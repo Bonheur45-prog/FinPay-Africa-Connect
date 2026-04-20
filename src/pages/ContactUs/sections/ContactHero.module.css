@@ -1,0 +1,227 @@
+/* FinPay Africa — ContactHero Section — Isolated styles */
+
+.hero {
+  --ch-maroon:  #8C1A13;
+  --ch-dark-maroon: #6A1109;
+  --ch-accent:   #af2b21;
+  --ch-gold:     #f5c518;
+  --ch-white:    #ffffff;
+  --ch-cream:    #faf8f4;
+  --ch-dark:     #150202;
+  --ch-mid:      #4a4a5a;
+  --ch-border:   rgba(140, 26, 19, 0.09);
+
+  position: relative;
+  background: var(--ch-white);
+  padding: 110px 24px 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Diagonal slash - top right */
+.accentSlash {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 380px;
+  height: 380px;
+  background: linear-gradient(135deg, var(--ch-maroon) 0%, var(--ch-dark-maroon) 100%);
+  clip-path: polygon(60% 0%, 100% 0%, 100% 40%, 40% 100%, 0% 100%, 0% 60%);
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dot grid texture */
+.gridTexture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(140, 26, 19, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* Inner */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Fade-up entrance */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fadeUp.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ch-maroon);
+}
+.eyebrowLine {
+  display: block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--ch-maroon);
+  border-radius: 1px;
+}
+
+/* Title */
+.title {
+
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+  color: var(--ch-dark);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.highlight {
+  color: var(--ch-maroon);
+  position: relative;
+  display: inline-block;
+}
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 4px; right: 4px; bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ch-maroon), var(--ch-dark-maroon));
+  border-radius: 2px;
+  opacity: 0.35;
+}
+
+/* Sub */
+.sub {
+
+  font-size: 1.05rem;
+  color: var(--ch-mid);
+  line-height: 1.72;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Intent grid */
+.intentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.intentCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1.5px solid var(--ch-border);
+  border-radius: 16px;
+  background: var(--ch-white);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.22s ease;
+  text-align: left;
+  animation: chSlideIn 0.6s ease both;
+}
+.intentCard:hover  {
+  box-shadow: 0 12px 36px rgba(140, 26, 19, 0.09);
+  border-color: rgba(140, 26, 19, 0.35);
+  transform: translateY(-3px);
+}
+
+@keyframes chSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.intentIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(140, 26, 19, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ch-maroon);
+  transition: background 0.22s ease;
+}
+.intentCard:hover .intentIcon  {
+  background: rgba(140, 26, 19, 0.16);
+}
+
+.intentText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.intentLabel {
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ch-dark);
+}
+
+.intentDesc {
+
+  font-size: 0.76rem;
+  color: var(--ch-mid);
+  line-height: 1.4;
+}
+
+.intentArrow {
+  flex-shrink: 0;
+  color: var(--ch-maroon);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.intentCard:hover .intentArrow  {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Wave to next section */
+.wave {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+.wave svg { display: block; width: 100%; height: 60px; }
+
+/* Responsive */
+@media (max-width: 760px) {
+  .intentGrid {
+    grid-template-columns: 1fr;
+  }
+  .hero { padding: 90px 20px 90px; }
+}
+@media (max-width: 480px) {
+  .intentCard { gap: 10px; padding: 14px 16px; }
+}

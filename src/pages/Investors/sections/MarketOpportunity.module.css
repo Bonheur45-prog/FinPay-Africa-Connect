@@ -1,0 +1,340 @@
+/* FinPay Africa — MarketOpportunity Section — Isolated styles */
+
+.section {
+  --mo-crimson:  #7a0e0e;
+  --mo-orange:   #e8760a;
+  --mo-amber:    #f5a623;
+  --mo-gold:     #f5c518;
+  --mo-white:    #ffffff;
+  --mo-cream:    #faf8f4;
+  --mo-dark:     #1a1a2e;
+  --mo-mid:      #4a4a6a;
+  --mo-border:   rgba(26,26,46,0.08);
+  --mo-green:    #2d7a3a;
+
+  background: var(--mo-white);
+}
+
+/* ── Problem block ── */
+.problemBlock {
+  padding: 100px 24px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.headerVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eyebrow {
+  display: inline-block;
+
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mo-crimson);
+  margin-bottom: 14px;
+  padding: 0 20px;
+  position: relative;
+}
+.eyebrow::before, .eyebrow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 28px; height: 1px;
+  background: var(--mo-crimson);
+  opacity: 0.5;
+}
+.eyebrow::before { right: 100%; margin-right: -12px; }
+.eyebrow::after  { left:  100%; margin-left:  -12px; }
+
+.sectionTitle {
+
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--mo-dark);
+  margin: 0 0 18px;
+  line-height: 1.2;
+}
+
+.sectionSub {
+
+  font-size: 1.05rem;
+  color: var(--mo-mid);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Pain cards grid */
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.painCard {
+  background: var(--mo-cream);
+  border: 1.5px solid var(--mo-border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease;
+}
+.painCardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.painCard:hover  {
+  box-shadow: 0 16px 40px rgba(26,26,46,0.08);
+}
+
+.painIcon { 
+  display: flex;
+  justify-content: center;
+  color: var(--mo-crimson);
+  margin-bottom: 8px;
+}
+
+.painValue {
+
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--mo-crimson);
+  line-height: 1;
+}
+
+.painLabel {
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--mo-dark);
+  line-height: 1.4;
+}
+
+.painNote {
+
+  font-size: 0.8rem;
+  color: var(--mo-mid);
+  line-height: 1.5;
+}
+
+/* ── Solution block ── */
+.solutionBlock {
+  background: var(--mo-cream);
+  padding: 100px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Bleed cream across full width */
+.solutionBlock {
+  max-width: 100%;
+  background: var(--mo-cream);
+}
+
+.solutionLeft {
+  max-width: 560px;
+  padding-left: max(24px, calc((100vw - 1200px) / 2));
+}
+
+.solutionRight {
+  display: flex;
+  align-items: center;
+  padding-right: max(24px, calc((100vw - 1200px) / 2));
+}
+
+.solutionTextWrap {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.solutionVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eyebrowDark {
+  display: inline-block;
+
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mo-orange);
+  margin-bottom: 14px;
+}
+
+.solutionTitle {
+
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: var(--mo-dark);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.solutionSub {
+
+  font-size: 1rem;
+  color: var(--mo-mid);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Solution list */
+.solutionList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.solutionItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.solutionItemVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.solutionDot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--mo-orange);
+  margin-top: 6px;
+  box-shadow: 0 0 0 4px rgba(232,118,10,0.15);
+}
+
+.solutionItemText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.solutionItemTitle {
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mo-dark);
+}
+
+.solutionItemDesc {
+
+  font-size: 0.9rem;
+  color: var(--mo-mid);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Chart card */
+.chartCard {
+  background: var(--mo-white);
+  border: 1.5px solid var(--mo-border);
+  border-radius: 20px;
+  padding: 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(26,26,46,0.06);
+}
+
+.chartTitle {
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mo-dark);
+  margin: 0 0 28px;
+}
+
+.chartBars {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.chartRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chartLabel {
+
+  font-size: 0.78rem;
+  color: var(--mo-mid);
+  width: 140px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.barTrack {
+  flex: 1;
+  height: 10px;
+  background: rgba(26,26,46,0.06);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1s ease;
+}
+
+.chartPct {
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 38px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.chartCaption {
+
+  font-size: 0.78rem;
+  color: var(--mo-green);
+  margin: 20px 0 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .painGrid { grid-template-columns: 1fr; }
+
+  .solutionBlock {
+    display: block;
+    padding: 80px 24px;
+  }
+  .solutionLeft { max-width: 100%; padding-left: 0; margin-bottom: 48px; }
+  .solutionRight { justify-content: center; padding-right: 0; }
+}
+
+@media (max-width: 640px) {
+  .problemBlock { padding: 80px 16px 60px; }
+}

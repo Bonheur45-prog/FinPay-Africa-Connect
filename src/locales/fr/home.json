@@ -1,0 +1,118 @@
+{
+    "hello": {
+        "hellobadge": "Expansion en Afrique · 2025",
+        "eyebrow": "Infrastructure Fintech de Nouvelle Génération",
+        "line1": "Transférez l'argent plus",
+        "emphasis": "vite",
+        "line2": "aux quatre coins",
+        "line3": "de l'Afrique",
+        "paragraph": "FinPay Africa propose une infrastructure de paiement sécurisée, instantanée et accessible, au service des entreprises, des communautés de la diaspora et des populations sous-bancarisées sur tout le continent.",
+        "buttons": {
+            "explore": "Découvrir notre plateforme",
+            "demo": "Voir la démo"
+        }
+    },
+
+    "core-solutions-heading": {
+        "label": "Nos Solutions Principales",
+        "title_start": "Conçu pour la",
+        "emphasis": "rapidité, la sécurité,",
+        "title_end": "et l'envergure africaine",
+        "description": "Chaque produit de notre écosystème est conçu pour la fiabilité et la conformité — afin que votre entreprise transfère des fonds en toute confiance, de Lagos au Cape Town et au-delà."
+    },
+
+    "solutions": {
+    "instant-payments": {
+      "tag": "Phare",
+      "title": "Paiements Transfrontaliers Instantanés",
+      "desc": "Envoyez et recevez de l'argent sur 54 marchés africains en moins de 2 secondes. Cryptage de niveau bancaire avec règlement en temps réel."
+    },
+    "diaspora": {
+      "tag": "Transfert",
+      "title": "Transferts d'Argent Diaspora",
+      "desc": "Transferts rapides à frais réduits depuis l'Europe, l'Amérique du Nord et le Moyen-Orient directement vers les portefeuilles mobiles africains."
+    },
+    "api": {
+      "tag": "Développeur",
+      "title": "API et Infrastructure de Paiement",
+      "desc": "Intégrez nos solutions de paiement dans n'importe quelle application avec un seul SDK. Conforme PCI-DSS, avec une disponibilité garantie de 99,9 %."
+    },
+    "cards": {
+      "tag": "Cartes",
+      "title": "Cartes Virtuelles et Physiques",
+      "desc": "Émettez des cartes virtuelles ou physiques personnalisées pour vos clients et employés — acceptation mondiale, contrôle en temps réel."
+    },
+    "kyc": {
+      "tag": "Conformité",
+      "title": "Vérification d'Identité et KYC",
+      "desc": "Contrôle KYC et AML automatisé pour une intégration rapide et conforme des particuliers et des entreprises à travers l'Afrique."
+    }
+  },
+
+  "learn-more-btn": "En savoir plus",
+  "core-solution-cta": "Explorer toutes les solutions",
+  "core-sol-trust-statement": "Adopté par des entreprises dans plus de 12+ pays et divers secteurs d'activité",
+
+  "latest-insight": {
+    "label": "Dernières perspectives",
+    "title1": "Des idées qui méritent d'être",
+    "title2": "lues",
+    "descriptions": "Analyses approfondies, récits de produits et leçons d'ingénierie par l'équipe qui bâtit le futur du travail.",
+
+    "blog": {
+      "read_time": "Lecture : {{count}} min",
+      "categories": {
+        "product": "Produit",
+        "engineering": "Ingénierie",
+        "growth": "Croissance",
+        "security": "Sécurité",
+        "design": "Design",
+        "culture": "Culture"
+      },
+      "posts": {
+        "p1": {
+          "title": "Dashboard : un redesign pour une vitesse 10×",
+          "desc": "Analyse des choix techniques ayant réduit les délais tout en clarifiant l'interface."
+        },
+        "p2": {
+          "title": "Le collaboratif temps réel, simplifié",
+          "desc": "Comment l'event-sourcing a simplifié notre architecture face aux WebSockets."
+        },
+        "p3": {
+          "title": "0 à 50k utilisateurs : l'onboarding gagnant",
+          "desc": "L'impact de micro-ajustements et d'un flux simplifié sur notre taux d'activation."
+        },
+        "p4": {
+          "title": "Zero-Trust : notre gestion des accès",
+          "desc": "Repenser les permissions pour des audits plus rapides et une sécurité renforcée."
+        },
+        "p5": {
+          "title": "La typographie comme décision produit",
+          "desc": "Le choix d'une police définit la perception de confiance et de sérieux de la marque."
+        },
+        "p6": {
+          "title": "Async-First : collaborer sur 11 fuseaux",
+          "desc": "Les rituels et outils pour rester alignés à distance sans multiplier les réunions."
+        }
+      },
+
+      "blog-post-cta": "Lire cet article"
+    },
+
+    "blog-section-cta": "Découvrir nos insights"
+  },
+
+  "global-reach": {
+    "label": "Portée Mondiale",
+    "title": "Connectez-vous à l'Afrique, où que vous soyez",
+    "description": "Notre infrastructure de paiement connecte les entreprises et les consommateurs à travers l'Afrique, avec des intégrations dans plus de 12 pays et des partenariats avec les principaux réseaux de paiement mondiaux.",
+
+    "presence-points": {
+      "p1": "Présence dans 12+ pays africains",
+      "p2": "Partenariats avec les principaux réseaux de paiement mondiaux",
+      "p3": "Support multilingue et multidevise"
+    }
+  }
+
+  
+}

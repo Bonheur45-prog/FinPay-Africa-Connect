@@ -1,0 +1,188 @@
+/* FinPay Africa — TractionStats Section — Isolated styles */
+
+.section {
+  --ts-crimson:    #6b0a0a;
+  --ts-crimson-dk: #480707;
+  --ts-orange:     #e8760a;
+  --ts-amber:      #f5a623;
+  --ts-gold:       #f5c518;
+  --ts-white:      #ffffff;
+  --ts-white-60:   rgba(255,255,255,0.60);
+  --ts-white-80:   rgba(255,255,255,0.80);
+
+  position: relative;
+  overflow: hidden;
+  padding: 100px 24px;
+}
+
+.bgGrad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--ts-crimson-dk) 0%, #8b1a1a 60%, #a02010 100%);
+  z-index: 0;
+}
+
+.bgLines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.025) 0,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.headerVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eyebrow {
+
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ts-amber);
+  margin-bottom: 12px;
+}
+
+.title {
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--ts-white);
+  margin: 0 0 14px;
+}
+
+.sub {
+
+  font-size: 1.02rem;
+  color: var(--ts-white-80);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Counter grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  width: 100%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.statItem {
+  background: rgba(255,255,255,0.04);
+  padding: 44px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, background 0.25s ease;
+}
+.statItemVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.statItem:hover  {
+  background: rgba(255,255,255,0.09);
+}
+
+.statNum {
+
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--ts-gold);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.suffix {
+  font-size: 0.55em;
+  font-weight: 700;
+  color: var(--ts-amber);
+}
+
+.statLabel {
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ts-white);
+}
+
+.statSub {
+
+  font-size: 0.78rem;
+  color: var(--ts-white-60);
+  line-height: 1.45;
+  max-width: 160px;
+}
+
+/* Bottom row */
+.bottomRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.divLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+.tagline {
+
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ts-white-60);
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .bottomRow {
+    display: none;
+  }
+}

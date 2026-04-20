@@ -1,0 +1,197 @@
+/*
+ * SolutionHero.module.css
+ * Full-screen hero for individual solution pages.
+ */
+
+/* ── Shell ───────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 12, 38, 0.98) 0%,
+    #8C1A13              55%,
+    rgba(6, 12, 38, 0.96) 100%
+  );
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 0 80px;  /* top clears the fixed header */
+}
+
+/* Dot-grid texture — matches the global hero */
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.045) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Content container ───────────────────────────────────────────── */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+/* ── Badge ───────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+
+  /* Entrance animation */
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+/* ── Headline ────────────────────────────────────────────────────── */
+.headline {
+
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1.06;
+  letter-spacing: -0.038em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+
+  opacity: 0;
+  animation: fadeSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.22s forwards;
+}
+
+/* Each \n becomes its own block-level span */
+.headlineLine {
+  display: block;
+}
+
+/* ── Supporting paragraph ────────────────────────────────────────── */
+.sub {
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.75;
+  max-width: 580px;
+
+  opacity: 0;
+  animation: fadeSlideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.38s forwards;
+}
+
+/* ── CTA row ─────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+
+  opacity: 0;
+  animation: fadeSlideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.52s forwards;
+}
+
+/* Primary filled button */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background: #8C1A13;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.btnPrimary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.btnPrimary:hover::before  { opacity: 1; }
+.btnPrimary:hover  {
+  background: #6A1109;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(140, 26, 19, 0.4);
+}
+.btnPrimary svg {
+  transition: transform 0.25s;
+}
+.btnPrimary:hover svg  { transform: translateX(3px); }
+
+/* Ghost secondary button */
+.btnSecondary {
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.82);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.825rem 1.6rem;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s;
+}
+.btnSecondary:hover  {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Shared entrance keyframe ────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .hero    { padding: 100px 0 64px; min-height: 80vh; }
+  .actions { flex-direction: column; width: 100%; }
+  .btnPrimary,
+  .btnSecondary { width: 100%; justify-content: center; }
+}

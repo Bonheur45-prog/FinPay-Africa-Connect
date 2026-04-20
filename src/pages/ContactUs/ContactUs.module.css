@@ -1,0 +1,10 @@
+/* FinPay Africa — Contact Us Page root styles */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+.page {
+
+  background-color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #1a1a2e;
+}

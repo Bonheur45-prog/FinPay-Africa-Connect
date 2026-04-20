@@ -1,0 +1,452 @@
+/*
+ * AfricaMap3D.module.css
+ * ─────────────────────────────────────────────────────────────────
+ * All classes are locally scoped via CSS Modules — safe to drop
+ * into any existing project without style conflicts.
+ *
+ * CSS custom properties you can override on the wrapper element:
+ *   --am-accent      brand red
+ *   --am-orange      brand orange
+ *   --am-surface     modal background
+ *   --am-text        primary text
+ *   --am-border      subtle border
+ *   --map-height     set programmatically from mapHeight prop
+ */
+
+/* ─── Design tokens ──────────────────────────────────────────────── */
+.wrapper {
+  --am-accent:   #DA1C21;
+  --am-orange:   #F77F25;
+  --am-text:     #f5e6e6;
+  --am-surface:  #1a0404;
+  --am-panel:    #0f0202;
+  --am-border:   rgba(218, 28, 33, 0.22);
+  --am-radius:   10px;
+  --am-shadow:   0 28px 72px rgba(0,0,0,0.8), 0 4px 18px rgba(218,28,33,0.22);
+
+  position: relative;
+  width: 100%;
+  height: var(--map-height, 620px);
+  border-radius: var(--am-radius);
+  overflow: hidden;
+
+  isolation: isolate; /* contains z-index stacking */
+  background: #080101;
+}
+
+/* ─── Loading state ──────────────────────────────────────────────── */
+.loadingState {
+  position: absolute;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #080101;
+  color: rgba(245, 230, 230, 0.5);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(218, 28, 33, 0.2);
+  border-top-color: var(--am-accent);
+  border-radius: 50%;
+  animation: am-spin 0.85s linear infinite;
+}
+
+@keyframes am-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Error state ────────────────────────────────────────────────── */
+.errorState {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f47c80;
+  font-size: 13px;
+  padding: 20px;
+  text-align: center;
+  background: #080101;
+}
+
+/* ─── Camera reset button ────────────────────────────────────────── */
+.controls {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ctrlBtn {
+  width: 32px;
+  height: 32px;
+  background: rgba(20, 4, 4, 0.88);
+  border: 1px solid var(--am-border);
+  color: var(--am-text);
+  font-size: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  user-select: none;
+}
+
+.ctrlBtn:hover  {
+  background: rgba(218, 28, 33, 0.32);
+  border-color: var(--am-accent);
+}
+
+.ctrlBtn:active {
+  transform: scale(0.92);
+}
+
+/* ─── Legend ─────────────────────────────────────────────────────── */
+.legend {
+  position: absolute;
+  bottom: 44px;
+  left: 14px;
+  z-index: 30;
+  background: rgba(18, 3, 3, 0.88);
+  border: 1px solid var(--am-border);
+  border-radius: 8px;
+  padding: 9px 13px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.legendTitle {
+  margin: 0 0 7px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(245, 230, 230, 0.38);
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  color: rgba(245, 230, 230, 0.8);
+  margin-bottom: 5px;
+}
+
+.legendRow:last-child {
+  margin-bottom: 0;
+}
+
+.legendDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── Interaction hint ───────────────────────────────────────────── */
+.hint {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  font-size: 10px;
+  color: rgba(245, 230, 230, 0.28);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.03em;
+  animation: am-hintFade 5s ease 2s forwards;
+}
+
+@keyframes am-hintFade {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ─── Country labels (rendered inside drei <Html> portal) ────────── */
+.label {
+  display: block;
+
+  font-size: 8.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  transition: color 0.15s, font-weight 0.15s;
+}
+
+.labelPresence  { color: rgba(240, 204, 204, 0.82); }
+.labelExpansion { color: rgba(244, 184, 122, 0.82); }
+
+.labelHovered {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Alignment — mirrors SVG text-anchor */
+.labelLeft  { transform: translateX(0);    text-align: left;  }
+.labelRight { transform: translateX(-100%); text-align: right; }
+
+/* ─── Modal backdrop ─────────────────────────────────────────────── */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: am-fadeIn 0.18s ease;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+@keyframes am-fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Modal panel ────────────────────────────────────────────────── */
+.modalPanel {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: 88vh;
+  background: var(--am-surface);
+  border-radius: 14px;
+  border: 1px solid var(--am-border);
+  box-shadow: var(--am-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: am-slideUp 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes am-slideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* ─── Modal header ───────────────────────────────────────────────── */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--am-border);
+  border-top: 3px solid transparent; /* overridden inline with country color */
+  background: var(--am-panel);
+  flex-shrink: 0;
+}
+
+.modalSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  margin: 0;
+  flex: 1;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--am-text);
+  letter-spacing: -0.01em;
+}
+
+.modalClose {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(245, 230, 230, 0.6);
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.modalClose:hover  {
+  background: rgba(218, 28, 33, 0.3);
+  color: #fff;
+}
+
+/* ─── Modal body ─────────────────────────────────────────────────── */
+.modalBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(218, 28, 33, 0.35) transparent;
+}
+
+.modalBody::-webkit-scrollbar       { width: 4px; }
+.modalBody::-webkit-scrollbar-track { background: transparent; }
+.modalBody::-webkit-scrollbar-thumb { background: rgba(218, 28, 33, 0.35); border-radius: 2px; }
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  width: fit-content;
+}
+
+.badgePresence {
+  background: rgba(218, 28, 33, 0.16);
+  color: #f47c80;
+  border: 1px solid rgba(218, 28, 33, 0.32);
+}
+
+.badgeExpansion {
+  background: rgba(247, 127, 37, 0.16);
+  color: #f7a96a;
+  border: 1px solid rgba(247, 127, 37, 0.32);
+}
+
+.badgeInactive {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(245, 230, 230, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Info rows */
+.infoRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.infoIcon {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.infoLabel {
+  margin: 0 0 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(245, 230, 230, 0.4);
+}
+
+.infoValue {
+  margin: 0;
+  font-size: 13px;
+  color: var(--am-text);
+  line-height: 1.45;
+}
+
+.infoDescription {
+  margin: 0;
+  font-size: 12.5px;
+  color: rgba(245, 230, 230, 0.72);
+  line-height: 1.58;
+}
+
+/* Project list */
+.projectList {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.projectItem {
+  font-size: 12px;
+  color: var(--am-text);
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border-left: 2px solid var(--am-accent);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ─── Modal footer ───────────────────────────────────────────────── */
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 20px;
+  border-top: 1px solid var(--am-border);
+  background: var(--am-panel);
+  flex-shrink: 0;
+}
+
+.modalBrand {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(245, 230, 230, 0.25);
+}
+
+.modalCloseBtn {
+  padding: 6px 18px;
+  background: rgba(218, 28, 33, 0.12);
+  border: 1px solid rgba(218, 28, 33, 0.32);
+  color: #f47c80;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.modalCloseBtn:hover  {
+  background: rgba(218, 28, 33, 0.28);
+  border-color: var(--am-accent);
+  color: #fff;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .modalBackdrop { align-items: flex-end; padding: 0; }
+
+  .modalPanel {
+    max-width: 100%;
+    border-radius: 14px 14px 0 0;
+    max-height: 80vh;
+  }
+
+  .label { font-size: 7.5px; }
+
+  .legend { bottom: 38px; left: 10px; padding: 7px 10px; }
+  .legendTitle { font-size: 8px; }
+  .legendRow   { font-size: 9.5px; }
+
+  .hint { font-size: 9px; }
+}

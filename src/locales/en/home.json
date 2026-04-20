@@ -1,0 +1,104 @@
+{
+    "hello": {
+        "hellobadge": "Expanding across Africa · 2025",
+        "eyebrow": "Next-Generation Fintech Infrastructure",
+        "line1": "Move money",
+        "emphasis": "faster",
+        "line2": "across every",
+        "line3": "corner of Africa",
+        "paragraph": "FinPay Africa delivers secure, instant, and accessible payment infrastructure — empowering businesses, diaspora communities, and underbanked populations across the continent.",
+        "buttons": {
+            "explore": "Explore Our Platform",
+            "demo": "Watch Demo"
+        }
+    },
+
+    "core-solutions-heading": {
+        "label": "Our Core Solutions",
+        "title_start": "Built for",
+        "emphasis": "speed, security,",
+        "title_end": "and African scale",
+        "description": "Every product in our ecosystem is engineered for reliability and compliance — so your business moves money with confidence, from Lagos to Cape Town and beyond."
+    },
+
+    "solutions": {
+    "instant-payments": {
+      "tag": "Flagship",
+      "title": "Instant Cross-Border Payments",
+      "desc": "Send and receive money across 54 African markets in under 2 seconds. Bank-grade encryption with real-time settlement."
+    },
+    "diaspora": {
+      "tag": "Remittance",
+      "title": "Diaspora Money Transfers",
+      "desc": "Low-fee, high-speed remittances from Europe, North America, and the Middle East directly to African mobile wallets."
+    },
+    "api": {
+      "tag": "Developer",
+      "title": "Payment API & Infrastructure",
+      "desc": "Integrate our payment rails into any app with a single SDK. PCI-DSS compliant, 99.9% uptime SLA guaranteed."
+    },
+    "cards": {
+      "tag": "Cards",
+      "title": "Virtual & Physical Cards",
+      "desc": "Issue branded virtual or physical cards to your customers and employees — worldwide acceptance, real-time controls."
+    },
+    "kyc": {
+      "tag": "Compliance",
+      "title": "Identity & KYC Verification",
+      "desc": "Automated KYC and AML screening for fast, compliant onboarding of individuals and businesses across Africa."
+    }
+  },
+
+  "learn-more-btn": "Learn More",
+  "core-solution-cta": "Explore All Solutions",
+  "core-sol-trust-statement": "Trusted by businesses across 12+ countries and multiple industries",
+
+  "latest-insight": {
+    "label": "Latest Insights",
+    "title1": "Ideas worth",
+    "title2": "reading",
+    "descriptions": "Deep dives, product stories, and engineering lessons from the team building the future of work.",
+
+    "blog": {
+      "read_time": "{{count}} min read",
+      "categories": {
+        "product": "Product",
+        "engineering": "Engineering",
+        "growth": "Growth",
+        "security": "Security",
+        "design": "Design",
+        "culture": "Culture"
+      },
+      "posts": {
+        "p1": {
+          "title": "Redesigning Our Dashboard for 10× Speed",
+          "desc": "A deep-dive into engineering decisions that cut load times and improved clarity for all users."
+        },
+        "p2": {
+          "title": "Real-Time Collaboration Without Complexity",
+          "desc": "How we used lightweight event-sourcing to replace tangled WebSockets—lessons learned."
+        },
+        "p3": {
+          "title": "0 to 50k Users: Onboarding That Worked",
+          "desc": "Small copy tweaks and a simplified flow—the simple shifts that tripled activation."
+        },
+        "p4": {
+          "title": "Zero-Trust: Our New Permissions Model",
+          "desc": "Rethinking role-based access to make audits faster and breaches far less likely."
+        },
+        "p5": {
+          "title": "Typography as a Core Product Decision",
+          "desc": "Choosing a typeface isn't cosmetic—it shapes how users perceive trust and authority."
+        },
+        "p6": {
+          "title": "Async-First: Working Across 11 Time Zones",
+          "desc": "The rituals and tools that keep our remote team aligned without endless meetings."
+        }
+      },
+
+      "blog-post-cta": "Read article"
+    },
+
+    "blog-section-cta": "Explore all insights"
+  }
+}

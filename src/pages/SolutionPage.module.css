@@ -1,0 +1,90 @@
+/*
+ * SolutionPage.module.css
+ * Styles for the loading, 404, and page wrapper states only.
+ * Each section component handles its own styles.
+ */
+
+/* ── Page wrapper ────────────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+}
+
+/* ── Full-page centred state (loading / 404) ─────────────────────── */
+.state {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grey-100);
+}
+
+/* ── Spinner ─────────────────────────────────────────────────────── */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--grey-200);
+  border-top-color: var(--navy);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── 404 block ───────────────────────────────────────────────────── */
+.notFound {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+}
+
+.notFoundCode {
+
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--grey-200);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.notFoundTitle {
+
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.025em;
+}
+
+.notFoundSub {
+  font-size: 0.9rem;
+  color: var(--grey-600);
+  line-height: 1.6;
+}
+
+.notFoundSub code {
+  font-size: 0.85rem;
+  background: var(--grey-200);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--navy);
+}
+
+.notFoundLink {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s;
+}
+
+.notFoundLink:hover  {
+  color: #6A1109;
+}

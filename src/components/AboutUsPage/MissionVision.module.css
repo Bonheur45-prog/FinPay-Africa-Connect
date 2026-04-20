@@ -1,0 +1,214 @@
+/* ============================================================
+   MissionVision.css
+   ============================================================ */
+
+.mv-section {
+  position: relative;
+  background: #090101;
+  padding: 2rem 2rem;
+  overflow: hidden;
+}
+
+.mv-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 100%, #8C1A131a 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 0% 0%, #8C1A1310 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.mv-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mv-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.mv-label {
+  display: inline-block;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8C1A13;
+  margin-bottom: 1rem;
+}
+
+.mv-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+}
+
+.mv-sub {
+
+  font-size: 1rem;
+  color: rgba(255,255,255,0.4);
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ---- Grid ---- */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ---- Card ---- */
+.mv-card {
+  position: relative;
+  background: rgba(26, 5, 5, 0.82);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 2.2rem;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.mv-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mv-card:hover  {
+  border-color: rgba(140, 26, 19, 0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.mv-card-vision {
+  border-top: 2px solid rgba(140, 26, 19, 0.4);
+}
+
+.mv-card-mission {
+  border-top: 2px solid rgba(175, 43, 33, 0.4);
+}
+
+.mv-card-values {
+  border-top: 2px solid rgba(106, 17, 9, 0.4);
+}
+
+/* ---- Icon ---- */
+.mv-icon-wrap {
+  width: 56px;
+  height: 56px;
+  background: rgba(140, 26, 19, 0.1);
+  border: 1px solid rgba(140, 26, 19, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8C1A13;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.mv-card:hover .mv-icon-wrap  {
+  background: rgba(140, 26, 19, 0.15);
+}
+
+/* ---- Card meta ---- */
+.mv-card-meta {
+  margin-bottom: 1.2rem;
+}
+
+.mv-card-label {
+  display: block;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C1A13;
+  margin-bottom: 0.4rem;
+}
+
+.mv-card-title {
+
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.mv-card-desc {
+
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* ---- Values list ---- */
+.mv-values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.mv-value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mv-value-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8C1A13;
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.mv-value-name {
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+.mv-value-desc {
+
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+}
+
+/* ---- Glow ---- */
+.mv-card-glow {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #8C1A1333, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .mv-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  .mv-grid { grid-template-columns: 1fr; }
+  .mv-section { padding: 5rem 1.5rem; }
+}

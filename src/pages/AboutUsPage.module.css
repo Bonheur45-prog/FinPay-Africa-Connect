@@ -1,0 +1,38 @@
+/* ============================================================
+   About.css — Page-level styles & global resets for About page
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page wrapper */
+.about-page {
+  background: #B22222;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Box-sizing reset (safe to add globally) */
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+/* Global link reset within about page */
+.about-page a {
+  color: inherit;
+}
+
+/* Selection color */
+.about-page ::selection {
+  background: #8C1A1355;
+  color: #fff;
+}

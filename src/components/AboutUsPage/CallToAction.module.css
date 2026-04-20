@@ -1,0 +1,209 @@
+/* ============================================================
+   CallToAction.css
+   ============================================================ */
+
+.cta-section {
+  position: relative;
+  background: #090101;
+  padding: 8rem 2rem;
+  overflow: hidden;
+}
+
+.cta-bg-deep {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, #8C1A1310 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, #6A110910 0%, transparent 40%);
+  opacity: 0.8;
+}
+
+.cta-orb-1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #8C1A131a, transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation: cta-float 12s infinite alternate;
+  pointer-events: none;
+}
+
+.cta-orb-2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #6A110915, transparent 70%);
+  bottom: -50px;
+  left: -50px;
+  animation: cta-float 15s infinite alternate-reverse;
+  pointer-events: none;
+}
+
+.cta-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(140, 26, 19, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 26, 19, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.cta-section.cta-visible .cta-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Badge ---- */
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(140, 26, 19, 0.15);
+  border: 1px solid rgba(140, 26, 19, 0.2);
+  border-radius: 100px;
+  color: #8C1A13;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.cta-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #8C1A13;
+  border-radius: 50%;
+  animation: cta-pulse 2s infinite;
+}
+
+@keyframes cta-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes cta-float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(20px); }
+}
+
+/* ---- Title ---- */
+.cta-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.cta-title-accent {
+  color: #8C1A13;
+}
+
+/* ---- Body ---- */
+.cta-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+}
+
+/* ---- Actions ---- */
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.25rem 2.8rem;
+  background: #8C1A13;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(140, 26, 19, 0.25);
+}
+
+.cta-btn-primary:hover {
+  background: #6A1109;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(140, 26, 19, 0.35);
+}
+
+.cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.cta-btn-secondary:hover  {
+  color: #6A1109;
+  border-color: rgba(147, 197, 253, 0.4);
+}
+
+/* ---- Contact info ---- */
+.cta-contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+}
+
+.cta-contact-item svg {
+  color: rgba(59, 130, 246, 0.5);
+  flex-shrink: 0;
+}
+
+.cta-contact-sep {
+  color: rgba(255,255,255,0.15);
+  font-size: 1.2rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .cta-section { padding: 6rem 1.5rem; }
+  .cta-contact-sep { display: none; }
+  .cta-actions { flex-direction: column; }
+}

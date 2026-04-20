@@ -1,0 +1,221 @@
+/* FinPay Africa — BecomePartner Section — Isolated styles */
+
+.section {
+  --bp-crimson:  #7a0e0e;
+  --bp-orange:   #e8760a;
+  --bp-amber:    #f5a623;
+  --bp-gold:     #f5c518;
+  --bp-white:    #ffffff;
+  --bp-white-70: rgba(255, 255, 255, 0.70);
+  --bp-white-85: rgba(255, 255, 255, 0.85);
+
+  background: #faf8f4;
+  padding: 60px 24px 100px;
+}
+
+/* ─── Main card ─── */
+.card {
+  max-width: 1160px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--bp-crimson) 0%, #b03010 50%, var(--bp-orange) 100%);
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Decorative orbs */
+.bgOrb1,
+.bgOrb2 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.bgOrb1 {
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.04);
+  top: -120px;
+  right: -80px;
+}
+.bgOrb2 {
+  width: 240px;
+  height: 240px;
+  background: rgba(245, 197, 24, 0.08);
+  bottom: -60px;
+  left: 60px;
+}
+
+/* Inner content layout */
+.content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 64px 64px 64px;
+  align-items: center;
+}
+
+/* ─── Left column ─── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eyebrow {
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bp-gold);
+}
+
+.title {
+
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--bp-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.body {
+
+  font-size: 1rem;
+  color: var(--bp-white-85);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bp-gold);
+  color: var(--bp-crimson);
+
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.35);
+}
+.btnPrimary:hover  {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(245, 197, 24, 0.45);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--bp-white);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+.btnSecondary:hover  {
+  border-color: var(--bp-white);
+}
+
+/* ─── Right column — benefits ─── */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.benefitItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px 22px;
+  transition: background 0.22s ease;
+}
+.benefitItem:hover  {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.benefitIcon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: rgba(245, 197, 24, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bp-gold);
+}
+
+.benefitText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.benefitTitle {
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bp-white);
+}
+
+.benefitDesc {
+
+  font-size: 0.85rem;
+  color: var(--bp-white-70);
+  line-height: 1.5;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 48px 36px;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 16px 80px;
+  }
+  .content {
+    padding: 36px 24px;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

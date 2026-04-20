@@ -1,0 +1,321 @@
+/* FinPay Africa — ContactInfo Section — Isolated styles */
+
+.section {
+  --ci-maroon:  #8C1A13;
+  --ci-dark-maroon: #6A1109;
+  --ci-accent:   #af2b21;
+  --ci-gold:     #f5c518;
+  --ci-white:    #ffffff;
+  --ci-cream:    #faf8f4;
+  --ci-dark:     #150202;
+  --ci-mid:      #4a4a5a;
+  --ci-border:   rgba(140, 26, 19, 0.09);
+
+  background: var(--ci-white);
+  padding: 100px 24px 80px;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.headerVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eyebrow {
+  display: inline-block;
+
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ci-maroon);
+  margin-bottom: 12px;
+}
+
+.title {
+
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--ci-dark);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.sub {
+
+  font-size: 1.02rem;
+  color: var(--ci-mid);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Team grid ── */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 72px;
+}
+
+/* ── Team card ── */
+.teamCard {
+  background: var(--ci-white);
+  border: 1.5px solid var(--ci-border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.teamCardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.teamCard:hover  {
+  box-shadow: 0 20px 52px rgba(140, 26, 19, 0.1);
+  border-color: rgba(140, 26, 19, 0.25);
+}
+
+.cardTopBar {
+  height: 4px;
+  width: 100%;
+}
+
+.avatarRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 24px 0;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ci-white);
+  letter-spacing: 0.04em;
+}
+
+.memberBasic {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.memberName {
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ci-dark);
+}
+
+.memberRole {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ci-maroon);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.memberLoc {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 0.76rem;
+  color: var(--ci-mid);
+  margin-top: 4px;
+}
+
+/* Contact details */
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--ci-border);
+  border-bottom: 1px solid var(--ci-border);
+  margin-top: 20px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 0.82rem;
+  color: var(--ci-mid);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  overflow: hidden;
+}
+.contactRow span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contactRow svg { flex-shrink: 0; }
+.contactRow:hover  { color: var(--ci-maroon); }
+
+/* Availability chip */
+.availChip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 24px;
+
+  font-size: 0.76rem;
+  color: var(--ci-mid);
+  background: rgba(26,26,46,0.02);
+}
+
+.availDot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2d7a3a;
+  box-shadow: 0 0 0 3px rgba(45,122,58,0.2);
+  animation: ciPulse 2.5s ease-in-out infinite;
+}
+@keyframes ciPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(45,122,58,0.2); }
+  50%       { box-shadow: 0 0 0 6px rgba(45,122,58,0.07); }
+}
+
+/* ── Channels row ── */
+.channelsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.channelsRowVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.channelCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 24px;
+  border: 1.5px solid var(--ci-border);
+  border-radius: 18px;
+  background: var(--ci-cream);
+  transition: box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.channelCard:hover  {
+  box-shadow: 0 10px 28px rgba(140, 26, 19, 0.07);
+  border-color: rgba(140, 26, 19, 0.2);
+}
+
+.channelIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(140, 26, 19, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ci-maroon);
+}
+
+.channelText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.channelTitle {
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ci-dark);
+}
+
+.channelDetail {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ci-maroon);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a.channelDetail:hover  { color: var(--ci-dark-maroon); }
+
+.channelSub {
+
+  font-size: 0.76rem;
+  color: var(--ci-mid);
+  opacity: 0.75;
+}
+
+/* ── Brand strip ── */
+.brandStrip {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid var(--ci-border);
+  padding-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.brandMark { flex-shrink: 0; }
+
+.brandWords {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brandName {
+
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ci-dark);
+}
+
+.brandTagline {
+
+  font-size: 0.8rem;
+  color: var(--ci-mid);
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .teamGrid, .channelsRow { grid-template-columns: 1fr; }
+  .section { padding: 80px 20px 60px; }
+}
+@media (max-width: 480px) {
+  .contactRow { font-size: 0.78rem; }
+  .channelCard { padding: 20px 18px; }
+}

@@ -1,0 +1,50 @@
+.wrapper {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--s-muted);
+  max-width: 600px;
+  margin: 16px auto 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.card {
+  padding: 28px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.card:hover  {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.step span {
+  display: block;
+  font-size: 14px;
+  color: var(--s-blue);
+  margin-bottom: 8px;
+}

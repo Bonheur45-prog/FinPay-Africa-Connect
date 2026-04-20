@@ -1,0 +1,159 @@
+/*
+ * SolutionCTA.module.css
+ */
+
+.section {
+  background: var(--grey-100);
+  padding: 80px 2rem;
+}
+
+/* Rounded dark block inside the light section — creates visual contrast */
+.block {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  background: linear-gradient(
+    135deg,
+    #0f1f5c 0%,
+    #8C1A13 50%,
+    #0d1a4a 100%
+  );
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 64px 3rem;
+  text-align: center;
+
+  /* Entrance — hidden until IntersectionObserver fires */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity   0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dot-grid texture inside the block */
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Headline ────────────────────────────────────────────────────── */
+.headline {
+
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.04em;
+}
+
+.headlineLine { display: block; }
+
+/* ── Sub ─────────────────────────────────────────────────────────── */
+.sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.65;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.btnPrimary:hover  {
+  background: var(--grey-100);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.btnSecondary {
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.825rem 1.6rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s;
+}
+.btnSecondary:hover  {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Trust line ──────────────────────────────────────────────────── */
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.02em;
+  margin-top: 0.25rem;
+}
+
+.trustDot {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .block   { padding: 48px 1.5rem; }
+  .actions { flex-direction: column; width: 100%; }
+  .btnPrimary, .btnSecondary { width: 100%; justify-content: center; }
+}

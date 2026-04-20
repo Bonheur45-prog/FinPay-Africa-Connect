@@ -1,0 +1,76 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* LEFT */
+.left {}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 15px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* FEATURES (upgrade from simple bullet points) */
+.features {
+  display: grid;
+  gap: 20px;
+}
+
+.feature h4 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* RIGHT */
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Simple animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .right {
+    margin-top: 30px;
+  }
+}

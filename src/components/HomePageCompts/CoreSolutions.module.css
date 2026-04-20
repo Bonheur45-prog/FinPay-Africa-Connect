@@ -1,0 +1,499 @@
+/* ================================================================
+   CoreSolutions.css
+   "Our Core Solutions" section — premium SaaS-grade styles.
+
+   Design tokens (--navy, --accent, etc.) are defined in App.css.
+   Make sure App.css is imported in App.jsx before this component.
+   ================================================================ */
+
+
+/* ── Section shell ───────────────────────────────────────────────── */
+.cs {
+  background: var(--white);
+  position: relative;
+  padding: 112px 0 120px;
+  padding-bottom: 20px;
+  overflow: hidden;          /* clip the wave + edge decorations */
+}
+
+/*
+   Subtle diagonal grid pattern — gives the section a premium
+   technical texture without being noisy.
+*/
+.cs::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(140, 26, 19, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 26, 19, 0.028) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ── Hero → Section connector wave ──────────────────────────────── */
+/*
+   The SVG wave sits at the very top of the section, visually
+   "peeling" the dark Hero overlay into the white section below.
+   Its fill matches the Hero's bottom colour (rgba(6,12,38,~0.9)).
+*/
+.cs__wave {
+  position: absolute;
+  top: -2px;                 /* overlap the Hero by 2px to hide seam */
+  left: 0; right: 0;
+  height: 80px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.cs__wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ── Max-width content wrapper ───────────────────────────────────── */
+.cs__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ================================================================
+   SECTION HEADER
+   ================================================================ */
+
+.cs__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 72px;
+}
+
+/* ── Small overline label ─────────────────────────────────────────── */
+.cs__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--navy-light);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+
+  /* Scroll-triggered entrance — initial hidden state */
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity   0.6s var(--ease-out),
+    transform 0.6s var(--ease-out);
+}
+.cs__label.visible { opacity: 1; transform: translateY(0); }
+
+/* Short decorative lines flanking the label text */
+.cs__label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #8C1A13, var(--accent));
+  border-radius: 2px;
+}
+
+/* ── Main headline ───────────────────────────────────────────────── */
+.cs__headline {
+
+  font-size: clamp(2rem, 3.6vw, 3rem);  /* fluid type */
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.12;
+  letter-spacing: -0.032em;
+  margin-bottom: 1.1rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity   0.7s var(--ease-out) 0.1s,
+    transform 0.7s var(--ease-out) 0.1s;
+}
+.cs__headline.visible { opacity: 1; transform: translateY(0); }
+
+/* Italic word with navy colour for editorial emphasis */
+.cs__headline em {
+  font-style: italic;
+  color: var(--navy);
+}
+
+/* ── Supporting description ──────────────────────────────────────── */
+.cs__desc {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--grey-600);
+  line-height: 1.75;
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity   0.7s var(--ease-out) 0.2s,
+    transform 0.7s var(--ease-out) 0.2s;
+}
+.cs__desc.visible { opacity: 1; transform: translateY(0); }
+
+
+/* ================================================================
+   CARDS GRID
+   ================================================================ */
+
+.cs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3-col desktop default */
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+
+/* ── Single card shell ───────────────────────────────────────────── */
+.cs__card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--grey-200);
+  box-shadow: 0 2px 12px rgba(140, 26, 19, 0.055);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  /* Scroll-triggered entrance — initial hidden state */
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity      0.65s var(--ease-out),
+    transform    0.65s var(--ease-out),
+    box-shadow   0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* When IntersectionObserver adds .visible (via JS) */
+.cs__card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card hover: lift + deeper shadow ────────────────────────────── */
+/*
+   translateY(-6px) creates a physical "lift".
+   We override the scroll animation transform here.
+   Both the entrance (.visible) and the hover need to work together;
+   the transition on the base element covers both.
+*/
+.cs__card:hover  {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(140, 26, 19, 0.14);
+  border-color: rgba(140, 26, 19, 0.18);
+}
+
+
+/* ── Featured card (first card, 2-column span) ───────────────────── */
+.cs__card--featured {
+  grid-column: span 2;     /* occupies two columns */
+  flex-direction: row;     /* media left, body right */
+}
+
+.cs__card--featured .cs__card-media {
+  width: 52%;
+  aspect-ratio: auto;      /* let height follow the card body */
+  flex-shrink: 0;
+}
+
+.cs__card--featured .cs__card-body {
+  padding: 2rem 1.8rem;
+  justify-content: center;
+}
+
+.cs__card--featured .cs__card-title {
+  font-size: 1.35rem;      /* slightly larger for the hero card */
+}
+
+
+/* ================================================================
+   CARD MEDIA (image / video / illustration)
+   ================================================================ */
+
+.cs__card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--grey-100);
+  flex-shrink: 0;
+}
+
+/* Shimmer loading placeholder */
+.cs__card-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--grey-100) 0%,
+    var(--grey-200) 50%,
+    var(--grey-100) 100%
+  );
+  background-size: 200%;
+  animation: cs-shimmer 1.6s ease infinite;
+  z-index: 0;
+}
+
+@keyframes cs-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* Image and video share the same fill/zoom behaviour */
+.cs__card-img,
+.cs__card-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s var(--ease-out);
+  z-index: 1;
+}
+
+/* SVG illustration fills its container */
+.cs__card-illustration {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+}
+.cs__card-illustration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Zoom the media on card hover */
+.cs__card:hover .cs__card-img,
+.cs__card:hover .cs__card-video,
+.cs__card:hover .cs__card-illustration svg  {
+  transform: scale(1.06);
+}
+
+/*
+   Dark gradient overlay — reveals on hover for visual depth.
+   Fades from transparent at top to dark navy at bottom.
+*/
+.cs__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(6, 12, 38, 0.52) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+.cs__card:hover .cs__card-overlay  { opacity: 1; }
+
+/* Small icon pill in the top-left corner of the media */
+.cs__card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Background and border come from inline styles in JSX (per card) */
+  backdrop-filter: blur(8px);
+}
+.cs__card-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* ================================================================
+   CARD BODY (text content)
+   ================================================================ */
+
+.cs__card-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;                 /* stretches to fill remaining card height */
+}
+
+/* Small category tag above the title */
+.cs__card-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy-light);
+}
+
+/* Card title */
+.cs__card-title {
+
+  font-size: 1.12rem;
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* 1–2 line supporting description */
+.cs__card-text {
+  font-size: 0.855rem;
+  font-weight: 300;
+  color: var(--grey-600);
+  line-height: 1.65;
+}
+
+/* "Learn more →" link with animated arrow nudge */
+.cs__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  margin-top: auto;        /* push to bottom of card body */
+  padding-top: 0.8rem;
+  letter-spacing: 0.01em;
+  transition: gap 0.25s var(--ease-out), color 0.2s;
+}
+.cs__card-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s var(--ease-out);
+}
+.cs__card:hover .cs__card-link            { color: #6A1109; gap: 0.55rem; }
+.cs__card:hover .cs__card-link svg        { transform: translateX(3px); }
+
+
+/* ================================================================
+   CTA AREA
+   ================================================================ */
+
+.cs__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity   0.65s var(--ease-out),
+    transform 0.65s var(--ease-out);
+}
+.cs__cta.visible { opacity: 1; transform: translateY(0); }
+
+/* Primary CTA button */
+.cs__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--navy);
+  border: none;
+  border-radius: 9px;
+  padding: 0.9rem 2.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background  0.28s ease,
+    transform   0.28s ease,
+    box-shadow  0.28s ease;
+}
+
+/* Glossy sheen that appears on hover */
+.cs__cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cs__cta-btn:hover::before  { opacity: 1; }
+
+.cs__cta-btn:hover  {
+  background: #6A1109;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(140, 26, 19, 0.3);
+}
+.cs__cta-btn svg { transition: transform 0.28s var(--ease-out); }
+.cs__cta-btn:hover svg  { transform: translateX(4px); }
+
+/* Subtle trust line under the button */
+.cs__trust {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--grey-400);
+  letter-spacing: 0.02em;
+}
+/* Amber dot accent */
+.cs__trust-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet: 2-column grid, featured card returns to normal */
+@media (max-width: 1024px) {
+  .cs__card--featured {
+    grid-column: span 1;      /* no longer spans 2 cols */
+    flex-direction: column;   /* stacks media above body */
+  }
+  .cs__card--featured .cs__card-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 860px) {
+  .cs__grid { grid-template-columns: repeat(2, 1fr); }
+  .cs        { padding: 80px 0 96px; }
+}
+
+/* Mobile: single column */
+@media (max-width: 560px) {
+  .cs__grid   { grid-template-columns: 1fr; }
+  .cs          { padding: 64px 0 80px; }
+  .cs__header  { margin-bottom: 48px; }
+}

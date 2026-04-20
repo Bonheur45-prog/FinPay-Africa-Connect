@@ -1,0 +1,275 @@
+/* FinPay Africa — InvestorsHero Section — Isolated styles */
+
+.hero {
+  --ih-crimson:    #6b0a0a;
+  --ih-crimson-dk: #480707;
+  --ih-orange:     #e8760a;
+  --ih-amber:      #f5a623;
+  --ih-gold:       #f5c518;
+  --ih-white:      #ffffff;
+  --ih-white-70:   rgba(255,255,255,0.70);
+  --ih-white-85:   rgba(255,255,255,0.85);
+
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px 140px;
+  text-align: center;
+}
+
+.bgBase {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--ih-crimson-dk) 0%, #8b1a1a 60%, #b03010 100%);
+  z-index: 0;
+}
+
+.bgTexture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 38px,
+      rgba(255,255,255,0.018) 38px,
+      rgba(255,255,255,0.018) 39px
+    );
+}
+
+/* Geometric floating shapes */
+.geo1, .geo2, .geo3 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.geo1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(232,118,10,0.14) 0%, transparent 70%);
+  top: -120px; right: -100px;
+  animation: ihFloat 8s ease-in-out infinite;
+}
+.geo2 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(245,197,24,0.1) 0%, transparent 70%);
+  bottom: 80px; left: -80px;
+  animation: ihFloat 11s ease-in-out infinite reverse;
+}
+.geo3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  top: 40%; left: 20%;
+  animation: ihFloat 14s ease-in-out infinite;
+}
+
+@keyframes ihFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-24px) scale(1.04); }
+}
+
+/* Africa SVG */
+.africaWrap {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+.africaSvg {
+  width: 100%;
+  height: auto;
+}
+
+/* Inner content */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+/* Entrance animation */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.68s ease, transform 0.68s ease;
+}
+.fadeUp.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Confidential / opportunity tag */
+.confTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 100px;
+  padding: 8px 22px;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ih-amber);
+}
+
+.confDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ih-gold);
+  animation: ihPulse 2.2s ease-in-out infinite;
+}
+@keyframes ihPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Title */
+.title {
+
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--ih-white);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.highlight {
+  color: var(--ih-gold);
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+/* Subtle underline on the big number */
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ih-gold), var(--ih-amber));
+  border-radius: 2px;
+}
+
+.titleSub {
+  font-size: 0.72em;
+  font-weight: 600;
+  color: var(--ih-white-70);
+  font-style: normal;
+}
+
+/* Sub */
+.sub {
+
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: var(--ih-white-85);
+  line-height: 1.75;
+  max-width: 660px;
+  margin: 0;
+}
+.strongWhite { color: var(--ih-white); font-weight: 700; }
+
+/* CTA actions */
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btnGold {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--ih-gold);
+  color: var(--ih-crimson-dk);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 6px 24px rgba(245,197,24,0.4);
+}
+.btnGold:hover  {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(245,197,24,0.5);
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: var(--ih-white);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+.btnGhost:hover  {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* Trust badges row */
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 5px 14px;
+
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--ih-white-70);
+}
+
+/* Wave */
+.wave {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+.wave svg { display: block; width: 100%; height: 90px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 90px 20px 110px; min-height: auto; }
+  .africaWrap { display: none; }
+  .actions { flex-direction: column; align-items: center; }
+  .btnGold, .btnGhost { width: 100%; max-width: 320px; justify-content: center; }
+}
