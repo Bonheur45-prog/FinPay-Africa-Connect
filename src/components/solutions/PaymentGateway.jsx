@@ -5,7 +5,7 @@ import styles from "./PaymentGateway.module.css";
 
 const PaymentGateway = () => {
   return (
-    <Section background="video">
+    <Section background="video" theme="maroon">
       <div className={styles.wrapper}>
 
         {/* LEFT CONTENT */}

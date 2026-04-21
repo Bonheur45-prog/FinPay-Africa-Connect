@@ -4,7 +4,7 @@
 
 .sa-section {
   position: relative;
-  background: #090101;
+  background: #ffffff;
   padding: 8rem 2rem;
   overflow: hidden;
 }
@@ -53,7 +53,7 @@
 .sa-title {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
-  color: #fff;
+  color: #150202;
   letter-spacing: -0.02em;
 }
 
@@ -61,9 +61,9 @@
 .sa-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.06);
+  gap: 1.5px;
+  background: rgba(140, 26, 19, 0.06);
+  border: 1px solid rgba(140, 26, 19, 0.06);
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 5rem;
@@ -71,7 +71,7 @@
 
 /* ---- Stat ---- */
 .sa-stat {
-  background: rgba(10, 2, 2, 0.9);
+  background: #ffffff;
   padding: 1.5rem 1rem;
   text-align: center;
   opacity: 0;
@@ -84,8 +84,8 @@
   transform: translateY(0);
 }
 
-.sa-stat:hover  {
-  background: rgba(20, 5, 5, 0.95);
+.sa-stat:hover {
+  background: rgba(140, 26, 19, 0.015);
 }
 
 .sa-stat-number {
@@ -102,7 +102,7 @@
 .sa-count {
   font-size: clamp(1.5rem, 4vw, 2.8rem);
   font-weight: 800;
-  color: #fff;
+  color: #150202;
   letter-spacing: -0.04em;
   line-height: 1;
 }
@@ -119,13 +119,13 @@
 .sa-stat-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.8);
+  color: #150202;
   margin-bottom: 0.35rem;
 }
 
 .sa-stat-sub {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
+  color: #4b5563;
   font-weight: 300;
 }
 
@@ -136,9 +136,10 @@
   margin: 6rem auto 0;
   text-align: center;
   padding: 3rem;
-  background: rgba(140, 26, 19, 0.05);
+  background: #ffffff;
   border-radius: 24px;
-  border: 1px solid rgba(140, 26, 19, 0.1);
+  border: 1px solid rgba(140, 26, 19, 0.08);
+  box-shadow: 0 8px 32px rgba(140, 26, 19, 0.04);
 }
 
 .sa-quote-mark {
@@ -153,7 +154,7 @@
 .sa-quote-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(255,255,255,0.55);
+  color: #4b5563;
   font-weight: 300;
   font-style: italic;
   margin-bottom: 1.5rem;
@@ -163,17 +164,27 @@
 
   font-size: 0.78rem;
   font-weight: 500;
-  color: rgba(59, 130, 246, 0.7);
+  color: #8C1A13;
   letter-spacing: 0.05em;
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
-  .sa-grid { grid-template-columns: repeat(2, 1fr); }
+  .sa-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 560px) {
-  .sa-grid { grid-template-columns: 1fr 1fr; }
-  .sa-stat { padding: 2rem 1rem; }
-  .sa-section { padding: 5rem 1.5rem; }
+  .sa-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sa-stat {
+    padding: 2rem 1rem;
+  }
+
+  .sa-section {
+    padding: 5rem 1.5rem;
+  }
 }

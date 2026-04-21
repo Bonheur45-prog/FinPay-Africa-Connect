@@ -1,11 +1,11 @@
 /* FinPay Africa — BecomePartner Section — Isolated styles */
 
 .section {
-  --bp-crimson:  #7a0e0e;
-  --bp-orange:   #e8760a;
-  --bp-amber:    #f5a623;
-  --bp-gold:     #f5c518;
-  --bp-white:    #ffffff;
+  --bp-crimson: #7a0e0e;
+  --bp-orange: #e8760a;
+  --bp-amber: #f5a623;
+  --bp-gold: #f5c518;
+  --bp-white: #ffffff;
   --bp-white-70: rgba(255, 255, 255, 0.70);
   --bp-white-85: rgba(255, 255, 255, 0.85);
 
@@ -25,6 +25,7 @@
   transform: translateY(32px) scale(0.98);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
+
 .cardVisible {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -38,6 +39,7 @@
   pointer-events: none;
   z-index: 0;
 }
+
 .bgOrb1 {
   width: 420px;
   height: 420px;
@@ -45,6 +47,7 @@
   top: -120px;
   right: -80px;
 }
+
 .bgOrb2 {
   width: 240px;
   height: 240px;
@@ -120,7 +123,8 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(245, 197, 24, 0.35);
 }
-.btnPrimary:hover  {
+
+.btnPrimary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(245, 197, 24, 0.45);
 }
@@ -137,7 +141,8 @@
   padding-bottom: 2px;
   transition: border-color 0.2s ease;
 }
-.btnSecondary:hover  {
+
+.btnSecondary:hover {
   border-color: var(--bp-white);
 }
 
@@ -158,7 +163,8 @@
   padding: 20px 22px;
   transition: background 0.22s ease;
 }
-.benefitItem:hover  {
+
+.benefitItem:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
@@ -207,12 +213,15 @@
   .section {
     padding: 40px 16px 80px;
   }
+
   .content {
     padding: 36px 24px;
   }
+
   .actions {
     flex-direction: column;
   }
+
   .btnPrimary,
   .btnSecondary {
     width: 100%;

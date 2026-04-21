@@ -97,7 +97,7 @@ export default function ContactHero() {
       {/* Wave down to the form section */}
       <div className={styles.wave} aria-hidden="true">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#1a1a2e" />
+          <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#8C1A13" />
         </svg>
       </div>
     </section>

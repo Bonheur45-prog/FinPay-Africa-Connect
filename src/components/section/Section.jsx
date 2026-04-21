@@ -5,13 +5,22 @@ import BgVideo from '../../assets/videos/8s-payment-gateway.mp4'
 import imageSrc from "../../assets/images/hello-1.jpg";
 import useReveal from "../../hooks/useReveal";
 
-const Section = ({ children, background = "gradient" }) => {
+const Section = ({ children, background = "gradient", theme = "navy" }) => {
   const [ref, isVisible] = useReveal();
+
+  // Helper to get themed class names
+  const getThemedClass = (baseClass) => {
+    if (theme === "maroon") {
+      const maroonClass = `maroon${baseClass.charAt(0).toUpperCase() + baseClass.slice(1)}`;
+      return styles[maroonClass] || styles[baseClass];
+    }
+    return styles[baseClass];
+  };
 
   return (
     <section
       ref={ref}
-      className={`${styles.section} ${styles[background]} ${
+      className={`${styles.section} ${getThemedClass(background)} ${
         isVisible ? styles.visible : ""
       }`}
     >
@@ -39,7 +48,7 @@ const Section = ({ children, background = "gradient" }) => {
       )}
 
       {/* Overlay */}
-      <div className={styles.overlay}></div>
+      <div className={getThemedClass("overlay")}></div>
 
       {/* Content */}
       <div className={styles.content}>

@@ -2,14 +2,14 @@
 
 /* ─── Tokens (scoped to this section root) ─── */
 .hero {
-  --hero-crimson:    #7a0e0e;
+  --hero-crimson: #7a0e0e;
   --hero-crimson-dk: #540a0a;
-  --hero-orange:     #e8760a;
-  --hero-amber:      #f5a623;
-  --hero-gold:       #f5c518;
-  --hero-white:      #ffffff;
-  --hero-white-60:   rgba(255, 255, 255, 0.60);
-  --hero-white-80:   rgba(255, 255, 255, 0.80);
+  --hero-orange: #e8760a;
+  --hero-amber: #f5a623;
+  --hero-gold: #f5c518;
+  --hero-white: #ffffff;
+  --hero-white-60: rgba(255, 255, 255, 0.60);
+  --hero-white-80: rgba(255, 255, 255, 0.80);
 
   position: relative;
   background-color: var(--hero-crimson-dk);
@@ -27,11 +27,9 @@
 .bgGradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 80% 60% at 50% 30%,
-    rgba(139, 26, 26, 0.9) 0%,
-    rgba(84, 10, 10, 1) 100%
-  );
+  background: radial-gradient(ellipse 80% 60% at 50% 30%,
+      rgba(139, 26, 26, 0.9) 0%,
+      rgba(84, 10, 10, 1) 100%);
   z-index: 0;
 }
 
@@ -41,13 +39,11 @@
   inset: 0;
   z-index: 0;
   background-image:
-    repeating-linear-gradient(
-      45deg,
+    repeating-linear-gradient(45deg,
       transparent,
       transparent 40px,
-      rgba(255,255,255,0.015) 40px,
-      rgba(255,255,255,0.015) 41px
-    );
+      rgba(255, 255, 255, 0.015) 40px,
+      rgba(255, 255, 255, 0.015) 41px);
 }
 
 /* Decorative snowflake */
@@ -64,8 +60,13 @@
 }
 
 @keyframes heroRotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Content wrapper */
@@ -86,6 +87,7 @@
   transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
+
 .fadeUp.visible {
   opacity: 1;
   transform: translateY(0);
@@ -118,15 +120,22 @@
 }
 
 @keyframes heroPulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.3); }
-  50%       { box-shadow: 0 0 0 6px rgba(245, 197, 24, 0.1); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 197, 24, 0.1);
+  }
 }
 
 /* Title */
 .title {
 
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
-  font-weight: 800;
+  font-size: clamp(2.6rem, 5.5vw, 5.2rem);
+  font-weight: 300;
   color: var(--hero-white);
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -209,6 +218,7 @@
   line-height: 0;
   z-index: 1;
 }
+
 .wave svg {
   display: block;
   width: 100%;

@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Globe } from 'lucide-react';
+import { Globe, Landmark, Laptop, Smartphone, ShoppingCart } from 'lucide-react';
 import styles from './PartnersGrid.module.css';
 import { useScrollReveal } from '../../../components/shared/useScrollReveal';
 
@@ -103,12 +103,12 @@ const PARTNERS = [
 
 const CATEGORIES = ['All', 'Financial', 'Technology', 'Mobile Money', 'Commerce'];
 
-/* Category icon map */
+/* Category icon map using Lucide React */
 const CATEGORY_ICONS = {
-  Financial:    '🏦',
-  Technology:   '⚙️',
-  'Mobile Money': '📱',
-  Commerce:     '🛒',
+  Financial:    <Landmark size={16} strokeWidth={2} />,
+  Technology:   <Laptop  size={16} strokeWidth={2} />,
+  'Mobile Money': <Smartphone size={16} strokeWidth={2} />,
+  Commerce:     <ShoppingCart size={16} strokeWidth={2} />,
 };
 
 /* Initials for logo placeholder */
@@ -153,7 +153,7 @@ function PartnerCard({ partner, index }) {
 
         <div className={styles.cardMeta}>
           <span className={`${styles.categoryTag} ${styles[`cat${partner.category.replace(/\s/g, '')}`]}`}>
-            {CATEGORY_ICONS[partner.category]} {partner.category}
+            <span className={styles.categoryIconWrap}>{CATEGORY_ICONS[partner.category]}</span> {partner.category}
           </span>
           <span className={styles.sinceTag}>Since {partner.since}</span>
         </div>
@@ -213,8 +213,8 @@ export default function PartnersGrid() {
             onClick={() => setActiveCategory(cat)}
             className={`${styles.filterBtn} ${activeCategory === cat ? styles.filterBtnActive : ''}`}
           >
-            {cat !== 'All' && <span aria-hidden="true">{CATEGORY_ICONS[cat]} </span>}
-            {cat}
+            {cat !== 'All' && <span aria-hidden="true" className={styles.filterIconWrap}>{CATEGORY_ICONS[cat]}</span>}
+            <span style={{marginLeft: cat === 'All' ? 0 : '8px'}}>{cat}</span>
           </button>
         ))}
       </div>

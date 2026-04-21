@@ -41,6 +41,7 @@ export default function AboutHero() {
       <div className={`${styles["ah-bg-layer"]} ${styles["ah-bg-2"]}`} />
       <div className={`${styles["ah-bg-layer"]} ${styles["ah-bg-3"]}`} />
       <div className={styles["ah-grid-overlay"]} />
+      <div className={styles["ah-maroon-blur"]} />
       <div className={styles["ah-noise"]} />
 
       {/* Floating orbs */}

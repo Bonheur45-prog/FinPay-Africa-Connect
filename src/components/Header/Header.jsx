@@ -83,9 +83,6 @@ export function Header() {
         <div className={styles["header__inner"]}>
           <Link to={langPath("/")} className={styles["header__logo"]} aria-label="FinPay Africa home">
             <LogoIcon />
-            <span className={styles["logo__text"]}>
-              Fin<span>Pay</span> Africa
-            </span>
           </Link>
 
           <nav className={styles["header__nav"]} aria-label="Main navigation">
@@ -127,7 +124,14 @@ export function Header() {
           </div>
         </div>
       </header>
-      <MobileMenu open={menuOpen} onClose={closeMenu} onSelectLanguage={selectLanguage} selectedLanguage={lang} navLinks={localizedNavLinks} />
+      <MobileMenu 
+        open={menuOpen} 
+        onClose={closeMenu} 
+        onSelectLanguage={selectLanguage} 
+        selectedLanguage={lang} 
+        navLinks={localizedNavLinks} 
+        solutionItems={localizedSolutionItems}
+      />
     </>
   );
 }

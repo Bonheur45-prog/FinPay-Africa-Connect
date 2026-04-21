@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
 import { solutions } from "../data/solutions";
-import Section from "../components/Section/Section";
 
 import SolutionHero from "../components/solutionDetail/SolutionHero";
 //import ProblemSolution from "../components/solutionDetail/ProblemSolution/ProblemSolution";
@@ -28,13 +27,8 @@ export default function SolutionPage() {
           const Component = componentMap[section.type];
           if (!Component) return null;
 
-          return (
-            <Section key={index} background={section.background}>
-              <Component {...section.data} />
-            </Section>
-          );
+          return <Component key={index} {...section.data} />;
         })}
-
-      </>
+    </>
   );
 }

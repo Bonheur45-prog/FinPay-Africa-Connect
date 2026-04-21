@@ -3,7 +3,7 @@
  */
 
 .band {
-  background: var(--navy);
+  background: #0b162c;
   padding: 2.5rem 2rem;
 }
 
@@ -23,7 +23,7 @@
   max-width: 240px;
   text-align: center;
   padding: 1.25rem 1rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
 
   /* Hidden until .visible is applied by the observer */
   opacity: 0;

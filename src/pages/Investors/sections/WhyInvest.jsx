@@ -50,17 +50,16 @@ const REASONS = [
     number: '04',
     title: 'A Scalable Technology Stack',
     body: 'Built in partnership with BrightLink Technologies, our platform is modular and API-driven. Adding new countries, new corridors, or new product lines (mobile money, microloans, insurance) requires configuration, not rebuilding.',
-    accent: '#1a2e5a',
+    accent: '#22c55e',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="6" y="6" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
-        <rect x="26" y="6" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
-        <rect x="6" y="26" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
-        <rect x="26" y="26" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
-        <line x1="22" y1="14" x2="26" y2="14" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="22" y1="34" x2="26" y2="34" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="14" y1="22" x2="14" y2="26" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="34" y1="22" x2="34" y2="26" stroke="currentColor" strokeWidth="1.5"/>
+        {/* API/layers icon — represents modular stack */}
+        <rect x="8"  y="10" width="32" height="8"  rx="3" stroke="currentColor" strokeWidth="2" opacity="0.4"/>
+        <rect x="8"  y="22" width="32" height="8"  rx="3" stroke="currentColor" strokeWidth="2" opacity="0.6"/>
+        <rect x="8"  y="34" width="32" height="6"  rx="3" stroke="currentColor" strokeWidth="2" opacity="0.9"/>
+        <line x1="16" y1="10" x2="16" y2="8"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <line x1="24" y1="10" x2="24" y2="8"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <line x1="32" y1="10" x2="32" y2="8"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -82,12 +81,11 @@ const REASONS = [
 
 function ReasonRow({ reason, index }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.15 });
-  const isEven = index % 2 === 0;
 
   return (
     <div
       ref={ref}
-      className={`${styles.row} ${isEven ? styles.rowNormal : styles.rowReverse} ${isVisible ? styles.rowVisible : ''}`}
+      className={`${styles.row} ${isVisible ? styles.rowVisible : ''}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       {/* Icon card */}

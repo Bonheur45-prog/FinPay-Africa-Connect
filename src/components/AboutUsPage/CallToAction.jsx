@@ -37,9 +37,11 @@ export default function CallToAction() {
             <span className={styles["cta-title-accent"]}>Infrastructure Together</span>
           </h2>
 
+          <p className={styles["cta-body"]}>
             Whether you're a financial institution seeking a reliable technology partner,
             an enterprise looking for scalable digital solutions, or a fintech startup
             needing expert infrastructure — FinPay Africa is ready.
+          </p>
 
           <div className={styles["cta-actions"]}>
             <a href="#contact" className={styles["cta-btn-primary"]}>

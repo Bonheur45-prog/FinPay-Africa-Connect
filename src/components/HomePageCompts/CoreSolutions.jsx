@@ -208,7 +208,7 @@ export function CoreSolutions() {
     <section className={styles["cs"]} id="solutions" aria-labelledby="cs-headline">
       <div className={styles["cs__wave"]} aria-hidden="true">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,0 C360,80 1080,0 1440,60 L1440,0 L0,0 Z" fill="rgba(6,12,38,0.92)" />
+          <path d="M0,0 C360,80 1080,0 1440,60 L1440,0 L0,0 Z" fill="#8C1A13" />
         </svg>
       </div>
 
@@ -263,7 +263,7 @@ function PaymentNetworkIllustration() {
     <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="pn-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#0f1f5c" />
+          <stop offset="0%" stopColor="#6A1109" />
           <stop offset="100%" stopColor="#8C1A13" />
         </linearGradient>
       </defs>

@@ -5,7 +5,7 @@ import CrossBorderImage from "../../assets/images/hello-4.jpg";
 
 const CrossBorderPayments = () => {
   return (
-    <Section background="gradient">
+    <Section background="gradient" theme="maroon">
       <div className={styles.wrapper}>
 
         {/* LEFT VISUAL */}
