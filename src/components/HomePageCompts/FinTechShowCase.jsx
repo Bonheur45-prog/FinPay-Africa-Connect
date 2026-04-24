@@ -28,7 +28,7 @@ import * as THREE from 'three'
 // CONSTANTS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const RING_RADIUS   = 3.4   // distance of each product from the centre
+const RING_RADIUS   = 4.4   // distance of each product from the centre
 const BASE_SPEED    = 0.28  // radians / second for Y-rotation
 const SCALE_ACTIVE  = 1.35
 const SCALE_PASSIVE = 0.82
@@ -81,7 +81,7 @@ const DEFAULT_PRODUCTS = [
     type: 'phone',
     image: 'https://picsum.photos/400/300?random=4',
     color: '#120404',
-    accentColor: '#6A1109',
+    accentColor: '#e4dad9',
     annotations: [
       { text: 'Real-time Transactions', dx: 1, dy: 0.5 },
       { text: 'USSD Integration', dx: -1, dy: -0.5 },
@@ -601,7 +601,7 @@ function ProductItem({ product, index, total, isActive, onHover }) {
       {/* ── Tooltip label (active only) ──────────────────────────────────── */}
       {isActive && (
         <Html
-          position={[0, 1.55, 0]}
+          position={[0, 1.10, 0]}
           center
           zIndexRange={[100, 0]}
           style={{ pointerEvents: 'none', userSelect: 'none' }}
@@ -1245,7 +1245,7 @@ export function FintechShowcase({
           right: 0,
           textAlign: 'center',
           zIndex: 20,
-          color: 'rgba(140,26,19,0.3)',
+          color: 'rgba(184, 27, 27, 0.88)',
           fontSize: '9px',
           letterSpacing: '0.45em',
           textTransform: 'uppercase',
