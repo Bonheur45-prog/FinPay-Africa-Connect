@@ -6,12 +6,15 @@ import enCommon from './locales/en/common.json';
 import enHome   from './locales/en/home.json';
 import enPartners from './locales/en/partners.json';
 import enAbout  from './locales/en/about.json';
+import enInvestors from './locales/en/investors.json';
 
 // --- French ---
 import frCommon from './locales/fr/common.json';
 import frHome   from './locales/fr/home.json';
 import frPartners from './locales/fr/partners.json';
 import frAbout  from './locales/fr/about.json';
+import frInvestors from './locales/fr/investors.json';
+
 
 i18n
   .use(initReactI18next)
@@ -22,12 +25,14 @@ i18n
         home   : enHome,
         partners : enPartners,
         about  : enAbout,
+        investors : enInvestors,
       },
       fr: {
         common : frCommon,
         home   : frHome,
         partners : frPartners,
         about  : frAbout,
+        investors : frInvestors,
       },
     },
 
