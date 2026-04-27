@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './PartnersHero.module.css';
 
 // Decorative snowflake motif — simplified brand mark used as BG texture
@@ -29,6 +30,7 @@ const SnowflakeMark = () => (
 );
 
 export default function PartnersHero() {
+  const { t } = useTranslation('partners');
   const badgeRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -58,39 +60,37 @@ export default function PartnersHero() {
         {/* Badge */}
         <div ref={badgeRef} className={`${styles.badge} ${styles.fadeUp}`}>
           <span className={styles.badgeDot} />
-          Our Ecosystem
+          {t('hero.badge')}
         </div>
 
         {/* Headline */}
         <h1 ref={titleRef} className={`${styles.title} ${styles.fadeUp}`}>
-          Built on{' '}
-          <span className={styles.accentOrange}>Trust</span>,<br />
-          Grown Through{' '}
-          <span className={styles.accentGold}>Partnership</span>
+          {t('hero.title.part1')}{' '}
+          <span className={styles.accentOrange}>{t('hero.title.trust')}</span>,<br />
+          {t('hero.title.part2')}{' '}
+          <span className={styles.accentGold}>{t('hero.title.partnership')}</span>
         </h1>
 
         {/* Subtitle */}
         <p ref={subtitleRef} className={`${styles.subtitle} ${styles.fadeUp}`}>
-          FinPay Africa's strength lies in its network. Together with our strategic partners
-          across finance, technology, and commerce, we are building the payment
-          infrastructure Africa truly deserves.
+          {t('hero.subtitle')}
         </p>
 
         {/* Stats bar */}
         <div ref={statsRef} className={`${styles.statsBar} ${styles.fadeUp}`}>
           <div className={styles.stat}>
-            <span className={styles.statNum}>30+</span>
-            <span className={styles.statLabel}>Active Partners</span>
+            <span className={styles.statNum}>{t('hero.stats.partners.number')}</span>
+            <span className={styles.statLabel}>{t('hero.stats.partners.label')}</span>
           </div>
           <div className={styles.statDivider} aria-hidden="true" />
           <div className={styles.stat}>
-            <span className={styles.statNum}>12</span>
-            <span className={styles.statLabel}>Countries Covered</span>
+            <span className={styles.statNum}>{t('hero.stats.countries.number')}</span>
+            <span className={styles.statLabel}>{t('hero.stats.countries.label')}</span>
           </div>
           <div className={styles.statDivider} aria-hidden="true" />
           <div className={styles.stat}>
-            <span className={styles.statNum}>2,500+</span>
-            <span className={styles.statLabel}>Clients Served</span>
+            <span className={styles.statNum}>{t('hero.stats.clients.number')}</span>
+            <span className={styles.statLabel}>{t('hero.stats.clients.label')}</span>
           </div>
         </div>
       </div>

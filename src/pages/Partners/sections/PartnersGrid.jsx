@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Globe, Landmark, Laptop, Smartphone, ShoppingCart } from 'lucide-react';
 import styles from './PartnersGrid.module.css';
 import { useScrollReveal } from '../../../components/shared/useScrollReveal';
@@ -13,91 +14,51 @@ import { useScrollReveal } from '../../../components/shared/useScrollReveal';
 const PARTNERS = [
   {
     id: 1,
-    name: 'BrightLink Technologies',
+    key: 'brightlink',
     category: 'Technology',
-    logo: null, // e.g. import logo from './assets/brightlink-logo.png'
-    partnershipType: 'Card Infrastructure & API',
-    description:
-      'BrightLink powers the card issuance infrastructure and payment APIs that underpin the Connect platform, enabling fast, secure transaction processing at scale across our network.',
-    since: '2022',
-    region: 'Europe & Africa',
+    logo: null,
   },
   {
     id: 2,
-    name: 'NSI-Monétique',
+    key: 'nsi',
     category: 'Financial',
     logo: null,
-    partnershipType: 'Banking & Monetic Solutions',
-    description:
-      'Our founding financial partner, providing the regulatory framework, banking expertise, and monetic infrastructure that gives FinPay Africa its institutional foundation and credibility.',
-    since: '2021',
-    region: 'Belgium / Africa',
   },
   {
     id: 3,
-    name: 'Pan-African Mobile Network',
+    key: 'panafricanmobile',
     category: 'Mobile Money',
     logo: null,
-    partnershipType: 'Mobile Wallet Integration',
-    description:
-      'Connecting the FinPay platform to mobile wallet ecosystems across Sub-Saharan Africa to ensure last-mile delivery and true financial inclusion for the unbanked population.',
-    since: '2023',
-    region: 'Sub-Saharan Africa',
   },
   {
     id: 4,
-    name: 'African Merchant Alliance',
+    key: 'africanmerchant',
     category: 'Commerce',
     logo: null,
-    partnershipType: 'Merchant Acceptance Network',
-    description:
-      'A coalition of merchants and retailers who accept FinPay cards and payment terminals, expanding our on-the-ground footprint across key urban markets throughout Africa.',
-    since: '2023',
-    region: 'West & Central Africa',
   },
   {
     id: 5,
-    name: 'EuroConnect Financial',
+    key: 'euroconnect',
     category: 'Financial',
     logo: null,
-    partnershipType: 'European Diaspora Banking',
-    description:
-      'Enabling European-based diaspora communities to send money home seamlessly through compliant, competitively priced corridors that meet EU financial regulations.',
-    since: '2022',
-    region: 'Europe',
   },
   {
     id: 6,
-    name: 'SecurePay Technologies',
+    key: 'securepay',
     category: 'Technology',
     logo: null,
-    partnershipType: 'Security & Compliance',
-    description:
-      'Providing enterprise-grade encryption, real-time fraud detection, and compliance tooling so every FinPay transaction meets the highest international security standards.',
-    since: '2023',
-    region: 'Global',
   },
   {
     id: 7,
-    name: 'Diaspora Connect Europe',
+    key: 'diasporaconnect',
     category: 'Commerce',
     logo: null,
-    partnershipType: 'Community & Distribution',
-    description:
-      'A community-driven distribution network connecting FinPay services to the African diaspora across France, Belgium, and the UK through trusted community touchpoints.',
-    since: '2022',
-    region: 'France, Belgium, UK',
   },
   {
     id: 8,
-    name: 'AfriMobile Solutions',
+    key: 'afrimobile',
     category: 'Mobile Money',
     logo: null,
-    partnershipType: 'Mobile Banking Infrastructure',
-    description:
-      'A specialist in USSD and mobile banking technology, allowing FinPay to reach customers even in regions with limited smartphone penetration.',
-    since: '2023',
-    region: 'East & Central Africa',
   },
 ];
 
@@ -131,6 +92,16 @@ const PLACEHOLDER_GRADIENTS = {
 
 function PartnerCard({ partner, index }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+  const { t } = useTranslation('partners');
+
+  // Get translated partner data
+  const partnerData = t(`partners.${partner.key}`, { returnObjects: true });
+  const name = partnerData?.name || partner.key;
+  const category = partnerData?.category || partner.category;
+  const partnershipType = partnerData?.partnershipType || '';
+  const description = partnerData?.description || '';
+  const since = partnerData?.since || '';
+  const region = partnerData?.region || '';
 
   return (
     <article
@@ -145,32 +116,32 @@ function PartnerCard({ partner, index }) {
           style={{ background: PLACEHOLDER_GRADIENTS[partner.category] }}
         >
           {partner.logo ? (
-            <img src={partner.logo} alt={`${partner.name} logo`} className={styles.logoImg} />
+            <img src={partner.logo} alt={`${name} logo`} className={styles.logoImg} />
           ) : (
-            <span className={styles.logoInitials}>{getInitials(partner.name)}</span>
+            <span className={styles.logoInitials}>{getInitials(name)}</span>
           )}
         </div>
 
         <div className={styles.cardMeta}>
           <span className={`${styles.categoryTag} ${styles[`cat${partner.category.replace(/\s/g, '')}`]}`}>
-            <span className={styles.categoryIconWrap}>{CATEGORY_ICONS[partner.category]}</span> {partner.category}
+            <span className={styles.categoryIconWrap}>{CATEGORY_ICONS[partner.category]}</span> {category}
           </span>
-          <span className={styles.sinceTag}>Since {partner.since}</span>
+          <span className={styles.sinceTag}>Since {since}</span>
         </div>
       </div>
 
       {/* Card body */}
       <div className={styles.cardBody}>
-        <h3 className={styles.cardName}>{partner.name}</h3>
-        <p className={styles.cardPartnershipType}>{partner.partnershipType}</p>
-        <p className={styles.cardDescription}>{partner.description}</p>
+        <h3 className={styles.cardName}>{name}</h3>
+        <p className={styles.cardPartnershipType}>{partnershipType}</p>
+        <p className={styles.cardDescription}>{description}</p>
       </div>
 
       {/* Card footer */}
       <div className={styles.cardFooter}>
         <span className={styles.regionTag}>
           <Globe size={12} strokeWidth={2} aria-hidden="true" />
-          {partner.region}
+          {region}
         </span>
       </div>
 
@@ -181,6 +152,7 @@ function PartnerCard({ partner, index }) {
 }
 
 export default function PartnersGrid() {
+  const { t } = useTranslation('partners');
   const [activeCategory, setActiveCategory] = useState('All');
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 
@@ -195,11 +167,10 @@ export default function PartnersGrid() {
         ref={headerRef}
         className={`${styles.header} ${headerVisible ? styles.headerVisible : ''}`}
       >
-        <div className={styles.headerEyebrow}>Who We Work With</div>
-        <h2 className={styles.headerTitle}>Our Partner Network</h2>
+        <div className={styles.headerEyebrow}>{t('grid.header.eyebrow')}</div>
+        <h2 className={styles.headerTitle}>{t('grid.header.title')}</h2>
         <p className={styles.headerSubtitle}>
-          A diverse ecosystem of financial institutions, technology providers, mobile
-          operators, and merchants — united by a shared mission to transform African payments.
+          {t('grid.header.subtitle')}
         </p>
       </div>
 
@@ -214,7 +185,7 @@ export default function PartnersGrid() {
             className={`${styles.filterBtn} ${activeCategory === cat ? styles.filterBtnActive : ''}`}
           >
             {cat !== 'All' && <span aria-hidden="true" className={styles.filterIconWrap}>{CATEGORY_ICONS[cat]}</span>}
-            <span style={{marginLeft: cat === 'All' ? 0 : '8px'}}>{cat}</span>
+            <span style={{marginLeft: cat === 'All' ? 0 : '8px'}}>{t(`categories.${cat.replace(/\s/g, '_').toLowerCase()}`)}</span>
           </button>
         ))}
       </div>
@@ -228,7 +199,7 @@ export default function PartnersGrid() {
 
       {/* Empty state */}
       {filtered.length === 0 && (
-        <p className={styles.emptyState}>No partners found in this category yet.</p>
+        <p className={styles.emptyState}>{t('grid.emptyState')}</p>
       )}
     </section>
   );

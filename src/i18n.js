@@ -4,11 +4,13 @@ import { initReactI18next } from 'react-i18next';
 // --- English ---
 import enCommon from './locales/en/common.json';
 import enHome   from './locales/en/home.json';
+import enPartners from './locales/en/partners.json';
 //import enAbout  from './locales/en/about.json';
 
 // --- French ---
 import frCommon from './locales/fr/common.json';
 import frHome   from './locales/fr/home.json';
+import frPartners from './locales/fr/partners.json';
 //import frAbout  from './locales/fr/about.json';
 
 i18n
@@ -18,11 +20,13 @@ i18n
       en: {
         common : enCommon,
         home   : enHome,
+        partners : enPartners,
         //about  : enAbout,
       },
       fr: {
         common : frCommon,
         home   : frHome,
+        partners : frPartners,
         //about  : frAbout,
       },
     },
