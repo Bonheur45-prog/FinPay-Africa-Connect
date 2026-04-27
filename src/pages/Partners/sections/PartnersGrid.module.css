@@ -1,16 +1,16 @@
 /* FinPay Africa — PartnersGrid Section — Isolated styles */
 
 .section {
-  --grid-crimson:  #7a0e0e;
-  --grid-orange:   #e8760a;
-  --grid-amber:    #f5a623;
-  --grid-gold:     #f5c518;
-  --grid-white:    #ffffff;
-  --grid-cream:    #faf8f4;
-  --grid-dark:     #1a1a2e;
-  --grid-mid:      #4a4a6a;
-  --grid-light:    #f0eeea;
-  --grid-border:   rgba(26, 26, 46, 0.08);
+  --grid-crimson: #7a0e0e;
+  --grid-orange: #e8760a;
+  --grid-amber: #f5a623;
+  --grid-gold: #f5c518;
+  --grid-white: #ffffff;
+  --grid-cream: #faf8f4;
+  --grid-dark: #1a1a2e;
+  --grid-mid: #4a4a6a;
+  --grid-light: #f0eeea;
+  --grid-border: rgba(26, 26, 46, 0.08);
 
   background-color: var(--grid-white);
   padding: 100px 24px 80px;
@@ -25,6 +25,7 @@
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .headerVisible {
   opacity: 1;
   transform: translateY(0);
@@ -42,6 +43,7 @@
   position: relative;
   padding: 0 20px;
 }
+
 .headerEyebrow::before,
 .headerEyebrow::after {
   content: '';
@@ -51,8 +53,16 @@
   height: 1px;
   background: var(--grid-amber);
 }
-.headerEyebrow::before { right: 100%; margin-right: -16px; }
-.headerEyebrow::after  { left:  100%; margin-left:  -16px; }
+
+.headerEyebrow::before {
+  right: 100%;
+  margin-right: -16px;
+}
+
+.headerEyebrow::after {
+  left: 100%;
+  margin-left: -16px;
+}
 
 .headerTitle {
 
@@ -92,12 +102,16 @@
   cursor: pointer;
   transition: all 0.22s ease;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
-.filterBtn:hover  {
+
+.filterBtn:hover {
   border-color: var(--grid-orange);
   color: var(--grid-orange);
   background: rgba(232, 118, 10, 0.05);
 }
+
 .filterBtnActive {
   background: var(--grid-crimson);
   border-color: var(--grid-crimson);
@@ -105,7 +119,8 @@
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(122, 14, 14, 0.25);
 }
-.filterBtnActive:hover  {
+
+.filterBtnActive:hover {
   background: var(--grid-crimson);
   color: #ffffff;
 }
@@ -137,11 +152,13 @@
   transform: translateY(30px);
   cursor: default;
 }
+
 .cardVisible {
   opacity: 1;
   transform: translateY(0);
 }
-.card:hover  {
+
+.card:hover {
   box-shadow: 0 20px 50px rgba(26, 26, 46, 0.1);
   border-color: rgba(232, 118, 10, 0.3);
   transform: translateY(-4px);
@@ -159,7 +176,8 @@
   transform-origin: left;
   transition: transform 0.35s ease;
 }
-.card:hover .cardAccentBar  {
+
+.card:hover .cardAccentBar {
   transform: scaleX(1);
 }
 
@@ -218,10 +236,25 @@
 }
 
 /* Category tag colors */
-.catFinancial       { background: rgba(122, 14, 14, 0.08); color: var(--grid-crimson); }
-.catTechnology      { background: rgba(26, 46, 90, 0.08);  color: #1a2e5a; }
-.catMobileMoney     { background: rgba(26, 90, 46, 0.08);  color: #1a5a2e; }
-.catCommerce        { background: rgba(232, 160, 48, 0.15); color: #8a5a10; }
+.catFinancial {
+  background: rgba(122, 14, 14, 0.08);
+  color: var(--grid-crimson);
+}
+
+.catTechnology {
+  background: rgba(26, 46, 90, 0.08);
+  color: #1a2e5a;
+}
+
+.catMobileMoney {
+  background: rgba(26, 90, 46, 0.08);
+  color: #1a5a2e;
+}
+
+.catCommerce {
+  background: rgba(232, 160, 48, 0.15);
+  color: #8a5a10;
+}
 
 .sinceTag {
 
@@ -297,12 +330,15 @@
   .section {
     padding: 80px 16px 60px;
   }
+
   .grid {
     grid-template-columns: 1fr;
   }
+
   .filterBar {
     gap: 8px;
   }
+
   .filterBtn {
     font-size: 0.82rem;
     padding: 8px 16px;

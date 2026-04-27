@@ -1,5 +1,6 @@
 .wrapper {
   text-align: center;
+  color: #ffffff;
 }
 
 .header {
@@ -12,7 +13,7 @@
 }
 
 .subtitle {
-  color: var(--s-muted);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 600px;
   margin: 16px auto 0;
 }
@@ -45,6 +46,6 @@
 .step span {
   display: block;
   font-size: 14px;
-  color: var(--s-blue);
+  color: var(--accent, #f59e0b); /* Keeping a colored/accented number looks better, but if pure white is strictly needed, we can change to #ffffff */
   margin-bottom: 8px;
 }

@@ -5,15 +5,9 @@
  */
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './TractionStats.module.css';
 import { useScrollReveal, useCountUp } from '../../../components/shared/useScrollReveal';
-
-const STATS = [
-  { value: 2500, suffix: '+', label: 'Active Clients', sub: 'using the Connect platform & card' },
-  { value: 30,   suffix: '+', label: 'Strategic Partners', sub: 'across finance, tech & commerce' },
-  { value: 12,   suffix: '',  label: 'Countries Covered', sub: 'and expanding across Africa' },
-  { value: 40,   suffix: 'B$', label: 'Market Addressable', sub: 'annual remittance flow to Sub-Saharan Africa' },
-];
 
 function StatCounter({ stat, delay = 0 }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.3 });
@@ -36,7 +30,11 @@ function StatCounter({ stat, delay = 0 }) {
 }
 
 export default function TractionStats() {
+  const { t } = useTranslation('investors');
   const { ref: hRef, isVisible: hVis } = useScrollReveal({ threshold: 0.2 });
+
+  const stats = t('traction.stats', { returnObjects: true });
+  const statsArray = Array.isArray(stats) ? stats : [];
 
   return (
     <section className={styles.section}>
@@ -50,17 +48,16 @@ export default function TractionStats() {
           ref={hRef}
           className={`${styles.header} ${hVis ? styles.headerVisible : ''}`}
         >
-          <div className={styles.eyebrow}>Traction & Proof</div>
-          <h2 className={styles.title}>The Numbers Speak</h2>
+          <div className={styles.eyebrow}>{t('traction.label')}</div>
+          <h2 className={styles.title}>{t('traction.title')}</h2>
           <p className={styles.sub}>
-            We are not just a vision. FinPay Africa is live, growing, and delivering
-            real value to real people across Europe and Africa today.
+            {t('traction.subtitle')}
           </p>
         </div>
 
         {/* Counters grid */}
         <div className={styles.grid}>
-          {STATS.map((stat, i) => (
+          {statsArray.map((stat, i) => (
             <StatCounter key={stat.label} stat={stat} delay={i * 100} />
           ))}
         </div>
@@ -68,7 +65,7 @@ export default function TractionStats() {
         {/* Bottom divider line with logo mark */}
         <div className={styles.bottomRow}>
           <div className={styles.divLine} aria-hidden="true" />
-          <span className={styles.tagline}>"Connecting you with your loved ones"</span>
+          <span className={styles.tagline}>{t('traction.tagline')}</span>
           <div className={styles.divLine} aria-hidden="true" />
         </div>
       </div>

@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, Phone, MapPin } from "lucide-react";
 import styles from './CallToAction.module.css';
 
 export default function CallToAction() {
+  const { t } = useTranslation('about');
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -29,21 +31,21 @@ export default function CallToAction() {
         <div className={styles["cta-inner"]}>
           <div className={styles["cta-badge"]}>
             <span className={styles["cta-badge-dot"]} />
-            Ready to build together
+            {t('cta.badge')}
           </div>
 
           <h2 className={styles["cta-title"]}>
-            Let's Build Africa's Financial<br />
-            <span className={styles["cta-title-accent"]}>Infrastructure Together</span>
+            {t('cta.title.part1')}<br />
+            <span className={styles["cta-title-accent"]}>{t('cta.title.part2')}</span>
           </h2>
 
-            Whether you're a financial institution seeking a reliable technology partner,
-            an enterprise looking for scalable digital solutions, or a fintech startup
-            needing expert infrastructure — FinPay Africa is ready.
+          <p className={styles["cta-body"]}>
+            {t('cta.description')}
+          </p>
 
           <div className={styles["cta-actions"]}>
             <a href="#contact" className={styles["cta-btn-primary"]}>
-              <span>Work With Us</span>
+              <span>{t('cta.button.primary')}</span>
               <ArrowRight size={18} strokeWidth={2} />
             </a>
             <a href="mailto:brighttlink@gmail.com" className={styles["cta-btn-secondary"]}>
@@ -54,12 +56,12 @@ export default function CallToAction() {
           <div className={styles["cta-contact-info"]}>
             <div className={styles["cta-contact-item"]}>
               <Phone size={15} strokeWidth={1.5} />
-              <span>+250 782 567 921 / +250 795 263 269</span>
+              <span>{t('cta.contact.phone')}</span>
             </div>
             <div className={styles["cta-contact-sep"]}>·</div>
             <div className={styles["cta-contact-item"]}>
               <MapPin size={15} strokeWidth={1.5} />
-              <span>Kigali, Rwanda</span>
+              <span>{t('cta.contact.location')}</span>
             </div>
           </div>
         </div>

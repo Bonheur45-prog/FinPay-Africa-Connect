@@ -1,5 +1,5 @@
 /* ============================================================
-   AboutHero.css — BrightLink Technologies
+   AboutHero.css — FinPay Africa
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
@@ -12,8 +12,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #020b18;
-
+  background: #ffffff;
 }
 
 /* ---- Layered backgrounds ---- */
@@ -24,7 +23,7 @@
 }
 
 .ah-bg-1 {
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, #8C1A1377 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(140, 26, 19, 0.08) 0%, transparent 70%);
   opacity: 0.9;
 }
 
@@ -44,8 +43,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(2px) saturate(1.1) brightness(0.95);
-  opacity: 0.85;
   pointer-events: none;
   z-index: 0;
 }
@@ -58,8 +55,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(140, 26, 19, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 26, 19, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   opacity: 0.85;
@@ -110,21 +107,39 @@
   animation-delay: -7s;
 }
 
+.ah-maroon-blur {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.171) 0%, transparent 100%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.123) 0%, transparent 70%);
+  backdrop-filter: blur(0px);
+  pointer-events: none;
+  z-index: 5;
+}
+
 @keyframes ah-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-30px) scale(1.05); }
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-40px) scale(1.1) rotate(5deg);
+  }
 }
 
 /* ---- Content ---- */
 .ah-content {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   text-align: center;
   max-width: 900px;
   padding: 0 2rem;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ah-section.ah-visible .ah-content {
@@ -137,9 +152,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(140, 26, 19, 0.25);
-  border: 1px solid rgba(140, 26, 19, 0.3);
-  color: #fbc9c9;
+  background: rgba(140, 26, 19, 0.1);
+  border: 1px solid rgba(140, 26, 19, 0.2);
+  color: #8C1A13;
 
   font-size: 0.78rem;
   font-weight: 500;
@@ -160,8 +175,17 @@
 }
 
 @keyframes ah-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.7); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.7);
+  }
 }
 
 /* ---- Title ---- */
@@ -174,7 +198,7 @@
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   line-height: 1.05;
   margin-bottom: 1.8rem;
-  color: #fff;
+  color: #150202;
   letter-spacing: -0.02em;
 }
 
@@ -198,7 +222,7 @@
 
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.938);
+  color: #ffffff;
   max-width: 650px;
   margin: 0 auto 2.5rem;
   padding-inline: 0.5rem;
@@ -219,11 +243,11 @@
   display: block;
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2));
+  background: linear-gradient(90deg, transparent, rgba(140, 26, 19, 0.1));
 }
 
 .ah-divider-line:last-child {
-  background: linear-gradient(90deg, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(90deg, rgba(140, 26, 19, 0.1), transparent);
 }
 
 .ah-divider-dot {
@@ -256,20 +280,20 @@
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: #94a3b8;
 }
 
 .ah-meta-value {
 
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.85);
+  color: #150202;
 }
 
 .ah-meta-sep {
   width: 1px;
   height: 36px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(140, 26, 19, 0.1);
 }
 
 /* ---- Scroll indicator ---- */
@@ -282,7 +306,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.911);
+  color: #94a3b8;
 
   font-size: 0.68rem;
   letter-spacing: 0.15em;
@@ -293,21 +317,40 @@
 .ah-scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.904), transparent);
+  background: linear-gradient(to bottom, #94a3b8, transparent);
 }
 
 @keyframes ah-scroll-fade {
-  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
-  50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(6px);
+  }
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .ah-meta-sep { display: none; }
-  .ah-meta { gap: 1.5rem; }
-  .ah-badge { font-size: 0.7rem; }
+  .ah-meta-sep {
+    display: none;
+  }
+
+  .ah-meta {
+    gap: 1.5rem;
+  }
+
+  .ah-badge {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .ah-title { font-size: 2.4rem; }
+  .ah-title {
+    font-size: 2.4rem;
+  }
 }

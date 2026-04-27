@@ -1,0 +1,230 @@
+{
+  "hero": {
+    "tag": "Opportunité d'Investissement",
+    "title": {
+      "part1": "Le Marché",
+      "highlight": "40 Milliards $",
+      "part2": "des Transferts de Fonds Africains",
+      "subtext": "est Prêt à Être Transformé"
+    },
+    "description": {
+      "part1": "Les frais de transaction vers l'Afrique restent à",
+      "highlight": "9,1 %",
+      "part2": "— près du double de la moyenne mondiale. FinPay Africa offre une solution moderne, peu coûteuse et entièrement conforme qui est déjà opérationnelle, en croissance et prête à se développer."
+    },
+    "buttons": {
+      "pitch": "Demander le Pitch Deck",
+      "schedule": "Planifier un Appel"
+    },
+    "badges": [
+      "Solution Certifiée",
+      "Conforme à l'UE",
+      "Opérationnel",
+      "Axé sur la Diaspora"
+    ]
+  },
+  "market": {
+    "problem": {
+      "label": "Le Problème",
+      "title": {
+        "part1": "L'Afrique Paie le Plus Cher",
+        "part2": "pour Transférer son Propre Argent"
+      },
+      "subtitle": "Bien que l'Afrique subsaharienne soit l'une des régions les plus actives pour les transferts de fonds au monde, elle paie systématiquement les frais les plus élevés, subit les transferts les plus lents et dispose de la moins importante infrastructure financière pour soutenir sa population."
+    },
+    "painPoints": [
+      {
+        "value": "9,1 %",
+        "label": "Frais de transaction moyens vers l'Afrique subsaharienne",
+        "note": "contre 7,2 % en moyenne mondiale et 5,4 % en Asie du Sud",
+        "icon": "trendingDown"
+      },
+      {
+        "value": "40 Md$",
+        "label": "Transferts annuels vers l'Afrique subsaharienne",
+        "note": "Représentant 10 %+ du PIB de plusieurs nations africaines",
+        "icon": "banknote"
+      },
+      {
+        "value": "57 %",
+        "label": "Des adultes en Afrique subsaharienne restent non bancarisés",
+        "note": "La plus grande population sans accès bancaire au monde",
+        "icon": "landmark"
+      }
+    ],
+    "solution": {
+      "label": "Notre Réponse",
+      "title": "Un Écosystème Financier Complet, Construit pour l'Afrique",
+      "subtitle": "FinPay Africa va bien au-delà des simples transferts. Nous construisons l'infrastructure financière qui connecte la diaspora à leurs pays d'origine — rapidement, simplement et abordablement."
+    },
+    "solutionPoints": [
+      {
+        "title": "Transferts instantanés et peu coûteux",
+        "desc": "Notre plateforme réduit les frais de transfert pour approcher l'objectif de 3 % du G20, économisant de l'argent réel aux familles à chaque transaction."
+      },
+      {
+        "title": "Compte IBAN + carte bancaire",
+        "desc": "Chaque utilisateur reçoit une carte bancaire certifiée et un compte IBAN, accordant l'accès au système financier mondial."
+      },
+      {
+        "title": "Mobile-first, adapté à la diaspora",
+        "desc": "Conçu pour la diaspora africaine en Europe — simple, rapide et disponible où qu'ils se trouvent."
+      },
+      {
+        "title": "Gestion des événements et tontines",
+        "desc": "Outils de pooling financier communautaire qui reflètent les pratiques sociales et économiques réelles de l'Afrique."
+      }
+    ],
+    "chart": {
+      "title": "Frais de Transaction par Région",
+      "caption": "FinPay Africa vise l'engagement de 5 % du G20, au-dessous de 3 %."
+    },
+    "chartData": [
+      {
+        "region": "Afrique subsaharienne",
+        "pct": 9.1,
+        "color": "#7a0e0e"
+      },
+      {
+        "region": "Moyenne Mondiale",
+        "pct": 7.2,
+        "color": "#e8760a"
+      },
+      {
+        "region": "Asie du Sud",
+        "pct": 5.4,
+        "color": "#4a4a6a"
+      },
+      {
+        "region": "Objectif FinPay",
+        "pct": 3.0,
+        "color": "#2d7a3a"
+      }
+    ]
+  },
+  "traction": {
+    "label": "Traction et Preuve",
+    "title": "Les Chiffres Parlent",
+    "subtitle": "Nous ne sommes pas juste une vision. FinPay Africa est opérationnel, en croissance et offre une véritable valeur à de vraies personnes en Europe et en Afrique aujourd'hui.",
+    "stats": [
+      {
+        "value": 2500,
+        "suffix": "+",
+        "label": "Clients Actifs",
+        "sub": "utilisant la plateforme Connect et la carte"
+      },
+      {
+        "value": 30,
+        "suffix": "+",
+        "label": "Partenaires Stratégiques",
+        "sub": "dans la finance, la tech et le commerce"
+      },
+      {
+        "value": 12,
+        "suffix": "",
+        "label": "Pays Couverts",
+        "sub": "et expansion à travers l'Afrique"
+      },
+      {
+        "value": 40,
+        "suffix": "Md$",
+        "label": "Marché Adressable",
+        "sub": "flux annuel de transferts vers l'Afrique subsaharienne"
+      }
+    ],
+    "tagline": "« Vous connecter avec vos proches »"
+  },
+  "whyInvest": {
+    "label": "Le Cas d'Investissement",
+    "title": "5 Raisons d'Investir dans FinPay Africa",
+    "subtitle": "Une combinaison convaincante de taille de marché, de timing, de maturité technologique, de conformité réglementaire et de mission sociale.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Un Marché Prouvé et Massif",
+        "body": "Plus de 40 milliards de dollars affluent chaque année en Afrique subsaharienne par le biais des transferts de fonds — représentant 10 %+ du PIB de plusieurs nations. Ce n'est pas spéculatif : c'est un marché profond, récurrent et en croissance qui a à peine été touché par la fintech moderne.",
+        "accent": "#7a0e0e",
+        "icon": "chart"
+      },
+      {
+        "number": "02",
+        "title": "Avantage du Premier Arrivant",
+        "body": "Les frais de transaction dans les corridors de transfert africains restent près du double de la moyenne mondiale en raison d'une infrastructure formelle limitée. FinPay Africa entre dans ce vide avec une solution certifiée, moderne et peu coûteuse avant la consolidation du marché.",
+        "accent": "#e8760a",
+        "icon": "star"
+      },
+      {
+        "number": "03",
+        "title": "Opérationnel, Certifié et Conforme",
+        "body": "FinPay Africa n'est pas un concept — elle est opérationnelle aujourd'hui. Nous détenons les certifications et partenariats nécessaires pour émettre de véritables cartes bancaires et comptes IBAN. Chaque transaction est traitée en pleine conformité avec les réglementations financières de l'UE et internationales.",
+        "accent": "#2d7a3a",
+        "icon": "shield"
+      },
+      {
+        "number": "04",
+        "title": "Une Pile Technologique Évolutive",
+        "body": "Construit en partenariat avec BrightLink Technologies, notre plateforme est modulaire et basée sur les API. L'ajout de nouveaux pays, de nouveaux corridors ou de nouvelles lignes de produits (monnaie mobile, microcrédits, assurance) nécessite une configuration, non une refonte.",
+        "accent": "#22c55e",
+        "icon": "layers"
+      },
+      {
+        "number": "05",
+        "title": "Impact Social — un Atout Stratégique",
+        "body": "Les investisseurs alignés sur les critères ESG et les institutions de développement international recherchent activement des opportunités fintech ayant un impact social mesurable. FinPay Africa offre : l'inclusion financière, l'autonomisation de la diaspora et la réduction de la pauvreté liée aux transferts sont intégrées dans notre modèle fondamental.",
+        "accent": "#7a5a00",
+        "icon": "people"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Prêt à Investir ?",
+    "title": {
+      "part1": "Rejoignez-Nous dans la Construction de l'Avenir Financier",
+      "part2": "de l'Afrique"
+    },
+    "description": "Nous sommes actuellement ouverts aux investisseurs stratégiques qui partagent notre vision de transformer les transferts de fonds et l'inclusion financière en Afrique. Notre pitch deck est disponible sur demande.",
+    "buttons": {
+      "pitch": "Demander le Pitch Deck",
+      "schedule": "Planifier un Appel"
+    },
+    "copyStatus": {
+      "default": "rmichel@nsi-monetique.com",
+      "copied": "Copié !"
+    },
+    "badges": [
+      "NDA confidentiel disponible",
+      "Entité réglementée par l'UE",
+      "Opérationnel"
+    ],
+    "teamSection": {
+      "title": "Parlez Directement à Notre Équipe",
+      "subtitle": "Cliquez sur n'importe quelle carte pour ouvrir un e-mail prérempli, ou appelez directement."
+    },
+    "team": [
+      {
+        "name": "Richard Michel",
+        "role": "Associé Fondateur",
+        "email": "rmichel@nsi-monetique.com",
+        "phone": "+32 478 63 71 41",
+        "location": "Belgique",
+        "initials": "RM"
+      },
+      {
+        "name": "Charles Nzeyimana",
+        "role": "Directeur Régional",
+        "email": "c.nzeyima@nsi-monetique.com",
+        "phone": "+257 79 591 466",
+        "location": "Burundi",
+        "initials": "CN"
+      },
+      {
+        "name": "Jean Paul Ngabonziza",
+        "role": "Directeur Afrique de l'Est",
+        "email": "jp.ngabonziza@nsi-monetique.com",
+        "phone": "+250 788 624 389",
+        "location": "Rwanda",
+        "initials": "JN"
+      }
+    ]
+  }
+}

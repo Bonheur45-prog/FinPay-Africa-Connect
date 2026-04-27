@@ -4,7 +4,7 @@ import styles from "./MobileMoneyCards.module.css";
 
 export default function MobileMoneyCards() {
   return (
-    <Section background="particles">
+    <Section background="particles" theme="maroon">
         <div className={`${styles.wrapper} ${styles.container}`}>
     
     {/* Header */}

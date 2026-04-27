@@ -4,7 +4,7 @@
 
 .ti-section {
   position: relative;
-  background: #150202;
+  background: #ffffff;
   padding: 8rem 2rem;
   overflow: hidden;
 }
@@ -13,8 +13,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 0%, #8C1A130a 0%, transparent 50%),
-    radial-gradient(circle at 50% 100%, #6A11090a 0%, transparent 50%);
+    radial-gradient(circle at 50% 0%, rgba(140, 26, 19, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(106, 17, 9, 0.04) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -52,7 +52,7 @@
 .ti-title {
   font-size: clamp(1.7rem, 3.5vw, 2.6rem);
   font-weight: 700;
-  color: #fff;
+  color: #150202;
   letter-spacing: -0.02em;
   margin-bottom: 0.8rem;
 }
@@ -60,7 +60,7 @@
 .ti-sub {
 
   font-size: 1rem;
-  color: rgba(255,255,255,0.4);
+  color: #4b5563;
   max-width: 560px;
   margin: 0 auto;
   font-weight: 300;
@@ -84,8 +84,8 @@
 }
 
 .ti-logo-box {
-  background: rgba(140, 26, 19, 0.04);
-  border: 1px solid rgba(140, 26, 19, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(140, 26, 19, 0.12);
   border-radius: 12px;
   padding: 2.5rem 1.5rem;
   margin-bottom: 1rem;
@@ -93,20 +93,21 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .ti-logo-item:hover .ti-logo-box {
-  background: rgba(140, 26, 19, 0.08);
-  border-color: rgba(140, 26, 19, 0.25);
+  background: #ffffff;
+  border-color: rgba(140, 26, 19, 0.3);
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 32px rgba(140, 26, 19, 0.1);
 }
 
 .ti-logo-name {
 
   font-size: 1.4rem;
   font-weight: 800;
-  color: #fff;
+  color: #150202;
 }
 
 .ti-logo-full {
@@ -122,7 +123,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: rgba(255,255,255,0.3);
+  color: #94a3b8;
 }
 
 /* ---- Badges ---- */
@@ -132,8 +133,8 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 2.5rem;
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(140, 26, 19, 0.02);
+  border: 1px solid rgba(140, 26, 19, 0.08);
   border-radius: 16px;
   margin-bottom: 2rem;
 }
@@ -165,13 +166,13 @@
 
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.85);
+  color: #150202;
 }
 
 .ti-badge-sub {
 
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.35);
+  color: #64748b;
   font-weight: 300;
 }
 
@@ -179,7 +180,7 @@
   text-align: center;
 
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.2);
+  color: #94a3b8;
   font-weight: 300;
   font-style: italic;
   margin: 0;
@@ -187,8 +188,21 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .ti-logos { gap: 0.75rem; }
-  .ti-logo-box { min-width: 110px; padding: 0.9rem 1.2rem; }
-  .ti-badges { gap: 1rem; padding: 1.5rem; }
-  .ti-section { padding: 5rem 1.5rem; }
+  .ti-logos {
+    gap: 0.75rem;
+  }
+
+  .ti-logo-box {
+    min-width: 110px;
+    padding: 0.9rem 1.2rem;
+  }
+
+  .ti-badges {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .ti-section {
+    padding: 5rem 1.5rem;
+  }
 }

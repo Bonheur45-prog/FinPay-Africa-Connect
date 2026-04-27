@@ -6,35 +6,9 @@
  */
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './InvestorsCTA.module.css';
 import { useScrollReveal } from '../../../components/shared/useScrollReveal';
-
-const TEAM = [
-  {
-    name: 'Richard Michel',
-    role: 'Founding Partner',
-    email: 'rmichel@nsi-monetique.com',
-    phone: '+32 478 63 71 41',
-    location: 'Belgium',
-    initials: 'RM',
-  },
-  {
-    name: 'Charles Nzeyimana',
-    role: 'Regional Director',
-    email: 'c.nzeyima@nsi-monetique.com',
-    phone: '+257 79 591 466',
-    location: 'Burundi',
-    initials: 'CN',
-  },
-  {
-    name: 'Jean Paul Ngabonziza',
-    role: 'East Africa Director',
-    email: 'jp.ngabonziza@nsi-monetique.com',
-    phone: '+250 788 624 389',
-    location: 'Rwanda',
-    initials: 'JN',
-  },
-];
 
 function TeamCard({ member, index }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
@@ -71,9 +45,16 @@ function TeamCard({ member, index }) {
 }
 
 export default function InvestorsCTA() {
+  const { t } = useTranslation('investors');
   const { ref: heroRef, isVisible: heroVis } = useScrollReveal({ threshold: 0.15 });
   const { ref: teamRef, isVisible: teamVis } = useScrollReveal({ threshold: 0.1 });
   const [copied, setCopied] = useState(false);
+
+  const team = t('cta.team', { returnObjects: true });
+  const teamArray = Array.isArray(team) ? team : [];
+
+  const badges = t('cta.badges', { returnObjects: true });
+  const badgesArray = Array.isArray(badges) ? badges : [];
 
   const handleCopy = () => {
     navigator.clipboard.writeText('rmichel@nsi-monetique.com');
@@ -94,18 +75,16 @@ export default function InvestorsCTA() {
         <div className={styles.ctaOrb2} aria-hidden="true" />
 
         <div className={styles.ctaContent}>
-          <div className={styles.ctaEyebrow}>Ready to Invest?</div>
+          <div className={styles.ctaEyebrow}>{t('cta.eyebrow')}</div>
 
           <h2 className={styles.ctaTitle}>
-            Join Us in Building Africa's
+            {t('cta.title.part1')}
             <br />
-            <span className={styles.ctaGold}>Financial Future</span>
+            <span className={styles.ctaGold}>{t('cta.title.part2')}</span>
           </h2>
 
           <p className={styles.ctaBody}>
-            We are currently open to strategic investors who share our vision of
-            transforming remittances and financial inclusion across Africa.
-            Our pitch deck is available upon request.
+            {t('cta.description')}
           </p>
 
           {/* Two CTA buttons */}
@@ -119,7 +98,7 @@ export default function InvestorsCTA() {
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              Request the Pitch Deck
+              {t('cta.buttons.pitch')}
             </a>
 
             <a
@@ -129,7 +108,7 @@ export default function InvestorsCTA() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              Schedule a Call
+              {t('cta.buttons.schedule')}
             </a>
           </div>
 
@@ -144,7 +123,7 @@ export default function InvestorsCTA() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
-                Copied!
+                {t('cta.copyStatus.copied')}
               </>
             ) : (
               <>
@@ -152,18 +131,14 @@ export default function InvestorsCTA() {
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                 </svg>
-                rmichel@nsi-monetique.com
+                {t('cta.copyStatus.default')}
               </>
             )}
           </button>
 
           {/* Confidence badges */}
           <div className={styles.badges}>
-            {[
-              'Confidential NDA available',
-              'EU-regulated entity',
-              'Live & operating',
-            ].map((b) => (
+            {badgesArray.map((b) => (
               <span key={b} className={styles.badge}>
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -178,14 +153,14 @@ export default function InvestorsCTA() {
       {/* ── Team contacts ── */}
       <div ref={teamRef} className={`${styles.teamSection} ${teamVis ? styles.teamSectionVisible : ''}`}>
         <div className={styles.teamHeader}>
-          <h3 className={styles.teamTitle}>Talk Directly to Our Team</h3>
+          <h3 className={styles.teamTitle}>{t('cta.teamSection.title')}</h3>
           <p className={styles.teamSub}>
-            Click any card to open a pre-filled email, or call directly.
+            {t('cta.teamSection.subtitle')}
           </p>
         </div>
 
         <div className={styles.teamGrid}>
-          {TEAM.map((member, i) => (
+          {teamArray.map((member, i) => (
             <TeamCard key={member.email} member={member} index={i} />
           ))}
         </div>

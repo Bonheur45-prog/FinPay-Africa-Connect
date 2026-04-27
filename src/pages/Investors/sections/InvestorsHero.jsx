@@ -5,10 +5,12 @@
  */
 
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Download, ArrowRight, Check } from 'lucide-react';
 import styles from './InvestorsHero.module.css';
 
 export default function InvestorsHero() {
+  const { t } = useTranslation('investors');
   const ref0 = useRef();
   const ref1 = useRef();
   const ref2 = useRef();
@@ -22,6 +24,9 @@ export default function InvestorsHero() {
     );
     return () => timers.forEach(clearTimeout);
   }, []);
+
+  const trustBadges = t('hero.badges', { returnObjects: true });
+  const badgesArray = Array.isArray(trustBadges) ? trustBadges : [];
 
   return (
     <section className={styles.hero}>
@@ -55,45 +60,42 @@ export default function InvestorsHero() {
         {/* Confidential tag */}
         <div ref={ref0} className={`${styles.confTag} ${styles.fadeUp}`}>
           <span className={styles.confDot} />
-          Investment Opportunity
+          {t('hero.tag')}
         </div>
 
         {/* Headline */}
         <h1 ref={ref1} className={`${styles.title} ${styles.fadeUp}`}>
-          The{' '}
-          <span className={styles.highlight}>$40 Billion</span>
+          {t('hero.title.part1')}{' '}
+          <span className={styles.highlight}>{t('hero.title.highlight')}</span>
           <br />
-          African Remittance Market
+          {t('hero.title.part2')}
           <br />
-          <span className={styles.titleSub}>is Ready to be Disrupted</span>
+          <span className={styles.titleSub}>{t('hero.title.subtext')}</span>
         </h1>
 
         {/* Sub-headline */}
         <p ref={ref2} className={`${styles.sub} ${styles.fadeUp}`}>
-          Transaction costs to Africa remain{' '}
-          <strong className={styles.strongWhite}>9.1%</strong> — nearly double the global
-          average. FinPay Africa delivers a modern, low-cost, fully compliant solution
-          that is already live, already growing, and ready to scale.
+          {t('hero.description.part1')} <strong className={styles.strongWhite}>{t('hero.description.highlight')}</strong> {t('hero.description.part2')}
         </p>
 
         {/* CTAs */}
         <div ref={ref3} className={`${styles.actions} ${styles.fadeUp}`}>
           <a href="/contact?subject=pitch-deck" className={styles.btnGold}>
             <Download size={18} strokeWidth={2} aria-hidden="true" />
-            Request Pitch Deck
+            {t('hero.buttons.pitch')}
           </a>
           <a href="/contact?subject=investor-call" className={styles.btnGhost}>
-            Schedule a Call
+            {t('hero.buttons.schedule')}
             <ArrowRight size={16} strokeWidth={2.5} aria-hidden="true" />
           </a>
         </div>
 
         {/* Trust badges */}
         <div className={styles.trustRow}>
-          {['Certified Solution', 'EU Compliant', 'Live & Operating', 'Diaspora-Focused'].map((t) => (
-            <span key={t} className={styles.trustBadge}>
+          {badgesArray.map((b) => (
+            <span key={b} className={styles.trustBadge}>
               <Check size={12} strokeWidth={3} aria-hidden="true" />
-              {t}
+              {b}
             </span>
           ))}
         </div>

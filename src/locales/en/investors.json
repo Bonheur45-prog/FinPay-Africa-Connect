@@ -1,0 +1,230 @@
+{
+  "hero": {
+    "tag": "Investment Opportunity",
+    "title": {
+      "part1": "The",
+      "highlight": "$40 Billion",
+      "part2": "African Remittance Market",
+      "subtext": "is Ready to be Disrupted"
+    },
+    "description": {
+      "part1": "Transaction costs to Africa remain",
+      "highlight": "9.1%",
+      "part2": "— nearly double the global average. FinPay Africa delivers a modern, low-cost, fully compliant solution that is already live, already growing, and ready to scale."
+    },
+    "buttons": {
+      "pitch": "Request Pitch Deck",
+      "schedule": "Schedule a Call"
+    },
+    "badges": [
+      "Certified Solution",
+      "EU Compliant",
+      "Live & Operating",
+      "Diaspora-Focused"
+    ]
+  },
+  "market": {
+    "problem": {
+      "label": "The Problem",
+      "title": {
+        "part1": "Africa Pays the Most",
+        "part2": "to Transfer its Own Money"
+      },
+      "subtitle": "Despite being one of the most active remittance regions in the world, Sub-Saharan Africa consistently pays the highest fees, suffers the slowest transfers, and has the least financial infrastructure to support its people."
+    },
+    "painPoints": [
+      {
+        "value": "9.1%",
+        "label": "Average transaction cost to Sub-Saharan Africa",
+        "note": "vs 7.2% global average and 5.4% in South Asia",
+        "icon": "trendingDown"
+      },
+      {
+        "value": "$40B+",
+        "label": "Annual remittances to Sub-Saharan Africa",
+        "note": "Representing 10%+ of GDP for several African nations",
+        "icon": "banknote"
+      },
+      {
+        "value": "57%",
+        "label": "Of adults in Sub-Saharan Africa remain unbanked",
+        "note": "The largest unbanked population of any world region",
+        "icon": "landmark"
+      }
+    ],
+    "solution": {
+      "label": "Our Answer",
+      "title": "A Complete Financial Ecosystem, Built for Africa",
+      "subtitle": "FinPay Africa goes beyond simple transfers. We are building the financial infrastructure that connects the diaspora to their home countries — quickly, simply, and affordably."
+    },
+    "solutionPoints": [
+      {
+        "title": "Instant, low-cost transfers",
+        "desc": "Our platform reduces transfer costs to approach the 3% G20 target, saving families real money on every transaction."
+      },
+      {
+        "title": "IBAN account + bank card",
+        "desc": "Every user receives a certified bank card and IBAN account, granting access to the global financial system."
+      },
+      {
+        "title": "Mobile-first, diaspora-ready",
+        "desc": "Designed for the African diaspora in Europe — simple, fast, and available wherever they are."
+      },
+      {
+        "title": "Event & tontine management",
+        "desc": "Community financial pooling tools that reflect real African social and economic practices."
+      }
+    ],
+    "chart": {
+      "title": "Transaction Cost by Region",
+      "caption": "FinPay Africa targets the G20 5% commitment, undercut to 3%."
+    },
+    "chartData": [
+      {
+        "region": "Sub-Saharan Africa",
+        "pct": 9.1,
+        "color": "#7a0e0e"
+      },
+      {
+        "region": "Global Average",
+        "pct": 7.2,
+        "color": "#e8760a"
+      },
+      {
+        "region": "South Asia",
+        "pct": 5.4,
+        "color": "#4a4a6a"
+      },
+      {
+        "region": "FinPay Target",
+        "pct": 3.0,
+        "color": "#2d7a3a"
+      }
+    ]
+  },
+  "traction": {
+    "label": "Traction & Proof",
+    "title": "The Numbers Speak",
+    "subtitle": "We are not just a vision. FinPay Africa is live, growing, and delivering real value to real people across Europe and Africa today.",
+    "stats": [
+      {
+        "value": 2500,
+        "suffix": "+",
+        "label": "Active Clients",
+        "sub": "using the Connect platform & card"
+      },
+      {
+        "value": 30,
+        "suffix": "+",
+        "label": "Strategic Partners",
+        "sub": "across finance, tech & commerce"
+      },
+      {
+        "value": 12,
+        "suffix": "",
+        "label": "Countries Covered",
+        "sub": "and expanding across Africa"
+      },
+      {
+        "value": 40,
+        "suffix": "B$",
+        "label": "Market Addressable",
+        "sub": "annual remittance flow to Sub-Saharan Africa"
+      }
+    ],
+    "tagline": "\"Connecting you with your loved ones\""
+  },
+  "whyInvest": {
+    "label": "The Investment Case",
+    "title": "5 Reasons to Invest in FinPay Africa",
+    "subtitle": "A compelling combination of market size, timing, technology maturity, regulatory compliance, and social mission.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "A Proven, Massive Market",
+        "body": "Over $40 billion flows into Sub-Saharan Africa each year through remittances — representing 10%+ of GDP in several nations. This is not speculative: it is a deep, recurring, growing market that has barely been touched by modern fintech.",
+        "accent": "#7a0e0e",
+        "icon": "chart"
+      },
+      {
+        "number": "02",
+        "title": "First-Mover Advantage",
+        "body": "Transaction costs in African remittance corridors remain nearly double the global average due to limited formal infrastructure. FinPay Africa enters this gap with a certified, modern, low-cost solution before the market consolidates.",
+        "accent": "#e8760a",
+        "icon": "star"
+      },
+      {
+        "number": "03",
+        "title": "Live, Certified & Compliant",
+        "body": "FinPay Africa is not a concept — it is operational today. We hold the certifications and partnerships required to issue real bank cards and IBAN accounts. Every transaction is processed in full compliance with EU and international financial regulations.",
+        "accent": "#2d7a3a",
+        "icon": "shield"
+      },
+      {
+        "number": "04",
+        "title": "A Scalable Technology Stack",
+        "body": "Built in partnership with BrightLink Technologies, our platform is modular and API-driven. Adding new countries, new corridors, or new product lines (mobile money, microloans, insurance) requires configuration, not rebuilding.",
+        "accent": "#22c55e",
+        "icon": "layers"
+      },
+      {
+        "number": "05",
+        "title": "Social Impact — a Strategic Asset",
+        "body": "ESG-aligned investors and international development institutions are actively seeking fintech opportunities with measurable social impact. FinPay Africa delivers: financial inclusion, diaspora empowerment, and reduced remittance poverty are built into our core model.",
+        "accent": "#7a5a00",
+        "icon": "people"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Ready to Invest?",
+    "title": {
+      "part1": "Join Us in Building Africa's",
+      "part2": "Financial Future"
+    },
+    "description": "We are currently open to strategic investors who share our vision of transforming remittances and financial inclusion across Africa. Our pitch deck is available upon request.",
+    "buttons": {
+      "pitch": "Request the Pitch Deck",
+      "schedule": "Schedule a Call"
+    },
+    "copyStatus": {
+      "default": "rmichel@nsi-monetique.com",
+      "copied": "Copied!"
+    },
+    "badges": [
+      "Confidential NDA available",
+      "EU-regulated entity",
+      "Live & operating"
+    ],
+    "teamSection": {
+      "title": "Talk Directly to Our Team",
+      "subtitle": "Click any card to open a pre-filled email, or call directly."
+    },
+    "team": [
+      {
+        "name": "Richard Michel",
+        "role": "Founding Partner",
+        "email": "rmichel@nsi-monetique.com",
+        "phone": "+32 478 63 71 41",
+        "location": "Belgium",
+        "initials": "RM"
+      },
+      {
+        "name": "Charles Nzeyimana",
+        "role": "Regional Director",
+        "email": "c.nzeyima@nsi-monetique.com",
+        "phone": "+257 79 591 466",
+        "location": "Burundi",
+        "initials": "CN"
+      },
+      {
+        "name": "Jean Paul Ngabonziza",
+        "role": "East Africa Director",
+        "email": "jp.ngabonziza@nsi-monetique.com",
+        "phone": "+250 788 624 389",
+        "location": "Rwanda",
+        "initials": "JN"
+      }
+    ]
+  }
+}

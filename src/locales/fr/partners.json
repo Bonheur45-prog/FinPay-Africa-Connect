@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "badge": "Notre Écosystème",
+    "title": {
+      "part1": "Construit sur",
+      "trust": "la Confiance",
+      "part2": "Grandi par",
+      "partnership": "les Partenariats"
+    },
+    "subtitle": "La force de FinPay Africa réside dans son réseau. Aux côtés de nos partenaires stratégiques dans les secteurs financier, technologique et commercial, nous construisons l'infrastructure de paiement que l'Afrique mérite vraiment.",
+    "stats": {
+      "partners": {
+        "number": "30+",
+        "label": "Partenaires Actifs"
+      },
+      "countries": {
+        "number": "12",
+        "label": "Pays Couverts"
+      },
+      "clients": {
+        "number": "2 500+",
+        "label": "Clients Servis"
+      }
+    }
+  },
+  "grid": {
+    "header": {
+      "eyebrow": "Nos Partenaires",
+      "title": "Notre Réseau de Partenaires",
+      "subtitle": "Un écosystème diversifié d'institutions financières, de fournisseurs technologiques, d'opérateurs mobiles et de commerçants — unis par une mission commune de transformer les paiements africains."
+    },
+    "emptyState": "Aucun partenaire trouvé dans cette catégorie pour le moment."
+  },
+  "categories": {
+    "all": "Tous",
+    "financial": "Financier",
+    "technology": "Technologie",
+    "mobile_money": "Mobile Money",
+    "commerce": "Commerce"
+  },
+  "cta": {
+    "eyebrow": "Rejoindre le Réseau",
+    "title": "Devenir Partenaire FinPay Africa",
+    "body": "Nous recherchons toujours des organisations avant-gardistes pour grandir avec nous. Que vous soyez une banque, une fintech, un opérateur mobile ou un réseau de commerçants — il y a une place pour vous dans l'écosystème FinPay Africa.",
+    "buttons": {
+      "apply": "Postuler Maintenant",
+      "talk": "Parlez à Notre Équipe"
+    }
+  },
+  "benefits": {
+    "compliance": {
+      "title": "Conformité Réglementaire",
+      "desc": "Opérez dans un cadre de paiement certifié et conforme au niveau international."
+    },
+    "reach": {
+      "title": "Portée Panafricaine",
+      "desc": "Accédez à un réseau panafricain établi couvrant 12+ pays."
+    },
+    "volume": {
+      "title": "Volume Croissant",
+      "desc": "Connectez-vous à une plateforme traitant des milliers de transactions mensuelles."
+    }
+  },
+  "partners": {
+    "brightlink": {
+      "name": "BrightLink Technologies",
+      "category": "Technologie",
+      "partnershipType": "Infrastructure de Cartes & API",
+      "description": "BrightLink alimente l'infrastructure d'émission de cartes et les API de paiement qui sous-tendent la plateforme Connect, permettant un traitement des transactions rapide et sécurisé à grande échelle dans notre réseau.",
+      "since": "2022",
+      "region": "Europe & Afrique"
+    },
+    "nsi": {
+      "name": "NSI-Monétique",
+      "category": "Financier",
+      "partnershipType": "Solutions Bancaires & Monétiques",
+      "description": "Notre partenaire financier fondateur, fournissant le cadre réglementaire, l'expertise bancaire et l'infrastructure monétique qui donnent à FinPay Africa sa fondation institutionnelle et sa crédibilité.",
+      "since": "2021",
+      "region": "Belgique / Afrique"
+    },
+    "panafricanmobile": {
+      "name": "Pan-African Mobile Network",
+      "category": "Mobile Money",
+      "partnershipType": "Intégration de Portefeuille Mobile",
+      "description": "Connecter la plateforme FinPay aux écosystèmes de portefeuilles mobiles à travers l'Afrique subsaharienne pour assurer une livraison du dernier kilomètre et une véritable inclusion financière pour la population non bancarisée.",
+      "since": "2023",
+      "region": "Afrique Subsaharienne"
+    },
+    "africanmerchant": {
+      "name": "African Merchant Alliance",
+      "category": "Commerce",
+      "partnershipType": "Réseau d'Acceptation Marchande",
+      "description": "Une coalition de commerçants et de détaillants qui acceptent les cartes FinPay et les terminaux de paiement, élargissant notre présence sur le terrain sur les principaux marchés urbains en Afrique.",
+      "since": "2023",
+      "region": "Afrique de l'Ouest & du Centre"
+    },
+    "euroconnect": {
+      "name": "EuroConnect Financial",
+      "category": "Financier",
+      "partnershipType": "Banque pour la Diaspora Européenne",
+      "description": "Permettre aux communautés de la diaspora européenne d'envoyer de l'argent à la maison de manière transparente par le biais de corridors conformes et compétitifs qui répondent aux réglementations financières de l'UE.",
+      "since": "2022",
+      "region": "Europe"
+    },
+    "securepay": {
+      "name": "SecurePay Technologies",
+      "category": "Technologie",
+      "partnershipType": "Sécurité & Conformité",
+      "description": "Fournissant le chiffrement de classe entreprise, la détection des fraudes en temps réel et les outils de conformité pour que chaque transaction FinPay respecte les plus hautes normes de sécurité internationales.",
+      "since": "2023",
+      "region": "Mondial"
+    },
+    "diasporaconnect": {
+      "name": "Diaspora Connect Europe",
+      "category": "Commerce",
+      "partnershipType": "Communauté & Distribution",
+      "description": "Un réseau de distribution piloté par la communauté reliant les services FinPay à la diaspora africaine en France, en Belgique et au Royaume-Uni par le biais de points de contact communautaires de confiance.",
+      "since": "2022",
+      "region": "France, Belgique, Royaume-Uni"
+    },
+    "afrimobile": {
+      "name": "AfriMobile Solutions",
+      "category": "Mobile Money",
+      "partnershipType": "Infrastructure Bancaire Mobile",
+      "description": "Un spécialiste de la technologie USSD et des services bancaires mobiles, permettant à FinPay d'atteindre les clients même dans les régions où la pénétration des smartphones est limitée.",
+      "since": "2023",
+      "region": "Afrique de l'Est & du Centre"
+    }
+  }
+}

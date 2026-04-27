@@ -5,7 +5,7 @@ import styles from "./SolutionsHero.module.css";
 
 const SolutionsHero = () => {
   return (
-    <Section background="particles">
+    <Section background="particles" theme="maroon">
       <div className={styles.heroWrapper}>
         
         {/* LEFT CONTENT */}

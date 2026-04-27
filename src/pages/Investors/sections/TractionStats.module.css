@@ -1,14 +1,14 @@
 /* FinPay Africa — TractionStats Section — Isolated styles */
 
 .section {
-  --ts-crimson:    #6b0a0a;
+  --ts-crimson: #6b0a0a;
   --ts-crimson-dk: #480707;
-  --ts-orange:     #e8760a;
-  --ts-amber:      #f5a623;
-  --ts-gold:       #f5c518;
-  --ts-white:      #ffffff;
-  --ts-white-60:   rgba(255,255,255,0.60);
-  --ts-white-80:   rgba(255,255,255,0.80);
+  --ts-orange: #e8760a;
+  --ts-amber: #f5a623;
+  --ts-gold: #f5c518;
+  --ts-white: #ffffff;
+  --ts-white-60: rgba(255, 255, 255, 0.60);
+  --ts-white-80: rgba(255, 255, 255, 0.80);
 
   position: relative;
   overflow: hidden;
@@ -27,13 +27,11 @@
   inset: 0;
   z-index: 0;
   background-image:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.025) 0,
-      rgba(255,255,255,0.025) 1px,
+    repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.025) 0,
+      rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 80px
-    );
+      transparent 80px);
 }
 
 .inner {
@@ -55,6 +53,7 @@
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .headerVisible {
   opacity: 1;
   transform: translateY(0);
@@ -92,14 +91,14 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   width: 100%;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   overflow: hidden;
 }
 
 .statItem {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   padding: 44px 28px;
   text-align: center;
   display: flex;
@@ -110,12 +109,14 @@
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease, background 0.25s ease;
 }
+
 .statItemVisible {
   opacity: 1;
   transform: translateY(0);
 }
-.statItem:hover  {
-  background: rgba(255,255,255,0.09);
+
+.statItem:hover {
+  background: rgba(255, 255, 255, 0.09);
 }
 
 .statNum {
@@ -161,7 +162,7 @@
 .divLine {
   flex: 1;
   height: 1px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .tagline {
@@ -178,10 +179,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
   }
+
   .bottomRow {
     display: none;
   }

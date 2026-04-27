@@ -1,39 +1,16 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Target, Eye, Star } from "lucide-react";
 import styles from './MissionVision.module.css';
 
-const cards = [
-  {
-    id: "mission",
-    icon: <Target size={28} strokeWidth={1.5} />,
-    label: "Mission",
-    title: "What Drives Us Daily",
-    description:
-      "To deliver secure, scalable, and reliable technology infrastructure that empowers financial institutions, enterprises, and businesses across Africa — enabling them to operate with confidence, compliance, and competitive agility.",
-  },
-  {
-    id: "vision",
-    icon: <Eye size={28} strokeWidth={1.5} />,
-    label: "Vision",
-    title: "Where We're Headed",
-    description:
-      "To become Africa's most trusted enterprise technology partner — a company synonymous with financial security, digital excellence, and long-term institutional reliability from Kigali to the continent.",
-  },
-  {
-    id: "values",
-    icon: <Star size={28} strokeWidth={1.5} />,
-    label: "Values",
-    title: "What We Stand On",
-    values: [
-      { name: "Integrity", desc: "We build on honesty and ethical practice at every layer." },
-      { name: "Security", desc: "We treat data and systems protection as non-negotiable." },
-      { name: "Partnership", desc: "Long-term relationships over short-term transactions." },
-      { name: "Excellence", desc: "High standards in code, communication, and delivery." },
-    ],
-  },
-];
+const iconMap = {
+  mission: <Target size={28} strokeWidth={1.5} />,
+  vision: <Eye size={28} strokeWidth={1.5} />,
+  values: <Star size={28} strokeWidth={1.5} />,
+};
 
 export default function MissionVision() {
+  const { t } = useTranslation('about');
   const cardRefs = useRef([]);
 
   useEffect(() => {
@@ -51,21 +28,28 @@ export default function MissionVision() {
     return () => observer.disconnect();
   }, []);
 
+  const cards = t('missionVision.cards', { returnObjects: true });
+  const cardsArray = Array.isArray(cards) ? cards : [];
+
   return (
     <section className={styles["mv-section"]}>
       <div className={styles["mv-bg"]} />
 
       <div className={styles["mv-container"]}>
         <div className={styles["mv-header"]}>
-          <span className={styles["mv-label"]}>Core Principles</span>
-          <h2 className={styles["mv-title"]}>Mission, Vision & Values</h2>
+          <span className={styles["mv-label"]}>
+            {t('missionVision.label')}
+          </span>
+          <h2 className={styles["mv-title"]}>
+            {t('missionVision.title')}
+          </h2>
           <p className={styles["mv-sub"]}>
-            The principles that guide every decision, every product, and every partnership.
+            {t('missionVision.subtitle')}
           </p>
         </div>
 
         <div className={styles["mv-grid"]}>
-          {cards.map((card, index) => (
+          {cardsArray.map((card, index) => (
             <div
               key={card.id}
               className={`mv-card mv-card-${card.id}`}
@@ -73,7 +57,7 @@ export default function MissionVision() {
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
               <div className={styles["mv-icon-wrap"]}>
-                {card.icon}
+                {iconMap[card.id] || <Target size={28} strokeWidth={1.5} />}
               </div>
               <div className={styles["mv-card-meta"]}>
                 <span className={styles["mv-card-label"]}>{card.label}</span>
@@ -82,7 +66,7 @@ export default function MissionVision() {
               {card.description && (
                 <p className={styles["mv-card-desc"]}>{card.description}</p>
               )}
-              {card.values && (
+              {card.values && Array.isArray(card.values) && (
                 <div className={styles["mv-values-list"]}>
                   {card.values.map((v) => (
                     <div key={v.name} className={styles["mv-value-item"]}>

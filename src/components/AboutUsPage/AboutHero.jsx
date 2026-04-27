@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from './AboutHero.module.css';
 
 export default function AboutHero() {
+  const { t } = useTranslation('about');
   const heroRef = useRef(null);
   const [videoReady, setVideoReady] = useState(true);
 
@@ -41,6 +43,7 @@ export default function AboutHero() {
       <div className={`${styles["ah-bg-layer"]} ${styles["ah-bg-2"]}`} />
       <div className={`${styles["ah-bg-layer"]} ${styles["ah-bg-3"]}`} />
       <div className={styles["ah-grid-overlay"]} />
+      <div className={styles["ah-maroon-blur"]} />
       <div className={styles["ah-noise"]} />
 
       {/* Floating orbs */}
@@ -50,19 +53,16 @@ export default function AboutHero() {
 
       <div className={styles["ah-content"]}>
         <div className={styles["ah-badge"]}>
-          <span className={styles["ah-badge-dot"]} />
-          FinPay Africa
+          {t('hero.badge')}
         </div>
 
         <h1 className={styles["ah-title"]}>
-          <span className={`${styles["ah-title-line"]} ${styles["ah-line-1"]}`}>Who We Are</span>
-          <span className={`${styles["ah-title-line"]} ${styles["ah-line-2"]}`}>& What We Stand For</span>
+          <span className={`${styles["ah-title-line"]} ${styles["ah-line-1"]}`}>{t('hero.title.line1')}</span>
+          <span className={`${styles["ah-title-line"]} ${styles["ah-line-2"]}`}>{t('hero.title.line2')}</span>
         </h1>
 
         <p className={styles["ah-subtitle"]}>
-          A trusted enterprise technology partner building secure, scalable digital
-          infrastructure for Africa's financial institutions — rooted in Rwanda,
-          reaching the continent.
+          {t('hero.subtitle')}
         </p>
 
         <div className={styles["ah-divider"]}>
@@ -74,7 +74,7 @@ export default function AboutHero() {
 
       <div className={styles["ah-scroll-indicator"]}>
         <div className={styles["ah-scroll-line"]} />
-        <span>Scroll To Explore</span>
+        <span>{t('hero.scroll')}</span>
       </div>
     </section>
   );

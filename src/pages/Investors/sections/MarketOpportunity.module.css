@@ -1,16 +1,16 @@
 /* FinPay Africa — MarketOpportunity Section — Isolated styles */
 
 .section {
-  --mo-crimson:  #7a0e0e;
-  --mo-orange:   #e8760a;
-  --mo-amber:    #f5a623;
-  --mo-gold:     #f5c518;
-  --mo-white:    #ffffff;
-  --mo-cream:    #faf8f4;
-  --mo-dark:     #1a1a2e;
-  --mo-mid:      #4a4a6a;
-  --mo-border:   rgba(26,26,46,0.08);
-  --mo-green:    #2d7a3a;
+  --mo-crimson: #7a0e0e;
+  --mo-orange: #e8760a;
+  --mo-amber: #f5a623;
+  --mo-gold: #f5c518;
+  --mo-white: #ffffff;
+  --mo-cream: #faf8f4;
+  --mo-dark: #1a1a2e;
+  --mo-mid: #4a4a6a;
+  --mo-border: rgba(26, 26, 46, 0.08);
+  --mo-green: #2d7a3a;
 
   background: var(--mo-white);
 }
@@ -30,6 +30,7 @@
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .headerVisible {
   opacity: 1;
   transform: translateY(0);
@@ -47,16 +48,27 @@
   padding: 0 20px;
   position: relative;
 }
-.eyebrow::before, .eyebrow::after {
+
+.eyebrow::before,
+.eyebrow::after {
   content: '';
   position: absolute;
   top: 50%;
-  width: 28px; height: 1px;
+  width: 28px;
+  height: 1px;
   background: var(--mo-crimson);
   opacity: 0.5;
 }
-.eyebrow::before { right: 100%; margin-right: -12px; }
-.eyebrow::after  { left:  100%; margin-left:  -12px; }
+
+.eyebrow::before {
+  right: 100%;
+  margin-right: -12px;
+}
+
+.eyebrow::after {
+  left: 100%;
+  margin-left: -12px;
+}
 
 .sectionTitle {
 
@@ -95,15 +107,17 @@
   transform: translateY(28px);
   transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease;
 }
+
 .painCardVisible {
   opacity: 1;
   transform: translateY(0);
 }
-.painCard:hover  {
-  box-shadow: 0 16px 40px rgba(26,26,46,0.08);
+
+.painCard:hover {
+  box-shadow: 0 16px 40px rgba(26, 26, 46, 0.08);
 }
 
-.painIcon { 
+.painIcon {
   display: flex;
   justify-content: center;
   color: var(--mo-crimson);
@@ -167,6 +181,7 @@
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .solutionVisible {
   opacity: 1;
   transform: translateY(0);
@@ -215,6 +230,7 @@
   transform: translateX(-20px);
   transition: opacity 0.55s ease, transform 0.55s ease;
 }
+
 .solutionItemVisible {
   opacity: 1;
   transform: translateX(0);
@@ -227,7 +243,7 @@
   border-radius: 50%;
   background: var(--mo-orange);
   margin-top: 6px;
-  box-shadow: 0 0 0 4px rgba(232,118,10,0.15);
+  box-shadow: 0 0 0 4px rgba(232, 118, 10, 0.15);
 }
 
 .solutionItemText {
@@ -259,7 +275,7 @@
   padding: 36px;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 8px 32px rgba(26,26,46,0.06);
+  box-shadow: 0 8px 32px rgba(26, 26, 46, 0.06);
 }
 
 .chartTitle {
@@ -294,7 +310,7 @@
 .barTrack {
   flex: 1;
   height: 10px;
-  background: rgba(26,26,46,0.06);
+  background: rgba(26, 26, 46, 0.06);
   border-radius: 100px;
   overflow: hidden;
 }
@@ -325,16 +341,29 @@
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
-  .painGrid { grid-template-columns: 1fr; }
+  .painGrid {
+    grid-template-columns: 1fr;
+  }
 
   .solutionBlock {
     display: block;
     padding: 80px 24px;
   }
-  .solutionLeft { max-width: 100%; padding-left: 0; margin-bottom: 48px; }
-  .solutionRight { justify-content: center; padding-right: 0; }
+
+  .solutionLeft {
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 48px;
+  }
+
+  .solutionRight {
+    justify-content: center;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 640px) {
-  .problemBlock { padding: 80px 16px 60px; }
+  .problemBlock {
+    padding: 80px 16px 60px;
+  }
 }
