@@ -1,47 +1,19 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Lock, Activity, Layers, FileCheck, Clock, Users } from "lucide-react";
 import styles from './CoreStrengths.module.css';
 
-const strengths = [
-  {
-    icon: <Lock size={26} strokeWidth={1.5} />,
-    title: "Bank-Grade Security",
-    description:
-      "Our systems are architected with end-to-end encryption, multi-factor authentication, and audit-ready logging — meeting the security standards demanded by Rwanda's regulatory environment and international frameworks.",
-  },
-  {
-    icon: <Activity size={26} strokeWidth={2} />,
-    title: "Proven Reliability",
-    description:
-      "Backed by our integration within the NSI Group ecosystem, we deliver solutions with tested infrastructure, dependable uptime, and disaster-recovery protocols trusted by institutional clients.",
-  },
-  {
-    icon: <Layers size={26} strokeWidth={1.5} />,
-    title: "Scalable Architecture",
-    description:
-      "We build platforms that grow with you — from single-branch institutions to multi-country deployments — using modular, cloud-ready architectures that scale without rebuilding from scratch.",
-  },
-  {
-    icon: <FileCheck size={26} strokeWidth={1.5} />,
-    title: "Regulatory Compliance",
-    description:
-      "From Rwanda's BNR directives to regional AML/KYC standards, our products are built with compliance as a first-class feature — not an afterthought — giving institutions confidence during audits.",
-  },
-  {
-    icon: <Clock size={26} strokeWidth={1.5} />,
-    title: "Deep Local Experience",
-    description:
-      "Years operating in Rwanda's financial and enterprise ecosystem give us contextual knowledge that external vendors lack — understanding regulation, culture, and infrastructure realities on the ground.",
-  },
-  {
-    icon: <Users size={26} strokeWidth={1.5} />,
-    title: "Dedicated Partnership Support",
-    description:
-      "We don't disappear after go-live. Our team provides ongoing technical support, system maintenance, and strategic consultation to ensure long-term value from every engagement.",
-  },
-];
+const iconMap = {
+  lock: <Lock size={26} strokeWidth={1.5} />,
+  activity: <Activity size={26} strokeWidth={2} />,
+  layers: <Layers size={26} strokeWidth={1.5} />,
+  fileCheck: <FileCheck size={26} strokeWidth={1.5} />,
+  clock: <Clock size={26} strokeWidth={1.5} />,
+  users: <Users size={26} strokeWidth={1.5} />,
+};
 
 export default function CoreStrengths() {
+  const { t } = useTranslation('about');
   const itemRefs = useRef([]);
 
   useEffect(() => {
@@ -59,6 +31,9 @@ export default function CoreStrengths() {
     return () => observer.disconnect();
   }, []);
 
+  const strengths = t('strengths.items', { returnObjects: true });
+  const strengthsArray = Array.isArray(strengths) ? strengths : [];
+
   return (
     <section className={styles["cs-section"]}>
       <div className={styles["cs-bg"]} />
@@ -66,23 +41,28 @@ export default function CoreStrengths() {
 
       <div className={styles["cs-container"]}>
         <div className={styles["cs-header"]}>
-          <span className={styles["cs-label"]}>Why Choose FinPay Africa</span>
-          <h2 className={styles["cs-title"]}>Core Strengths That Set Us Apart</h2>
+          <span className={styles["cs-label"]}>
+            {t('strengths.label')}
+          </span>
+          <h2 className={styles["cs-title"]}>
+            {t('strengths.title')}
+          </h2>
           <p className={styles["cs-sub"]}>
-            What makes us the right partner for financial institutions and enterprises
-            that refuse to compromise on quality.
+            {t('strengths.subtitle')}
           </p>
         </div>
 
         <div className={styles["cs-grid"]}>
-          {strengths.map((item, index) => (
+          {strengthsArray.map((item, index) => (
             <div
               key={item.title}
               className={styles["cs-item"]}
               ref={(el) => (itemRefs.current[index] = el)}
               style={{ transitionDelay: `${(index % 3) * 0.1}s` }}
             >
-              <div className={styles["cs-icon"]}>{item.icon}</div>
+              <div className={styles["cs-icon"]}>
+                {iconMap[item.icon] || <Lock size={26} strokeWidth={1.5} />}
+              </div>
               <h3 className={styles["cs-item-title"]}>{item.title}</h3>
               <p className={styles["cs-item-desc"]}>{item.description}</p>
               <div className={styles["cs-item-line"]} />

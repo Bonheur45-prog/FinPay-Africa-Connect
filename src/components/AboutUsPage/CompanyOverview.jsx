@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import CompanyOverviewImage from "../../assets/images/physical-virtual-card.png";
 import styles from './CompanyOverview.module.css';
 
 export default function CompanyOverview() {
+  const { t } = useTranslation('about');
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
   const rightRef = useRef(null);
@@ -23,39 +25,34 @@ export default function CompanyOverview() {
     return () => observer.disconnect();
   }, []);
 
+  const tags = t('company.tags', { returnObjects: true });
+
   return (
     <section className={styles["co-section"]} ref={sectionRef}>
       <div className={styles["co-bg-mesh"]} />
       <div className={styles["co-container"]}>
         {/* Left: Text */}
         <div className={styles["co-left"]} ref={leftRef}>
-          <div className={styles["co-label"]}>Company Overview</div>
+          <div className={styles["co-label"]}>
+            {t('company.label')}
+          </div>
           <h2 className={styles["co-title"]}>
-            Building the Digital Backbone of Africa's Financial Future
+            {t('company.title')}
           </h2>
           <div className={styles["co-body"]}>
             <p>
-              FinPay Africa Ltd is a Kigali-based enterprise technology company
-              specializing in secure financial software, payment systems, and digital
-              infrastructure for banks, microfinance institutions, and enterprise clients
-              across Rwanda and the broader African continent.
+              {t('company.description.p1')}
             </p>
             <p>
-              Operating as part of the{" "}
-              <strong>NSI Group (Nord Sud Industriess)</strong> — a well-established
-              industrial and commercial conglomerate — FinPay Africa benefits from decades of
-              institutional trust, local market knowledge, and strategic positioning that few
-              technology firms in the region can match.
+              {t('company.description.p2.part1')} <strong>{t('company.description.p2.part2')}</strong> {t('company.description.p2.part3')}
             </p>
             <p>
-              We don't just deliver software. We engineer trust — through robust
-              architecture, rigorous compliance frameworks, and client-centric partnerships
-              that stand the test of time.
+              {t('company.description.p3')}
             </p>
           </div>
           <div className={styles["co-tags"]}>
-            {["FinTech Solutions", "Banking Software", "Payment Systems", "Enterprise IT", "NSI Group"].map((t) => (
-              <span className={styles["co-tag"]} key={t}>{t}</span>
+            {Array.isArray(tags) && tags.map((tag) => (
+              <span className={styles["co-tag"]} key={tag}>{tag}</span>
             ))}
           </div>
         </div>
@@ -67,7 +64,7 @@ export default function CompanyOverview() {
               <div className={styles["co-card-dots"]}>
                 <span /><span /><span />
               </div>
-              <span className={styles["co-card-label"]}>Company Profile</span>
+              <span className={styles["co-card-label"]}>{t('company.cardLabel')}</span>
             </div>
             <div className={styles["co-card-body"]}>
               <img src={CompanyOverviewImage} alt="" />

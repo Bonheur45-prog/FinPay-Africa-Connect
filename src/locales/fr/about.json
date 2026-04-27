@@ -1,0 +1,263 @@
+{
+  "hero": {
+    "badge": "À Propos de FinPay Africa",
+    "title": {
+      "line1": "Partenaire Technologique de Confiance",
+      "line2": "pour l'Avenir Financier de l'Afrique"
+    },
+    "subtitle": "Construire une infrastructure financière sécurisée et évolutive qui autonomise les institutions et stimule la croissance continentale.",
+    "scroll": "Défiler pour Découvrir"
+  },
+  "company": {
+    "label": "Aperçu de l'Entreprise",
+    "title": "Construire l'épine dorsale numérique de l'avenir financier de l'Afrique",
+    "description": {
+      "p1": "FinPay Africa Ltd est une entreprise technologique basée à Kigali, spécialisée dans les logiciels financiers sécurisés, les systèmes de paiement et l'infrastructure numérique pour les banques, les institutions de microfinance et les clients d'entreprise à travers le Rwanda et le continent africain.",
+      "p2": {
+        "part1": "En tant que partie du",
+        "part2": "NSI Group (Nord Sud Industriess)",
+        "part3": "— un conglomérat industriel et commercial bien établi — FinPay Africa bénéficie de décennies de confiance institutionnelle, de connaissances du marché local et d'un positionnement stratégique que peu d'entreprises technologiques dans la région peuvent égaler."
+      },
+      "p3": "Nous ne livrons pas seulement des logiciels. Nous construisons la confiance — grâce à une architecture robuste, des cadres de conformité rigoureux et des partenariats centrés sur le client qui résistent à l'épreuve du temps."
+    },
+    "tags": [
+      "Solutions FinTech",
+      "Logiciels Bancaires",
+      "Systèmes de Paiement",
+      "Informatique d'Entreprise",
+      "NSI Group"
+    ],
+    "cardLabel": "Profil de l'Entreprise"
+  },
+  "strengths": {
+    "label": "Pourquoi Choisir FinPay Africa",
+    "title": "Points Forts Qui Nous Distinguent",
+    "subtitle": "Ce qui fait de nous le bon partenaire pour les institutions financières et les entreprises qui refusent de compromettre la qualité.",
+    "items": [
+      {
+        "icon": "lock",
+        "title": "Sécurité de Niveau Bancaire",
+        "description": "Nos systèmes sont conçus avec chiffrement de bout en bout, authentification multifacteur et enregistrement auditeur — répondant aux normes de sécurité exigées par l'environnement réglementaire du Rwanda et les cadres internationaux."
+      },
+      {
+        "icon": "activity",
+        "title": "Fiabilité Éprouvée",
+        "description": "Soutenue par notre intégration dans l'écosystème du NSI Group, nous livrons des solutions avec une infrastructure testée, un temps d'activité fiable et des protocoles de reprise après sinistre de confiance des clients institutionnels."
+      },
+      {
+        "icon": "layers",
+        "title": "Architecture Évolutive",
+        "description": "Nous construisons des plateformes qui se développent avec vous — des institutions à branche unique aux déploiements multi-pays — en utilisant des architectures modulaires et prêtes pour le cloud qui se développent sans refonte."
+      },
+      {
+        "icon": "fileCheck",
+        "title": "Conformité Réglementaire",
+        "description": "Des directives de la BNR du Rwanda aux normes AML/KYC régionales, nos produits sont construits avec la conformité comme caractéristique de première classe — pas une réflexion après coup — donnant aux institutions confiance lors des audits."
+      },
+      {
+        "icon": "clock",
+        "title": "Expérience Locale Approfondie",
+        "description": "Des années d'opération dans l'écosystème financier et d'entreprise du Rwanda nous donnent une connaissance contextuelle que les fournisseurs externes n'ont pas — comprendre la réglementation, la culture et les réalités d'infrastructure sur le terrain."
+      },
+      {
+        "icon": "users",
+        "title": "Support de Partenariat Dédié",
+        "description": "Nous ne disparaissons pas après le déploiement. Notre équipe fournit un support technique continu, la maintenance des systèmes et des conseils stratégiques pour assurer la valeur à long terme de chaque engagement."
+      }
+    ]
+  },
+  "missionVision": {
+    "label": "Principes Fondamentaux",
+    "title": "Mission, Vision et Valeurs",
+    "subtitle": "Les principes qui guident chaque décision, chaque produit et chaque partenariat.",
+    "cards": [
+      {
+        "id": "mission",
+        "label": "Mission",
+        "title": "Ce Qui Nous Pousse Chaque Jour",
+        "description": "Fournir une infrastructure technologique sécurisée, évolutive et fiable qui autonomise les institutions financières, les entreprises et les commerces en Afrique — leur permettant d'opérer avec confiance, conformité et agilité concurrentielle."
+      },
+      {
+        "id": "vision",
+        "label": "Vision",
+        "title": "Où Nous Allons",
+        "description": "Devenir le partenaire technologique d'entreprise le plus fiable d'Afrique — une entreprise synonyme de sécurité financière, d'excellence numérique et de fiabilité institutionnelle à long terme de Kigali au continent."
+      },
+      {
+        "id": "values",
+        "label": "Valeurs",
+        "title": "Sur Quoi Nous Nous Appuyons",
+        "values": [
+          {
+            "name": "Intégrité",
+            "desc": "Nous construisons sur l'honnêteté et la pratique éthique à chaque niveau."
+          },
+          {
+            "name": "Sécurité",
+            "desc": "Nous traitons la protection des données et des systèmes comme non-négociable."
+          },
+          {
+            "name": "Partenariat",
+            "desc": "Les relations à long terme plutôt que les transactions à court terme."
+          },
+          {
+            "name": "Excellence",
+            "desc": "Normes élevées dans le code, la communication et la livraison."
+          }
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "label": "Par les Chiffres",
+    "title": "Réalisations et Jalons",
+    "items": [
+      {
+        "value": 10,
+        "suffix": "+",
+        "label": "Années d'Expérience",
+        "sub": "En technologie d'entreprise"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "Projets Livrés",
+        "sub": "À Travers le Rwanda et l'Afrique de l'Est"
+      },
+      {
+        "value": 15,
+        "suffix": "+",
+        "label": "Clients Institutionnels",
+        "sub": "Banques, IMF et entreprises"
+      },
+      {
+        "value": 99,
+        "suffix": "%",
+        "label": "Taux de Rétention des Clients",
+        "sub": "Partenariats à long terme"
+      }
+    ],
+    "quote": {
+      "text": "En fintech, l'atout le plus fort que vous pouvez construire est la confiance institutionnelle. Chaque système que nous déployons, chaque ligne de code que nous écrivons, est une autre brique dans cette fondation.",
+      "attribution": "— Direction de FinPay Africa"
+    }
+  },
+  "timeline": {
+    "label": "Notre Parcours",
+    "title": "Une Décennie de Construction de la Confiance",
+    "subtitle": "De nos racines dans le secteur industriel du Rwanda à la première ligne de la transformation technologique financière de l'Afrique.",
+    "items": [
+      {
+        "year": "2010",
+        "title": "Vision Fondatrice",
+        "description": "La vision fondatrice de FinPay Africa émerge au sein du NSI Group — un conglomérat industriel établi avec des décennies de présence commerciale au Rwanda. L'accent sur la transformation financière numérique commence.",
+        "tag": "Fondation"
+      },
+      {
+        "year": "2015",
+        "title": "FinPay Africa Constituée",
+        "description": "Formellement établie en tant qu'entité technologique financière indépendante à Kigali, Rwanda. TIN enregistré (155772836). Focus initial sur les solutions de paiement d'entreprise pour les entreprises locales.",
+        "tag": "Lancement"
+      },
+      {
+        "year": "2017",
+        "title": "Jalon du Secteur Financier",
+        "description": "Premier partenariat sécurisé avec une banque commerciale rwandaise. Livré intégration interface bancaire principale et automatisation du flux de travail numérique — un moment déterminant façonnant notre ADN fintech.",
+        "tag": "Secteur Bancaire"
+      },
+      {
+        "year": "2019",
+        "title": "Infrastructure Pan-Africaine",
+        "description": "Capacités élargies pour inclure le traitement des transactions multi-canaux et les API de monnaie mobile. Devenu une couche technologique critique pour les institutions financières en Afrique de l'Est.",
+        "tag": "Expansion"
+      },
+      {
+        "year": "2022",
+        "title": "Innovation de la Suite de Produits",
+        "description": "Lancement d'une suite de produits propriétaires couvrant l'intégration numérique sécurisée, les rapports de conformité et la gestion des documents — construits spécifiquement pour les besoins des marchés africains.",
+        "tag": "Innovation"
+      },
+      {
+        "year": "2024",
+        "title": "Leadership Continental",
+        "description": "Mise à l'échelle des opérations stratégiques en Afrique de l'Ouest et Australe. Positionnement de FinPay Africa comme l'épine dorsale technologique principale pour la prochaine génération d'infrastructure financière du continent.",
+        "tag": "Leadership"
+      }
+    ]
+  },
+  "trust": {
+    "label": "Confiance Institutionnelle",
+    "title": "De Confiance des Institutions Financières et des Entreprises",
+    "subtitle": "Nos clients et partenaires sont parmi les organisations les plus réglementées et respectées du Rwanda — et ils nous font confiance avec leur noyau technologique.",
+    "partners": [
+      {
+        "name": "BNR",
+        "full": "Banque Nationale du Rwanda",
+        "type": "Régulateur"
+      },
+      {
+        "name": "RDB",
+        "full": "Conseil de Développement du Rwanda",
+        "type": "Gouvernement"
+      },
+      {
+        "name": "MINICT",
+        "full": "Ministère des TIC",
+        "type": "Gouvernement"
+      },
+      {
+        "name": "FinPay Africa",
+        "full": "Partenaire Fintech",
+        "type": "Partenaire"
+      },
+      {
+        "name": "NSI Group",
+        "full": "Nord Sud Industriess",
+        "type": "Groupe"
+      },
+      {
+        "name": "Microfinance",
+        "full": "Réseau IMF Rwanda",
+        "type": "Secteur"
+      }
+    ],
+    "badges": [
+      {
+        "icon": "shield",
+        "label": "Enregistré RDB",
+        "sub": "Entité officielle"
+      },
+      {
+        "icon": "lock",
+        "label": "Pratiques Sécurisées",
+        "sub": "Chiffré de bout en bout"
+      },
+      {
+        "icon": "clock",
+        "label": "Années d'Opération",
+        "sub": "Historique établi"
+      },
+      {
+        "icon": "check",
+        "label": "Conforme BNR",
+        "sub": "Aligné sur la réglementation"
+      }
+    ],
+    "disclaimer": "Les logos des partenaires sont représentatifs de nos domaines d'engagement. Les accords clients réels sont soumis à la confidentialité."
+  },
+  "cta": {
+    "badge": "Prêt à construire ensemble",
+    "title": {
+      "part1": "Construisons Ensemble l'Infrastructure Financière",
+      "part2": "de l'Afrique"
+    },
+    "description": "Que vous soyez une institution financière à la recherche d'un partenaire technologique fiable, une entreprise en quête de solutions numériques évolutives, ou une startup fintech ayant besoin d'une infrastructure experte — FinPay Africa est prête.",
+    "button": {
+      "primary": "Travailler Avec Nous"
+    },
+    "contact": {
+      "phone": "+250 782 567 921 / +250 795 263 269",
+      "location": "Kigali, Rwanda"
+    }
+  }
+}
