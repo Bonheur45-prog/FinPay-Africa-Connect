@@ -16,8 +16,8 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./StatsBand.module.css";
 
-export default function StatsBand({ items = [] }) {
-  const { t } = useTranslation("solutions");
+export default function StatsBand({ items = [], namespace = "solutions" }) {
+  const { t } = useTranslation(namespace);
   const bandRef = useRef(null);
 
   useEffect(() => {

@@ -30,8 +30,9 @@ export default function SolutionHero({
   primaryCta,
   secondaryCta,
   accent = "#f59e0b",
+  namespace = "solutions",
 }) {
-  const { t } = useTranslation("solutions");
+  const { t } = useTranslation(namespace);
   // Convert \n in the headline string to <br> elements for layout control
   const translatedHeadline = t(headline);
   const headlineLines = translatedHeadline.split("\n");

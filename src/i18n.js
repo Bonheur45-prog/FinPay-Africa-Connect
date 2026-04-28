@@ -9,6 +9,8 @@ import enAbout  from './locales/en/about.json';
 import enInvestors from './locales/en/investors.json';
 import enContact from './locales/en/contact.json';
 import enSolutions from './locales/en/solutions.json';
+import enDiaspora from './locales/en/diaspora.json';
+import enApi from './locales/en/api.json';
 
 // --- French ---
 import frCommon from './locales/fr/common.json';
@@ -18,6 +20,8 @@ import frAbout  from './locales/fr/about.json';
 import frInvestors from './locales/fr/investors.json';
 import frContact from './locales/fr/contact.json';
 import frSolutions from './locales/fr/solutions.json';
+import frDiaspora from './locales/fr/diaspora.json';
+import frApi from './locales/fr/api.json';
 
 
 i18n
@@ -32,6 +36,8 @@ i18n
         investors : enInvestors,
         contact : enContact,
         solutions : enSolutions,
+        diaspora : enDiaspora,
+        api : enApi,
       },
       fr: {
         common : frCommon,
@@ -41,6 +47,8 @@ i18n
         investors : frInvestors,
         contact : frContact,
         solutions : frSolutions,
+        diaspora : frDiaspora,
+        api : frApi,
       },
     },
 

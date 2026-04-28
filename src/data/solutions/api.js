@@ -8,6 +8,7 @@
  */
 
 const api = {
+  namespace: "api",
   meta: {
     title: "api.meta.title",
     description: "api.meta.description",

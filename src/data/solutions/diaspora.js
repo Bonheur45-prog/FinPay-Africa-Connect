@@ -8,11 +8,10 @@
  */
 
 const diaspora = {
+  namespace: "diaspora",
   meta: {
-    title: "Diaspora Money Transfers — FinPay Africa",
-    description:
-      "Fast, low-cost money transfers for African diaspora communities. " +
-      "Transparent FX, local payout options, and built-in compliance.",
+    title: "diaspora.meta.title",
+    description: "diaspora.meta.description",
   },
 
   sections: [
@@ -20,13 +19,11 @@ const diaspora = {
       type: "hero",
       background: "particles",
       data: {
-        badge: "Diaspora Remittances",
-        headline: "Send money home with speed, trust, and clarity",
-        sub:
-          "Low-fee transfers from Europe, North America and the Middle East " +
-          "into Africa, with local payout rails, market-leading FX, and full compliance.",
-        primaryCta: { label: "Start transfers", href: "/signup" },
-        secondaryCta: { label: "Talk to sales", href: "/contact" },
+        badge: "diaspora.hero.badge",
+        headline: "diaspora.hero.headline",
+        sub: "diaspora.hero.sub",
+        primaryCta: { label: "diaspora.hero.primaryCta.label", href: "/signup" },
+        secondaryCta: { label: "diaspora.hero.secondaryCta.label", href: "/contact" },
         accent: "#8C1A13",
       },
     },
@@ -35,49 +32,38 @@ const diaspora = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Diaspora-first payments",
-        headline: "Deliver faster, safer remittances for every corridor",
+        eyebrow: "diaspora.features1.eyebrow",
+        headline: "diaspora.features1.headline",
         items: [
           {
             icon: "globe",
-            title: "Global corridor coverage",
-            body:
-              "Support payouts from major diaspora hubs into local African accounts, " +
-              "mobile wallets, and cash pickup partners.",
+            title: "diaspora.features1.items.0.title",
+            body: "diaspora.features1.items.0.body",
           },
           {
             icon: "lightning",
-            title: "Fast settlement",
-            body:
-              "Most transfers settle in under 60 seconds with transparent routing " +
-              "and real-time notification updates.",
+            title: "diaspora.features1.items.1.title",
+            body: "diaspora.features1.items.1.body",
           },
           {
             icon: "shield",
-            title: "Built-in compliance",
-            body:
-              "AML screening, KYC checks, and sanctions filtering keep every transfer " +
-              "safe and auditable.",
+            title: "diaspora.features1.items.2.title",
+            body: "diaspora.features1.items.2.body",
           },
           {
             icon: "chart",
-            title: "Transparent FX pricing",
-            body:
-              "Show customers exact exchange rates and fees before they send, " +
-              "with no hidden costs.",
+            title: "diaspora.features1.items.3.title",
+            body: "diaspora.features1.items.3.body",
           },
           {
             icon: "code",
-            title: "Developer-friendly APIs",
-            body:
-              "Integrate remittance flows quickly with REST endpoints, webhooks, " +
-              "and customizable payout journeys.",
+            title: "diaspora.features1.items.4.title",
+            body: "diaspora.features1.items.4.body",
           },
           {
             icon: "lock",
-            title: "Secure onboardings",
-            body:
-              "Protect your brand with multi-layer fraud controls and secure settlement rails.",
+            title: "diaspora.features1.items.5.title",
+            body: "diaspora.features1.items.5.body",
           },
         ],
       },
@@ -88,10 +74,10 @@ const diaspora = {
       background: "gradient",
       data: {
         items: [
-          { value: "< 60s", label: "Average payout time" },
-          { value: "99.9%", label: "Transfer completion rate" },
-          { value: "24/7", label: "Support for diaspora corridors" },
-          { value: "Multi-currency", label: "EUR, USD, GBP, AED, and more" },
+          { value: "< 60s", label: "diaspora.stats.items.0.label" },
+          { value: "99.9%", label: "diaspora.stats.items.1.label" },
+          { value: "24/7", label: "diaspora.stats.items.2.label" },
+          { value: "Multi-currency", label: "diaspora.stats.items.3.label" },
         ],
       },
     },
@@ -100,47 +86,38 @@ const diaspora = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Designed for diaspora trust",
-        headline: "Connect families, businesses, and financial ecosystems",
+        eyebrow: "diaspora.features2.eyebrow",
+        headline: "diaspora.features2.headline",
         items: [
           {
             icon: "shield",
-            title: "Regulated payout partners",
-            body:
-              "Work with licensed local payers and banks across Africa for fast, " +
-              "compliant delivery.",
+            title: "diaspora.features2.items.0.title",
+            body: "diaspora.features2.items.0.body",
           },
           {
             icon: "globe",
-            title: "Multi-rail support",
-            body:
-              "Offer bank transfers, mobile wallet credit, and cash collection in key markets.",
+            title: "diaspora.features2.items.1.title",
+            body: "diaspora.features2.items.1.body",
           },
           {
             icon: "card",
-            title: "Consumer-friendly experience",
-            body:
-              "Keep the customer journey simple with clear fees, rate locking, " +
-              "and instant status updates.",
+            title: "diaspora.features2.items.2.title",
+            body: "diaspora.features2.items.2.body",
           },
           {
             icon: "chart",
-            title: "Data-driven insights",
-            body:
-              "Measure corridor performance, customer retention, and FX margins " +
-              "from one dashboard.",
+            title: "diaspora.features2.items.3.title",
+            body: "diaspora.features2.items.3.body",
           },
           {
             icon: "code",
-            title: "White-label flows",
-            body:
-              "Brand the remittance experience as your own while FinPay handles the rails.",
+            title: "diaspora.features2.items.4.title",
+            body: "diaspora.features2.items.4.body",
           },
           {
             icon: "lock",
-            title: "Secure funding",
-            body:
-              "Protect customer deposits with strong settlement controls and secure wallets.",
+            title: "diaspora.features2.items.5.title",
+            body: "diaspora.features2.items.5.body",
           },
         ],
       },
@@ -150,12 +127,11 @@ const diaspora = {
       type: "cta",
       background: "gradient",
       data: {
-        headline: "Launch diaspora transfers with confidence",
-        sub:
-          "Enable low-cost, fast, compliant remittances for African diaspora customers.",
-        primaryCta: { label: "Get started", href: "/signup" },
-        secondaryCta: { label: "Book a demo", href: "/contact" },
-        trust: "Trusted by diaspora fintechs · No setup fee · Full API control",
+        headline: "diaspora.cta.headline",
+        sub: "diaspora.cta.sub",
+        primaryCta: { label: "diaspora.cta.primaryCta.label", href: "/signup" },
+        secondaryCta: { label: "diaspora.cta.secondaryCta.label", href: "/contact" },
+        trust: "diaspora.cta.trust",
       },
     },
   ],

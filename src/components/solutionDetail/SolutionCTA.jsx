@@ -22,8 +22,9 @@ export default function SolutionCTA({
   primaryCta,
   secondaryCta,
   trust,
+  namespace = "solutions",
 }) {
-  const { t } = useTranslation("solutions");
+  const { t } = useTranslation(namespace);
   const blockRef = useRef(null);
 
   // Fade in once the block enters the viewport

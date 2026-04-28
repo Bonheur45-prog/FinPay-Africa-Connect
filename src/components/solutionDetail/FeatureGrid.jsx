@@ -56,8 +56,8 @@ function FallbackIcon() {
 // ─────────────────────────────────────────────────────────────────
 // COMPONENT
 // ─────────────────────────────────────────────────────────────────
-export default function FeatureGrid({ eyebrow, headline, items = [] }) {
-  const { t } = useTranslation("solutions");
+export default function FeatureGrid({ eyebrow, headline, items = [], namespace = "solutions" }) {
+  const { t } = useTranslation(namespace);
   const gridRef = useRef(null);
 
   useEffect(() => {
