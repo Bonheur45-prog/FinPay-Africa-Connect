@@ -9,10 +9,8 @@
 
 const api = {
   meta: {
-    title: "Payment API & Infrastructure — FinPay Africa",
-    description:
-      "Build payment-enabled apps with a unified API, secure infrastructure, " +
-      "and local settlement rails designed for African markets.",
+    title: "api.meta.title",
+    description: "api.meta.description",
   },
 
   sections: [
@@ -20,13 +18,11 @@ const api = {
       type: "hero",
       background: "particles",
       data: {
-        badge: "Payment API",
-        headline: "Power payments with one API and enterprise-grade infrastructure",
-        sub:
-          "Integrate checkout, reconciliation, compliance and settlement " +
-          "with a single platform built for Africa’s fastest growing apps.",
-        primaryCta: { label: "Explore the API", href: "/signup" },
-        secondaryCta: { label: "Request a demo", href: "/contact" },
+        badge: "api.hero.badge",
+        headline: "api.hero.headline",
+        sub: "api.hero.sub",
+        primaryCta: { label: "api.hero.primaryCta.label", href: "/signup" },
+        secondaryCta: { label: "api.hero.secondaryCta.label", href: "/contact" },
         accent: "#7c3aed",
       },
     },
@@ -35,50 +31,38 @@ const api = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Developer-first infrastructure",
-        headline: "One API. Multiple payment rails. Zero infrastructure overhead.",
+        eyebrow: "api.features1.eyebrow",
+        headline: "api.features1.headline",
         items: [
           {
             icon: "code",
-            title: "Unified payment endpoints",
-            body:
-              "Accept cards, bank transfers, mobile money and wallets through one " +
-              "REST API with SDKs for web and mobile.",
+            title: "api.features1.items.0.title",
+            body: "api.features1.items.0.body",
           },
           {
             icon: "lock",
-            title: "PCI-ready security",
-            body:
-              "Hosted tokenization, secure vaults, and compliance checks built " +
-              "into every payment flow.",
+            title: "api.features1.items.1.title",
+            body: "api.features1.items.1.body",
           },
           {
             icon: "globe",
-            title: "Local settlement rails",
-            body:
-              "Connected to local banks, wallets and cash networks across Africa " +
-              "for fast, compliant payouts.",
+            title: "api.features1.items.2.title",
+            body: "api.features1.items.2.body",
           },
           {
             icon: "chart",
-            title: "Smart routing",
-            body:
-              "Route payments automatically on cost, speed, and currency availability " +
-              "for the best customer experience.",
+            title: "api.features1.items.3.title",
+            body: "api.features1.items.3.body",
           },
           {
             icon: "clock",
-            title: "Real-time reconciliation",
-            body:
-              "Track settlements, refunds and disputes instantly with webhooks " +
-              "and ledger-ready reporting.",
+            title: "api.features1.items.4.title",
+            body: "api.features1.items.4.body",
           },
           {
             icon: "shield",
-            title: "Built-in compliance",
-            body:
-              "KYC, AML and sanctions screening are embedded in the payment path, " +
-              "so every transaction stays compliant.",
+            title: "api.features1.items.5.title",
+            body: "api.features1.items.5.body",
           },
         ],
       },
@@ -89,10 +73,10 @@ const api = {
       background: "gradient",
       data: {
         items: [
-          { value: "99.99%", label: "API uptime" },
-          { value: "< 50ms", label: "Average response time" },
-          { value: "100+", label: "Integration endpoints" },
-          { value: "24/7", label: "Infrastructure monitoring" },
+          { value: "99.99%", label: "api.stats.items.0.label" },
+          { value: "< 50ms", label: "api.stats.items.1.label" },
+          { value: "100+", label: "api.stats.items.2.label" },
+          { value: "24/7", label: "api.stats.items.3.label" },
         ],
       },
     },
@@ -101,50 +85,38 @@ const api = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Infrastructure for scale",
-        headline: "Secure, resilient systems for high-volume payments",
+        eyebrow: "api.features2.eyebrow",
+        headline: "api.features2.headline",
         items: [
           {
             icon: "card",
-            title: "Payment orchestration",
-            body:
-              "A resilient core routes funds across rails with retries, fallback " +
-              "paths and payout guarantees.",
+            title: "api.features2.items.0.title",
+            body: "api.features2.items.0.body",
           },
           {
             icon: "lock",
-            title: "Enterprise security",
-            body:
-              "Role-based access, audit logs, and encryption protect your users " +
-              "and your business.",
+            title: "api.features2.items.1.title",
+            body: "api.features2.items.1.body",
           },
           {
             icon: "globe",
-            title: "Regional connectivity",
-            body:
-              "Local currency support and settlement partners in key African markets " +
-              "reduce friction and speed payouts.",
+            title: "api.features2.items.2.title",
+            body: "api.features2.items.2.body",
           },
           {
             icon: "code",
-            title: "SDKs & webhooks",
-            body:
-              "Ship faster with SDKs, ready-made UI components, and webhook events " +
-              "for every payment lifecycle state.",
+            title: "api.features2.items.3.title",
+            body: "api.features2.items.3.body",
           },
           {
             icon: "chart",
-            title: "Insightful dashboards",
-            body:
-              "Monitor transaction health, revenue metrics, and partner performance " +
-              "from one analytics panel.",
+            title: "api.features2.items.4.title",
+            body: "api.features2.items.4.body",
           },
           {
             icon: "shield",
-            title: "Fraud prevention",
-            body:
-              "Adaptive risk scoring and fraud rules reduce chargebacks and protect " +
-              "customer trust.",
+            title: "api.features2.items.5.title",
+            body: "api.features2.items.5.body",
           },
         ],
       },
@@ -154,13 +126,11 @@ const api = {
       type: "cta",
       background: "gradient",
       data: {
-        headline: "Launch payment APIs your team can trust",
-        sub:
-          "From startups to enterprise, use modern infrastructure that handles " +
-          "payments, compliance, and settlement in one platform.",
-        primaryCta: { label: "Start building", href: "/signup" },
-        secondaryCta: { label: "Talk to sales", href: "/contact" },
-        trust: "PCI-ready · ISO 27001 · Built for African payments",
+        headline: "api.cta.headline",
+        sub: "api.cta.sub",
+        primaryCta: { label: "api.cta.primaryCta.label", href: "/signup" },
+        secondaryCta: { label: "api.cta.secondaryCta.label", href: "/contact" },
+        trust: "api.cta.trust",
       },
     },
   ],

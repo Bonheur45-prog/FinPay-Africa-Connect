@@ -1,0 +1,110 @@
+{
+  "api": {
+    "meta": {
+      "title": "API de Paiement & Infrastructure — FinPay Africa",
+      "description": "Créez des applications compatibles avec les paiements grâce à une API unifiée, une infrastructure sécurisée et des rails de règlement locaux conçus pour les marchés africains les plus dynamiques."
+    },
+    "hero": {
+      "badge": "API de Paiement",
+      "headline": "Alimentez les paiements avec une API unique et une infrastructure de niveau entreprise",
+      "sub": "Intégrez le checkout, la réconciliation, la conformité et le règlement avec une plateforme unique conçue pour les applications africaines à la croissance la plus rapide.",
+      "primaryCta": {
+        "label": "Explorer l'API"
+      },
+      "secondaryCta": {
+        "label": "Demander une démo"
+      }
+    },
+    "features1": {
+      "eyebrow": "Infrastructure axée sur les développeurs",
+      "headline": "Une API. Plusieurs rails de paiement. Zéro surcharge d'infrastructure.",
+      "items": [
+        {
+          "title": "Points de terminaison de paiement unifiés",
+          "body": "Acceptez les cartes, les virements bancaires, l'argent mobile et les portefeuilles via une API REST unique avec des SDK pour le web et le mobile."
+        },
+        {
+          "title": "Sécurité prête pour PCI",
+          "body": "Tokenisation hébergée, coffres-forts sécurisés et vérifications de conformité intégrées dans chaque flux de paiement."
+        },
+        {
+          "title": "Rails de règlement locaux",
+          "body": "Connecté aux banques locales, portefeuilles et réseaux d'argent liquide à travers l'Afrique pour des paiements rapides et conformes."
+        },
+        {
+          "title": "Routage intelligent",
+          "body": "Routez les paiements automatiquement en fonction du coût, de la vitesse et de la disponibilité des devises pour la meilleure expérience client."
+        },
+        {
+          "title": "Rapprochement en temps réel",
+          "body": "Suivez les règlements, remboursements et litiges instantanément avec des webhooks et des rapports prêts pour le grand livre."
+        },
+        {
+          "title": "Conformité intégrée",
+          "body": "Les screenings KYC, AML et sanctions sont intégrés dans le chemin de paiement, pour que chaque transaction reste conforme."
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "99.99%",
+          "label": "Disponibilité de l'API"
+        },
+        {
+          "value": "< 50ms",
+          "label": "Temps de réponse moyen"
+        },
+        {
+          "value": "100+",
+          "label": "Points de terminaison d'intégration"
+        },
+        {
+          "value": "24/7",
+          "label": "Surveillance de l'infrastructure"
+        }
+      ]
+    },
+    "features2": {
+      "eyebrow": "Infrastructure pour l'échelle",
+      "headline": "Systèmes sécurisés et résilients pour les paiements à haut volume",
+      "items": [
+        {
+          "title": "Orchestration des paiements",
+          "body": "Un cœur résilient route les fonds à travers les rails avec des tentatives, des chemins de secours et des garanties de paiement."
+        },
+        {
+          "title": "Sécurité d'entreprise",
+          "body": "Accès basé sur les rôles, journaux d'audit et chiffrement protègent vos utilisateurs et votre entreprise."
+        },
+        {
+          "title": "Connectivité régionale",
+          "body": "Support des devises locales et partenaires de règlement dans les marchés africains clés réduisent les frictions et accélèrent les paiements."
+        },
+        {
+          "title": "SDK et webhooks",
+          "body": "Déployez plus rapidement avec des SDK, des composants UI prêts à l'emploi et des événements webhook pour chaque état du cycle de vie des paiements."
+        },
+        {
+          "title": "Tableaux de bord perspicaces",
+          "body": "Surveillez la santé des transactions, les métriques de revenus et les performances des partenaires depuis un panneau d'analyse unique."
+        },
+        {
+          "title": "Prévention de la fraude",
+          "body": "Le scoring de risque adaptatif et les règles de fraude réduisent les rejets de paiement et protègent la confiance des clients."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Lancez des API de paiement en lesquelles votre équipe peut avoir confiance",
+      "sub": "Des startups aux entreprises, utilisez une infrastructure moderne qui gère les paiements, la conformité et le règlement en une seule plateforme.",
+      "primaryCta": {
+        "label": "Commencer à construire"
+      },
+      "secondaryCta": {
+        "label": "Parler aux ventes"
+      },
+      "trust": "Prêt pour PCI · ISO 27001 · Conçu pour les paiements africains"
+    }
+  }
+}

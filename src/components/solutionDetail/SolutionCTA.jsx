@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./SolutionCTA.module.css";
 
 export default function SolutionCTA({
@@ -22,6 +23,7 @@ export default function SolutionCTA({
   secondaryCta,
   trust,
 }) {
+  const { t } = useTranslation("solutions");
   const blockRef = useRef(null);
 
   // Fade in once the block enters the viewport
@@ -43,7 +45,8 @@ export default function SolutionCTA({
     return () => observer.disconnect();
   }, []);
 
-  const headlineLines = (headline ?? "").split("\n");
+  const translatedHeadline = t(headline);
+  const headlineLines = translatedHeadline.split("\n");
 
   return (
     <section className={styles.section}>
@@ -60,17 +63,17 @@ export default function SolutionCTA({
             ))}
           </h2>
 
-          {sub && <p className={styles.sub}>{sub}</p>}
+          {sub && <p className={styles.sub}>{t(sub)}</p>}
 
           <div className={styles.actions}>
             {primaryCta && (
               <a href={primaryCta.href} className={styles.btnPrimary}>
-                {primaryCta.label}
+                {t(primaryCta.label)}
               </a>
             )}
             {secondaryCta && (
               <a href={secondaryCta.href} className={styles.btnSecondary}>
-                {secondaryCta.label}
+                {t(secondaryCta.label)}
               </a>
             )}
           </div>
@@ -78,7 +81,7 @@ export default function SolutionCTA({
           {trust && (
             <p className={styles.trust}>
               <span className={styles.trustDot} aria-hidden="true" />
-              {trust}
+              {t(trust)}
             </p>
           )}
 
