@@ -11,6 +11,9 @@ import enContact from './locales/en/contact.json';
 import enSolutions from './locales/en/solutions.json';
 import enDiaspora from './locales/en/diaspora.json';
 import enApi from './locales/en/api.json';
+import enCards from './locales/en/cards.json';
+import enKyc from './locales/en/kyc.json';
+import enCrossBorder from './locales/en/crossBorder.json';
 
 // --- French ---
 import frCommon from './locales/fr/common.json';
@@ -22,6 +25,9 @@ import frContact from './locales/fr/contact.json';
 import frSolutions from './locales/fr/solutions.json';
 import frDiaspora from './locales/fr/diaspora.json';
 import frApi from './locales/fr/api.json';
+import frCards from './locales/fr/cards.json';
+import frKyc from './locales/fr/kyc.json';
+import frCrossBorder from './locales/fr/crossBorder.json';
 
 
 i18n
@@ -38,6 +44,9 @@ i18n
         solutions : enSolutions,
         diaspora : enDiaspora,
         api : enApi,
+        cards : enCards,
+        kyc : enKyc,
+        crossBorder : enCrossBorder,
       },
       fr: {
         common : frCommon,
@@ -49,6 +58,9 @@ i18n
         solutions : frSolutions,
         diaspora : frDiaspora,
         api : frApi,
+        cards : frCards,
+        kyc : frKyc,
+        crossBorder : frCrossBorder,
       },
     },
 

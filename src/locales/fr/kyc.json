@@ -1,0 +1,80 @@
+{
+  "kyc": {
+    "meta": {
+      "title": "Vérification d'Identité & KYC — FinPay Africa",
+      "description": "Screening KYC et AML automatisé pour un onboarding rapide et conforme des individus et entreprises à travers l'Afrique."
+    },
+    "hero": {
+      "badge": "Conformité",
+      "headline": "Connaissez votre client.\nProtégez votre entreprise.",
+      "sub": "KYC automatisé, screening AML et vérification d'identité — conçu pour les types d'ID africains. Onboardez en secondes. Restez conforme pour toujours.",
+      "primaryCta": {
+        "label": "Commencer à vérifier"
+      },
+      "secondaryCta": {
+        "label": "Lire la documentation"
+      }
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "< 8s",
+          "label": "Temps moyen KYC"
+        },
+        {
+          "value": "98.4%",
+          "label": "Précision de vérification"
+        },
+        {
+          "value": "50+",
+          "label": "Listes de sanctions criblées"
+        },
+        {
+          "value": "22",
+          "label": "Types d'ID africains pris en charge"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Conformité à l'échelle",
+      "headline": "Vérifiez quiconque,\nn'importe où en Afrique",
+      "items": [
+        {
+          "title": "Support multi-documents ID",
+          "body": "IDs nationales, passeports, permis de conduire et cartes d'électeur — de 54 pays africains — vérifiés avec OCR alimenté par IA."
+        },
+        {
+          "title": "Détection de vivacité",
+          "body": "Vérifications de vivacité passive en moins de 3 secondes. Empêche la tromperie avec des photos imprimées ou des vidéos enregistrées."
+        },
+        {
+          "title": "Screening AML et sanctions",
+          "body": "Screening en temps réel contre 50+ listes de sanctions globales, bases de données PEP et médias défavorables — à chaque onboarding et transaction."
+        },
+        {
+          "title": "Résultats notés par risque",
+          "body": "Chaque vérification retourne un score de risque avec des codes de raison détaillés, pour que votre équipe de conformité puisse prendre des décisions rapides et audibles."
+        },
+        {
+          "title": "Sans code + API",
+          "body": "Intégrez notre flux KYC hébergé avec une ligne de code, ou construisez un parcours entièrement personnalisé en utilisant notre API de Vérification headless."
+        },
+        {
+          "title": "Enregistrements prêts pour audit",
+          "body": "Chaque vérification est stockée avec horodatage, preuves et journal de décision. Export en un clic pour les demandes de régulateur."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Onboarding conforme\nen minutes, pas en mois",
+      "sub": "Approuvé par les fintechs et banques licenciées à travers l'Afrique.",
+      "primaryCta": {
+        "label": "Essayez gratuitement"
+      },
+      "secondaryCta": {
+        "label": "Demander une démo"
+      },
+      "trust": "Conforme GDPR & NDPR · SOC 2 Type II · Données restent en région"
+    }
+  }
+}

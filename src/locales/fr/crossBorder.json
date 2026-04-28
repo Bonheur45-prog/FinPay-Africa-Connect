@@ -1,0 +1,80 @@
+{
+  "crossBorder": {
+    "meta": {
+      "title": "Paiements Transfrontaliers Instantanés — FinPay Africa",
+      "description": "Règlement en temps réel dans 150+ pays. Tarification transparente. Pas de frais cachés."
+    },
+    "hero": {
+      "badge": "Paiements Transfrontaliers",
+      "headline": "Déplacez l'argent globalement\navec vitesse et transparence",
+      "sub": "Règlement en temps réel dans 150+ pays. Tarification transparente. Pas de frais cachés.",
+      "primaryCta": {
+        "label": "Commencer"
+      },
+      "secondaryCta": {
+        "label": "Voir la documentation"
+      }
+    },
+    "features": {
+      "eyebrow": "Couverture globale",
+      "headline": "Envoyez de l'argent partout\nen secondes",
+      "items": [
+        {
+          "title": "150+ pays",
+          "body": "Règlement en temps réel vers des comptes bancaires et portefeuilles mobiles dans le monde entier."
+        },
+        {
+          "title": "Transferts instantanés",
+          "body": "La plupart des corridors se règlent en moins de 60 secondes — pas de retards, pas d'excuses."
+        },
+        {
+          "title": "Tarification transparente",
+          "body": "Pas de frais cachés. Connaissez votre coût exact avant d'envoyer."
+        },
+        {
+          "title": "Conformité complète",
+          "body": "Screening des sanctions intégré et vérifications AML sur chaque transaction."
+        },
+        {
+          "title": "API d'abord",
+          "body": "Intégrez les paiements dans votre app. Webhooks pour les mises à jour de règlement en temps réel."
+        },
+        {
+          "title": "Sécurité de niveau entreprise",
+          "body": "Paiements multi-signatures, détection de fraude et résolution de litiges."
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "< 60s",
+          "label": "Temps de règlement"
+        },
+        {
+          "value": "150+",
+          "label": "Pays couverts"
+        },
+        {
+          "value": "0.8%",
+          "label": "Frais moyen"
+        },
+        {
+          "value": "$2M+",
+          "label": "Volume traité quotidiennement"
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Commencez à envoyer globalement\naujourd'hui",
+      "sub": "Pas de frais de configuration. Pas de volume minimum. Payez au fur et à mesure.",
+      "primaryCta": {
+        "label": "Ouvrir un compte"
+      },
+      "secondaryCta": {
+        "label": "Parler aux ventes"
+      },
+      "trust": "Soutenu par les principaux investisseurs fintech · Certifié ISO 27001"
+    }
+  }
+}

@@ -7,12 +7,12 @@
 
 const kyc = {
   slug: "kyc",
+  namespace: "kyc",
 
   meta: {
-    title: "Identity & KYC Verification — FinPay Africa",
+    title: "kyc.meta.title",
     description:
-      "Automated KYC and AML screening for fast, compliant onboarding " +
-      "of individuals and businesses across Africa.",
+      "kyc.meta.description",
   },
 
   sections: [
@@ -20,13 +20,12 @@ const kyc = {
       type: "hero",
       background: "particles",
       data: {
-        badge: "Compliance",
-        headline: "Know your customer.\nProtect your business.",
+        badge: "kyc.hero.badge",
+        headline: "kyc.hero.headline",
         sub:
-          "Automated KYC, AML screening, and identity verification — " +
-          "built for African ID types. Onboard in seconds. Stay compliant forever.",
-        primaryCta:   { label: "Start verifying",       href: "/signup"  },
-        secondaryCta: { label: "Read the docs",         href: "/docs"    },
+          "kyc.hero.sub",
+        primaryCta:   { label: "kyc.hero.primaryCta.label",       href: "/signup"  },
+        secondaryCta: { label: "kyc.hero.secondaryCta.label",         href: "/docs"    },
         accent: "#22c55e",
       },
     },
@@ -36,10 +35,10 @@ const kyc = {
       background: "gradient",
       data: {
         items: [
-          { value: "< 8s",  label: "Average KYC time"     },
-          { value: "98.4%", label: "Verification accuracy" },
-          { value: "50+",   label: "Sanction lists screened"},
-          { value: "22",    label: "African ID types supported"},
+          { value: "< 8s",  label: "kyc.stats.items.0.label"     },
+          { value: "98.4%", label: "kyc.stats.items.1.label" },
+          { value: "50+",   label: "kyc.stats.items.2.label"},
+          { value: "22",    label: "kyc.stats.items.3.label"},
         ],
       },
     },
@@ -48,50 +47,44 @@ const kyc = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Compliance at scale",
-        headline: "Verify anyone,\nanywhere in Africa",
+        eyebrow: "kyc.features.eyebrow",
+        headline: "kyc.features.headline",
         items: [
           {
             icon: "shield",
-            title: "Multi-document ID support",
+            title: "kyc.features.items.0.title",
             body:
-              "National IDs, passports, driver licences, and voter cards — " +
-              "from 54 African countries — verified with AI-powered OCR.",
+              "kyc.features.items.0.body",
           },
           {
             icon: "lightning",
-            title: "Liveness detection",
+            title: "kyc.features.items.1.title",
             body:
-              "Passive liveness checks in under 3 seconds. " +
-              "Prevents spoofing with printed photos or recorded videos.",
+              "kyc.features.items.1.body",
           },
           {
             icon: "globe",
-            title: "AML & sanctions screening",
+            title: "kyc.features.items.2.title",
             body:
-              "Real-time screening against 50+ global sanction lists, PEP " +
-              "databases, and adverse media — on every onboarding and transaction.",
+              "kyc.features.items.2.body",
           },
           {
             icon: "chart",
-            title: "Risk-scored results",
+            title: "kyc.features.items.3.title",
             body:
-              "Every verification returns a risk score with detailed reason codes, " +
-              "so your compliance team can make fast, auditable decisions.",
+              "kyc.features.items.3.body",
           },
           {
             icon: "code",
-            title: "No-code + API",
+            title: "kyc.features.items.4.title",
             body:
-              "Drop in our hosted KYC flow with one line of code, or build " +
-              "a fully custom journey using our headless Verification API.",
+              "kyc.features.items.4.body",
           },
           {
             icon: "clock",
-            title: "Audit-ready records",
+            title: "kyc.features.items.5.title",
             body:
-              "Every check is stored with timestamp, evidence, and decision log. " +
-              "One-click export for regulator requests.",
+              "kyc.features.items.5.body",
           },
         ],
       },
@@ -101,11 +94,11 @@ const kyc = {
       type: "cta",
       background: "gradient",
       data: {
-        headline: "Compliant onboarding\nin minutes, not months",
-        sub: "Trusted by licensed fintechs and banks across Africa.",
-        primaryCta:   { label: "Try for free",      href: "/signup"  },
-        secondaryCta: { label: "Request a demo",    href: "/contact" },
-        trust: "GDPR & NDPR compliant · SOC 2 Type II · Data stays in-region",
+        headline: "kyc.cta.headline",
+        sub: "kyc.cta.sub",
+        primaryCta:   { label: "kyc.cta.primaryCta.label",      href: "/signup"  },
+        secondaryCta: { label: "kyc.cta.secondaryCta.label",    href: "/contact" },
+        trust: "kyc.cta.trust",
       },
     },
   ],

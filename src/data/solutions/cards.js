@@ -10,13 +10,12 @@
  */
 
 const cards = {
+  namespace: "cards",
   slug: "cards",
 
   meta: {
-    title: "Virtual & Physical Cards — FinPay Africa",
-    description:
-      "Issue branded cards to customers and employees. " +
-      "Real-time spend controls, worldwide acceptance.",
+    title: "cards.meta.title",
+    description: "cards.meta.description",
   },
 
   sections: [
@@ -24,13 +23,11 @@ const cards = {
       type: "hero",
       background: "particles",
       data: {
-        badge: "Cards Issuing",
-        headline: "Your brand,\nin every wallet",
-        sub:
-          "Issue branded virtual or physical Visa / Mastercard cards to anyone " +
-          "in Africa. Real-time spend controls. Instant freeze. Zero card-present fraud.",
-        primaryCta:   { label: "Get your card programme", href: "/signup"   },
-        secondaryCta: { label: "View documentation",      href: "/docs"     },
+        badge: "cards.hero.badge",
+        headline: "cards.hero.headline",
+        sub: "cards.hero.sub",
+        primaryCta:   { label: "cards.hero.primaryCta.label", href: "/signup"   },
+        secondaryCta: { label: "cards.hero.secondaryCta.label",      href: "/docs"     },
         accent: "#8C1A13",
       },
     },
@@ -40,10 +37,10 @@ const cards = {
       background: "gradient",
       data: {
         items: [
-          { value: "< 30s",  label: "Card issuance time"   },
-          { value: "190+",   label: "Countries accepted"   },
-          { value: "0%",     label: "Card-present fraud"   },
-          { value: "Real-time", label: "Spend controls"    },
+          { value: "< 30s",  label: "cards.stats.items.0.label"   },
+          { value: "190+",   label: "cards.stats.items.1.label"   },
+          { value: "0%",     label: "cards.stats.items.2.label"   },
+          { value: "Real-time", label: "cards.stats.items.3.label"    },
         ],
       },
     },
@@ -52,50 +49,38 @@ const cards = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Everything included",
-        headline: "One platform,\nevery card type",
+        eyebrow: "cards.features.eyebrow",
+        headline: "cards.features.headline",
         items: [
           {
             icon: "card",
-            title: "Virtual cards — instant",
-            body:
-              "Spin up virtual cards for online payments, subscriptions, " +
-              "or employee expenses in under 30 seconds via API or dashboard.",
+            title: "cards.features.items.0.title",
+            body: "cards.features.items.0.body",
           },
           {
             icon: "globe",
-            title: "Physical card production",
-            body:
-              "White-label physical cards with your brand, chip, contactless, " +
-              "and PIN. Delivered anywhere in Africa within 5 business days.",
+            title: "cards.features.items.1.title",
+            body: "cards.features.items.1.body",
           },
           {
             icon: "shield",
-            title: "Real-time spend controls",
-            body:
-              "Set limits by category, merchant, time, geography, or amount. " +
-              "Freeze / unfreeze any card in milliseconds via API.",
+            title: "cards.features.items.2.title",
+            body: "cards.features.items.2.body",
           },
           {
             icon: "chart",
-            title: "Transaction reporting",
-            body:
-              "Live transaction feeds, categorised spend analytics, and " +
-              "exportable statements — for your finance team or your customers.",
+            title: "cards.features.items.3.title",
+            body: "cards.features.items.3.body",
           },
           {
             icon: "lightning",
-            title: "Instant top-up",
-            body:
-              "Fund cards directly from your FinPay wallet. Real-time balance " +
-              "updates pushed to your system via Webhooks.",
+            title: "cards.features.items.4.title",
+            body: "cards.features.items.4.body",
           },
           {
             icon: "code",
-            title: "Full API control",
-            body:
-              "Create, fund, freeze, and close cards programmatically. " +
-              "Embed card management into your own app with our white-label SDK.",
+            title: "cards.features.items.5.title",
+            body: "cards.features.items.5.body",
           },
         ],
       },
@@ -105,11 +90,11 @@ const cards = {
       type: "cta",
       background: "gradient",
       data: {
-        headline: "Launch your card\nprogramme today",
-        sub: "From fintech startups to enterprise — we scale with you.",
-        primaryCta:   { label: "Start issuing cards", href: "/signup"   },
-        secondaryCta: { label: "Talk to our team",    href: "/contact"  },
-        trust: "Visa & Mastercard certified · No minimum volume · Full API access",
+        headline: "cards.cta.headline",
+        sub: "cards.cta.sub",
+        primaryCta:   { label: "cards.cta.primaryCta.label", href: "/signup"   },
+        secondaryCta: { label: "cards.cta.secondaryCta.label",    href: "/contact"  },
+        trust: "cards.cta.trust",
       },
     },
   ],
