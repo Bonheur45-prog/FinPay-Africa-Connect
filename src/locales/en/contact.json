@@ -1,0 +1,161 @@
+{
+  "hero": {
+    "eyebrow": "Get In Touch",
+    "title": {
+      "part1": "We Reply Within",
+      "highlight": "24 Hours"
+    },
+    "subtitle": "Whether you're a potential partner, an investor, or simply want to know more about what we're building at FinPay Africa — we'd love to hear from you.",
+    "intentLinks": [
+      {
+        "icon": "message",
+        "label": "General Inquiry",
+        "desc": "Questions, feedback, or any other message",
+        "href": "#contact-form",
+        "subject": "general"
+      },
+      {
+        "icon": "users",
+        "label": "Partnership Request",
+        "desc": "Explore a strategic collaboration with us",
+        "href": "#contact-form",
+        "subject": "partnership"
+      },
+      {
+        "icon": "dollar",
+        "label": "Investor Inquiry",
+        "desc": "Request our pitch deck or schedule a call",
+        "href": "#contact-form",
+        "subject": "investor"
+      }
+    ]
+  },
+  "form": {
+    "header": {
+      "eyebrow": "Send us a message",
+      "title": "How can we help?"
+    },
+    "subjects": [
+      {
+        "key": "general",
+        "label": "General",
+        "placeholder": "Tell us how we can help you..."
+      },
+      {
+        "key": "partnership",
+        "label": "Partnership",
+        "placeholder": "Describe the partnership you have in mind..."
+      },
+      {
+        "key": "investor",
+        "label": "Investor",
+        "placeholder": "Tell us about your investment interests..."
+      }
+    ],
+    "labels": {
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Jean Paul",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Ngabonziza",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+32 478 00 00 00",
+      "organization": "Organization",
+      "organizationPlaceholder": "Company or organization name",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "optional": "optional"
+    },
+    "validation": {
+      "firstName": "First name is required",
+      "lastName": "Last name is required",
+      "email": "Enter a valid email address",
+      "organization": "Organization name is required for partnership requests",
+      "message": "Please write a message"
+    },
+    "buttons": {
+      "send": "Send Message",
+      "sending": "Sending…"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for reaching out. A member of our team will get back to you within 24 hours.",
+      "button": "Send another message"
+    },
+    "privacy": "We respect your privacy. Your information is never shared with third parties."
+  },
+  "info": {
+    "eyebrow": "Our Team",
+    "title": "Talk to the Right Person",
+    "subtitle": "Our team spans Belgium, Burundi, and Rwanda — covering Europe and East Africa time zones. Reach out directly to whoever is closest to your need.",
+    "team": [
+      {
+        "name": "Richard Michel",
+        "role": "Founding Partner",
+        "email": "rmichel@nsi-monetique.com",
+        "phone": "+32 478 63 71 41",
+        "location": "Brussels, Belgium",
+        "flag": "🇧🇪",
+        "timezone": "CET (UTC+1)",
+        "initials": "RM",
+        "gradientFrom": "#7a0e0e",
+        "gradientTo": "#e8760a",
+        "availability": "Mon–Fri, 9:00–18:00 CET"
+      },
+      {
+        "name": "Charles Nzeyimana",
+        "role": "Regional Director",
+        "email": "c.nzeyima@nsi-monetique.com",
+        "phone": "+257 79 591 466",
+        "location": "Bujumbura, Burundi",
+        "flag": "🇧🇮",
+        "timezone": "EAT (UTC+3)",
+        "initials": "CN",
+        "gradientFrom": "#1a2e5a",
+        "gradientTo": "#3a6bba",
+        "availability": "Mon–Fri, 8:00–17:00 EAT"
+      },
+      {
+        "name": "Jean Paul Ngabonziza",
+        "role": "East Africa Director",
+        "email": "jp.ngabonziza@nsi-monetique.com",
+        "phone": "+250 788 624 389",
+        "location": "Kigali, Rwanda",
+        "flag": "🇷🇼",
+        "timezone": "EAT (UTC+3)",
+        "initials": "JN",
+        "gradientFrom": "#2d5a1a",
+        "gradientTo": "#5a9a3a",
+        "availability": "Mon–Fri, 8:00–17:00 EAT"
+      }
+    ],
+    "channels": [
+      {
+        "type": "mail",
+        "title": "Email Us",
+        "detail": "rmichel@nsi-monetique.com",
+        "sub": "We reply within 24 hours",
+        "href": "mailto:rmichel@nsi-monetique.com"
+      },
+      {
+        "type": "phone",
+        "title": "Call Us",
+        "detail": "+32 478 63 71 41",
+        "sub": "Belgium office — Mon–Fri",
+        "href": "tel:+32478637141"
+      },
+      {
+        "type": "clock",
+        "title": "Response Time",
+        "detail": "Within 24 Hours",
+        "sub": "For all inquiries, guaranteed",
+        "href": null
+      }
+    ],
+    "brand": {
+      "name": "FinPay Africa",
+      "tagline": "Connecting you with your loved ones"
+    }
+  }
+}

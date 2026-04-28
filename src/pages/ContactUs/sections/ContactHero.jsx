@@ -5,34 +5,18 @@
  */
 
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MessageSquare, Users, DollarSign, ArrowRight } from 'lucide-react';
 import styles from './ContactHero.module.css';
 
-const INTENT_LINKS = [
-  {
-    icon: <MessageSquare size={20} strokeWidth={2} />,
-    label: 'General Inquiry',
-    desc: 'Questions, feedback, or any other message',
-    href: '#contact-form',
-    subject: 'general',
-  },
-  {
-    icon: <Users size={20} strokeWidth={2} />,
-    label: 'Partnership Request',
-    desc: 'Explore a strategic collaboration with us',
-    href: '#contact-form',
-    subject: 'partnership',
-  },
-  {
-    icon: <DollarSign size={20} strokeWidth={2.5} />,
-    label: 'Investor Inquiry',
-    desc: 'Request our pitch deck or schedule a call',
-    href: '#contact-form',
-    subject: 'investor',
-  },
-];
+const iconMap = {
+  message: <MessageSquare size={20} strokeWidth={2} />,
+  users: <Users size={20} strokeWidth={2} />,
+  dollar: <DollarSign size={20} strokeWidth={2.5} />,
+};
 
 export default function ContactHero() {
+  const { t } = useTranslation('contact');
   const ref0 = useRef();
   const ref1 = useRef();
   const ref2 = useRef();
@@ -46,6 +30,9 @@ export default function ContactHero() {
     return () => timers.forEach(clearTimeout);
   }, []);
 
+  const intentLinks = t('hero.intentLinks', { returnObjects: true });
+  const intentLinksArray = Array.isArray(intentLinks) ? intentLinks : [];
+
   return (
     <section className={styles.hero}>
       {/* Diagonal crimson accent — top-right corner */}
@@ -58,24 +45,23 @@ export default function ContactHero() {
         {/* Eyebrow */}
         <div ref={ref0} className={`${styles.eyebrow} ${styles.fadeUp}`}>
           <span className={styles.eyebrowLine} aria-hidden="true" />
-          Get In Touch
+          {t('hero.eyebrow')}
           <span className={styles.eyebrowLine} aria-hidden="true" />
         </div>
 
         {/* Headline */}
         <h1 ref={ref1} className={`${styles.title} ${styles.fadeUp}`}>
-          We Reply Within{' '}
-          <span className={styles.highlight}>24 Hours</span>
+          {t('hero.title.part1')}{' '}
+          <span className={styles.highlight}>{t('hero.title.highlight')}</span>
         </h1>
 
         <p className={`${styles.sub} ${styles.fadeUp}`} ref={ref2}>
-          Whether you're a potential partner, an investor, or simply want to know more
-          about what we're building at FinPay Africa — we'd love to hear from you.
+          {t('hero.subtitle')}
         </p>
 
         {/* Intent quick-links */}
         <div className={styles.intentGrid}>
-          {INTENT_LINKS.map((item, i) => (
+          {intentLinksArray.map((item, i) => (
             <a
               key={item.label}
               href={item.href}
@@ -83,7 +69,7 @@ export default function ContactHero() {
               className={styles.intentCard}
               style={{ animationDelay: `${600 + i * 120}ms` }}
             >
-              <div className={styles.intentIcon}>{item.icon}</div>
+              <div className={styles.intentIcon}>{iconMap[item.icon] || iconMap.message}</div>
               <div className={styles.intentText}>
                 <span className={styles.intentLabel}>{item.label}</span>
                 <span className={styles.intentDesc}>{item.desc}</span>
