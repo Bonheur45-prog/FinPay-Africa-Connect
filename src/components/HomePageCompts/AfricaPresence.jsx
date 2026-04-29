@@ -13,21 +13,10 @@
  * - Customizable content and styling
  */
 
-import React, { useState } from 'react';
-import AfricaMap3D from '../map3d/AfricaMap3D';
-import CountryModal from '../map3d/CountryModal';
-import { DEFAULT_COUNTRIES, getPresenceCountries, getExpansionCountries, getInactiveCountries } from '../../data/countryData';
+import React from 'react';
+import AfricaMap from '../AfricaMap/AfricaMap';
 
 export default function AfricaPresenceSection() {
-  const [selectedCountry, setSelectedCountry] = useState(null);
-
-  // Calculate stats
-  const stats = {
-    total: DEFAULT_COUNTRIES.length,
-    presence: getPresenceCountries().length,
-    expansion: getExpansionCountries().length,
-    inactive: getInactiveCountries().length,
-  };
 
   // Key points for the left section
   const keyPoints = [
@@ -195,106 +184,50 @@ export default function AfricaPresenceSection() {
           gap: 24px;
         }
 
-        /* Stats above map */
-        .presence-stats {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
-        }
-
-        .stat-card {
-          background: white;
-          padding: 16px;
-          border-radius: 8px;
-          text-align: center;
-          border: 1px solid #f0f0f0;
-          transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-          border-color: #8C1A13;
-          box-shadow: 0 4px 12px rgba(140, 26, 19, 0.1);
-        }
-
-        .stat-number {
-          font-size: 28px;
-          font-weight: 700;
-          background: linear-gradient(135deg, #8C1A13, #6A1109);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 4px;
-        }
-
-        .stat-label {
-          font-size: 12px;
-          color: #999;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
         /* 3D Map Card Container */
         .map-card-wrapper {
           position: relative;
-          border-radius: 16px;
+          border-radius: 12px;
           overflow: hidden;
-          background: white;
+          background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
           
-          /* Multiple shadow layers for depth */
+          /* Clean shadow for modern look */
           box-shadow: 
-            0 0 0 1px rgba(140, 26, 19, 0.08),
-            0 8px 24px rgba(140, 26, 19, 0.12),
-            0 24px 48px rgba(0, 0, 0, 0.08);
+            0 0 0 1px rgba(140, 26, 19, 0.06),
+            0 12px 32px rgba(0, 0, 0, 0.08);
           
           transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
         }
 
         .map-card-wrapper:hover {
           box-shadow: 
-            0 0 0 2px rgba(140, 26, 19, 0.2),
-            0 12px 32px rgba(140, 26, 19, 0.16),
-            0 32px 64px rgba(0, 0, 0, 0.12);
-          transform: translateY(-4px);
+            0 0 0 2px rgba(140, 26, 19, 0.12),
+            0 16px 48px rgba(0, 0, 0, 0.12);
+          transform: translateY(-2px);
         }
 
-        /* Gradient border effect */
+        /* Gradient top border */
         .map-card-wrapper::before {
           content: '';
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #8C1A13, #6A1109, transparent);
-          opacity: 0;
-          transition: opacity 0.3s ease;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(140, 26, 19, 0.3), transparent);
           z-index: 10;
-        }
-
-        .map-card-wrapper:hover::before {
-          opacity: 1;
-        }
-
-        /* Corner decoration */
-        .map-card-wrapper::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 100px;
-          height: 100px;
-          background: radial-gradient(circle at bottom right, rgba(140, 26, 19, 0.08), transparent);
-          pointer-events: none;
-          z-index: 1;
         }
 
         .map-container {
           position: relative;
           width: 100%;
-          height: 450px;
-          background: #f8f9fa;
-          border-radius: 16px;
+          height: 500px;
+          background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
         }
 
         /* Badge on top-right */
@@ -302,17 +235,18 @@ export default function AfricaPresenceSection() {
           position: absolute;
           top: 16px;
           right: 16px;
-          background: white;
-          padding: 8px 16px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(8px);
+          padding: 10px 18px;
           border-radius: 24px;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: 600;
           color: #8C1A13;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-          z-index: 10;
+          box-shadow: 0 4px 16px rgba(140, 26, 19, 0.15);
+          z-index: 20;
           display: flex;
           align-items: center;
-          gap: 6px;
+          gap: 8px;
         }
 
         .map-badge::before {
@@ -343,11 +277,7 @@ export default function AfricaPresenceSection() {
           }
 
           .map-container {
-            height: 380px;
-          }
-
-          .presence-stats {
-            grid-template-columns: repeat(2, 1fr);
+            height: 420px;
           }
         }
 
@@ -379,26 +309,13 @@ export default function AfricaPresenceSection() {
           }
 
           .map-container {
-            height: 320px;
+            height: 360px;
           }
 
           .map-card-wrapper {
             box-shadow: 
-              0 0 0 1px rgba(140, 26, 19, 0.08),
-              0 4px 12px rgba(140, 26, 19, 0.08),
-              0 12px 24px rgba(0, 0, 0, 0.06);
-          }
-
-          .presence-stats {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          .stat-card {
-            padding: 12px;
-          }
-
-          .stat-number {
-            font-size: 24px;
+              0 0 0 1px rgba(140, 26, 19, 0.06),
+              0 8px 20px rgba(0, 0, 0, 0.06);
           }
         }
 
@@ -436,11 +353,7 @@ export default function AfricaPresenceSection() {
           }
 
           .map-container {
-            height: 280px;
-          }
-
-          .presence-stats {
-            grid-template-columns: 1fr;
+            height: 300px;
           }
 
           .map-badge {
@@ -509,52 +422,22 @@ export default function AfricaPresenceSection() {
 
         {/* ─── RIGHT SECTION ────────────────────────────────────────── */}
         <div className="presence-right">
-          {/* Stats Cards */}
-          <div className="presence-stats">
-            <div className="stat-card">
-              <div className="stat-number">{stats.total}</div>
-              <div className="stat-label">Total Countries</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">{stats.presence}</div>
-              <div className="stat-label">Active Presence</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">{stats.expansion}</div>
-              <div className="stat-label">Expansion Targets</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">{stats.inactive}</div>
-              <div className="stat-label">Other Markets</div>
-            </div>
-          </div>
-
           {/* 3D Map Card */}
           <div className="map-card-wrapper">
             <div className="map-container">
               <div className="map-badge">
                 Interactive Map
               </div>
-              <AfricaMap3D
-                defaultCountries={DEFAULT_COUNTRIES}
-                mapHeight={450}
-                showLegend={false}
-                showLabels={true}
-                backgroundColor="#f8f9fa"
-                onCountryClick={setSelectedCountry}
+              <AfricaMap 
+                width={720} 
+                height={500} 
+                extrusionDepth={3}
+                showLegend={true}
               />
             </div>
           </div>
         </div>
       </div>
-
-      {/* Country Modal */}
-      {selectedCountry && (
-        <CountryModal
-          country={selectedCountry}
-          onClose={() => setSelectedCountry(null)}
-        />
-      )}
     </section>
   );
 }

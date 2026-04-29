@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { Zap, Globe, Code, CreditCard, Shield, ArrowRight } from "lucide-react";
 import { useLangPath } from '../../hooks/useLangPath';
+import paymentShowcaseImg from "../../assets/images/solutions-show-case/cross-border-payments-showcase.png";
 import physicalVirtualCard from '../../assets/images/physical-virtual-card.png';
+import diasporaShowcaseImg from "../../assets/images/solutions-show-case/diaspora-transfers-showcase.png";
+import apiShowcaseImg from "../../assets/images/solutions-show-case/payment-api-showcase.png";
+import kycShowcaseImg from "../../assets/images/solutions-show-case/kyc-verification-showcase.png";
 import styles from "./CoreSolutions.module.css";
 
 const SOLUTIONS = [
@@ -13,8 +17,8 @@ const SOLUTIONS = [
     tag: "solutions.instant-payments.tag",
     title: "solutions.instant-payments.title",
     desc: "solutions.instant-payments.desc",
-    image: null,
-    video: 'https://v.ftcdn.net/16/58/23/22/240_F_1658232282_rit2Pj2tLjYMkF5Yt3BJNHabRhBRRrkA_ST.mp4',
+    image: paymentShowcaseImg,
+    video: null,
     Illustration: PaymentNetworkIllustration,
     badgeBg: "rgba(245,158,11,0.18)",
     badgeBorder: "rgba(245,158,11,0.35)",
@@ -26,7 +30,7 @@ const SOLUTIONS = [
     tag: "solutions.diaspora.tag",
     title: "solutions.diaspora.title",
     desc: "solutions.diaspora.desc",
-    image: null,
+    image: diasporaShowcaseImg,
     video: null,
     Illustration: DiasporaIllustration,
     badgeBg: "rgba(140, 26, 19,0.18)",
@@ -39,7 +43,7 @@ const SOLUTIONS = [
     tag: "solutions.api.tag",
     title: "solutions.api.title",
     desc: "solutions.api.desc",
-    image: null,
+    image: apiShowcaseImg,
     video: null,
     Illustration: ApiIllustration,
     badgeBg: "rgba(167,139,250,0.18)",
@@ -65,7 +69,7 @@ const SOLUTIONS = [
     tag: "solutions.kyc.tag",
     title: "solutions.kyc.title",
     desc: "solutions.kyc.desc",
-    image: null,
+    image: kycShowcaseImg,
     video: null,
     Illustration: ShieldIllustration,
     badgeBg: "rgba(107,203,119,0.15)",
