@@ -27,7 +27,7 @@ export default function SolutionPage() {
           const Component = componentMap[section.type];
           if (!Component) return null;
 
-          return <Component key={index} {...section.data} namespace={data.namespace} />;
+          return <Component key={`${slug}-${index}`} {...section.data} namespace={data.namespace} />;
         })}
     </>
   );

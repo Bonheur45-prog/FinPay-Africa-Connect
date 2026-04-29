@@ -10,9 +10,9 @@ const kyc = {
   namespace: "kyc",
 
   meta: {
-    title: "kyc.meta.title",
+    title: "meta.title",
     description:
-      "kyc.meta.description",
+      "meta.description",
   },
 
   sections: [
@@ -20,12 +20,12 @@ const kyc = {
       type: "hero",
       background: "particles",
       data: {
-        badge: "kyc.hero.badge",
-        headline: "kyc.hero.headline",
+        badge: "hero.badge",
+        headline: "hero.headline",
         sub:
-          "kyc.hero.sub",
-        primaryCta:   { label: "kyc.hero.primaryCta.label",       href: "/signup"  },
-        secondaryCta: { label: "kyc.hero.secondaryCta.label",         href: "/docs"    },
+          "hero.sub",
+        primaryCta:   { label: "hero.primaryCta.label",       href: "/signup"  },
+        secondaryCta: { label: "hero.secondaryCta.label",         href: "/docs"    },
         accent: "#22c55e",
       },
     },
@@ -35,10 +35,10 @@ const kyc = {
       background: "gradient",
       data: {
         items: [
-          { value: "< 8s",  label: "kyc.stats.items.0.label"     },
-          { value: "98.4%", label: "kyc.stats.items.1.label" },
-          { value: "50+",   label: "kyc.stats.items.2.label"},
-          { value: "22",    label: "kyc.stats.items.3.label"},
+          { value: "< 8s",  label: "stats.items.0.label"     },
+          { value: "98.4%", label: "stats.items.1.label" },
+          { value: "50+",   label: "stats.items.2.label"},
+          { value: "22",    label: "stats.items.3.label"},
         ],
       },
     },
@@ -47,44 +47,44 @@ const kyc = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "kyc.features.eyebrow",
-        headline: "kyc.features.headline",
+        eyebrow: "features.eyebrow",
+        headline: "features.headline",
         items: [
           {
             icon: "shield",
-            title: "kyc.features.items.0.title",
+            title: "features.items.0.title",
             body:
-              "kyc.features.items.0.body",
+              "features.items.0.body",
           },
           {
             icon: "lightning",
-            title: "kyc.features.items.1.title",
+            title: "features.items.1.title",
             body:
-              "kyc.features.items.1.body",
+              "features.items.1.body",
           },
           {
             icon: "globe",
-            title: "kyc.features.items.2.title",
+            title: "features.items.2.title",
             body:
-              "kyc.features.items.2.body",
+              "features.items.2.body",
           },
           {
             icon: "chart",
-            title: "kyc.features.items.3.title",
+            title: "features.items.3.title",
             body:
-              "kyc.features.items.3.body",
+              "features.items.3.body",
           },
           {
             icon: "code",
-            title: "kyc.features.items.4.title",
+            title: "features.items.4.title",
             body:
-              "kyc.features.items.4.body",
+              "features.items.4.body",
           },
           {
             icon: "clock",
-            title: "kyc.features.items.5.title",
+            title: "features.items.5.title",
             body:
-              "kyc.features.items.5.body",
+              "features.items.5.body",
           },
         ],
       },
@@ -94,11 +94,11 @@ const kyc = {
       type: "cta",
       background: "gradient",
       data: {
-        headline: "kyc.cta.headline",
-        sub: "kyc.cta.sub",
-        primaryCta:   { label: "kyc.cta.primaryCta.label",      href: "/signup"  },
-        secondaryCta: { label: "kyc.cta.secondaryCta.label",    href: "/contact" },
-        trust: "kyc.cta.trust",
+        headline: "cta.headline",
+        sub: "cta.sub",
+        primaryCta:   { label: "cta.primaryCta.label",      href: "/signup"  },
+        secondaryCta: { label: "cta.secondaryCta.label",    href: "/contact" },
+        trust: "cta.trust",
       },
     },
   ],

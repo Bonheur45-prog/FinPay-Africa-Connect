@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import { Zap, Globe, Code, CreditCard, Shield, ArrowRight } from "lucide-react";
+import { useLangPath } from '../../hooks/useLangPath';
 import physicalVirtualCard from '../../assets/images/physical-virtual-card.png';
 import styles from "./CoreSolutions.module.css";
 
@@ -114,6 +116,7 @@ function CardMedia({ image, video, Illustration, badgeBg, badgeBorder, BadgeIcon
 
 function SolutionCard({ solution, delay }) {
   const { t } = useTranslation("home");
+  const { langPath } = useLangPath();
 
   const {
     featured,
@@ -142,10 +145,10 @@ function SolutionCard({ solution, delay }) {
         <h3 className={styles["cs__card-title"]}>{t(title)}</h3>
         <p className={styles["cs__card-text"]}>{t(desc)}</p>
 
-        <a href={href} className={styles["cs__card-link"]}>
+        <Link to={langPath(href)} className={styles["cs__card-link"]}>
           {t("learn-more-btn")}
           <ArrowRight size={16} strokeWidth={2} />
-        </a>
+        </Link>
       </div>
     </article>
   );
@@ -153,6 +156,7 @@ function SolutionCard({ solution, delay }) {
 
 export function CoreSolutions() {
   const { t } = useTranslation("home");
+  const { langPath } = useLangPath();
 
   const labelRef    = useRef(null);
   const headlineRef = useRef(null);
@@ -241,10 +245,10 @@ export function CoreSolutions() {
         </div>
 
         <div className={styles["cs__cta"]} ref={ctaRef}>
-          <a href="/solutions" className={styles["cs__cta-btn"]}>
+          <Link to={langPath("/solutions")} className={styles["cs__cta-btn"]}>
             {t("core-solution-cta")}
             <ArrowRight color="white" size={16} strokeWidth={2} />
-          </a>
+          </Link>
 
           <p className={styles["cs__trust"]}>
             <span className={styles["cs__trust-dot"]} aria-hidden="true" />

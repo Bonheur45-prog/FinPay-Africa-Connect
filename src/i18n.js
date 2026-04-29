@@ -30,7 +30,7 @@ import frKyc from './locales/fr/kyc.json';
 import frCrossBorder from './locales/fr/crossBorder.json';
 
 
-i18n
+export const initI18n = i18n
   .use(initReactI18next)
   .init({
     resources: {
@@ -42,11 +42,11 @@ i18n
         investors : enInvestors,
         contact : enContact,
         solutions : enSolutions,
-        diaspora : enDiaspora,
-        api : enApi,
-        cards : enCards,
-        kyc : enKyc,
-        crossBorder : enCrossBorder,
+        diaspora : enDiaspora?.diaspora ?? enDiaspora,
+        api : enApi?.api ?? enApi,
+        cards : enCards?.cards ?? enCards,
+        kyc : enKyc?.kyc ?? enKyc,
+        crossBorder : enCrossBorder?.crossBorder ?? enCrossBorder,
       },
       fr: {
         common : frCommon,
@@ -56,15 +56,19 @@ i18n
         investors : frInvestors,
         contact : frContact,
         solutions : frSolutions,
-        diaspora : frDiaspora,
-        api : frApi,
-        cards : frCards,
-        kyc : frKyc,
-        crossBorder : frCrossBorder,
+        diaspora : frDiaspora?.diaspora ?? frDiaspora,
+        api : frApi?.api ?? frApi,
+        cards : frCards?.cards ?? frCards,
+        kyc : frKyc?.kyc ?? frKyc,
+        crossBorder : frCrossBorder?.crossBorder ?? frCrossBorder,
       },
     },
 
     fallbackLng  : 'fr',   // French is the default
+    initImmediate: false,
+    react: {
+      useSuspense: false,
+    },
     interpolation: { escapeValue: false },
   });
 
