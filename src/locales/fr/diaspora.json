@@ -1,0 +1,110 @@
+{
+  "diaspora": {
+    "meta": {
+      "title": "Transferts d'Argent Diaspora — FinPay Africa",
+      "description": "Transferts d'argent rapides et à faible coût pour les communautés africaines de la diaspora. Taux de change transparents, options de paiement locales et conformité intégrée."
+    },
+    "hero": {
+      "badge": "Remises Diaspora",
+      "headline": "Envoyez de l'argent chez vous avec rapidité, confiance et clarté",
+      "sub": "Transferts à faible frais d'Europe, d'Amérique du Nord et du Moyen-Orient vers l'Afrique, avec des rails de paiement locaux, des taux de change leaders du marché et une conformité totale.",
+      "primaryCta": {
+        "label": "Commencer les transferts"
+      },
+      "secondaryCta": {
+        "label": "Parler aux ventes"
+      }
+    },
+    "features1": {
+      "eyebrow": "Paiements axés sur la diaspora",
+      "headline": "Livrer des remises plus rapides et plus sûres pour chaque couloir",
+      "items": [
+        {
+          "title": "Couverture des couloirs mondiaux",
+          "body": "Prendre en charge les paiements des principaux hubs de diaspora vers les comptes africains locaux, les portefeuilles mobiles et les partenaires de retrait d'espèces."
+        },
+        {
+          "title": "Règlement rapide",
+          "body": "La plupart des transferts se règlent en moins de 60 secondes avec un routage transparent et des mises à jour de notification en temps réel."
+        },
+        {
+          "title": "Conformité intégrée",
+          "body": "Les screenings AML, les vérifications KYC et les filtrages de sanctions gardent chaque transfert sûr et auditable."
+        },
+        {
+          "title": "Tarification FX transparente",
+          "body": "Montrez aux clients les taux de change exacts et les frais avant qu'ils envoient, sans coûts cachés."
+        },
+        {
+          "title": "APIs conviviales pour les développeurs",
+          "body": "Intégrez rapidement les flux de remise avec des points de terminaison REST, des webhooks et des parcours de paiement personnalisables."
+        },
+        {
+          "title": "Intégrations sécurisées",
+          "body": "Protégez votre marque avec des contrôles de fraude multi-couches et des rails de règlement sécurisés."
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "< 60s",
+          "label": "Temps de paiement moyen"
+        },
+        {
+          "value": "99.9%",
+          "label": "Taux d'achèvement des transferts"
+        },
+        {
+          "value": "24/7",
+          "label": "Support pour les couloirs diaspora"
+        },
+        {
+          "value": "Multi-devises",
+          "label": "EUR, USD, GBP, AED, et plus"
+        }
+      ]
+    },
+    "features2": {
+      "eyebrow": "Conçu pour la confiance diaspora",
+      "headline": "Connecter les familles, les entreprises et les écosystèmes financiers",
+      "items": [
+        {
+          "title": "Partenaires de paiement réglementés",
+          "body": "Travaillez avec des payeurs locaux licenciés et des banques à travers l'Afrique pour une livraison rapide et conforme."
+        },
+        {
+          "title": "Support multi-rails",
+          "body": "Offrez des virements bancaires, des crédits de portefeuille mobile et des collectes d'espèces dans les marchés clés."
+        },
+        {
+          "title": "Expérience conviviale pour les consommateurs",
+          "body": "Gardez le parcours client simple avec des frais clairs, un verrouillage des taux et des mises à jour de statut instantanées."
+        },
+        {
+          "title": "Insights basés sur les données",
+          "body": "Mesurez les performances des couloirs, la rétention des clients et les marges FX depuis un tableau de bord unique."
+        },
+        {
+          "title": "Flux en marque blanche",
+          "body": "Marquez l'expérience de remise comme la vôtre tandis que FinPay gère les rails."
+        },
+        {
+          "title": "Financement sécurisé",
+          "body": "Protégez les dépôts des clients avec des contrôles de règlement solides et des portefeuilles sécurisés."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Lancez les transferts diaspora avec confiance",
+      "sub": "Activez des remises à faible coût, rapides et conformes pour les clients africains de la diaspora.",
+      "primaryCta": {
+        "label": "Commencer"
+      },
+      "secondaryCta": {
+        "label": "Réserver une démo"
+      },
+      "trust": "Approuvé par les fintechs diaspora · Aucun frais de configuration · Contrôle API complet"
+    }
+  }
+}

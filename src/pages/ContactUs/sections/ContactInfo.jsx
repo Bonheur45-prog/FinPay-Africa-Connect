@@ -5,76 +5,10 @@
  */
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Mail, Phone, Clock } from 'lucide-react';
 import styles from './ContactInfo.module.css';
 import { useScrollReveal } from '../../../components/shared/useScrollReveal';
-
-/* ── Real contacts from the FinPay Africa documentation ── */
-const TEAM = [
-  {
-    name: 'Richard Michel',
-    role: 'Founding Partner',
-    email: 'rmichel@nsi-monetique.com',
-    phone: '+32 478 63 71 41',
-    location: 'Brussels, Belgium',
-    flag: '🇧🇪',
-    timezone: 'CET (UTC+1)',
-    initials: 'RM',
-    gradientFrom: '#7a0e0e',
-    gradientTo: '#e8760a',
-    availability: 'Mon–Fri, 9:00–18:00 CET',
-  },
-  {
-    name: 'Charles Nzeyimana',
-    role: 'Regional Director',
-    email: 'c.nzeyima@nsi-monetique.com',
-    phone: '+257 79 591 466',
-    location: 'Bujumbura, Burundi',
-    flag: '🇧🇮',
-    timezone: 'EAT (UTC+3)',
-    initials: 'CN',
-    gradientFrom: '#1a2e5a',
-    gradientTo: '#3a6bba',
-    availability: 'Mon–Fri, 8:00–17:00 EAT',
-  },
-  {
-    name: 'Jean Paul Ngabonziza',
-    role: 'East Africa Director',
-    email: 'jp.ngabonziza@nsi-monetique.com',
-    phone: '+250 788 624 389',
-    location: 'Kigali, Rwanda',
-    flag: '🇷🇼',
-    timezone: 'EAT (UTC+3)',
-    initials: 'JN',
-    gradientFrom: '#2d5a1a',
-    gradientTo: '#5a9a3a',
-    availability: 'Mon–Fri, 8:00–17:00 EAT',
-  },
-];
-
-const CHANNELS = [
-  {
-    icon: <Mail size={22} strokeWidth={2} aria-hidden="true" />,
-    title: 'Email Us',
-    detail: 'rmichel@nsi-monetique.com',
-    sub: 'We reply within 24 hours',
-    href: 'mailto:rmichel@nsi-monetique.com',
-  },
-  {
-    icon: <Phone size={22} strokeWidth={2} aria-hidden="true" />,
-    title: 'Call Us',
-    detail: '+32 478 63 71 41',
-    sub: 'Belgium office — Mon–Fri',
-    href: 'tel:+32478637141',
-  },
-  {
-    icon: <Clock size={22} strokeWidth={2} aria-hidden="true" />,
-    title: 'Response Time',
-    detail: 'Within 24 Hours',
-    sub: 'For all inquiries, guaranteed',
-    href: null,
-  },
-];
 
 function TeamCard({ member, index }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.15 });
@@ -142,8 +76,15 @@ function TeamCard({ member, index }) {
 }
 
 export default function ContactInfo() {
+  const { t } = useTranslation('contact');
   const { ref: hRef, isVisible: hVis } = useScrollReveal();
   const { ref: chRef, isVisible: chVis } = useScrollReveal({ threshold: 0.2 });
+
+  const team = t('info.team', { returnObjects: true });
+  const teamArray = Array.isArray(team) ? team : [];
+
+  const channels = t('info.channels', { returnObjects: true });
+  const channelsArray = Array.isArray(channels) ? channels : [];
 
   return (
     <section className={styles.section}>
@@ -152,17 +93,16 @@ export default function ContactInfo() {
         ref={hRef}
         className={`${styles.header} ${hVis ? styles.headerVisible : ''}`}
       >
-        <div className={styles.eyebrow}>Our Team</div>
-        <h2 className={styles.title}>Talk to the Right Person</h2>
+        <div className={styles.eyebrow}>{t('info.eyebrow')}</div>
+        <h2 className={styles.title}>{t('info.title')}</h2>
         <p className={styles.sub}>
-          Our team spans Belgium, Burundi, and Rwanda — covering Europe and
-          East Africa time zones. Reach out directly to whoever is closest to your need.
+          {t('info.subtitle')}
         </p>
       </div>
 
       {/* ── Team cards ── */}
       <div className={styles.teamGrid}>
-        {TEAM.map((member, i) => (
+        {teamArray.map((member, i) => (
           <TeamCard key={member.email} member={member} index={i} />
         ))}
       </div>
@@ -172,13 +112,17 @@ export default function ContactInfo() {
         ref={chRef}
         className={`${styles.channelsRow} ${chVis ? styles.channelsRowVisible : ''}`}
       >
-        {CHANNELS.map((ch, i) => (
+        {channelsArray.map((ch, i) => (
           <div
             key={ch.title}
             className={styles.channelCard}
             style={{ transitionDelay: `${i * 90}ms` }}
           >
-            <div className={styles.channelIcon}>{ch.icon}</div>
+            <div className={styles.channelIcon}>
+              {ch.type === 'mail' && <Mail size={22} strokeWidth={2} aria-hidden="true" />}
+              {ch.type === 'phone' && <Phone size={22} strokeWidth={2} aria-hidden="true" />}
+              {ch.type === 'clock' && <Clock size={22} strokeWidth={2} aria-hidden="true" />}
+            </div>
             <div className={styles.channelText}>
               <div className={styles.channelTitle}>{ch.title}</div>
               {ch.href ? (
@@ -209,8 +153,8 @@ export default function ContactInfo() {
           </svg>
         </div>
         <div className={styles.brandWords}>
-          <div className={styles.brandName}>FinPay Africa</div>
-          <div className={styles.brandTagline}>Connecting you with your loved ones</div>
+          <div className={styles.brandName}>{t('info.brand.name')}</div>
+          <div className={styles.brandTagline}>{t('info.brand.tagline')}</div>
         </div>
       </div>
     </section>

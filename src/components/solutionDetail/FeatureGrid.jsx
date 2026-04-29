@@ -19,6 +19,7 @@
  */
 
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { 
   Zap, 
   ShieldCheck, 
@@ -55,7 +56,8 @@ function FallbackIcon() {
 // ─────────────────────────────────────────────────────────────────
 // COMPONENT
 // ─────────────────────────────────────────────────────────────────
-export default function FeatureGrid({ eyebrow, headline, items = [] }) {
+export default function FeatureGrid({ eyebrow, headline, items = [], namespace = "solutions" }) {
+  const { t } = useTranslation(namespace);
   const gridRef = useRef(null);
 
   useEffect(() => {
@@ -82,7 +84,8 @@ export default function FeatureGrid({ eyebrow, headline, items = [] }) {
   }, []);
 
   // Split headline on \n to allow controlled line breaks
-  const headlineLines = (headline ?? "").split("\n");
+  const translatedHeadline = t(headline);
+  const headlineLines = translatedHeadline.split("\n");
 
   return (
     <section className={styles.section} aria-labelledby="fg-headline">
@@ -93,7 +96,7 @@ export default function FeatureGrid({ eyebrow, headline, items = [] }) {
           {eyebrow && (
             <div className={styles.eyebrow}>
               <span className={styles.eyebrowLine} />
-              {eyebrow}
+              {t(eyebrow)}
             </div>
           )}
           <h2 className={styles.headline} id="fg-headline">
@@ -120,8 +123,8 @@ export default function FeatureGrid({ eyebrow, headline, items = [] }) {
                   {Icon}
                 </div>
 
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p  className={styles.cardBody}>{item.body}</p>
+                <h3 className={styles.cardTitle}>{t(item.title)}</h3>
+                <p  className={styles.cardBody}>{t(item.body)}</p>
               </article>
             );
           })}

@@ -11,6 +11,7 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CheckCircle, Send } from 'lucide-react';
 import styles from './ContactForm.module.css';
 
@@ -50,13 +51,6 @@ const BG_IMAGES = [
 
 const SLIDE_DURATION = 5000; // ms per slide
 const FADE_DURATION  = 900;  // ms for cross-fade
-
-/* ── Subjects / tabs ── */
-const SUBJECTS = [
-  { key: 'general',     label: 'General',     placeholder: 'Tell us how we can help you...' },
-  { key: 'partnership', label: 'Partnership',  placeholder: 'Describe the partnership you have in mind...' },
-  { key: 'investor',    label: 'Investor',     placeholder: 'Tell us about your investment interests...' },
-];
 
 const INITIAL_FORM = {
   firstName: '',
@@ -136,6 +130,7 @@ function Slideshow() {
 
 /* ── Main ContactForm component ── */
 export default function ContactForm() {
+  const { t } = useTranslation('contact');
   const [subject, setSubject]   = useState('general');
   const [fields, setFields]     = useState(INITIAL_FORM);
   const [errors, setErrors]     = useState({});
@@ -143,7 +138,12 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted]   = useState(false);
 
-  const currentSubjectObj = SUBJECTS.find((s) => s.key === subject);
+  const subjects = t('form.subjects', { returnObjects: true });
+  const subjectsArray = Array.isArray(subjects) ? subjects : [];
+  const currentSubjectObj = subjectsArray.find((s) => s.key === subject);
+
+  const validationMessages = t('form.validation', { returnObjects: true });
+  const labels = t('form.labels', { returnObjects: true });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -194,13 +194,13 @@ export default function ContactForm() {
       <div className={styles.panel}>
         {/* Panel header */}
         <div className={styles.panelHeader}>
-          <div className={styles.panelEyebrow}>Send us a message</div>
-          <h2 className={styles.panelTitle}>How can we help?</h2>
+          <div className={styles.panelEyebrow}>{t('form.header.eyebrow')}</div>
+          <h2 className={styles.panelTitle}>{t('form.header.title')}</h2>
         </div>
 
         {/* Subject tabs */}
         <div className={styles.tabs} role="tablist" aria-label="Select inquiry type">
-          {SUBJECTS.map((s) => (
+          {subjectsArray.map((s) => (
             <button
               key={s.key}
               role="tab"
@@ -220,13 +220,12 @@ export default function ContactForm() {
             <div className={styles.successIcon} aria-hidden="true">
               <CheckCircle size={32} strokeWidth={2.5} />
             </div>
-            <h3 className={styles.successTitle}>Message Sent!</h3>
+            <h3 className={styles.successTitle}>{t('form.success.title')}</h3>
             <p className={styles.successBody}>
-              Thank you for reaching out. A member of our team will get back to
-              you within 24 hours.
+              {t('form.success.message')}
             </p>
             <button onClick={handleReset} className={styles.successBtn} type="button">
-              Send another message
+              {t('form.success.button')}
             </button>
           </div>
         ) : (
@@ -234,7 +233,7 @@ export default function ContactForm() {
             {/* Name row */}
             <div className={styles.row2}>
               <div className={styles.fieldWrap}>
-                <label className={styles.label} htmlFor="cf-firstName">First Name *</label>
+                <label className={styles.label} htmlFor="cf-firstName">{labels?.firstName || 'First Name'} *</label>
                 <input
                   id="cf-firstName"
                   name="firstName"
@@ -244,15 +243,15 @@ export default function ContactForm() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.input} ${touched.firstName && errors.firstName ? styles.inputError : ''}`}
-                  placeholder="Jean Paul"
+                  placeholder={labels?.firstNamePlaceholder || 'Jean Paul'}
                 />
                 {touched.firstName && errors.firstName && (
-                  <span className={styles.error} role="alert">{errors.firstName}</span>
+                  <span className={styles.error} role="alert">{validationMessages?.firstName || errors.firstName}</span>
                 )}
               </div>
 
               <div className={styles.fieldWrap}>
-                <label className={styles.label} htmlFor="cf-lastName">Last Name *</label>
+                <label className={styles.label} htmlFor="cf-lastName">{labels?.lastName || 'Last Name'} *</label>
                 <input
                   id="cf-lastName"
                   name="lastName"
@@ -262,17 +261,17 @@ export default function ContactForm() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.input} ${touched.lastName && errors.lastName ? styles.inputError : ''}`}
-                  placeholder="Ngabonziza"
+                  placeholder={labels?.lastNamePlaceholder || 'Ngabonziza'}
                 />
                 {touched.lastName && errors.lastName && (
-                  <span className={styles.error} role="alert">{errors.lastName}</span>
+                  <span className={styles.error} role="alert">{validationMessages?.lastName || errors.lastName}</span>
                 )}
               </div>
             </div>
 
             {/* Email */}
             <div className={styles.fieldWrap}>
-              <label className={styles.label} htmlFor="cf-email">Email Address *</label>
+              <label className={styles.label} htmlFor="cf-email">{labels?.email || 'Email Address'} *</label>
               <input
                 id="cf-email"
                 name="email"
@@ -282,17 +281,17 @@ export default function ContactForm() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={`${styles.input} ${touched.email && errors.email ? styles.inputError : ''}`}
-                placeholder="you@example.com"
+                placeholder={labels?.emailPlaceholder || 'you@example.com'}
               />
               {touched.email && errors.email && (
-                <span className={styles.error} role="alert">{errors.email}</span>
+                <span className={styles.error} role="alert">{validationMessages?.email || errors.email}</span>
               )}
             </div>
 
             {/* Phone (optional) */}
             <div className={styles.fieldWrap}>
               <label className={styles.label} htmlFor="cf-phone">
-                Phone <span className={styles.optional}>(optional)</span>
+                {labels?.phone || 'Phone'} <span className={styles.optional}>({t('form.labels.optional') || 'optional'})</span>
               </label>
               <input
                 id="cf-phone"
@@ -302,7 +301,7 @@ export default function ContactForm() {
                 value={fields.phone}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="+32 478 00 00 00"
+                placeholder={labels?.phonePlaceholder || '+32 478 00 00 00'}
               />
             </div>
 
@@ -310,7 +309,7 @@ export default function ContactForm() {
             {(subject === 'partnership' || subject === 'investor') && (
               <div className={styles.fieldWrap}>
                 <label className={styles.label} htmlFor="cf-organization">
-                  Organization {subject === 'partnership' ? '*' : <span className={styles.optional}>(optional)</span>}
+                  {labels?.organization || 'Organization'} {subject === 'partnership' ? '*' : <span className={styles.optional}>({t('form.labels.optional') || 'optional'})</span>}
                 </label>
                 <input
                   id="cf-organization"
@@ -320,17 +319,17 @@ export default function ContactForm() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.input} ${touched.organization && errors.organization ? styles.inputError : ''}`}
-                  placeholder="Company or organization name"
+                  placeholder={labels?.organizationPlaceholder || 'Company or organization name'}
                 />
                 {touched.organization && errors.organization && (
-                  <span className={styles.error} role="alert">{errors.organization}</span>
+                  <span className={styles.error} role="alert">{validationMessages?.organization || errors.organization}</span>
                 )}
               </div>
             )}
 
             {/* Message */}
             <div className={styles.fieldWrap}>
-              <label className={styles.label} htmlFor="cf-message">Message *</label>
+              <label className={styles.label} htmlFor="cf-message">{labels?.message || 'Message'} *</label>
               <textarea
                 id="cf-message"
                 name="message"
@@ -339,10 +338,10 @@ export default function ContactForm() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={`${styles.textarea} ${touched.message && errors.message ? styles.inputError : ''}`}
-                placeholder={currentSubjectObj.placeholder}
+                placeholder={currentSubjectObj?.placeholder || t('form.labels.messagePlaceholder') || 'Your message...'}
               />
               {touched.message && errors.message && (
-                <span className={styles.error} role="alert">{errors.message}</span>
+                <span className={styles.error} role="alert">{validationMessages?.message || errors.message}</span>
               )}
             </div>
 
@@ -355,18 +354,18 @@ export default function ContactForm() {
               {submitting ? (
                 <>
                   <span className={styles.spinner} aria-hidden="true" />
-                  Sending…
+                  {t('form.buttons.sending') || 'Sending…'}
                 </>
               ) : (
                 <>
-                  Send Message
+                  {t('form.buttons.send') || 'Send Message'}
                   <Send size={16} strokeWidth={2.5} aria-hidden="true" />
                 </>
               )}
             </button>
 
             <p className={styles.privacyNote}>
-              We respect your privacy. Your information is never shared with third parties.
+              {t('form.privacy')}
             </p>
           </form>
         )}

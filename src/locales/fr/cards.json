@@ -1,0 +1,80 @@
+{
+  "cards": {
+    "meta": {
+      "title": "Cartes Virtuelles & Physiques — FinPay Africa",
+      "description": "Émettez des cartes de marque pour les clients et les employés. Contrôles de dépenses en temps réel, acceptation mondiale."
+    },
+    "hero": {
+      "badge": "Émission de Cartes",
+      "headline": "Votre marque,\ndans chaque portefeuille",
+      "sub": "Émettez des cartes Visa / Mastercard virtuelles ou physiques de marque à quiconque en Afrique. Contrôles de dépenses en temps réel. Gel instantané. Zéro fraude carte-présente.",
+      "primaryCta": {
+        "label": "Obtenez votre programme de cartes"
+      },
+      "secondaryCta": {
+        "label": "Voir la documentation"
+      }
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "< 30s",
+          "label": "Temps d'émission de carte"
+        },
+        {
+          "value": "190+",
+          "label": "Pays acceptés"
+        },
+        {
+          "value": "0%",
+          "label": "Fraude carte-présente"
+        },
+        {
+          "value": "Temps réel",
+          "label": "Contrôles de dépenses"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Tout inclus",
+      "headline": "Une plateforme,\ntous types de cartes",
+      "items": [
+        {
+          "title": "Cartes virtuelles — instantanées",
+          "body": "Créez des cartes virtuelles pour les paiements en ligne, abonnements ou dépenses des employés en moins de 30 secondes via API ou tableau de bord."
+        },
+        {
+          "title": "Production de cartes physiques",
+          "body": "Cartes physiques en marque blanche avec votre marque, puce, sans contact et PIN. Livrées partout en Afrique dans les 5 jours ouvrables."
+        },
+        {
+          "title": "Contrôles de dépenses en temps réel",
+          "body": "Définissez des limites par catégorie, marchand, temps, géographie ou montant. Gelez / dégelez toute carte en millisecondes via API."
+        },
+        {
+          "title": "Rapports de transactions",
+          "body": "Flux de transactions en direct, analyses de dépenses catégorisées et relevés exportables — pour votre équipe financière ou vos clients."
+        },
+        {
+          "title": "Recharge instantanée",
+          "body": "Financer les cartes directement depuis votre portefeuille FinPay. Mises à jour de solde en temps réel poussées vers votre système via Webhooks."
+        },
+        {
+          "title": "Contrôle API complet",
+          "body": "Créez, financez, gelez et fermez des cartes par programmation. Intégrez la gestion des cartes dans votre propre application avec notre SDK en marque blanche."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Lancez votre programme\nde cartes aujourd'hui",
+      "sub": "Des startups fintech aux entreprises — nous évoluons avec vous.",
+      "primaryCta": {
+        "label": "Commencer à émettre des cartes"
+      },
+      "secondaryCta": {
+        "label": "Parlez à notre équipe"
+      },
+      "trust": "Certifié Visa & Mastercard · Aucun volume minimum · Accès API complet"
+    }
+  }
+}

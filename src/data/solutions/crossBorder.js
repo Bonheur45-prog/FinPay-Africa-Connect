@@ -1,14 +1,22 @@
 const crossBorder = {
+  slug: "cross-border",
+  namespace: "crossBorder",
+
+  meta: {
+    title: "crossBorder.meta.title",
+    description: "crossBorder.meta.description",
+  },
+
   sections: [
     {
       type: "hero",
       background: "particles",
       data: {
-        badge: "Cross-Border Payments",
-        headline: "Move money globally\nwith speed and transparency",
-        sub: "Real-time settlement in 150+ countries. Transparent pricing. No hidden fees.",
-        primaryCta:   { label: "Get started",          href: "/signup"  },
-        secondaryCta: { label: "View documentation",   href: "/docs"    },
+        badge: "crossBorder.hero.badge",
+        headline: "crossBorder.hero.headline",
+        sub: "crossBorder.hero.sub",
+        primaryCta:   { label: "crossBorder.hero.primaryCta.label",          href: "/signup"  },
+        secondaryCta: { label: "crossBorder.hero.secondaryCta.label",   href: "/docs"    },
         accent: "#f59e0b",
       },
     },
@@ -17,38 +25,38 @@ const crossBorder = {
       type: "features",
       background: "gradient",
       data: {
-        eyebrow: "Global coverage",
-        headline: "Send money anywhere\nin seconds",
+        eyebrow: "crossBorder.features.eyebrow",
+        headline: "crossBorder.features.headline",
         items: [
           {
             icon: "globe",
-            title: "150+ countries",
-            body: "Real-time settlement to bank accounts and mobile wallets worldwide.",
+            title: "crossBorder.features.items.0.title",
+            body: "crossBorder.features.items.0.body",
           },
           {
             icon: "lightning",
-            title: "Instant transfers",
-            body: "Most corridors settle in under 60 seconds — no delays, no excuses.",
+            title: "crossBorder.features.items.1.title",
+            body: "crossBorder.features.items.1.body",
           },
           {
             icon: "chart",
-            title: "Transparent pricing",
-            body: "No hidden fees. Know your exact cost before you send.",
+            title: "crossBorder.features.items.2.title",
+            body: "crossBorder.features.items.2.body",
           },
           {
             icon: "shield",
-            title: "Full compliance",
-            body: "Built-in sanctions screening and AML checks on every transaction.",
+            title: "crossBorder.features.items.3.title",
+            body: "crossBorder.features.items.3.body",
           },
           {
             icon: "code",
-            title: "API first",
-            body: "Embed payments into your app. Webhooks for real-time settlement updates.",
+            title: "crossBorder.features.items.4.title",
+            body: "crossBorder.features.items.4.body",
           },
           {
             icon: "lock",
-            title: "Enterprise-grade security",
-            body: "Multi-signature payouts, fraud detection, and dispute resolution.",
+            title: "crossBorder.features.items.5.title",
+            body: "crossBorder.features.items.5.body",
           },
         ],
       },
@@ -59,10 +67,10 @@ const crossBorder = {
       background: "gradient",
       data: {
         items: [
-          { value: "< 60s", label: "Settlement time" },
-          { value: "150+",  label: "Countries covered" },
-          { value: "0.8%",  label: "Average fee" },
-          { value: "$2M+",  label: "Volume processed daily" },
+          { value: "< 60s", label: "crossBorder.stats.items.0.label" },
+          { value: "150+",  label: "crossBorder.stats.items.1.label" },
+          { value: "0.8%",  label: "crossBorder.stats.items.2.label" },
+          { value: "$2M+",  label: "crossBorder.stats.items.3.label" },
         ],
       },
     },
@@ -71,11 +79,11 @@ const crossBorder = {
       type: "cta",
       background: "gradient",
       data: {
-        headline: "Start sending globally\ntoday",
-        sub: "No setup fees. No minimum volume. Pay as you go.",
-        primaryCta:   { label: "Open an account",  href: "/signup"  },
-        secondaryCta: { label: "Talk to sales",    href: "/contact" },
-        trust: "Supported by leading fintech investors · ISO 27001 certified",
+        headline: "crossBorder.cta.headline",
+        sub: "crossBorder.cta.sub",
+        primaryCta:   { label: "crossBorder.cta.primaryCta.label",  href: "/signup"  },
+        secondaryCta: { label: "crossBorder.cta.secondaryCta.label",    href: "/contact" },
+        trust: "crossBorder.cta.trust",
       },
     },
   ],

@@ -1,0 +1,80 @@
+{
+  "crossBorder": {
+    "meta": {
+      "title": "Instant Cross-border Payments — FinPay Africa",
+      "description": "Real-time settlement in 150+ countries. Transparent pricing. No hidden fees."
+    },
+    "hero": {
+      "badge": "Cross-Border Payments",
+      "headline": "Move money globally\nwith speed and transparency",
+      "sub": "Real-time settlement in 150+ countries. Transparent pricing. No hidden fees.",
+      "primaryCta": {
+        "label": "Get started"
+      },
+      "secondaryCta": {
+        "label": "View documentation"
+      }
+    },
+    "features": {
+      "eyebrow": "Global coverage",
+      "headline": "Send money anywhere\nin seconds",
+      "items": [
+        {
+          "title": "150+ countries",
+          "body": "Real-time settlement to bank accounts and mobile wallets worldwide."
+        },
+        {
+          "title": "Instant transfers",
+          "body": "Most corridors settle in under 60 seconds — no delays, no excuses."
+        },
+        {
+          "title": "Transparent pricing",
+          "body": "No hidden fees. Know your exact cost before you send."
+        },
+        {
+          "title": "Full compliance",
+          "body": "Built-in sanctions screening and AML checks on every transaction."
+        },
+        {
+          "title": "API first",
+          "body": "Embed payments into your app. Webhooks for real-time settlement updates."
+        },
+        {
+          "title": "Enterprise-grade security",
+          "body": "Multi-signature payouts, fraud detection, and dispute resolution."
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "< 60s",
+          "label": "Settlement time"
+        },
+        {
+          "value": "150+",
+          "label": "Countries covered"
+        },
+        {
+          "value": "0.8%",
+          "label": "Average fee"
+        },
+        {
+          "value": "$2M+",
+          "label": "Volume processed daily"
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Start sending globally\ntoday",
+      "sub": "No setup fees. No minimum volume. Pay as you go.",
+      "primaryCta": {
+        "label": "Open an account"
+      },
+      "secondaryCta": {
+        "label": "Talk to sales"
+      },
+      "trust": "Supported by leading fintech investors · ISO 27001 certified"
+    }
+  }
+}

@@ -20,6 +20,7 @@
  */
 
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import styles from "./SolutionHero.module.css";
 
 export default function SolutionHero({
@@ -29,9 +30,12 @@ export default function SolutionHero({
   primaryCta,
   secondaryCta,
   accent = "#f59e0b",
+  namespace = "solutions",
 }) {
+  const { t } = useTranslation(namespace);
   // Convert \n in the headline string to <br> elements for layout control
-  const headlineLines = headline?.split("\n");
+  const translatedHeadline = t(headline);
+  const headlineLines = translatedHeadline.split("\n");
 
   return (
     <section className={styles.hero} aria-labelledby="sol-hero-heading">
@@ -54,7 +58,7 @@ export default function SolutionHero({
             className={styles.badgeDot}
             style={{ background: accent }}
           />
-          {badge}
+          {t(badge)}
         </div>
 
         {/* ── Headline ────────────────────────────────────────── */}
@@ -67,19 +71,19 @@ export default function SolutionHero({
         </h1>
 
         {/* ── Supporting text ─────────────────────────────────── */}
-        <p className={styles.sub}>{sub}</p>
+        <p className={styles.sub}>{t(sub)}</p>
 
         {/* ── CTA buttons ─────────────────────────────────────── */}
         <div className={styles.actions}>
           {primaryCta && (
             <a href={primaryCta.href} className={styles.btnPrimary}>
-              {primaryCta.label}
+              {t(primaryCta.label)}
               <ArrowRight size={14} strokeWidth={2.5} />
             </a>
           )}
           {secondaryCta && (
             <a href={secondaryCta.href} className={styles.btnSecondary}>
-              {secondaryCta.label}
+              {t(secondaryCta.label)}
             </a>
           )}
         </div>

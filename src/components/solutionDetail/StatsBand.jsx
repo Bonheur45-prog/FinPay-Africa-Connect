@@ -13,9 +13,11 @@
  */
 
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./StatsBand.module.css";
 
-export default function StatsBand({ items = [] }) {
+export default function StatsBand({ items = [], namespace = "solutions" }) {
+  const { t } = useTranslation(namespace);
   const bandRef = useRef(null);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function StatsBand({ items = [] }) {
             style={{ "--delay": `${i * 80}ms` }}
           >
             <span className={styles.value}>{stat.value}</span>
-            <span className={styles.label}>{stat.label}</span>
+            <span className={styles.label}>{t(stat.label)}</span>
           </div>
         ))}
       </div>
