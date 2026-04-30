@@ -6,7 +6,8 @@ import { MOCK_BLOG_POSTS, CATEGORY_METADATA } from "../../features/blog/constant
 import styles from "./BlogsSection.module.css";
 
 function BlogCard({ post, index, language }) {
-  const { t } = useTranslation(["home", "blogs"]);
+  const { t: tBlog } = useTranslation("blogs");
+  const { t: tHome } = useTranslation("home");
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ function BlogCard({ post, index, language }) {
           className={styles["blog-card__badge"]}
           style={{ background: badge.bg, color: badge.text }}
         >
-          {t(`categories.${post.category}`)}
+          {tBlog(`categories.${post.category}`)}
         </span>
       </div>
 
@@ -65,7 +66,7 @@ function BlogCard({ post, index, language }) {
             ·
           </span>
           <span className={styles["blog-card__readtime"]}>
-            {post.readTime} {t("card.minutes")}
+            {post.readTime} {tBlog("card.minutes")}
           </span>
         </div>
 
@@ -81,7 +82,7 @@ function BlogCard({ post, index, language }) {
           className={styles["blog-card__link"]}
           aria-label={`Read: ${post.title[language]}`}
         >
-          {t("latest-insight.blog.blog-post-cta")}
+          {tHome("latest-insight.blog.blog-post-cta")}
           <ArrowRight className={styles["blog-card__arrow"]} size={16} strokeWidth={2} />
         </Link>
       </div>
@@ -90,7 +91,8 @@ function BlogCard({ post, index, language }) {
 }
 
 export default function BlogSection() {
-  const { t, i18n } = useTranslation(["home", "blogs"]);
+  const { t: tHome, i18n } = useTranslation("home");
+  const { t: tBlog } = useTranslation("blogs");
   const language = i18n.language?.startsWith("fr") ? "fr" : "en";
   const posts = [...MOCK_BLOG_POSTS].sort(
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
@@ -104,12 +106,12 @@ export default function BlogSection() {
 
       <div className={styles["blog-section__container"]}>
         <header className={styles["blog-section__header"]}>
-          <span className={styles["blog-section__eyebrow"]}>{t("latest-insight.label")}</span>
+          <span className={styles["blog-section__eyebrow"]}>{tHome("latest-insight.label")}</span>
           <h2 className={styles["blog-section__heading"]} id="blog-heading">
-            {t("latest-insight.title1")}&nbsp;{t("latest-insight.title2")}
+            {tHome("latest-insight.title1")}&nbsp;{tHome("latest-insight.title2")}
           </h2>
           <p className={styles["blog-section__subheading"]}>
-            {t("latest-insight.descriptions")}
+            {tHome("latest-insight.descriptions")}
           </p>
         </header>
 
@@ -121,7 +123,7 @@ export default function BlogSection() {
 
         <div className={styles["blog-section__cta-wrap"]}>
           <Link to="blog" className={styles["blog-section__cta"]}>
-            {t("latest-insight.blog-section-cta")}
+            {tHome("latest-insight.blog-section-cta")}
             <ArrowRight size={18} strokeWidth={2} />
           </Link>
         </div>
