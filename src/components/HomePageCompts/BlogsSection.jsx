@@ -1,28 +1,13 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router";
+import { MOCK_BLOG_POSTS, CATEGORY_METADATA } from "../../features/blog/constants/blogData";
 import styles from "./BlogsSection.module.css";
 
-const BLOG_POSTS = [
-  { id: 1, category: "product", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80", readTime: "5 min read", date: "Jun 12, 2025", href: "#" },
-  { id: 2, category: "engineering", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80", readTime: "8 min read", date: "May 28, 2025", href: "#" },
-  { id: 3, category: "growth", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", readTime: "6 min read", date: "May 14, 2025", href: "#" },
-  { id: 4, category: "security", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80", readTime: "7 min read", date: "Apr 30, 2025", href: "#" },
-  { id: 5, category: "design", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80", readTime: "4 min read", date: "Apr 18, 2025", href: "#" },
-  { id: 6, category: "culture", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80", readTime: "5 min read", date: "Apr 5, 2025", href: "#" },
-];
-
-const CATEGORY_COLORS = {
-  Product:     { bg: "#8C1A13", text: "#fff" },
-  Engineering: { bg: "#0f172a", text: "#fff" },
-  Growth:      { bg: "#065f46", text: "#fff" },
-  Security:    { bg: "#7c2d12", text: "#fff" },
-  Design:      { bg: "#4c1d95", text: "#fff" },
-  Culture:     { bg: "#1e3a5f", text: "#fff" },
-};
-
-function BlogCard({ post, index }) {
-  const { t } = useTranslation("home");
+function BlogCard({ post, index, language }) {
+  const { t: tBlog } = useTranslation("blogs");
+  const { t: tHome } = useTranslation("home");
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -45,39 +30,73 @@ function BlogCard({ post, index }) {
     return () => observer.disconnect();
   }, [index]);
 
-  const badge = CATEGORY_COLORS[post.category] || CATEGORY_COLORS.Product;
+  const badge = CATEGORY_METADATA[post.category] || CATEGORY_METADATA.product;
 
   return (
-    <article ref={cardRef} className={styles["blog-card"]} style={{ "--card-index": index }}>
+    <article
+      ref={cardRef}
+      className={styles["blog-card"]}
+      style={{ "--card-index": index }}
+    >
       <div className={styles["blog-card__image-wrap"]}>
-        <img src={post.image} alt={post.title} className={styles["blog-card__image"]} loading="lazy" />
+        <img
+          src={post.image}
+          alt={post.title[language]}
+          className={styles["blog-card__image"]}
+          loading="lazy"
+        />
         <div className={styles["blog-card__image-overlay"]} />
-        <span className={styles["blog-card__badge"]} style={{ background: badge.bg, color: badge.text }}>
-          {t(`latest-insight.blog.categories.${post.category}`)}
+        <span
+          className={styles["blog-card__badge"]}
+          style={{ background: badge.bg, color: badge.text }}
+        >
+          {tBlog(`categories.${post.category}`)}
         </span>
       </div>
 
       <div className={styles["blog-card__body"]}>
         <div className={styles["blog-card__meta"]}>
-          <span className={styles["blog-card__date"]}>{post.date}</span>
-          <span className={styles["blog-card__dot"]} aria-hidden="true">·</span>
-          <span className={styles["blog-card__readtime"]}>{post.readTime}</span>
+          <span className={styles["blog-card__date"]}>
+            {new Date(post.publishedAt).toLocaleDateString(
+              language === "fr" ? "fr-FR" : "en-US",
+              { year: "numeric", month: "short", day: "numeric" }
+            )}
+          </span>
+          <span className={styles["blog-card__dot"]} aria-hidden="true">
+            ·
+          </span>
+          <span className={styles["blog-card__readtime"]}>
+            {post.readTime} {tBlog("card.minutes")}
+          </span>
         </div>
 
-        <h3 className={styles["blog-card__title"]}>{t(`latest-insight.blog.posts.p${post.id}.title`)}</h3>
-        <p className={styles["blog-card__desc"]}>{t(`latest-insight.blog.posts.p${post.id}.desc`)}</p>
+        <h3 className={styles["blog-card__title"]}>
+          {post.title[language]}
+        </h3>
+        <p className={styles["blog-card__desc"]}>
+          {post.description[language]}
+        </p>
 
-        <a href={post.href} className={styles["blog-card__link"]} aria-label={`Read: ${post.title}`}>
-          {t("latest-insight.blog.blog-post-cta")}
+        <Link
+          to={`blog/${post.slug}`}
+          className={styles["blog-card__link"]}
+          aria-label={`Read: ${post.title[language]}`}
+        >
+          {tHome("latest-insight.blog.blog-post-cta")}
           <ArrowRight className={styles["blog-card__arrow"]} size={16} strokeWidth={2} />
-        </a>
+        </Link>
       </div>
     </article>
   );
 }
 
 export default function BlogSection() {
-  const { t } = useTranslation("home");
+  const { t: tHome, i18n } = useTranslation("home");
+  const { t: tBlog } = useTranslation("blogs");
+  const language = i18n.language?.startsWith("fr") ? "fr" : "en";
+  const posts = [...MOCK_BLOG_POSTS].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  );
 
   return (
     <section className={styles["blog-section"]} aria-labelledby="blog-heading">
@@ -87,26 +106,26 @@ export default function BlogSection() {
 
       <div className={styles["blog-section__container"]}>
         <header className={styles["blog-section__header"]}>
-          <span className={styles["blog-section__eyebrow"]}>{t("latest-insight.label")}</span>
+          <span className={styles["blog-section__eyebrow"]}>{tHome("latest-insight.label")}</span>
           <h2 className={styles["blog-section__heading"]} id="blog-heading">
-            {t("latest-insight.title1")}&nbsp;{t("latest-insight.title2")}
+            {tHome("latest-insight.title1")}&nbsp;{tHome("latest-insight.title2")}
           </h2>
           <p className={styles["blog-section__subheading"]}>
-            {t("latest-insight.descriptions")}
+            {tHome("latest-insight.descriptions")}
           </p>
         </header>
 
         <div className={styles["blog-section__grid"]}>
-          {BLOG_POSTS.map((post, i) => (
-            <BlogCard key={post.id} post={post} index={i} />
+          {posts.slice(0, 6).map((post, i) => (
+            <BlogCard key={post.id} post={post} index={i} language={language} />
           ))}
         </div>
 
         <div className={styles["blog-section__cta-wrap"]}>
-          <a href="#" className={styles["blog-section__cta"]}>
-            {t("latest-insight.blog-section-cta")}
+          <Link to="blog" className={styles["blog-section__cta"]}>
+            {tHome("latest-insight.blog-section-cta")}
             <ArrowRight size={18} strokeWidth={2} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
