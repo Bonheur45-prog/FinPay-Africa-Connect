@@ -14,6 +14,7 @@ import enApi from './locales/en/api.json';
 import enCards from './locales/en/cards.json';
 import enKyc from './locales/en/kyc.json';
 import enCrossBorder from './locales/en/crossBorder.json';
+import { blogTranslations } from './features/blog/constants/translations.js';
 
 // --- French ---
 import frCommon from './locales/fr/common.json';
@@ -47,6 +48,7 @@ export const initI18n = i18n
         cards : enCards?.cards ?? enCards,
         kyc : enKyc?.kyc ?? enKyc,
         crossBorder : enCrossBorder?.crossBorder ?? enCrossBorder,
+        blogs : blogTranslations.en.blogs,
       },
       fr: {
         common : frCommon,
@@ -61,6 +63,7 @@ export const initI18n = i18n
         cards : frCards?.cards ?? frCards,
         kyc : frKyc?.kyc ?? frKyc,
         crossBorder : frCrossBorder?.crossBorder ?? frCrossBorder,
+        blogs : blogTranslations.fr.blogs,
       },
     },
 

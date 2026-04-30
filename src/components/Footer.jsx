@@ -33,7 +33,7 @@ export function Footer() {
             <Link to="/about">About Us</Link>
             <Link to="#">Our Team</Link>
             <Link to="#">Careers</Link>
-            <Link to="#">Blog</Link>
+            <Link to="blog">Blog</Link>
           </div>
 
           <div>

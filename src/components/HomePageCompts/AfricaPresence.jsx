@@ -431,7 +431,7 @@ export default function AfricaPresenceSection() {
               <AfricaMap 
                 width={720} 
                 height={500} 
-                extrusionDepth={3}
+                extrusionDepth={5}
                 showLegend={true}
               />
             </div>
