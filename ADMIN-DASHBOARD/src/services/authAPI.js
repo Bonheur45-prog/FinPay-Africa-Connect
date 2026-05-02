@@ -3,12 +3,12 @@ import apiClient from './apiClient';
 const authAPI = {
   login: async (credentials) => {
     const response = await apiClient.post('/api/auth/login', credentials);
-    return response.data;
+    return response.data.data;
   },
 
   getMe: async () => {
     const response = await apiClient.get('/api/auth/me');
-    return response.data;
+    return response.data.data;
   },
 
   logout: async () => {

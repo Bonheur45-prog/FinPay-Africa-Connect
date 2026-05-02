@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL
       ? process.env.FRONTEND_URL.split(',')
-      : ['http://localhost:5173', 'http://localhost:3000'],
+      : ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:3001'],
     credentials: true,
   })
 );
@@ -34,11 +34,11 @@ const globalLimiter = rateLimit({
 
 // Stricter limiter for auth endpoints
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 1 * 60 * 1000,
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { success: false, message: 'Too many login attempts. Please try again in 15 minutes.' },
+  message: { success: false, message: 'Too many login attempts. Please try again in 1 minute.' },
 });
 
 app.use(globalLimiter);

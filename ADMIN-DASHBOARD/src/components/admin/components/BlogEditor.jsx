@@ -5,7 +5,7 @@ import {
   Type, Heading2, Heading3, List, AlignLeft, Image as ImageIcon,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import blogAPI from '../../services/blogAPI';
+import blogAPI from "../../../services/blogAPI.js";
 import styles from './BlogEditor.module.css';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────

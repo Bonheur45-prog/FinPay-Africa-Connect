@@ -4,8 +4,8 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { LayoutDashboard, FileText, LogOut, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import useAuthStore from '../store/useAuthStore';
-import authAPI from '../services/authAPI';
+import useAuthStore from '../../store/useAuthStore.js';
+import authAPI from '../../services/authAPI.js';
 import styles from './AdminLayout.module.css';
 
 const NAV_LINKS = [

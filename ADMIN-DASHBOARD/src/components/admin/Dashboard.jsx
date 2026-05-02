@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { FileText, BookOpen, Edit3, Eye, PlusCircle, ArrowRight } from 'lucide-react';
-import blogAPI from '../services/blogAPI';
+import blogAPI from '../../services/blogAPI.js';
 import styles from './Dashboard.module.css';
 
 const StatCard = ({ icon: Icon, label, value, color }) => (

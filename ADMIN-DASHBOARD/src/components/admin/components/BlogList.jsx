@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { PlusCircle, Search, Eye, Edit2, Trash2, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import toast from 'react-hot-toast';
-import blogAPI from '../../services/blogAPI';
+import blogAPI from '../../../services/blogAPI.js';
 import styles from './BlogList.module.css';
 
 const STATUS_TABS = ['all', 'published', 'draft', 'archived'];

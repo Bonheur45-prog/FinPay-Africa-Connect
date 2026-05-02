@@ -3,8 +3,8 @@ import { Navigate, useNavigate } from 'react-router';
 import { useMutation } from '@tanstack/react-query';
 import { Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
-import authAPI from '../services/authAPI';
-import useAuthStore from '../store/useAuthStore';
+import authAPI from '../../services/authAPI.js';
+import useAuthStore from '../../store/useAuthStore.js';
 import styles from './Login.module.css';
 
 export default function Login() {
