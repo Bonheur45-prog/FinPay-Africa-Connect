@@ -82,7 +82,6 @@ const blogSchema = new mongoose.Schema({
 // Indexes
 blogSchema.index({ 'title.en': 'text', 'title.fr': 'text', 'content.en': 'text', 'content.fr': 'text' });
 blogSchema.index({ category: 1, status: 1, featured: -1, publishedAt: -1 });
-blogSchema.index({ slug: 1 });
 
 // Virtual for reading time
 blogSchema.virtual('readingTime').get(function() {

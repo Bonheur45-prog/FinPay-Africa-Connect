@@ -179,9 +179,11 @@ export const uploadCoverImage = async (req, res) => {
 
     return sendSuccess(res, 200, 'Cover image uploaded successfully', { coverImage: result.secure_url });
   } catch (error) {
+    console.error('[uploadCoverImage] error:', error);
     return sendError(res, 500, error.message);
   }
 };
+
 
 export const uploadBlogImages = async (req, res) => {
   try {
