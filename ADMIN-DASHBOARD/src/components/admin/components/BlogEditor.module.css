@@ -88,7 +88,6 @@
 
 .sectionHeaderClickable {
   cursor: pointer;
-  user-select: none;
 }
 
 .sectionHeaderClickable:hover { background: #F1F5F9; }
@@ -335,9 +334,15 @@
 .previewEmpty { color: #CBD5E1; font-style: italic; font-size: 0.9rem; margin: 0; }
 
 .previewBody { font-size: 0.9375rem; line-height: 1.8; color: #1E293B; }
+.previewH1   { font-size: 1.5rem; font-weight: 800; color: #0A1628; margin: 1.75rem 0 0.75rem; }
 .previewH2   { font-size: 1.25rem; font-weight: 700; color: #0A1628; margin: 1.5rem 0 0.75rem; }
 .previewH3   { font-size: 1.0625rem; font-weight: 600; color: #0A1628; margin: 1.25rem 0 0.5rem; }
 .previewPara { margin: 0 0 1rem; }
+.previewCenter { margin: 0 0 1rem; text-align: center; font-style: italic; color: #334155; }
+.previewCenterBlock { margin: 0 0 1rem; text-align: center; }
+.previewCenterHeading { text-align: center; }
+.previewImage { display: block; width: 100%; max-width: 100%; margin: 1rem auto; border-radius: 12px; }
+.previewImageBlock { display: block; width: 100%; max-width: 100%; margin: 1rem auto; border-radius: 12px; }
 .previewList { margin: 0 0 1rem; padding-left: 1.5rem; }
 .previewList li { margin-bottom: 0.375rem; }
 
@@ -428,7 +433,6 @@
   font-size: 0.875rem;
   color: #374151;
   cursor: pointer;
-  user-select: none;
 }
 
 .checkbox {
