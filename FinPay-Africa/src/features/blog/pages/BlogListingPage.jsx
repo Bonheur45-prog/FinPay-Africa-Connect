@@ -13,9 +13,10 @@ import {
   ChevronLeft,
   ChevronRight,
   TrendingUp,
+  UserCircle,
 } from "lucide-react";
 import { useBlogListing } from "../hooks/useBlog";
-import { CATEGORY_METADATA, MOCK_BLOG_POSTS } from "../constants/blogData";
+import { CATEGORY_METADATA } from "../constants/blogData";
 import styles from "./BlogListingPage.module.css";
 
 function FeaturedBlogCard({ post, language, blogBasePath }) {
@@ -24,7 +25,7 @@ function FeaturedBlogCard({ post, language, blogBasePath }) {
   return (
     <article className={styles["featured-card"]}>
       <div className={styles["featured-card__image"]}>
-        <img src={post.image} alt={post.title[language]} loading="lazy" />
+        <img src={post.coverImage} alt={post.title[language]} loading="lazy" />
         <div className={styles["featured-card__overlay"]} />
         <div className={styles["featured-card__badge"]}>
           {t("listing.featured")}
@@ -43,11 +44,15 @@ function FeaturedBlogCard({ post, language, blogBasePath }) {
         </p>
 
         <div className={styles["featured-card__meta"]}>
-          <img
-            src={post.author.avatar}
-            alt={post.author.name}
-            className={styles["featured-card__author-avatar"]}
-          />
+          {post.author.avatar ? (
+            <img
+              src={post.author.avatar}
+              alt={post.author.name}
+              className={styles["featured-card__author-avatar"]}
+            />
+          ) : (
+            <UserCircle size={40} className={styles["featured-card__author-avatar"]} />
+          )}
           <div>
             <p className={styles["featured-card__author-name"]}>
               {post.author.name}
@@ -85,7 +90,7 @@ function BlogCardGrid({ post, language, index, blogBasePath }) {
     >
       <div className={styles["blog-card__image-wrap"]}>
         <img
-          src={post.thumbnail || post.image}
+          src={post.thumbnail || post.coverImage}
           alt={post.title[language]}
           className={styles["blog-card__image"]}
           loading="lazy"
@@ -111,7 +116,7 @@ function BlogCardGrid({ post, language, index, blogBasePath }) {
           </span>
           <span className={styles["blog-card__separator"]}>·</span>
           <span className={styles["blog-card__read-time"]}>
-            {post.readTime} {t("card.minutes")}
+            {post.readingTime} {t("card.minutes")}
           </span>
         </div>
 
@@ -142,7 +147,6 @@ function BlogListingPage() {
 
   const {
     posts,
-    allFilteredPosts,
     totalPosts,
     currentPage,
     totalPages,
@@ -155,9 +159,9 @@ function BlogListingPage() {
     setSortBy,
     isLoading,
     error,
-  } = useBlogListing(MOCK_BLOG_POSTS, 6);
+  } = useBlogListing(6);
 
-  const featuredPosts = MOCK_BLOG_POSTS.filter((p) => p.featured).slice(0, 1);
+  const featuredPosts = posts.filter((p) => p.featured).slice(0, 1);
 
   const categories = [
     { id: "all", label: t("listing.filterAll") },

@@ -15,6 +15,7 @@ import {
   Play,
   X,
 } from "lucide-react";
+import { UserCircle } from "lucide-react";
 import { useBlogDetail, useBlogComments } from "../hooks/useBlog";
 import { CATEGORY_METADATA } from "../constants/blogData";
 import styles from "./BlogDetailPage.module.css";
@@ -327,14 +328,15 @@ function BlogDetailPage({ postId }) {
         <p className={styles["blog-header__excerpt"]}>{post.excerpt[language]}</p>
         <div className={styles["blog-header__meta"]}>
           <div className={styles["author-info"]}>
-            <img
-              src={post.author?.avatar || '/placeholder-avatar.jpg'}
-              alt={post.author?.name || 'Author'}
-              className={styles["author-avatar"]}
-              onError={(e) => {
-                e.target.src = '/placeholder-avatar.jpg';
-              }}
-            />
+            {post.author?.avatar ? (
+              <img
+                src={post.author.avatar}
+                alt={post.author?.name || 'Author'}
+                className={styles["author-avatar"]}
+              />
+            ) : (
+              <UserCircle size={50} className={styles["author-avatar"]} />
+            )}
             <div>
               <p className={styles["author-name"]}>{post.author?.name}</p>
               {post.author?.bio && post.author.bio[language] && (

@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import blogAPI from "../../services/blogAPI";
 import { MOCK_BLOG_POSTS, CATEGORY_METADATA } from "../../features/blog/constants/blogData";
 import styles from "./BlogsSection.module.css";
 
@@ -40,7 +41,7 @@ function BlogCard({ post, index, language }) {
     >
       <div className={styles["blog-card__image-wrap"]}>
         <img
-          src={post.image}
+          src={post.coverImage}
           alt={post.title[language]}
           className={styles["blog-card__image"]}
           loading="lazy"
@@ -66,7 +67,7 @@ function BlogCard({ post, index, language }) {
             ·
           </span>
           <span className={styles["blog-card__readtime"]}>
-            {post.readTime} {tBlog("card.minutes")}
+            {post.readingTime} {tBlog("card.minutes")}
           </span>
         </div>
 
@@ -94,9 +95,42 @@ export default function BlogSection() {
   const { t: tHome, i18n } = useTranslation("home");
   const { t: tBlog } = useTranslation("blogs");
   const language = i18n.language?.startsWith("fr") ? "fr" : "en";
-  const posts = [...MOCK_BLOG_POSTS].sort(
-    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
-  );
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchPosts = async () => {
+      try {
+        const response = await blogAPI.getBlogs({
+          limit: 6,
+          sort: "-publishedAt",
+          status: "published",
+        });
+
+        if (isMounted) {
+          setPosts(response.blogs || []);
+        }
+      } catch (error) {
+        console.error("Failed to load latest blog posts:", error);
+        if (isMounted) {
+          setPosts([...MOCK_BLOG_POSTS]
+            .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+            .slice(0, 6));
+        }
+      }
+    };
+
+    fetchPosts();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const sortedPosts = posts.length
+    ? [...posts].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    : [...MOCK_BLOG_POSTS].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 
   return (
     <section className={styles["blog-section"]} aria-labelledby="blog-heading">
@@ -116,7 +150,7 @@ export default function BlogSection() {
         </header>
 
         <div className={styles["blog-section__grid"]}>
-          {posts.slice(0, 6).map((post, i) => (
+          {sortedPosts.slice(0, 6).map((post, i) => (
             <BlogCard key={post.id} post={post} index={i} language={language} />
           ))}
         </div>
