@@ -157,7 +157,6 @@ export const useBlogComments = (postId) => {
     setSubmitError(null);
 
     try {
-      // TODO: Implement comment API when backend supports it
       console.log('Comment submission not yet implemented:', commentData);
 
       // For now, just simulate success

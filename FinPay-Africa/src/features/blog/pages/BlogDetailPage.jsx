@@ -16,38 +16,10 @@ import {
   X,
 } from "lucide-react";
 import { UserCircle } from "lucide-react";
+import { parseBlogContent } from "../utils/contentParser.jsx";
 import { useBlogDetail, useBlogComments } from "../hooks/useBlog";
 import { CATEGORY_METADATA } from "../constants/blogData";
 import styles from "./BlogDetailPage.module.css";
-
-function TableOfContents({ content }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const headings = content.match(/^## .+$/gm) || [];
-
-  if (headings.length === 0) return null;
-
-  return (
-    <div className={styles.toc}>
-      <button
-        className={styles["toc__toggle"]}
-        onClick={() => setIsOpen(!isOpen)}
-        type="button"
-      >
-        <span>📑 Table of Contents</span>
-        <span className={styles["toc__arrow"]}>{isOpen ? "▼" : "▶"}</span>
-      </button>
-      {isOpen && (
-        <ul className={styles["toc__list"]}>
-          {headings.map((heading, idx) => (
-            <li key={idx}>
-              <a href={`#section-${idx}`}>{heading.replace(/^## /, "")}</a>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
 
 function MediaGallery({ media }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -405,44 +377,9 @@ function BlogDetailPage({ postId }) {
 
       <div className={styles["blog-content"]}>
         <div className={styles["content-wrapper"]}>
-          <aside className={styles.sidebar}>
-            <TableOfContents content={post.content[language]} />
-          </aside>
           <main className={styles["article-content"]}>
             <div className={styles["article-body"]}>
-              {post.content[language].split("\n\n").map((paragraph, idx) => {
-                if (paragraph.startsWith("## ")) {
-                  const title = paragraph.replace(/^## /, "");
-                  return (
-                    <h2 key={idx} id={`section-${idx}`} className={styles["content-heading"]}>
-                      {title}
-                    </h2>
-                  );
-                }
-                if (paragraph.startsWith("### ")) {
-                  const title = paragraph.replace(/^### /, "");
-                  return (
-                    <h3 key={idx} className={styles["content-subheading"]}>
-                      {title}
-                    </h3>
-                  );
-                }
-                if (paragraph.startsWith("- ")) {
-                  const items = paragraph.split("\n").filter((l) => l.startsWith("- "));
-                  return (
-                    <ul key={idx} className={styles["content-list"]}>
-                      {items.map((item, i) => (
-                        <li key={i}>{item.replace(/^- /, "")}</li>
-                      ))}
-                    </ul>
-                  );
-                }
-                return (
-                  <p key={idx} className={styles["content-paragraph"]}>
-                    {paragraph}
-                  </p>
-                );
-              })}
+              {parseBlogContent(post.content[language])}
             </div>
             {post.mediaGallery && post.mediaGallery.length > 0 && <MediaGallery media={post.mediaGallery} />}
             {post.tags && post.tags.length > 0 && (
