@@ -536,8 +536,8 @@ const AfricaMap3D = forwardRef(function AfricaMap3D(
         key={canvasKey}
         camera={{ position: [1.2, -1.4, 5.0], fov: 42, near: 0.05, far: 60 }}
         style={{ background: backgroundColor, display: 'block', width: '100%', height: '100%' }}
-        shadows="soft"
-        gl={{ antialias: true, alpha: false }}
+        shadows
+        gl={{ antialias: true, alpha: false, shadowMap: { type: THREE.PCFShadowMap } }}
       >
         <Suspense fallback={null}>
           {topoData && (

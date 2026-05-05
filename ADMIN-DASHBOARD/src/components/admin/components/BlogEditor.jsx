@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import {
   ArrowLeft, Upload, X, Eye, EyeOff, ChevronDown, ChevronUp,
-  Type, Heading2, Heading3, List, AlignLeft, Image as ImageIcon,
+  Type, Heading2, Heading3, List, Bold, Italic, AlignLeft, AlignCenter, Image as ImageIcon,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import blogAPI from "../../../services/blogAPI.js";
@@ -87,25 +87,116 @@ const formToPayload = (form) => ({
 function ContentPreview({ content }) {
   if (!content) return <p className={styles.previewEmpty}>Nothing to preview yet…</p>;
 
+  const parseInline = (text, keyPrefix = '') => {
+    if (!text) return [];
+
+    const imagePattern = /!\[([^\]]*)\]\(([^)]+)\)/;
+    const imageMatch = imagePattern.exec(text);
+    if (imageMatch) {
+      const before = text.slice(0, imageMatch.index);
+      const after = text.slice(imageMatch.index + imageMatch[0].length);
+      return [
+        ...parseInline(before, `${keyPrefix}before-`),
+        <img
+          key={`${keyPrefix}img-${imageMatch.index}`}
+          src={imageMatch[2]}
+          alt={imageMatch[1] || 'Blog image'}
+          className={styles.previewImage}
+        />,
+        ...parseInline(after, `${keyPrefix}after-`),
+      ];
+    }
+
+    const markerPattern = /(\*[^*]+\*|_[^_]+_|~[^~]+~)/;
+    const markerMatch = markerPattern.exec(text);
+    if (markerMatch) {
+      const before = text.slice(0, markerMatch.index);
+      const after = text.slice(markerMatch.index + markerMatch[0].length);
+      const raw = markerMatch[0];
+      const inner = raw.slice(1, -1);
+      const marker = raw[0];
+      const innerNodes = parseInline(inner, `${keyPrefix}inner-${markerMatch.index}-`);
+
+      const wrapped = marker === '*'
+        ? <strong key={`${keyPrefix}bold-${markerMatch.index}`}>{innerNodes}</strong>
+        : marker === '_'
+          ? <em key={`${keyPrefix}italic-${markerMatch.index}`}>{innerNodes}</em>
+          : <span key={`${keyPrefix}center-${markerMatch.index}`} className={styles.previewCenter}>{innerNodes}</span>;
+
+      return [
+        ...parseInline(before, `${keyPrefix}before-`),
+        wrapped,
+        ...parseInline(after, `${keyPrefix}after-`),
+      ];
+    }
+
+    return [text];
+  };
+
+  const renderBlock = (block, idx, center = false) => {
+    const trimmed = block.trim();
+    if (!trimmed) return null;
+
+    const imageOnly = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imageOnly) {
+      return (
+        <img
+          key={`image-${idx}`}
+          src={imageOnly[2]}
+          alt={imageOnly[1] || 'Blog image'}
+          className={styles.previewImageBlock}
+        />
+      );
+    }
+
+    if (trimmed.startsWith('~') && trimmed.endsWith('~')) {
+      return renderBlock(trimmed.slice(1, -1).trim(), idx, true);
+    }
+    if (trimmed.startsWith('#') && trimmed.endsWith('#') && !trimmed.startsWith('## ')) {
+      return (
+        <h1 key={idx} className={center ? `${styles.previewH1} ${styles.previewCenterHeading}` : styles.previewH1}>
+          {parseInline(trimmed.slice(1, -1).trim(), `h1-${idx}-`)}
+        </h1>
+      );
+    }
+    if (trimmed.startsWith('## ')) {
+      return (
+        <h2 key={idx} className={center ? `${styles.previewH2} ${styles.previewCenterHeading}` : styles.previewH2}>
+          {parseInline(trimmed.replace(/^## /, ''), `h2-${idx}-`)}
+        </h2>
+      );
+    }
+    if (trimmed.startsWith('### ')) {
+      return (
+        <h3 key={idx} className={center ? `${styles.previewH3} ${styles.previewCenterHeading}` : styles.previewH3}>
+          {parseInline(trimmed.replace(/^### /, ''), `h3-${idx}-`)}
+        </h3>
+      );
+    }
+    if (trimmed.startsWith('- ')) {
+      const items = trimmed.split('\n').filter((l) => l.startsWith('- '));
+      return (
+        <ul key={idx} className={styles.previewList}>
+          {items.map((item, i) => (
+            <li key={i}>{parseInline(item.replace(/^- /, ''), `li-${idx}-${i}-`)}</li>
+          ))}
+        </ul>
+      );
+    }
+    if (center) {
+      return (
+        <div key={idx} className={styles.previewCenterBlock}>
+          {parseInline(trimmed, `p-${idx}-`)}
+        </div>
+      );
+    }
+
+    return <p key={idx} className={styles.previewPara}>{parseInline(trimmed, `p-${idx}-`)}</p>;
+  };
+
   return (
     <div className={styles.previewBody}>
-      {content.split('\n\n').map((block, idx) => {
-        if (block.startsWith('## ')) {
-          return <h2 key={idx} className={styles.previewH2}>{block.replace(/^## /, '')}</h2>;
-        }
-        if (block.startsWith('### ')) {
-          return <h3 key={idx} className={styles.previewH3}>{block.replace(/^### /, '')}</h3>;
-        }
-        if (block.startsWith('- ')) {
-          const items = block.split('\n').filter((l) => l.startsWith('- '));
-          return (
-            <ul key={idx} className={styles.previewList}>
-              {items.map((item, i) => <li key={i}>{item.replace(/^- /, '')}</li>)}
-            </ul>
-          );
-        }
-        return block ? <p key={idx} className={styles.previewPara}>{block}</p> : null;
-      })}
+      {content.split('\n\n').map((block, idx) => renderBlock(block, idx))}
     </div>
   );
 }
@@ -113,54 +204,148 @@ function ContentPreview({ content }) {
 // ─── Markdown toolbar ────────────────────────────────────────────────────────
 
 const TOOLBAR_ACTIONS = [
-  { label: '¶',   title: 'Paragraph — just type',     prefix: ''    },
-  { label: 'H2',  title: 'Section heading (##)',       prefix: '## ' },
-  { label: 'H3',  title: 'Sub-heading (###)',          prefix: '### '},
-  { label: '•',   title: 'List item (-)',              prefix: '- '  },
+  { label: '¶',        title: 'Paragraph — just type',                 action: 'paragraph' },
+  { label: 'H1',       title: 'Big title (#Big Title#)',               action: 'heading1' },
+  { label: 'H2',       title: 'Section heading (##)',                   action: 'heading2' },
+  { label: 'H3',       title: 'Sub-heading (###)',                      action: 'heading3' },
+  { label: '*',        title: 'Bold text (*bold*)',                     action: 'bold' },
+  { label: '_',        title: 'Italic text (_italic_)',                 action: 'italic' },
+  { label: '•',        title: 'Bullet list item (-)',                   action: 'list' },
+  { label: 'Center',   title: 'Centered text (~center~)',               action: 'center' },
+  { label: 'Img',      title: 'Insert image markdown (![alt](url))',     action: 'image' },
 ];
 
 function ContentField({ lang, value, onChange, textareaRef }) {
   const [showPreview, setShowPreview] = useState(false);
   const wordCount = value.trim() ? value.trim().split(/\s+/).length : 0;
 
-  const insertMarkdown = useCallback((prefix) => {
+  const wrapSelection = useCallback((wrapper, placeholder) => {
     const ta = textareaRef.current;
     if (!ta) {
-      // Fallback: just append
-      onChange(value + (value ? '\n\n' : '') + prefix);
+      onChange(value + (value ? '\n\n' : '') + wrapper + placeholder + wrapper);
       return;
     }
-    const s   = ta.selectionStart;
-    const e   = ta.selectionEnd;
+    const s = ta.selectionStart;
+    const e = ta.selectionEnd;
+    const selectedText = value.slice(s, e) || placeholder;
     const before = value.slice(0, s);
-    const after  = value.slice(e);
-    const sep    = before.length > 0 && !before.endsWith('\n\n') ? '\n\n' : '';
-    const insert = sep + prefix;
-    const newVal = before + insert + after;
-    const newPos = s + insert.length;
+    const after = value.slice(e);
+    const wrapped = `${wrapper}${selectedText}${wrapper}`;
+    const newValue = before + wrapped + after;
+    const cursorStart = s + wrapper.length;
+    const cursorEnd = cursorStart + selectedText.length;
 
-    onChange(newVal);
+    onChange(newValue);
     requestAnimationFrame(() => {
       ta.focus();
-      ta.setSelectionRange(newPos, newPos);
+      ta.setSelectionRange(cursorStart, cursorEnd);
     });
   }, [value, onChange, textareaRef]);
+
+  const insertBlock = useCallback((prefix, suffix = '') => {
+    const ta = textareaRef.current;
+    if (!ta) {
+      onChange(value + (value ? '\n\n' : '') + prefix + suffix);
+      return;
+    }
+    const s = ta.selectionStart;
+    const e = ta.selectionEnd;
+    const before = value.slice(0, s);
+    const after = value.slice(e);
+    const needsBreak = before.length > 0 && !before.endsWith('\n\n');
+    const insert = (needsBreak ? '\n\n' : '') + prefix + suffix;
+    const newValue = before + insert + after;
+    const pos = s + insert.length;
+
+    onChange(newValue);
+    requestAnimationFrame(() => {
+      ta.focus();
+      ta.setSelectionRange(pos, pos);
+    });
+  }, [value, onChange, textareaRef]);
+
+  const insertMarkdown = useCallback((action) => {
+    switch (action) {
+      case 'heading1':
+        insertBlock('#', '#');
+        break;
+      case 'heading2':
+        insertBlock('## ');
+        break;
+      case 'heading3':
+        insertBlock('### ');
+        break;
+      case 'bold':
+        wrapSelection('*', 'bold');
+        break;
+      case 'italic':
+        wrapSelection('_', 'italic');
+        break;
+      case 'center': {
+        const ta = textareaRef.current;
+        const s = ta?.selectionStart ?? value.length;
+        const e = ta?.selectionEnd ?? value.length;
+        const before = value.slice(0, s);
+        const selectedText = value.slice(s, e) || 'Centered text';
+        const after = value.slice(e);
+        const centered = `~${selectedText}~`;
+        const newValue = before + centered + after;
+        onChange(newValue);
+        requestAnimationFrame(() => {
+          if (ta) {
+            ta.focus();
+            ta.setSelectionRange(s + 1, s + 1 + selectedText.length);
+          }
+        });
+        break;
+      }
+      case 'image': {
+        const ta = textareaRef.current;
+        const s = ta?.selectionStart ?? value.length;
+        const e = ta?.selectionEnd ?? value.length;
+        const before = value.slice(0, s);
+        const selectedText = value.slice(s, e) || 'alt text';
+        const after = value.slice(e);
+        const insert = `![${selectedText}](https://)`;
+        const newValue = before + insert + after;
+        onChange(newValue);
+        requestAnimationFrame(() => {
+          if (ta) {
+            ta.focus();
+            const urlStart = before.length + insert.indexOf('https://');
+            ta.setSelectionRange(urlStart, urlStart + 8);
+          }
+        });
+        break;
+      }
+      case 'list':
+        insertBlock('- ');
+        break;
+      default:
+        insertBlock('');
+    }
+  }, [insertBlock, wrapSelection, textareaRef, value, onChange]);
 
   return (
     <div className={styles.contentField}>
       <div className={styles.contentToolbar}>
-        {TOOLBAR_ACTIONS.map(({ label, title, prefix }) => (
+        {TOOLBAR_ACTIONS.map(({ label, title, action }) => (
           <button
             key={label}
             type="button"
             title={title}
             className={styles.toolbarBtn}
-            onClick={() => insertMarkdown(prefix)}
+            onClick={() => insertMarkdown(action)}
           >
-            {label === '¶'  ? <AlignLeft size={14} /> :
-             label === 'H2' ? <Heading2  size={14} /> :
-             label === 'H3' ? <Heading3  size={14} /> :
-             label === '•'  ? <List      size={14} /> :
+            {label === '¶'      ? <AlignLeft size={14} /> :
+             label === 'H1'      ? <Type       size={14} /> :
+             label === 'H2'      ? <Heading2   size={14} /> :
+             label === 'H3'      ? <Heading3   size={14} /> :
+             label === '*'       ? <Bold       size={14} /> :
+             label === '_'       ? <Italic     size={14} /> :
+             label === '•'       ? <List       size={14} /> :
+             label === 'Center'  ? <AlignCenter size={14} /> :
+             label === 'Img'     ? <ImageIcon size={14} /> :
              label}
           </button>
         ))}
@@ -510,8 +695,7 @@ export default function BlogEditor({ blog, onClose }) {
                     Article Content <span className={styles.required}>*</span>
                   </label>
                   <p className={styles.formatGuide}>
-                    <strong>Format guide:</strong> Use <code>## </code> for section headings,{' '}
-                    <code>### </code> for sub-headings, <code>- </code> for bullet list items.
+                    <strong>Format guide:</strong> Use <code>#Big Title#</code> for a large heading, <code>## </code> for section headings, <code>### </code> for sub-headings, <code>*bold*</code> for bold text, <code>_italic_</code> for italics, <code>~center~</code> for centered text, and <code>- </code> for bullet lists.
                     Separate each block with a blank line.
                   </p>
                   <ContentField
