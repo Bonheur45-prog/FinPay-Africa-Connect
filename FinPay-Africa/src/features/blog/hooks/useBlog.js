@@ -109,19 +109,28 @@ export const useBlogDetail = (postId) => {
         const blogPost = await blogAPI.getBlogBySlug(postId);
         setPost(blogPost);
 
-        if (blogPost?.category) {
-          const res = await blogAPI.getBlogs({
-            category: blogPost.category,
+        const loadRelated = async () => {
+          const params = {
             limit: 4,
             status: "published",
-          });
+          };
 
-          const filtered = res.blogs.filter(
-            (p) => p.slug !== blogPost.slug
-          );
+          if (blogPost?.category) {
+            params.category = blogPost.category;
+          }
 
-          setRelatedPosts(filtered.slice(0, 3));
-        }
+          const res = await blogAPI.getBlogs(params);
+          const filtered = (res.blogs || []).filter((p) => p.slug !== blogPost.slug);
+
+          if (filtered.length === 0 && blogPost?.category) {
+            const fallback = await blogAPI.getBlogs({ limit: 4, status: "published" });
+            setRelatedPosts((fallback.blogs || []).filter((p) => p.slug !== blogPost.slug).slice(0, 3));
+          } else {
+            setRelatedPosts(filtered.slice(0, 3));
+          }
+        };
+
+        await loadRelated();
       } catch (err) {
         setError(err.message || "Failed to fetch blog");
       } finally {

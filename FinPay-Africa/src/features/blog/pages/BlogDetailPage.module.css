@@ -689,80 +689,91 @@
    ───────────────────────────────────────────────────────────────────────────── */
 
 .related-posts {
-  margin-top: 80px;
-  padding-top: 40px;
+  margin: 40px 24px 20px;
+  padding-top: 32px;
   border-top: 2px solid var(--border-color);
 }
 
 .related-posts__title {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 32px;
+  margin: 0 0 24px;
+  text-align: center;
 }
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
 }
 
-.related-card {
+.highlighted-card {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
 }
 
-.related-card:hover {
-  transform: translateY(-4px);
+.highlighted-card:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.related-card__image {
+.highlighted-card__image {
   width: 100%;
-  height: 180px;
+  height: 140px;
   object-fit: cover;
   display: block;
 }
 
-.related-card__body {
-  padding: 20px;
+.highlighted-card__body {
+  padding: 16px;
 }
 
-.related-card__category {
-  display: inline-block;
+.highlighted-card__category {
+  display: inline-flex;
   background: var(--primary-light);
   color: var(--primary-color);
   padding: 4px 10px;
   border-radius: 999px;
-  font-size: 10px;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.related-card__title {
+.highlighted-card__title {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 12px;
-  line-height: 1.4;
+  margin: 0 0 10px;
+  line-height: 1.35;
 }
 
-.related-card__link {
+.highlighted-card__description {
+  margin: 0 0 14px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-height: 3.6em;
+  overflow: hidden;
+}
+
+.highlighted-card__link {
   display: inline-flex;
+  align-items: center;
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: gap var(--transition-smooth);
-  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: color var(--transition-smooth);
 }
 
-.related-card__link:hover {
-  gap: 8px;
+.highlighted-card__link:hover {
+  color: var(--primary-dark);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────

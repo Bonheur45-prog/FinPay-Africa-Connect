@@ -240,22 +240,28 @@ function RelatedArticles({ relatedPosts, language, blogBasePath }) {
       <h3 className={styles["related-posts__title"]}>{t("detail.relatedArticles")}</h3>
       <div className={styles["related-grid"]}>
         {relatedPosts.map((post) => (
-          <article key={post._id} className={styles["related-card"]}>
+          <article key={post._id || post.id} className={styles["highlighted-card"]}>
             <img
               src={post.coverImage || "/placeholder-blog.jpg"}
               alt={post.title[language]}
-              className={styles["related-card__image"]}
+              className={styles["highlighted-card__image"]}
               onError={(e) => {
                 e.target.src = "/placeholder-blog.jpg";
               }}
             />
-            <div className={styles["related-card__body"]}>
-              <p className={styles["related-card__category"]}>
+            <div className={styles["highlighted-card__body"]}>
+              <p className={styles["highlighted-card__category"]}>
                 {t(`categories.${post.category}`)}
               </p>
-              <h4 className={styles["related-card__title"]}>{post.title[language]}</h4>
-              <Link to={`${blogBasePath}/${post.slug}`} className={styles["related-card__link"]}>
-                Read More →
+              <h4 className={styles["highlighted-card__title"]}>{post.title[language]}</h4>
+              <p className={styles["highlighted-card__description"]}>
+                {post.description?.[language] || post.excerpt?.[language]}
+              </p>
+              <Link
+                to={`${blogBasePath}/${post.slug}`}
+                className={styles["highlighted-card__link"]}
+              >
+                {t("card.readArticle")}
               </Link>
             </div>
           </article>
