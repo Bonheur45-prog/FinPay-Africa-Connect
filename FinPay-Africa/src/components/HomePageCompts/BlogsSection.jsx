@@ -93,7 +93,6 @@ function BlogCard({ post, index, language }) {
 
 export default function BlogSection() {
   const { t: tHome, i18n } = useTranslation("home");
-  const { t: tBlog } = useTranslation("blogs");
   const language = i18n.language?.startsWith("fr") ? "fr" : "en";
   const [posts, setPosts] = useState([]);
 
