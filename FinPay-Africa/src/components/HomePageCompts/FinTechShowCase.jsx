@@ -876,7 +876,7 @@ function Header() {
       <div>
         <div
           style={{
-            color: '#8C1A13',
+            color: '#d4b36a',
             fontSize: '10px',
             letterSpacing: '0.35em',
             textTransform: 'uppercase',
@@ -897,7 +897,7 @@ function Header() {
             lineHeight: 1,
           }}
         >
-          Fin<span style={{ color: '#8C1A13' }}>Pay</span>{' '}
+          Fin<span style={{ color: '#d4b36a' }}>Pay</span>{' '}
           <span style={{ opacity: 0.45, fontSize: '14px' }}>AFRICA</span>
         </div>
       </div>
@@ -907,25 +907,27 @@ function Header() {
           <button
             key={label}
             style={{
-              background: 'transparent',
-              border: '1px solid rgba(140,26,19,0.25)',
-              color: '#af2b21',
-              padding: '6px 18px',
-              borderRadius: '4px',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.14)',
+              color: '#f8fafc',
+              padding: '8px 16px',
+              borderRadius: '999px',
               fontSize: '11px',
               letterSpacing: '0.12em',
               cursor: 'pointer',
               fontFamily: "'Rajdhani', sans-serif",
               fontWeight: '600',
-              transition: 'border-color 0.2s, color 0.2s',
+              transition: 'border-color 0.2s, color 0.2s, background 0.2s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(140,26,19,0.6)'
-              e.currentTarget.style.color = '#ffccbc'
+              e.currentTarget.style.borderColor = 'rgba(212,179,106,0.8)'
+              e.currentTarget.style.color = '#d4b36a'
+              e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(140,26,19,0.25)'
-              e.currentTarget.style.color = '#af2b21'
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
+              e.currentTarget.style.color = '#f8fafc'
+              e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
             }}
           >
             {label.toUpperCase()}
@@ -952,13 +954,13 @@ function ActiveProductPanel({ product }) {
     >
       <div
         style={{
-          background: 'rgba(26, 5, 5, 0.82)',
+          background: 'rgba(8, 6, 12, 0.88)',
           border: `1px solid ${product.accentColor}44`,
-          borderRadius: '10px',
-          padding: '14px 20px',
-          backdropFilter: 'blur(12px)',
-          boxShadow: `0 0 32px ${product.accentColor}22, 0 4px 24px rgba(0,0,0,0.5)`,
-          minWidth: '190px',
+          borderRadius: '14px',
+          padding: '16px 22px',
+          backdropFilter: 'blur(14px)',
+          boxShadow: `0 0 26px ${product.accentColor}22, 0 6px 22px rgba(0,0,0,0.35)`,
+          minWidth: '210px',
         }}
       >
         {/* Accent bar */}
@@ -974,7 +976,7 @@ function ActiveProductPanel({ product }) {
         />
         <div
           style={{
-            color: '#fbc9c9',
+            color: '#d4c4b1',
             fontSize: '11px',
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
@@ -987,8 +989,8 @@ function ActiveProductPanel({ product }) {
         </div>
         <div
           style={{
-            color: '#ffffff',
-            fontSize: '18px',
+            color: '#f8fafc',
+            fontSize: '20px',
             fontWeight: '700',
             fontFamily: "'Rajdhani', sans-serif",
             letterSpacing: '0.04em',
@@ -1053,7 +1055,7 @@ function DotIndicator({ products, activeIndex }) {
             height: '6px',
             borderRadius: '3px',
             background:
-              i === activeIndex ? p.accentColor : 'rgba(255,255,255,0.2)',
+              i === activeIndex ? p.accentColor : 'rgba(255,255,255,0.16)',
             boxShadow:
               i === activeIndex ? `0 0 8px ${p.accentColor}` : 'none',
             transition: 'all 0.35s ease',
@@ -1073,9 +1075,9 @@ function HoverHint({ isHovered }) {
         bottom: '22px',
         right: '40px',
         zIndex: 20,
-        color: 'rgba(140,26,19,0.45)',
+        color: 'rgba(255,255,255,0.65)',
         fontSize: '10px',
-        letterSpacing: '0.2em',
+        letterSpacing: '0.18em',
         textTransform: 'uppercase',
         fontFamily: "'Rajdhani', sans-serif",
         fontWeight: 600,
@@ -1148,7 +1150,7 @@ export function FintechShowcase({
         width: '100%',
         height,
         background:
-          'radial-gradient(ellipse at 50% 35%, #2a0c0c 0%, #1a0404 55%, #090101 100%)',
+          'radial-gradient(ellipse at 50% 30%, #2c1010 0%, #0f0508 44%, #040205 100%)',
         position: 'relative',
         overflow: 'hidden',
         fontFamily: "'Rajdhani', 'Exo 2', sans-serif",
@@ -1214,7 +1216,7 @@ export function FintechShowcase({
           right: 0,
           height: '130px',
           background:
-            'linear-gradient(to bottom, rgba(1,5,9,0.7) 0%, transparent 100%)',
+            'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%)',
           pointerEvents: 'none',
           zIndex: 10,
         }}
@@ -1230,7 +1232,7 @@ export function FintechShowcase({
           right: 0,
           height: '100px',
           background:
-            'linear-gradient(to top, rgba(1,5,9,0.8) 0%, transparent 100%)',
+            'linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)',
           pointerEvents: 'none',
           zIndex: 10,
         }}
@@ -1245,9 +1247,9 @@ export function FintechShowcase({
           right: 0,
           textAlign: 'center',
           zIndex: 20,
-          color: 'rgba(184, 27, 27, 0.88)',
-          fontSize: '9px',
-          letterSpacing: '0.45em',
+          color: 'rgba(255,255,255,0.72)',
+          fontSize: '10px',
+          letterSpacing: '0.32em',
           textTransform: 'uppercase',
           fontFamily: "'Rajdhani', sans-serif",
           fontWeight: 600,
