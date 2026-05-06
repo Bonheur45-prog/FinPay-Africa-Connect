@@ -229,6 +229,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 18px;
 }
 
 /* ── Meta (date · read time) ─────────────────────────────────────────────── */
@@ -269,12 +270,10 @@
 
 /* ── Description (line-clamped) ──────────────────────────────────────────── */
 .blog-card__desc {
-
   font-size: 0.9rem;
   line-height: 1.65;
   color: var(--blog-muted);
-  margin: 0 0 auto;
-  padding-bottom: 20px;
+  margin: 0;
 
   /* Line clamp — max 3 lines */
   display: -webkit-box;
@@ -288,6 +287,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  margin-top: auto;
 
   font-size: 13px;
   font-weight: 600;
