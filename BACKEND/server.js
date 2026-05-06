@@ -1,5 +1,7 @@
+import dns from 'node:dns';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 // ─── Load Environment Variables FIRST ──────────────────────
 const envPath = fileURLToPath(new URL('.env', import.meta.url));
