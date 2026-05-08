@@ -112,6 +112,126 @@
       "p2": "Partenariats avec les principaux réseaux de paiement mondiaux",
       "p3": "Support multilingue et multidevise"
     }
+  },
+
+  "fintech-showcase": {
+    "header": "Nos Produits Fintech",
+    "products": {
+      "card": {
+        "label": "Carte FinPay",
+        "description": "Émission sécurisée de cartes avec acceptation mondiale des paiements",
+        "status": "Actif",
+        "annotations": [
+          "Puce Sécurisée",
+          "Paiements Mondiaux"
+        ],
+        "features": [
+          "Technologie de Puce Sécurisée",
+          "Acceptation Mondiale des Paiements",
+          "Surveillance en Temps Réel",
+          "Support Multi-Devise"
+        ]
+      },
+      "pos": {
+        "label": "Terminal POS PayConnect",
+        "description": "Règlement POS en temps réel pour les transactions instantanées",
+        "status": "Actif",
+        "annotations": [
+          "Paiements Sans Contact",
+          "Règlement Instantané"
+        ],
+        "features": [
+          "Paiements Sans Contact",
+          "Règlement Instantané",
+          "Support du Mode Hors Ligne",
+          "Analyses Avancées"
+        ]
+      },
+      "id": {
+        "label": "IdentityPass",
+        "description": "Vérification d'identité numérique biométrique",
+        "status": "Bêta",
+        "annotations": [
+          "Vérification Biométrique",
+          "Authentification Sécurisée"
+        ],
+        "features": [
+          "Vérification Biométrique",
+          "Authentification Sécurisée",
+          "Technologie Anti-Usurpation",
+          "Prêt pour la Conformité"
+        ]
+      },
+      "phone": {
+        "label": "MobiWallet",
+        "description": "Infrastructure de portefeuille mobile pan-africain",
+        "status": "Actif",
+        "annotations": [
+          "Transactions en Temps Réel",
+          "Intégration USSD"
+        ],
+        "features": [
+          "Transactions en Temps Réel",
+          "Intégration USSD",
+          "Support Basse Bande Passante",
+          "Support Multi-Langue"
+        ]
+      },
+      "document": {
+        "label": "DocSecure",
+        "description": "Gestion de documents infalsifiables avec signatures numériques",
+        "status": "Actif",
+        "annotations": [
+          "Sceaux Infalsifiables",
+          "Signatures Numériques"
+        ],
+        "features": [
+          "Sceaux Infalsifiables",
+          "Signatures Numériques",
+          "Vérification Blockchain",
+          "Stockage Verrouillé Temporellement"
+        ]
+      },
+      "coin": {
+        "label": "CryptoVault",
+        "description": "Portefeuille crypto multi-chaîne avec auto-garde",
+        "status": "Bêta",
+        "annotations": [
+          "Support Multi-Chaîne",
+          "Auto-Garde"
+        ],
+        "features": [
+          "Support Multi-Chaîne",
+          "Contrôles d'Auto-Garde",
+          "Trading Décentralisé",
+          "Intégration Portefeuille Matériel"
+        ]
+      }
+    },
+    "modal": {
+      "valueProposition": "Paiements Modernes, Construits pour l'Afrique",
+      "description": "Responsabiliser les entreprises et les consommateurs avec des solutions financières sécurisées et évolutives sur tout le continent.",
+      "keyBenefits": [
+        "Émission sécurisée de cartes et acceptation mondiale des paiements",
+        "Règlement POS en temps réel pour les transactions instantanées",
+        "Identité numérique biométrique et authentification"
+      ]
+    },
+    "nowViewing": "En Cours de Consultation",
+    "explore": "Explorer",
+    "hoverToPause": "Survolez pour pauser",
+    "header": {
+      "subtitle": "Fintech Pan-Africain",
+      "brand": "FinPay",
+      "region": "AFRIQUE"
+    },
+    "navigation": {
+      "products": "Produits",
+      "solutions": "Solutions",
+      "enterprise": "Entreprise"
+    },
+    "keyFeatures": "Caractéristiques Clés",
+    "tagline": "Alimenter l'Avenir Financier de l'Afrique"
   }
 
   
