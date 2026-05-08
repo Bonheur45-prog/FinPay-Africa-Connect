@@ -100,5 +100,125 @@
     },
 
     "blog-section-cta": "Explore all insights"
+  },
+
+  "fintech-showcase": {
+    "header": "Our Fintech Products",
+    "products": {
+      "card": {
+        "label": "FinPay Card",
+        "description": "Secure card issuance with global payment acceptance",
+        "status": "Live",
+        "annotations": [
+          "Secure Chip",
+          "Global Payments"
+        ],
+        "features": [
+          "Secure Chip Technology",
+          "Global Payment Acceptance",
+          "Real-time Transaction Monitoring",
+          "Multi-Currency Support"
+        ]
+      },
+      "pos": {
+        "label": "PayConnect POS",
+        "description": "Real-time POS settlement for instant transactions",
+        "status": "Live",
+        "annotations": [
+          "Contactless Payments",
+          "Instant Settlement"
+        ],
+        "features": [
+          "Contactless Payments",
+          "Instant Settlement",
+          "Offline Mode Support",
+          "Advanced Analytics"
+        ]
+      },
+      "id": {
+        "label": "IdentityPass",
+        "description": "Biometric digital identity verification",
+        "status": "Beta",
+        "annotations": [
+          "Biometric Verification",
+          "Secure Authentication"
+        ],
+        "features": [
+          "Biometric Verification",
+          "Secure Authentication",
+          "Anti-Spoofing Technology",
+          "Compliance Ready"
+        ]
+      },
+      "phone": {
+        "label": "MobiWallet",
+        "description": "Pan-African mobile wallet infrastructure",
+        "status": "Live",
+        "annotations": [
+          "Real-time Transactions",
+          "USSD Integration"
+        ],
+        "features": [
+          "Real-time Transactions",
+          "USSD Integration",
+          "Low Bandwidth Support",
+          "Multi-Language Support"
+        ]
+      },
+      "document": {
+        "label": "DocSecure",
+        "description": "Tamper-proof document management with digital signatures",
+        "status": "Live",
+        "annotations": [
+          "Tamper-Proof Seals",
+          "Digital Signatures"
+        ],
+        "features": [
+          "Tamper-Proof Seals",
+          "Digital Signatures",
+          "Blockchain Verification",
+          "Time-Locked Storage"
+        ]
+      },
+      "coin": {
+        "label": "CryptoVault",
+        "description": "Multi-chain crypto wallet with self-custody",
+        "status": "Beta",
+        "annotations": [
+          "Multi-Chain Support",
+          "Self-Custody"
+        ],
+        "features": [
+          "Multi-Chain Support",
+          "Self-Custody Controls",
+          "Decentralized Trading",
+          "Hardware Wallet Integration"
+        ]
+      }
+    },
+    "modal": {
+      "valueProposition": "Modern Payments, Built for Africa",
+      "description": "Empowering businesses and consumers with secure, scalable financial solutions across the continent.",
+      "keyBenefits": [
+        "Secure card issuance and global payment acceptance",
+        "Real-time POS settlement for instant transactions",
+        "Biometric digital identity and authentication"
+      ]
+    },
+    "nowViewing": "Now Viewing",
+    "explore": "Explore",
+    "hoverToPause": "Hover to pause",
+    "header": {
+      "subtitle": "Pan-African Fintech",
+      "brand": "FinPay",
+      "region": "AFRICA"
+    },
+    "navigation": {
+      "products": "Products",
+      "solutions": "Solutions",
+      "enterprise": "Enterprise"
+    },
+    "keyFeatures": "Key Features",
+    "tagline": "Powering Africa's Financial Future"
   }
 }
