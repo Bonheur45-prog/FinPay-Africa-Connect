@@ -875,8 +875,9 @@ function Scene({ products, isHovered, onActiveChange }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 /** Header bar at the top of the section */
-function Header() {
+function Header({ screenWidth }) {
   const { t } = useTranslation('home')
+  const compact = screenWidth < 760
   
   return (
     <div
@@ -885,7 +886,7 @@ function Header() {
         top: 0,
         left: 0,
         right: 0,
-        padding: '9px 40px',
+        padding: compact ? '10px 18px' : '9px 40px',
         zIndex: 20,
         display: 'flex',
         justifyContent: 'space-between',
@@ -912,61 +913,64 @@ function Header() {
         <div
           style={{
             color: '#ffffff',
-            fontSize: '21px',
+            fontSize: compact ? '18px' : '21px',
             fontWeight: '700',
             fontFamily: "'Orbitron', sans-serif",
             letterSpacing: '0.04em',
             lineHeight: 1,
+            display: 'flex',
+            alignItems: 'baseline',
+            gap: '6px',
           }}
         >
-          {t('fintech-showcase.header.brand')}<span style={{ color: '#d4b36a' }}>{t('fintech-showcase.header.brand')}</span>{' '}
-          <span style={{ opacity: 0.45, fontSize: '14px' }}>{t('fintech-showcase.header.region')}</span>
+          <span>Fin</span>
+          <span style={{ color: '#d4b36a' }}>Pay</span>
+          <span style={{ opacity: 0.45, fontSize: compact ? '12px' : '14px' }}>{t('fintech-showcase.header.region')}</span>
         </div>
       </div>
 
-      <nav style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-        {[
-          { key: 'products', label: t('fintech-showcase.navigation.products') },
-          { key: 'solutions', label: t('fintech-showcase.navigation.solutions') },
-          { key: 'enterprise', label: t('fintech-showcase.navigation.enterprise') }
-        ].map((item) => (
-          <button
-            key={item.key}
-            style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.14)',
-              color: '#f8fafc',
-              padding: '8px 16px',
-              borderRadius: '999px',
-              fontSize: '11px',
-              letterSpacing: '0.12em',
-              cursor: 'pointer',
-              fontFamily: "'Rajdhani', sans-serif",
-              fontWeight: '600',
-              transition: 'border-color 0.2s, color 0.2s, background 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(212,179,106,0.8)'
-              e.currentTarget.style.color = '#d4b36a'
-              e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
-              e.currentTarget.style.color = '#f8fafc'
-              e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-            }}
-          >
-            {item.label.toUpperCase()}
-          </button>
-        ))}
-      </nav>
+      {!compact && (
+        <nav style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {['products', 'solutions', 'enterprise'].map((key) => (
+            <button
+              key={key}
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.14)',
+                color: '#f8fafc',
+                padding: '8px 16px',
+                borderRadius: '999px',
+                fontSize: '11px',
+                letterSpacing: '0.12em',
+                cursor: 'pointer',
+                fontFamily: "'Rajdhani', sans-serif",
+                fontWeight: '600',
+                transition: 'border-color 0.2s, color 0.2s, background 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(212,179,106,0.8)'
+                e.currentTarget.style.color = '#d4b36a'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
+                e.currentTarget.style.color = '#f8fafc'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+              }}
+            >
+              {t(`fintech-showcase.navigation.${key}`).toUpperCase()}
+            </button>
+          ))}
+        </nav>
+      )}
     </div>
   )
 }
 
 /** Active product info panel – bottom-left */
-function ActiveProductPanel({ product, onExploreClick }) {
+function ActiveProductPanel({ product, onExploreClick, screenWidth }) {
   const { t } = useTranslation('home')
+  const mobile = screenWidth < 520
   const translatedAnnotations = t(`fintech-showcase.products.${product.id}.annotations`, { returnObjects: true })
   const annotations = Array.isArray(translatedAnnotations) && translatedAnnotations.length
     ? translatedAnnotations
@@ -978,8 +982,9 @@ function ActiveProductPanel({ product, onExploreClick }) {
       key={product.id}
       style={{
         position: 'absolute',
-        bottom: '48px',
-        left: '40px',
+        bottom: mobile ? '18px' : '48px',
+        left: mobile ? '12px' : '40px',
+        right: mobile ? '12px' : 'auto',
         zIndex: 20,
         animation: 'fadeSlideIn 0.35s ease forwards',
       }}
@@ -989,10 +994,11 @@ function ActiveProductPanel({ product, onExploreClick }) {
           background: 'rgba(8, 6, 12, 0.88)',
           border: `1px solid ${product.accentColor}44`,
           borderRadius: '14px',
-          padding: '16px 22px',
+          padding: mobile ? '14px 16px' : '16px 22px',
           backdropFilter: 'blur(14px)',
           boxShadow: `0 0 26px ${product.accentColor}22, 0 6px 22px rgba(0,0,0,0.35)`,
-          minWidth: '210px',
+          minWidth: mobile ? 'auto' : '210px',
+          maxWidth: mobile ? 'calc(100vw - 28px)' : '300px',
         }}
       >
         {/* Accent bar */}
@@ -1129,7 +1135,8 @@ function ActiveProductPanel({ product, onExploreClick }) {
 }
 
 /** Dot indicator row showing which product is active */
-function DotIndicator({ products, activeIndex }) {
+function DotIndicator({ products, activeIndex, screenWidth }) {
+  if (screenWidth < 520) return null
   return (
     <div
       style={{
@@ -1163,8 +1170,9 @@ function DotIndicator({ products, activeIndex }) {
 }
 
 /** Value proposition panel – bottom-left modal */
-function ValuePropositionPanel({ onClose, product }) {
+function ValuePropositionPanel({ onClose, product, screenWidth }) {
   const { t } = useTranslation('home')
+  const mobile = screenWidth < 520
   
   if (!product) return null
   
@@ -1174,11 +1182,12 @@ function ValuePropositionPanel({ onClose, product }) {
     <div
       style={{
         position: 'absolute',
-        bottom: '120px',
-        left: '40px',
+        bottom: mobile ? '90px' : '120px',
+        left: mobile ? '12px' : '40px',
+        right: mobile ? '12px' : 'auto',
         zIndex: 25,
-        maxWidth: '400px',
-        padding: '20px',
+        maxWidth: mobile ? 'calc(100vw - 24px)' : '400px',
+        padding: mobile ? '16px' : '20px',
         background: 'rgba(8, 6, 12, 0.95)',
         border: '1px solid rgba(255,255,255,0.15)',
         borderRadius: '16px',
@@ -1269,8 +1278,9 @@ function ValuePropositionPanel({ onClose, product }) {
 }
 
 /** Hover hint – bottom-right */
-function HoverHint({ isHovered }) {
+function HoverHint({ isHovered, screenWidth }) {
   const { t } = useTranslation('home')
+  if (screenWidth < 520) return null
   
   return (
     <div
@@ -1315,7 +1325,19 @@ export function FintechShowcase({
   const [activeProduct, setActiveProduct] = useState(products[0] ?? null)
   const [isHovered, setIsHovered]       = useState(false)
   const [showModal, setShowModal]       = useState(false)
+  const [screenWidth, setScreenWidth]   = useState(() => typeof window !== 'undefined' ? window.innerWidth : 1200)
+  const cameraPosition = useMemo(() => {
+    if (screenWidth < 520) return [-5.2, 2.1, 12.5]
+    if (screenWidth < 760) return [-4.6, 1.9, 11]
+    return [-3.8, 1.6, 9.5]
+  }, [screenWidth])
   const autoPauseTimerRef = useRef(null)
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Validate products prop
   const safeProducts = useMemo(
@@ -1393,9 +1415,9 @@ export function FintechShowcase({
 
       {/* ── 3-D Canvas ───────────────────────────────────────────── */}
       <Canvas
-        camera={{ position: [-3.8, 1.6, 9.5], fov: 48 }}
+        camera={{ position: cameraPosition, fov: 48 }}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-        dpr={[1, Math.min(window.devicePixelRatio, 2)]}
+        dpr={[1, Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, 2)]}
         shadows
         style={{ position: 'absolute', inset: 0, zIndex: 1 }}
       >
@@ -1407,7 +1429,7 @@ export function FintechShowcase({
       </Canvas>
 
       {/* ── 2-D Overlays ─────────────────────────────────────────── */}
-      <Header />
+      <Header screenWidth={screenWidth} />
       {showModal && (
         <>
           {/* Modal backdrop */}
@@ -1424,15 +1446,17 @@ export function FintechShowcase({
           <ValuePropositionPanel 
             onClose={() => setShowModal(false)} 
             product={activeProduct}
+            screenWidth={screenWidth}
           />
         </>
       )}
       <ActiveProductPanel 
         product={activeProduct} 
         onExploreClick={() => setShowModal(true)} 
+        screenWidth={screenWidth}
       />
-      <DotIndicator products={safeProducts} activeIndex={activeIndex} />
-      <HoverHint isHovered={isHovered} />
+      <DotIndicator products={safeProducts} activeIndex={activeIndex} screenWidth={screenWidth} />
+      <HoverHint isHovered={isHovered} screenWidth={screenWidth} />
 
       {/* Top vignette */}
       <div
