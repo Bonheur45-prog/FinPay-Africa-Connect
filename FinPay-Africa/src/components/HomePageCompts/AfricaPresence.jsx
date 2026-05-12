@@ -28,6 +28,7 @@ function StatCard({ value, label, suffix }) {
   
   // Intersection Observer to trigger animation when card comes into view
   useEffect(() => {
+    const element = cardRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
@@ -37,13 +38,13 @@ function StatCard({ value, label, suffix }) {
       { threshold: 0.3 } // Trigger when 30% of the card is visible
     );
     
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (element) {
+      observer.observe(element);
     }
     
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [isVisible]);
