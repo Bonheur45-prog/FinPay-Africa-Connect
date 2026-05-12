@@ -5,39 +5,45 @@
 
 /* ── CSS variables (declare in a global :root or App.css) ──────── */
 :root {
-  --navy:       #8C1A13;
-  --navy-dark:  #6A1109;
+  --navy: #8C1A13;
+  --navy-dark: #6A1109;
   --navy-light: #8C1A13;
-  --black:      #0a0a0a;
-  --white:      #ffffff;
-  --grey-100:   #f4f6f9;
-  --grey-200:   #e5e9f0;
-  --grey-400:   #8a94a6;
-  --grey-600:   #4b5563;
-  --accent:     #f59e0b;
-  --header-h:   72px;         /* height of the header bar */
-  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --grey-100: #f4f6f9;
+  --grey-200: #e5e9f0;
+  --grey-400: #8a94a6;
+  --grey-600: #4b5563;
+  --accent: #f59e0b;
+  --header-h: 72px;
+  /* height of the header bar */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ── Header shell ────────────────────────────────────────────────── */
 .header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--header-h);
   background: var(--white);
   z-index: 1100;
   /* Smooth transition for shadow and blur on scroll */
   transition:
-    box-shadow   0.35s ease,
+    box-shadow 0.35s ease,
+    -webkit-backdrop-filter 0.35s ease,
     backdrop-filter 0.35s ease,
-    background   0.35s ease;
+    background 0.35s ease;
 }
 
 /* Applied via JS when window.scrollY > 10 */
 .header.scrolled {
   box-shadow: 0 4px 32px rgba(140, 26, 19, 0.10);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.90); /* slightly translucent */
+  background: rgba(255, 255, 255, 0.90);
+  /* slightly translucent */
 }
 
 /* Centered max-width wrapper */
@@ -78,8 +84,10 @@
 /* Diagonal gloss highlight */
 .logo__shine {
   position: absolute;
-  top: -6px; left: -6px;
-  width: 24px; height: 24px;
+  top: -6px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
 }
@@ -93,7 +101,10 @@
   letter-spacing: -0.025em;
   line-height: 1;
 }
-.logo__text span { color: var(--accent); }
+
+.logo__text span {
+  color: var(--accent);
+}
 
 
 /* ── Desktop navigation links ────────────────────────────────────── */
@@ -107,7 +118,7 @@
 
 .nav__link {
   position: relative;
-  font-size: 0.975rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--grey-600);
   text-decoration: none;
@@ -133,8 +144,23 @@
   transition: transform 0.32s var(--ease-out);
 }
 
-.nav__link:hover           { color: #6A1109; }
-.nav__link:hover::after    { transform: scaleX(1); }
+.nav__link:hover {
+  color: #6A1109;
+}
+
+.nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active / current page highlight */
+.nav__link--active {
+  color: #8C1A13;
+  font-weight: 700;
+}
+
+.nav__link--active::after {
+  transform: scaleX(1);
+}
 
 .nav__link--dropdown {
   display: inline-flex;
@@ -181,7 +207,7 @@
 }
 
 .nav__item--dropdown.open .solutions-dropdown,
-.nav__item--dropdown:hover .solutions-dropdown  {
+.nav__item--dropdown:hover .solutions-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -204,7 +230,7 @@
   transition: background 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.solution-item:hover  {
+.solution-item:hover {
   background: var(--grey-100);
   box-shadow: 3px 8px 24px rgba(13, 30, 75, 0.349);
   transform: translateX(4px);
@@ -221,6 +247,7 @@
     opacity: 0;
     transform: scale(0.6) translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -302,7 +329,8 @@
   transition: border-color 0.25s, background 0.25s;
   white-space: nowrap;
 }
-.btn-ghost:hover  {
+
+.btn-ghost:hover {
   border-color: #6A1109;
   background: var(--grey-100);
 }
@@ -326,18 +354,26 @@
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
-.btn-cta svg { transition: transform 0.25s; }
-.btn-cta:hover  {
+
+.btn-cta svg {
+  transition: transform 0.25s;
+}
+
+.btn-cta:hover {
   background: #6A1109;
   transform: translateY(-1px);
   box-shadow: 0 8px 24px rgba(140, 26, 19, 0.28);
 }
-.btn-cta:hover svg  { transform: translateX(3px); }
+
+.btn-cta:hover svg {
+  transform: translateX(3px);
+}
 
 
 /* ── Hamburger (mobile only) ─────────────────────────────────────── */
 .hamburger {
-  display: none;           /* hidden on desktop */
+  display: none;
+  /* hidden on desktop */
   width: 44px;
   height: 44px;
   align-items: center;
@@ -346,9 +382,11 @@
   border: none;
   cursor: pointer;
   position: relative;
-  z-index: 1200;           /* above mobile menu */
+  z-index: 1200;
+  /* above mobile menu */
   flex-shrink: 0;
 }
+
 .hamburger.open {
   z-index: 1200;
 }
@@ -373,14 +411,23 @@
   /* Individual transitions for the morphing animation */
   transition:
     transform 0.38s var(--ease-out),
-    opacity   0.25s ease,
-    width     0.3s ease;
+    opacity 0.25s ease,
+    width 0.3s ease;
 }
 
 /* When .open is applied — morph into × */
-.hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open .ham-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.hamburger.open .ham-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .ham-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open .ham-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 
 /* ── Dark overlay behind mobile menu ─────────────────────────────── */
@@ -397,6 +444,7 @@
   opacity: 0;
   transition: opacity 0.35s ease;
 }
+
 .mob-overlay.open {
   display: block;
   pointer-events: auto;
@@ -408,20 +456,25 @@
 .mob-menu {
   display: none;
   position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: min(320px, 92vw);        /* never wider than viewport */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 92vw);
+  /* never wider than viewport */
   background: var(--white);
   z-index: 1050;
   flex-direction: column;
-  padding-top: var(--header-h);   /* clear the fixed header */
+  padding-top: var(--header-h);
+  /* clear the fixed header */
   /* Start off-screen to the right */
   transform: translateX(110%);
   opacity: 0;
   transition:
     transform 0.48s var(--ease-out),
-    opacity   0.35s ease;
+    opacity 0.35s ease;
   box-shadow: -24px 0 60px rgba(0, 0, 0, 0.14);
 }
+
 .mob-menu.open {
   transform: translateX(0);
   opacity: 1;
@@ -456,11 +509,12 @@
   display: block;
   border-bottom: 1px solid var(--grey-100);
   transition:
-    color        0.25s ease,
+    color 0.25s ease,
     padding-left 0.25s var(--ease-out);
   letter-spacing: -0.02em;
 }
-.mob-nav__link:hover  {
+
+.mob-nav__link:hover {
   color: #000000;
   padding-left: 0.6rem;
 }
@@ -504,7 +558,8 @@
 }
 
 .mob-dropdown.open {
-  max-height: 800px; /* arbitrary large value */
+  max-height: 800px;
+  /* arbitrary large value */
   opacity: 1;
   margin-bottom: 1rem;
 }
@@ -576,18 +631,26 @@
   border: none;
   display: block;
 }
+
 .mob-btn-ghost {
   color: var(--navy);
   border: 1.5px solid var(--grey-200);
   background: none;
 }
-.mob-btn-ghost:hover  { border-color: #6A1109; background: var(--grey-100); }
+
+.mob-btn-ghost:hover {
+  border-color: #6A1109;
+  background: var(--grey-100);
+}
 
 .mob-btn-fill {
   color: white;
   background: var(--navy);
 }
-.mob-btn-fill:hover  { background: #6A1109; }
+
+.mob-btn-fill:hover {
+  background: #6A1109;
+}
 
 
 /* ── Language selector ──────────────────────────────────────────── */
@@ -612,6 +675,7 @@
   pointer-events: none;
   overflow: hidden;
 }
+
 .lang-modal.open {
   transform: translateY(0) scale(1);
   opacity: 1;
@@ -652,9 +716,11 @@
   color: var(--grey-600);
   text-align: left;
 }
-.lang-option:hover  {
+
+.lang-option:hover {
   background: var(--grey-100);
 }
+
 .lang-option.selected {
   background: var(--navy);
   color: white;
@@ -671,11 +737,31 @@
 /* ── Responsive breakpoint ───────────────────────────────────────── */
 /* Below 768px: hide desktop nav, show hamburger */
 @media (max-width: 768px) {
-  .header__nav          { display: none; }   /* hide desktop links */
-  .btn-ghost            { display: none; }   /* hide Sign In on mobile */
-  .header__actions .btn-cta { display: none; } /* hide desktop CTA */
-  .hamburger            { display: flex; }   /* show hamburger */
-  .mob-menu             { display: flex; }   /* enable mobile menu */
+  .header__nav {
+    display: none;
+  }
+
+  /* hide desktop links */
+  .btn-ghost {
+    display: none;
+  }
+
+  /* hide Sign In on mobile */
+  .header__actions .btn-cta {
+    display: none;
+  }
+
+  /* hide desktop CTA */
+  .hamburger {
+    display: flex;
+  }
+
+  /* show hamburger */
+  .mob-menu {
+    display: flex;
+  }
+
+  /* enable mobile menu */
 }
 
 
@@ -715,7 +801,7 @@
   color: inherit;
 }
 
-.mob-lang__btn:hover  {
+.mob-lang__btn:hover {
   background: rgba(255, 255, 255, 0.06);
 }
 
