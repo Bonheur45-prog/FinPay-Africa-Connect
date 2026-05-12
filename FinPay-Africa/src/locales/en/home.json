@@ -220,5 +220,42 @@
     },
     "keyFeatures": "Key Features",
     "tagline": "Powering Africa's Financial Future"
+  },
+  "africa-presence": {
+    "label": "Global Reach",
+    "titlePrefix": "FinPay",
+    "titleHighlight": "Presence Across Africa",
+    "subtitle": "We are expanding our financial services across the African continent, bringing digital solutions to millions of people and businesses.",
+    "keyPoints": [
+      "Present in 54 African nations with local expertise",
+      "6 active operations centers driving growth",
+      "Strategic expansion into 10 key markets",
+      "Trusted by millions across the continent",
+      "Committed to financial inclusion"
+    ],
+    "ctaText": "Explore More",
+    "mapBadgeText": "Interactive Map",
+    "stats": {
+      "countries": {
+        "value": "54",
+        "label": "Countries",
+        "suffix": "+"
+      },
+      "users": {
+        "value": "10M",
+        "label": "Active Users",
+        "suffix": "+"
+      },
+      "growth": {
+        "value": "100",
+        "label": "Growth Rate",
+        "suffix": "%"
+      },
+      "operations": {
+        "value": "6",
+        "label": "Operations Centers",
+        "suffix": ""
+      }
+    }
   }
 }

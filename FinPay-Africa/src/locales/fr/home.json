@@ -232,7 +232,42 @@
     },
     "keyFeatures": "Caractéristiques Clés",
     "tagline": "Alimenter l'Avenir Financier de l'Afrique"
+  },
+  "africa-presence": {
+    "label": "Présence Mondiale",
+    "titlePrefix": "FinPay",
+    "titleHighlight": "Présence à Travers l'Afrique",
+    "subtitle": "Nous étendons nos services financiers sur tout le continent africain, apportant des solutions numériques à des millions de personnes et d'entreprises.",
+    "keyPoints": [
+      "Présent dans 54 nations africaines avec une expertise locale",
+      "6 centres d'opérations actifs en croissance",
+      "Expansion stratégique vers 10 marchés clés",
+      "Approuvé par des millions sur tout le continent",
+      "Engagé envers l'inclusion financière"
+    ],
+    "ctaText": "Explorer Plus",
+    "mapBadgeText": "Carte Interactive",
+    "stats": {
+      "countries": {
+        "value": "54",
+        "label": "Pays",
+        "suffix": "+"
+      },
+      "users": {
+        "value": "10M",
+        "label": "Utilisateurs Actifs",
+        "suffix": "+"
+      },
+      "growth": {
+        "value": "100",
+        "label": "Taux de Croissance",
+        "suffix": "%"
+      },
+      "operations": {
+        "value": "6",
+        "label": "Centres d'Opérations",
+        "suffix": ""
+      }
+    }
   }
-
-  
 }

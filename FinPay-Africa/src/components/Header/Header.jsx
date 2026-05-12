@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from '../../hooks/useLangPath';
 import { CreditCard, Send, Code, Shield, ArrowRight } from "lucide-react";
-import { useNavigate, useParams, useLocation, Link } from "react-router";
+import { useNavigate, useParams, useLocation, Link, NavLink } from "react-router";
 
 import LogoIcon from "./LogoIcon";
 import Hamburger from "./Hamburger";
@@ -99,9 +99,16 @@ export function Header() {
                 );
               }
               return (
-                <Link key={link.label} to={link.href} className={styles["nav__link"]}>
+                <NavLink
+                  key={link.label}
+                  to={link.href}
+                  end={link.href === langPath("/")}
+                  className={({ isActive }) =>
+                    `${styles["nav__link"]}${isActive ? ` ${styles["nav__link--active"]}` : ""}`
+                  }
+                >
                   {t(link.label)}
-                </Link>
+                </NavLink>
               );
             })}
           </nav>
@@ -124,12 +131,12 @@ export function Header() {
           </div>
         </div>
       </header>
-      <MobileMenu 
-        open={menuOpen} 
-        onClose={closeMenu} 
-        onSelectLanguage={selectLanguage} 
-        selectedLanguage={lang} 
-        navLinks={localizedNavLinks} 
+      <MobileMenu
+        open={menuOpen}
+        onClose={closeMenu}
+        onSelectLanguage={selectLanguage}
+        selectedLanguage={lang}
+        navLinks={localizedNavLinks}
         solutionItems={localizedSolutionItems}
       />
     </>
