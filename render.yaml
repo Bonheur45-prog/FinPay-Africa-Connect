@@ -36,3 +36,14 @@ services:
     envVars:
       - key: VITE_API_URL
         value: https://backend-z0r8.onrender.com
+
+  - type: static_site
+    name: finpay-admin
+    plan: free
+    region: oregon
+    root: ADMIN-DASHBOARD
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://backend-z0r8.onrender.com
