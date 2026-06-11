@@ -3,7 +3,7 @@
  * Detailed blog article page with comments, related articles, and media support
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import {
@@ -249,6 +249,14 @@ function BlogDetailPage({ postId }) {
   const blogBasePath = `/${lang || "fr"}/blog`;
   const language = i18n.language || "en";
   const { post, relatedPosts, isLoading, error } = useBlogDetail(postId);
+
+  // Set document title to post title when loaded
+  useEffect(() => {
+    if (post) {
+      const title = `${post.title[language]} — FinPay Africa`;
+      document.title = title;
+    }
+  }, [post, language]);
 
   if (isLoading) {
     return (

@@ -5,6 +5,7 @@
 
 import React from "react";
 import { useTranslation } from "react-i18next";
+import HeadTitle from '../../../components/HeadTitle';
 import { Link, useParams } from "react-router";
 import {
   Search,
@@ -144,6 +145,7 @@ function BlogListingPage() {
   const { lang } = useParams();
   const language = i18n.language || "en";
   const blogBasePath = `/${lang || "fr"}/blog`;
+  const pageTitle = `${t('listing.title')} — FinPay Africa`;
 
   const {
     posts,
@@ -175,6 +177,7 @@ function BlogListingPage() {
 
   return (
     <div className={styles["blog-listing"]}>
+      <HeadTitle title={pageTitle} />
       <section className={styles["blog-listing__header"]}>
         <div className={styles["header__content"]}>
           <h1 className={styles["header__title"]}>

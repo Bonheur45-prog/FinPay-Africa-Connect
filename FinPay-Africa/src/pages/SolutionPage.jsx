@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { solutions } from "../data/solutions";
+import HeadTitle from '../components/HeadTitle';
 
 import SolutionHero from "../components/solutionDetail/SolutionHero";
 //import ProblemSolution from "../components/solutionDetail/ProblemSolution/ProblemSolution";
@@ -21,9 +22,12 @@ export default function SolutionPage() {
 
   if (!data) return <div>Solution not found</div>;
 
+  const title = data?.meta?.title || `${data?.namespace || slug} — Solutions — FinPay Africa`;
+
   return (
     <>
-        {data.sections.map((section, index) => {
+      <HeadTitle title={title} />
+      {data.sections.map((section, index) => {
           const Component = componentMap[section.type];
           if (!Component) return null;
 

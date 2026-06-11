@@ -13,6 +13,7 @@
  */
 
 import React from 'react';
+import HeadTitle from '../../components/HeadTitle';
 import styles from './Investors.module.css';
 import InvestorsHero from './sections/InvestorsHero';
 import MarketOpportunity from './sections/MarketOpportunity';
@@ -21,13 +22,18 @@ import WhyInvest from './sections/WhyInvest';
 import InvestorsCTA from './sections/InvestorsCTA';
 
 export default function Investors() {
+  const title = 'Investors — FinPay Africa';
+
   return (
-    <main className={styles.page}>
-      <InvestorsHero />
-      <MarketOpportunity />
-      <TractionStats />
-      <WhyInvest />
-      <InvestorsCTA />
-    </main>
+    <>
+      <HeadTitle title={title} />
+      <main className={styles.page}>
+        <InvestorsHero />
+        <MarketOpportunity />
+        <TractionStats />
+        <WhyInvest />
+        <InvestorsCTA />
+      </main>
+    </>
   );
 }

@@ -12,17 +12,23 @@
  */
 
 import React from 'react';
+import HeadTitle from '../../components/HeadTitle';
 import styles from './ContactUs.module.css';
 import ContactHero from './sections/ContactHero';
 import ContactForm from './sections/ContactForm';
 import ContactInfo from './sections/ContactInfo';
 
 export default function ContactUs() {
+  const title = 'Contact — FinPay Africa';
+
   return (
-    <main className={styles.page}>
-      <ContactHero />
-      <ContactForm />
-      <ContactInfo />
-    </main>
+    <>
+      <HeadTitle title={title} />
+      <main className={styles.page}>
+        <ContactHero />
+        <ContactForm />
+        <ContactInfo />
+      </main>
+    </>
   );
 }

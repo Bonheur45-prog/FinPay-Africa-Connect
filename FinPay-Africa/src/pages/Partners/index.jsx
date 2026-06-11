@@ -12,20 +12,25 @@
  */
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import HeadTitle from '../../components/HeadTitle';
 import PartnersHero from './sections/PartnersHero';
 import PartnersGrid from './sections/PartnersGrid';
 import BecomePartner from './sections/BecomePartner';
 import styles from './Partners.module.css';
 
 export default function Partners() {
+  const { t } = useTranslation('partners');
+  const title = `${t('grid.header.title') || 'Partners'} — FinPay Africa`;
+
   return (
     <>
+      <HeadTitle title={title} />
       <main className={styles.page}>
-      <PartnersHero />
-      <PartnersGrid />
-      <BecomePartner />
+        <PartnersHero />
+        <PartnersGrid />
+        <BecomePartner />
       </main>
     </>
-
   );
 }
