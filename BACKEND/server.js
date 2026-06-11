@@ -31,9 +31,21 @@ const app = express();
 // ─── Security ─────────────────────────────────────────────
 app.use(helmet());
 
-const allowedOrigins = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL.split(',').map((origin) => origin.trim())
-  : ['https://finpay-africa-connect.onrender.com', 'https://admin-dashboard-z398.onrender.com', 'https://finpay-africa.com', 'http://localhost:5173', 'http://localhost:3000', 'http://localhost:3001', '192.168.8.105:5173'];
+const defaultOrigins = [
+  'https://finpay-africa-connect.onrender.com',
+  'https://admin-dashboard-z398.onrender.com',
+  'https://finpay-africa.com',
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'http://localhost:3001',
+  '192.168.8.105:5173'
+];
+
+const envOrigins = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.split(',').map((origin) => origin.trim()).filter(Boolean)
+  : [];
+
+const allowedOrigins = [...new Set([...defaultOrigins, ...envOrigins])];
 
 app.use(
   cors({
@@ -47,6 +59,7 @@ app.use(
     credentials: true,
   })
 );
+
 
 // Global rate limiter — 100 requests per 15 minutes per IP
 const globalLimiter = rateLimit({
