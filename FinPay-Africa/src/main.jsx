@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/FinPay-Africa-Connect/">
+    <BrowserRouter basename="/">
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>

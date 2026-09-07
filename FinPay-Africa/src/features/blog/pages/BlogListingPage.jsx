@@ -5,6 +5,7 @@
 
 import React from "react";
 import { useTranslation } from "react-i18next";
+import HeadTitle from '../../../components/HeadTitle';
 import { Link, useParams } from "react-router";
 import {
   Search,
@@ -144,6 +145,15 @@ function BlogListingPage() {
   const { lang } = useParams();
   const language = i18n.language || "en";
   const blogBasePath = `/${lang || "fr"}/blog`;
+  const pageTitle = `${t('listing.title')} — FinPay Africa`;
+  const description = t('listing.subtitle');
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : blogBasePath;
+  const canonical = `https://finpay-africa.com${pathname}`;
+  const hreflangs = [
+    { lang: 'en', href: `https://finpay-africa.com/en${pathname.startsWith('/en') ? pathname.slice(3) : pathname}` },
+    { lang: 'fr', href: `https://finpay-africa.com/fr${pathname.startsWith('/fr') ? pathname.slice(3) : pathname}` },
+  ];
+  const og = { title: pageTitle, description, url: canonical, image: 'https://finpay-africa.com/assets/og-blog.jpg' };
 
   const {
     posts,
@@ -175,6 +185,7 @@ function BlogListingPage() {
 
   return (
     <div className={styles["blog-listing"]}>
+      <HeadTitle title={pageTitle} description={description} canonical={canonical} og={og} twitter={{ card: 'summary_large_image', title: pageTitle, description, image: og.image }} hreflangs={hreflangs} jsonLd={{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: pageTitle, description }} />
       <section className={styles["blog-listing__header"]}>
         <div className={styles["header__content"]}>
           <h1 className={styles["header__title"]}>

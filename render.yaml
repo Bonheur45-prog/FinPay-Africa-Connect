@@ -1,0 +1,49 @@
+# Render deployment configuration for FinPay Africa
+# Replace placeholder values and set the referenced secrets in Render.
+
+services:
+  - type: web_service
+    name: finpay-backend
+    env: node
+    plan: free
+    region: oregon
+    root: BACKEND
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromSecret: mongodb_uri
+      - key: JWT_SECRET
+        fromSecret: jwt_secret
+      - key: CLOUDINARY_CLOUD_NAME
+        fromSecret: cloudinary_cloud_name
+      - key: CLOUDINARY_API_KEY
+        fromSecret: cloudinary_api_key
+      - key: CLOUDINARY_API_SECRET
+        fromSecret: cloudinary_api_secret
+      - key: FRONTEND_URL
+        value: https://<your-frontend-service>.onrender.com
+
+  - type: static_site
+    name: finpay-frontend
+    plan: free
+    region: oregon
+    root: FinPay-Africa
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://backend-z0r8.onrender.com
+
+  - type: static_site
+    name: finpay-admin
+    plan: free
+    region: oregon
+    root: ADMIN-DASHBOARD
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://backend-z0r8.onrender.com
