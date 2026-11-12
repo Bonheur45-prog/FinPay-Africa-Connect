@@ -1,0 +1,5266 @@
+{
+ "pages": [
+  {
+   "system_key": "home",
+   "slug": "home",
+   "title": {
+    "fr": "Accueil",
+    "en": "Home"
+   },
+   "meta_title": {
+    "fr": "FinPay Africa — Infrastructure de paiement sécurisée pour l’Afrique",
+    "en": "FinPay Africa — Secure payment infrastructure for Africa"
+   },
+   "meta_description": {
+    "fr": "FinPay Africa propose une infrastructure de paiement sécurisée, instantanée et accessible, au service des entreprises, des communautés de la diaspora et des populations sous-bancarisées sur tout le continent.",
+    "en": "FinPay Africa delivers secure, instant, and accessible payment infrastructure — empowering businesses, diaspora communities, and underbanked populations across the continent."
+   },
+   "sections": [
+    {
+     "id": "b_8mdd4v30",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "home",
+      "eyebrow": {
+       "fr": "Infrastructure Fintech de Nouvelle Génération",
+       "en": "Next-Generation Fintech Infrastructure"
+      },
+      "title": {
+       "fr": "Transférez l'argent plus vite aux quatre coins",
+       "en": "Move money faster across every"
+      },
+      "highlight": {
+       "fr": "de l'Afrique",
+       "en": "corner of Africa"
+      },
+      "subtitle": {
+       "fr": "FinPay Africa propose une infrastructure de paiement sécurisée, instantanée et accessible, au service des entreprises, des communautés de la diaspora et des populations sous-bancarisées sur tout le continent.",
+       "en": "FinPay Africa delivers secure, instant, and accessible payment infrastructure — empowering businesses, diaspora communities, and underbanked populations across the continent."
+      },
+      "primary": {
+       "label": {
+        "fr": "Découvrir nos solutions",
+        "en": "Explore our solutions"
+       },
+       "url": "/solutions"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "image": "@asset:card-and-app.webp",
+      "badges": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conforme AML/KYC",
+         "en": "AML/KYC compliant"
+        }
+       },
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "Corridors Europe–Afrique",
+         "en": "Europe–Africa corridors"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_t9nt3w5u",
+     "type": "logos",
+     "visible": true,
+     "data": {
+      "title": {
+       "fr": "Ils travaillent avec l’écosystème FinPay Africa",
+       "en": "Working across Africa’s financial ecosystem"
+      }
+     }
+    },
+    {
+     "id": "b_zbikcidk",
+     "type": "solutions",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Nos Solutions Principales",
+       "en": "Our Core Solutions"
+      },
+      "title": {
+       "fr": "Conçu pour la rapidité, la sécurité, et l'envergure africaine",
+       "en": "Built for speed, security, and African scale"
+      },
+      "subtitle": {
+       "fr": "Chaque produit de notre écosystème est conçu pour la fiabilité et la conformité — afin que votre entreprise transfère des fonds en toute confiance, de Lagos au Cape Town et au-delà.",
+       "en": "Every product in our ecosystem is engineered for reliability and compliance — so your business moves money with confidence, from Lagos to Cape Town and beyond."
+      },
+      "cta": {
+       "label": {
+        "fr": "Voir toutes les solutions",
+        "en": "View all solutions"
+       },
+       "url": "/solutions"
+      }
+     }
+    },
+    {
+     "id": "b_pbhsahxt",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Par les Chiffres",
+       "en": "By The Numbers"
+      },
+      "title": {
+       "fr": "Réalisations et Jalons",
+       "en": "Achievements & Milestones"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "dark",
+      "items": [
+       {
+        "value": {
+         "fr": "10+",
+         "en": "10+"
+        },
+        "label": {
+         "fr": "Années d'Expérience",
+         "en": "Years of Experience"
+        },
+        "note": {
+         "fr": "En technologie d'entreprise",
+         "en": "In enterprise technology"
+        }
+       },
+       {
+        "value": {
+         "fr": "50+",
+         "en": "50+"
+        },
+        "label": {
+         "fr": "Projets Livrés",
+         "en": "Projects Delivered"
+        },
+        "note": {
+         "fr": "À Travers le Rwanda et l'Afrique de l'Est",
+         "en": "Across Rwanda & East Africa"
+        }
+       },
+       {
+        "value": {
+         "fr": "15+",
+         "en": "15+"
+        },
+        "label": {
+         "fr": "Clients Institutionnels",
+         "en": "Institutional Clients"
+        },
+        "note": {
+         "fr": "Banques, IMF et entreprises",
+         "en": "Banks, MFIs & enterprises"
+        }
+       },
+       {
+        "value": {
+         "fr": "99%",
+         "en": "99%"
+        },
+        "label": {
+         "fr": "Taux de Rétention des Clients",
+         "en": "Client Retention Rate"
+        },
+        "note": {
+         "fr": "Partenariats à long terme",
+         "en": "Long-term partnerships"
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_wnnhj7xv",
+     "type": "split",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Aperçu de l'Entreprise",
+       "en": "Company Overview"
+      },
+      "title": {
+       "fr": "Construire l'épine dorsale numérique de l'avenir financier de l'Afrique",
+       "en": "Building the Digital Backbone of Africa's Financial Future"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "body": {
+       "fr": "<p>FinPay Africa Ltd est une entreprise technologique basée à Kigali, spécialisée dans les logiciels financiers sécurisés, les systèmes de paiement et l'infrastructure numérique pour les banques, les institutions de microfinance et les clients d'entreprise à travers le Rwanda et le continent africain.</p><p>Nous ne livrons pas seulement des logiciels. Nous construisons la confiance — grâce à une architecture robuste, des cadres de conformité rigoureux et des partenariats centrés sur le client qui résistent à l'épreuve du temps.</p>",
+       "en": "<p>FinPay Africa Ltd is a Kigali-based enterprise technology company specializing in secure financial software, payment systems, and digital infrastructure for banks, microfinance institutions, and enterprise clients across Rwanda and the broader African continent.</p><p>We don't just deliver software. We engineer trust — through robust architecture, rigorous compliance frameworks, and client-centric partnerships that stand the test of time.</p>"
+      },
+      "bullets": [
+       {
+        "text": {
+         "fr": "Sécurité de Niveau Bancaire",
+         "en": "Bank-Grade Security"
+        }
+       },
+       {
+        "text": {
+         "fr": "Fiabilité Éprouvée",
+         "en": "Proven Reliability"
+        }
+       },
+       {
+        "text": {
+         "fr": "Architecture Évolutive",
+         "en": "Scalable Architecture"
+        }
+       },
+       {
+        "text": {
+         "fr": "Conformité Réglementaire",
+         "en": "Regulatory Compliance"
+        }
+       }
+      ],
+      "image": "@asset:global.webp",
+      "image_side": "right",
+      "tags": [],
+      "cta": {
+       "label": {
+        "fr": "En savoir plus sur nous",
+        "en": "More about us"
+       },
+       "url": "/about"
+      },
+      "tone": "light"
+     }
+    },
+    {
+     "id": "b_xaji0y6d",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_hv3a3zmf",
+     "type": "presence",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Présence Mondiale",
+       "en": "Global Reach"
+      },
+      "title": {
+       "fr": "Une présence qui s'étend à travers l'Afrique",
+       "en": "A growing presence across Africa"
+      },
+      "subtitle": {
+       "fr": "Nous étendons nos services financiers sur tout le continent africain, apportant des solutions numériques à des millions de personnes et d'entreprises.",
+       "en": "We are expanding our financial services across the African continent, bringing digital solutions to millions of people and businesses."
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Opérationnel dans 6 pays d’Afrique de l’Est et centrale",
+         "en": "Operating in 6 countries across East and Central Africa"
+        }
+       },
+       {
+        "text": {
+         "fr": "Expansion en cours vers 8 marchés d’Afrique de l’Ouest et centrale",
+         "en": "Expanding into 8 markets in West and Central Africa"
+        }
+       },
+       {
+        "text": {
+         "fr": "Corridors diaspora depuis la Belgique, la France et le Royaume-Uni",
+         "en": "Diaspora corridors from Belgium, France and the UK"
+        }
+       },
+       {
+        "text": {
+         "fr": "Engagé pour l’inclusion financière",
+         "en": "Committed to financial inclusion"
+        }
+       }
+      ],
+      "countries": [
+       {
+        "name": {
+         "fr": "Rwanda",
+         "en": "Rwanda"
+        },
+        "code": "RW",
+        "status": "active"
+       },
+       {
+        "name": {
+         "fr": "RD Congo",
+         "en": "DR Congo"
+        },
+        "code": "CD",
+        "status": "active"
+       },
+       {
+        "name": {
+         "fr": "Burundi",
+         "en": "Burundi"
+        },
+        "code": "BI",
+        "status": "active"
+       },
+       {
+        "name": {
+         "fr": "Tanzanie",
+         "en": "Tanzania"
+        },
+        "code": "TZ",
+        "status": "active"
+       },
+       {
+        "name": {
+         "fr": "Kenya",
+         "en": "Kenya"
+        },
+        "code": "KE",
+        "status": "active"
+       },
+       {
+        "name": {
+         "fr": "Djibouti",
+         "en": "Djibouti"
+        },
+        "code": "DJ",
+        "status": "active"
+       },
+       {
+        "name": {
+         "fr": "Mali",
+         "en": "Mali"
+        },
+        "code": "ML",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Côte d'Ivoire",
+         "en": "Côte d'Ivoire"
+        },
+        "code": "CI",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Sénégal",
+         "en": "Senegal"
+        },
+        "code": "SN",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Bénin",
+         "en": "Benin"
+        },
+        "code": "BJ",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Togo",
+         "en": "Togo"
+        },
+        "code": "TG",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Cameroun",
+         "en": "Cameroon"
+        },
+        "code": "CM",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Gabon",
+         "en": "Gabon"
+        },
+        "code": "GA",
+        "status": "expanding"
+       },
+       {
+        "name": {
+         "fr": "Congo-Brazzaville",
+         "en": "Republic of the Congo"
+        },
+        "code": "CG",
+        "status": "expanding"
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_g0fn9xuy",
+     "type": "posts",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Dernières perspectives",
+       "en": "Latest Insights"
+      },
+      "title": {
+       "fr": "Analyses et actualités",
+       "en": "Insights and news"
+      },
+      "subtitle": {
+       "fr": "Points de vue de notre équipe sur les paiements, la conformité et la finance numérique en Afrique.",
+       "en": "Perspectives from our team on payments, compliance and digital finance in Africa."
+      },
+      "count": 3,
+      "cta": {
+       "label": {
+        "fr": "Tous les articles",
+        "en": "All articles"
+       },
+       "url": "/blog"
+      }
+     }
+    },
+    {
+     "id": "b_41ibljh7",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Prêt à construire ensemble",
+       "en": "Ready to build together"
+      },
+      "title": {
+       "fr": "Construisons Ensemble l'Infrastructure Financière de l'Afrique",
+       "en": "Let's Build Africa's Financial Infrastructure Together"
+      },
+      "subtitle": {
+       "fr": "Que vous soyez une institution financière à la recherche d'un partenaire technologique fiable, une entreprise en quête de solutions numériques évolutives, ou une startup fintech ayant besoin d'une infrastructure experte — FinPay Africa est prête.",
+       "en": "Whether you're a financial institution seeking a reliable technology partner, an enterprise looking for scalable digital solutions, or a fintech startup needing expert infrastructure — FinPay Africa is ready."
+      },
+      "primary": {
+       "label": {
+        "fr": "Contacter notre équipe",
+        "en": "Contact our team"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Découvrir nos solutions",
+        "en": "Explore our solutions"
+       },
+       "url": "/solutions"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Réponse sous 24 heures",
+         "en": "Reply within 24 hours"
+        }
+       },
+       {
+        "text": {
+         "fr": "Équipes en Belgique, au Burundi et au Rwanda",
+         "en": "Teams in Belgium, Burundi and Rwanda"
+        }
+       },
+       {
+        "text": {
+         "fr": "Accord de confidentialité sur demande",
+         "en": "NDA available on request"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "system_key": "about",
+   "slug": "about",
+   "title": {
+    "fr": "À propos",
+    "en": "About us"
+   },
+   "meta_title": {
+    "fr": "À propos — FinPay Africa",
+    "en": "About us — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Construire une infrastructure financière sécurisée et évolutive qui autonomise les institutions et stimule la croissance continentale.",
+    "en": "Building secure, scalable financial infrastructure that powers institutions and drives continental growth."
+   },
+   "sections": [
+    {
+     "id": "b_5lxo6qji",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "À Propos de FinPay Africa",
+       "en": "About FinPay Africa"
+      },
+      "title": {
+       "fr": "Partenaire Technologique de Confiance",
+       "en": "Trusted Technology Partner"
+      },
+      "highlight": {
+       "fr": "pour l'Avenir Financier de l'Afrique",
+       "en": "for Africa's Financial Future"
+      },
+      "subtitle": {
+       "fr": "Construire une infrastructure financière sécurisée et évolutive qui autonomise les institutions et stimule la croissance continentale.",
+       "en": "Building secure, scalable financial infrastructure that powers institutions and drives continental growth."
+      },
+      "primary": {
+       "label": {
+        "fr": "Travailler avec nous",
+        "en": "Work with us"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    },
+    {
+     "id": "b_ujv6oh9s",
+     "type": "split",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Aperçu de l'Entreprise",
+       "en": "Company Overview"
+      },
+      "title": {
+       "fr": "Construire l'épine dorsale numérique de l'avenir financier de l'Afrique",
+       "en": "Building the Digital Backbone of Africa's Financial Future"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "body": {
+       "fr": "<p>FinPay Africa Ltd est une entreprise technologique basée à Kigali, spécialisée dans les logiciels financiers sécurisés, les systèmes de paiement et l'infrastructure numérique pour les banques, les institutions de microfinance et les clients d'entreprise à travers le Rwanda et le continent africain.</p><p>En tant que partie du <strong>NSI Group (Nord Sud Industriess)</strong> — un conglomérat industriel et commercial bien établi — FinPay Africa bénéficie de décennies de confiance institutionnelle, de connaissances du marché local et d'un positionnement stratégique que peu d'entreprises technologiques dans la région peuvent égaler.</p><p>Nous ne livrons pas seulement des logiciels. Nous construisons la confiance — grâce à une architecture robuste, des cadres de conformité rigoureux et des partenariats centrés sur le client qui résistent à l'épreuve du temps.</p>",
+       "en": "<p>FinPay Africa Ltd is a Kigali-based enterprise technology company specializing in secure financial software, payment systems, and digital infrastructure for banks, microfinance institutions, and enterprise clients across Rwanda and the broader African continent.</p><p>Operating as part of the <strong>NSI Group (Nord Sud Industriess)</strong> — a well-established industrial and commercial conglomerate — FinPay Africa benefits from decades of institutional trust, local market knowledge, and strategic positioning that few technology firms in the region can match.</p><p>We don't just deliver software. We engineer trust — through robust architecture, rigorous compliance frameworks, and client-centric partnerships that stand the test of time.</p>"
+      },
+      "bullets": [],
+      "image": "@asset:brand-art.webp",
+      "image_side": "right",
+      "tags": [
+       {
+        "text": {
+         "fr": "Solutions FinTech",
+         "en": "FinTech Solutions"
+        }
+       },
+       {
+        "text": {
+         "fr": "Logiciels Bancaires",
+         "en": "Banking Software"
+        }
+       },
+       {
+        "text": {
+         "fr": "Systèmes de Paiement",
+         "en": "Payment Systems"
+        }
+       },
+       {
+        "text": {
+         "fr": "Informatique d'Entreprise",
+         "en": "Enterprise IT"
+        }
+       },
+       {
+        "text": {
+         "fr": "NSI Group",
+         "en": "NSI Group"
+        }
+       }
+      ],
+      "cta": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "tone": "light"
+     }
+    },
+    {
+     "id": "b_dbdw2pcn",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Pourquoi Choisir FinPay Africa",
+       "en": "Why Choose FinPay Africa"
+      },
+      "title": {
+       "fr": "Points Forts Qui Nous Distinguent",
+       "en": "Core Strengths That Set Us Apart"
+      },
+      "subtitle": {
+       "fr": "Ce qui fait de nous le bon partenaire pour les institutions financières et les entreprises qui refusent de compromettre la qualité.",
+       "en": "What makes us the right partner for financial institutions and enterprises that refuse to compromise on quality."
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Sécurité de Niveau Bancaire",
+         "en": "Bank-Grade Security"
+        },
+        "body": {
+         "fr": "Nos systèmes sont conçus avec chiffrement de bout en bout, authentification multifacteur et enregistrement auditeur — répondant aux normes de sécurité exigées par l'environnement réglementaire du Rwanda et les cadres internationaux.",
+         "en": "Our systems are architected with end-to-end encryption, multi-factor authentication, and audit-ready logging — meeting the security standards demanded by Rwanda's regulatory environment and international frameworks."
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Fiabilité Éprouvée",
+         "en": "Proven Reliability"
+        },
+        "body": {
+         "fr": "Soutenue par notre intégration dans l'écosystème du NSI Group, nous livrons des solutions avec une infrastructure testée, un temps d'activité fiable et des protocoles de reprise après sinistre de confiance des clients institutionnels.",
+         "en": "Backed by our integration within the NSI Group ecosystem, we deliver solutions with tested infrastructure, dependable uptime, and disaster-recovery protocols trusted by institutional clients."
+        }
+       },
+       {
+        "icon": "layers",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Architecture Évolutive",
+         "en": "Scalable Architecture"
+        },
+        "body": {
+         "fr": "Nous construisons des plateformes qui se développent avec vous — des institutions à branche unique aux déploiements multi-pays — en utilisant des architectures modulaires et prêtes pour le cloud qui se développent sans refonte.",
+         "en": "We build platforms that grow with you — from single-branch institutions to multi-country deployments — using modular, cloud-ready architectures that scale without rebuilding from scratch."
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Conformité Réglementaire",
+         "en": "Regulatory Compliance"
+        },
+        "body": {
+         "fr": "Des directives de la BNR du Rwanda aux normes AML/KYC régionales, nos produits sont construits avec la conformité comme caractéristique de première classe — pas une réflexion après coup — donnant aux institutions confiance lors des audits.",
+         "en": "From Rwanda's BNR directives to regional AML/KYC standards, our products are built with compliance as a first-class feature — not an afterthought — giving institutions confidence during audits."
+        }
+       },
+       {
+        "icon": "clock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Expérience Locale Approfondie",
+         "en": "Deep Local Experience"
+        },
+        "body": {
+         "fr": "Des années d'opération dans l'écosystème financier et d'entreprise du Rwanda nous donnent une connaissance contextuelle que les fournisseurs externes n'ont pas — comprendre la réglementation, la culture et les réalités d'infrastructure sur le terrain.",
+         "en": "Years operating in Rwanda's financial and enterprise ecosystem give us contextual knowledge that external vendors lack — understanding regulation, culture, and infrastructure realities on the ground."
+        }
+       },
+       {
+        "icon": "users",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Support de Partenariat Dédié",
+         "en": "Dedicated Partnership Support"
+        },
+        "body": {
+         "fr": "Nous ne disparaissons pas après le déploiement. Notre équipe fournit un support technique continu, la maintenance des systèmes et des conseils stratégiques pour assurer la valeur à long terme de chaque engagement.",
+         "en": "We don't disappear after go-live. Our team provides ongoing technical support, system maintenance, and strategic consultation to ensure long-term value from every engagement."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_9t84azyt",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Principes Fondamentaux",
+       "en": "Core Principles"
+      },
+      "title": {
+       "fr": "Mission, Vision et Valeurs",
+       "en": "Mission, Vision & Values"
+      },
+      "subtitle": {
+       "fr": "Les principes qui guident chaque décision, chaque produit et chaque partenariat.",
+       "en": "The principles that guide every decision, every product, and every partnership."
+      },
+      "columns": "3",
+      "tone": "light",
+      "items": [
+       {
+        "icon": "rocket",
+        "label": {
+         "fr": "Mission",
+         "en": "Mission"
+        },
+        "title": {
+         "fr": "Ce Qui Nous Pousse Chaque Jour",
+         "en": "What Drives Us Daily"
+        },
+        "body": {
+         "fr": "Fournir une infrastructure technologique sécurisée, évolutive et fiable qui autonomise les institutions financières, les entreprises et les commerces en Afrique — leur permettant d'opérer avec confiance, conformité et agilité concurrentielle.",
+         "en": "To deliver secure, scalable, and reliable technology infrastructure that empowers financial institutions, enterprises, and businesses across Africa — enabling them to operate with confidence, compliance, and competitive agility."
+        }
+       },
+       {
+        "icon": "eye",
+        "label": {
+         "fr": "Vision",
+         "en": "Vision"
+        },
+        "title": {
+         "fr": "Où Nous Allons",
+         "en": "Where We're Headed"
+        },
+        "body": {
+         "fr": "Devenir le partenaire technologique d'entreprise le plus fiable d'Afrique — une entreprise synonyme de sécurité financière, d'excellence numérique et de fiabilité institutionnelle à long terme de Kigali au continent.",
+         "en": "To become Africa's most trusted enterprise technology partner — a company synonymous with financial security, digital excellence, and long-term institutional reliability from Kigali to the continent."
+        }
+       },
+       {
+        "icon": "award",
+        "label": {
+         "fr": "Valeurs",
+         "en": "Values"
+        },
+        "title": {
+         "fr": "Sur Quoi Nous Nous Appuyons",
+         "en": "What We Stand On"
+        },
+        "body": {
+         "fr": "Intégrité · Sécurité · Partenariat · Excellence. Nous construisons sur l'honnêteté et la pratique éthique à chaque niveau. Nous traitons la protection des données et des systèmes comme non-négociable. Les relations à long terme plutôt que les transactions à court terme. Normes élevées dans le code, la communication et la livraison.",
+         "en": "Integrity · Security · Partnership · Excellence. We build on honesty and ethical practice at every layer. We treat data and systems protection as non-negotiable. Long-term relationships over short-term transactions. High standards in code, communication, and delivery."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_pbhsahxt",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Par les Chiffres",
+       "en": "By The Numbers"
+      },
+      "title": {
+       "fr": "Réalisations et Jalons",
+       "en": "Achievements & Milestones"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "dark",
+      "items": [
+       {
+        "value": {
+         "fr": "10+",
+         "en": "10+"
+        },
+        "label": {
+         "fr": "Années d'Expérience",
+         "en": "Years of Experience"
+        },
+        "note": {
+         "fr": "En technologie d'entreprise",
+         "en": "In enterprise technology"
+        }
+       },
+       {
+        "value": {
+         "fr": "50+",
+         "en": "50+"
+        },
+        "label": {
+         "fr": "Projets Livrés",
+         "en": "Projects Delivered"
+        },
+        "note": {
+         "fr": "À Travers le Rwanda et l'Afrique de l'Est",
+         "en": "Across Rwanda & East Africa"
+        }
+       },
+       {
+        "value": {
+         "fr": "15+",
+         "en": "15+"
+        },
+        "label": {
+         "fr": "Clients Institutionnels",
+         "en": "Institutional Clients"
+        },
+        "note": {
+         "fr": "Banques, IMF et entreprises",
+         "en": "Banks, MFIs & enterprises"
+        }
+       },
+       {
+        "value": {
+         "fr": "99%",
+         "en": "99%"
+        },
+        "label": {
+         "fr": "Taux de Rétention des Clients",
+         "en": "Client Retention Rate"
+        },
+        "note": {
+         "fr": "Partenariats à long terme",
+         "en": "Long-term partnerships"
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_jxepq85j",
+     "type": "quote",
+     "visible": true,
+     "data": {
+      "text": {
+       "fr": "En fintech, l'atout le plus fort que vous pouvez construire est la confiance institutionnelle. Chaque système que nous déployons, chaque ligne de code que nous écrivons, est une autre brique dans cette fondation.",
+       "en": "In fintech, the strongest asset you can build is institutional trust. Every system we deploy, every line of code we write, is another brick in that foundation."
+      },
+      "attribution": {
+       "fr": "Direction de FinPay Africa",
+       "en": "FinPay Africa leadership"
+      }
+     }
+    },
+    {
+     "id": "b_sg65kxvf",
+     "type": "timeline",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Notre Parcours",
+       "en": "Our Journey"
+      },
+      "title": {
+       "fr": "Une Décennie de Construction de la Confiance",
+       "en": "A Decade of Building Trust"
+      },
+      "subtitle": {
+       "fr": "De nos racines dans le secteur industriel du Rwanda à la première ligne de la transformation technologique financière de l'Afrique.",
+       "en": "From our roots in Rwanda's industrial sector to the front line of Africa's financial technology transformation."
+      },
+      "items": [
+       {
+        "year": "2010",
+        "tag": {
+         "fr": "Fondation",
+         "en": "Foundation"
+        },
+        "title": {
+         "fr": "Vision Fondatrice",
+         "en": "Foundational Vision"
+        },
+        "body": {
+         "fr": "La vision fondatrice de FinPay Africa émerge au sein du NSI Group — un conglomérat industriel établi avec des décennies de présence commerciale au Rwanda. L'accent sur la transformation financière numérique commence.",
+         "en": "FinPay Africa's founding vision emerges within the NSI Group — an established industrial conglomerate with decades of commercial presence in Rwanda. The focus on digital financial transformation begins."
+        }
+       },
+       {
+        "year": "2015",
+        "tag": {
+         "fr": "Lancement",
+         "en": "Launch"
+        },
+        "title": {
+         "fr": "FinPay Africa Constituée",
+         "en": "FinPay Africa Incorporated"
+        },
+        "body": {
+         "fr": "Formellement établie en tant qu'entité technologique financière indépendante à Kigali, Rwanda. TIN enregistré (155772836). Focus initial sur les solutions de paiement d'entreprise pour les entreprises locales.",
+         "en": "Formally established as an independent financial technology entity in Kigali, Rwanda. TIN registered (155772836). Initial focus on enterprise payment solutions for local businesses."
+        }
+       },
+       {
+        "year": "2017",
+        "tag": {
+         "fr": "Secteur Bancaire",
+         "en": "Banking"
+        },
+        "title": {
+         "fr": "Jalon du Secteur Financier",
+         "en": "Financial Sector Milestone"
+        },
+        "body": {
+         "fr": "Premier partenariat sécurisé avec une banque commerciale rwandaise. Livré intégration interface bancaire principale et automatisation du flux de travail numérique — un moment déterminant façonnant notre ADN fintech.",
+         "en": "Secured first partnership with a Rwandan commercial bank. Delivered core banking interface integration and digital workflow automation — a defining moment shaping our fintech DNA."
+        }
+       },
+       {
+        "year": "2019",
+        "tag": {
+         "fr": "Expansion",
+         "en": "Expansion"
+        },
+        "title": {
+         "fr": "Infrastructure Pan-Africaine",
+         "en": "Pan-African Infrastructure"
+        },
+        "body": {
+         "fr": "Capacités élargies pour inclure le traitement des transactions multi-canaux et les API de monnaie mobile. Devenu une couche technologique critique pour les institutions financières en Afrique de l'Est.",
+         "en": "Expanded capabilities to include multi-channel transaction processing and mobile money APIs. Became a critical technology layer for financial institutions across East Africa."
+        }
+       },
+       {
+        "year": "2022",
+        "tag": {
+         "fr": "Innovation",
+         "en": "Innovation"
+        },
+        "title": {
+         "fr": "Innovation de la Suite de Produits",
+         "en": "Product Suite Innovation"
+        },
+        "body": {
+         "fr": "Lancement d'une suite de produits propriétaires couvrant l'intégration numérique sécurisée, les rapports de conformité et la gestion des documents — construits spécifiquement pour les besoins des marchés africains.",
+         "en": "Launched a proprietary product suite covering secure digital onboarding, compliance reporting, and document management — built specifically for the needs of African markets."
+        }
+       },
+       {
+        "year": "2024",
+        "tag": {
+         "fr": "Leadership",
+         "en": "Leadership"
+        },
+        "title": {
+         "fr": "Leadership Continental",
+         "en": "Continental Leadership"
+        },
+        "body": {
+         "fr": "Mise à l'échelle des opérations stratégiques en Afrique de l'Ouest et Australe. Positionnement de FinPay Africa comme l'épine dorsale technologique principale pour la prochaine génération d'infrastructure financière du continent.",
+         "en": "Scaling strategic operations into West and Southern Africa. Positioning FinPay Africa as the premier technology backbone for the continent's next-generation financial infrastructure."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_1t2tala7",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "Les logos des partenaires sont représentatifs de nos domaines d'engagement. Les accords clients réels sont soumis à la confidentialité.",
+       "en": "Partner logos are representative of our engagement areas. Actual client agreements are subject to confidentiality."
+      }
+     }
+    },
+    {
+     "id": "b_53lc58dr",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Prêt à construire ensemble",
+       "en": "Ready to build together"
+      },
+      "title": {
+       "fr": "Construisons Ensemble l'Infrastructure Financière de l'Afrique",
+       "en": "Let's Build Africa's Financial Infrastructure Together"
+      },
+      "subtitle": {
+       "fr": "Que vous soyez une institution financière à la recherche d'un partenaire technologique fiable, une entreprise en quête de solutions numériques évolutives, ou une startup fintech ayant besoin d'une infrastructure experte — FinPay Africa est prête.",
+       "en": "Whether you're a financial institution seeking a reliable technology partner, an enterprise looking for scalable digital solutions, or a fintech startup needing expert infrastructure — FinPay Africa is ready."
+      },
+      "primary": {
+       "label": {
+        "fr": "Contacter notre équipe",
+        "en": "Contact our team"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Découvrir nos solutions",
+        "en": "Explore our solutions"
+       },
+       "url": "/solutions"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Réponse sous 24 heures",
+         "en": "Reply within 24 hours"
+        }
+       },
+       {
+        "text": {
+         "fr": "Équipes en Belgique, au Burundi et au Rwanda",
+         "en": "Teams in Belgium, Burundi and Rwanda"
+        }
+       },
+       {
+        "text": {
+         "fr": "Accord de confidentialité sur demande",
+         "en": "NDA available on request"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "system_key": "solutions",
+   "slug": "solutions",
+   "title": {
+    "fr": "Solutions",
+    "en": "Solutions"
+   },
+   "meta_title": {
+    "fr": "Solutions de paiement — FinPay Africa",
+    "en": "Payment solutions — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Paiements transfrontaliers, transferts diaspora, API de paiement, cartes et KYC : l'infrastructure financière de FinPay Africa.",
+    "en": "Cross-border payments, diaspora transfers, payment APIs, cards and KYC: FinPay Africa’s financial infrastructure."
+   },
+   "sections": [
+    {
+     "id": "b_c11ertj5",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Nos solutions",
+       "en": "Our solutions"
+      },
+      "title": {
+       "fr": "Des solutions de paiement numériques",
+       "en": "Digital payment solutions"
+      },
+      "highlight": {
+       "fr": "conçues pour l'Afrique",
+       "en": "built for Africa"
+      },
+      "subtitle": {
+       "fr": "FinPay Africa fournit une infrastructure financière moderne, sécurisée et évolutive pour les banques, les entreprises et les transactions transfrontalières sur tout le continent.",
+       "en": "FinPay Africa provides modern, secure and scalable financial infrastructure for banks, businesses and cross-border transactions across the continent."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": [
+       {
+        "icon": "repeat",
+        "label": {
+         "fr": "Transferts transfrontaliers",
+         "en": "Cross-border transfers"
+        }
+       },
+       {
+        "icon": "credit-card",
+        "label": {
+         "fr": "Émission de cartes",
+         "en": "Card issuing"
+        }
+       },
+       {
+        "icon": "smartphone",
+        "label": {
+         "fr": "Intégration mobile money",
+         "en": "Mobile money integration"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_pht0hl9x",
+     "type": "solutions",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "Conçu pour la rapidité, la sécurité, et l'envergure africaine",
+       "en": "Built for speed, security, and African scale"
+      },
+      "subtitle": {
+       "fr": "Chaque produit de notre écosystème est conçu pour la fiabilité et la conformité — afin que votre entreprise transfère des fonds en toute confiance, de Lagos au Cape Town et au-delà.",
+       "en": "Every product in our ecosystem is engineered for reliability and compliance — so your business moves money with confidence, from Lagos to Cape Town and beyond."
+      },
+      "cta": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      }
+     }
+    },
+    {
+     "id": "b_pseimvih",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_cwi64ciy",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Prêt à construire ensemble",
+       "en": "Ready to build together"
+      },
+      "title": {
+       "fr": "Construisons Ensemble l'Infrastructure Financière de l'Afrique",
+       "en": "Let's Build Africa's Financial Infrastructure Together"
+      },
+      "subtitle": {
+       "fr": "Que vous soyez une institution financière à la recherche d'un partenaire technologique fiable, une entreprise en quête de solutions numériques évolutives, ou une startup fintech ayant besoin d'une infrastructure experte — FinPay Africa est prête.",
+       "en": "Whether you're a financial institution seeking a reliable technology partner, an enterprise looking for scalable digital solutions, or a fintech startup needing expert infrastructure — FinPay Africa is ready."
+      },
+      "primary": {
+       "label": {
+        "fr": "Contacter notre équipe",
+        "en": "Contact our team"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Découvrir nos solutions",
+        "en": "Explore our solutions"
+       },
+       "url": "/solutions"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Réponse sous 24 heures",
+         "en": "Reply within 24 hours"
+        }
+       },
+       {
+        "text": {
+         "fr": "Équipes en Belgique, au Burundi et au Rwanda",
+         "en": "Teams in Belgium, Burundi and Rwanda"
+        }
+       },
+       {
+        "text": {
+         "fr": "Accord de confidentialité sur demande",
+         "en": "NDA available on request"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "system_key": "partners",
+   "slug": "partners",
+   "title": {
+    "fr": "Partenaires",
+    "en": "Partners"
+   },
+   "meta_title": {
+    "fr": "Partenaires — FinPay Africa",
+    "en": "Partners — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "La force de FinPay Africa réside dans son réseau. Aux côtés de nos partenaires stratégiques dans les secteurs financier, technologique et commercial, nous construisons l'infrastructure de paiement que l'Afrique mérite vraiment.",
+    "en": "FinPay Africa's strength lies in its network. Together with our strategic partners across finance, technology, and commerce, we are building the payment infrastructure Africa truly deserves."
+   },
+   "sections": [
+    {
+     "id": "b_he7ur23g",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Notre Écosystème",
+       "en": "Our Ecosystem"
+      },
+      "title": {
+       "fr": "Construit sur la Confiance",
+       "en": "Built on Trust"
+      },
+      "highlight": {
+       "fr": "Grandi par les Partenariats",
+       "en": "Grown Through Partnership"
+      },
+      "subtitle": {
+       "fr": "La force de FinPay Africa réside dans son réseau. Aux côtés de nos partenaires stratégiques dans les secteurs financier, technologique et commercial, nous construisons l'infrastructure de paiement que l'Afrique mérite vraiment.",
+       "en": "FinPay Africa's strength lies in its network. Together with our strategic partners across finance, technology, and commerce, we are building the payment infrastructure Africa truly deserves."
+      },
+      "primary": {
+       "label": {
+        "fr": "Devenir partenaire",
+        "en": "Become a partner"
+       },
+       "url": "/contact-us?type=partnership"
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    },
+    {
+     "id": "b_dppq0y9d",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "light",
+      "items": [
+       {
+        "value": {
+         "fr": "30+",
+         "en": "30+"
+        },
+        "label": {
+         "fr": "Partenaires Actifs",
+         "en": "Active Partners"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "12",
+         "en": "12"
+        },
+        "label": {
+         "fr": "Pays Couverts",
+         "en": "Countries Covered"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "2 500+",
+         "en": "2,500+"
+        },
+        "label": {
+         "fr": "Clients Servis",
+         "en": "Clients Served"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_om5igqpk",
+     "type": "partners",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Nos Partenaires",
+       "en": "Who We Work With"
+      },
+      "title": {
+       "fr": "Notre Réseau de Partenaires",
+       "en": "Our Partner Network"
+      },
+      "subtitle": {
+       "fr": "Un écosystème diversifié d'institutions financières, de fournisseurs technologiques, d'opérateurs mobiles et de commerçants — unis par une mission commune de transformer les paiements africains.",
+       "en": "A diverse ecosystem of financial institutions, technology providers, mobile operators, and merchants — united by a shared mission to transform African payments."
+      },
+      "filters": true
+     }
+    },
+    {
+     "id": "b_i7p5tb94",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Rejoindre le Réseau",
+       "en": "Join the Network"
+      },
+      "title": {
+       "fr": "Pourquoi rejoindre le réseau FinPay Africa",
+       "en": "Why join the FinPay Africa network"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Conformité Réglementaire",
+         "en": "Regulatory Compliance"
+        },
+        "body": {
+         "fr": "Opérez dans un cadre de paiement certifié et conforme au niveau international.",
+         "en": "Operate under a certified, internationally compliant payment framework."
+        }
+       },
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Portée Panafricaine",
+         "en": "Pan-African Reach"
+        },
+        "body": {
+         "fr": "Accédez à un réseau panafricain établi couvrant 12+ pays.",
+         "en": "Access an established cross-border network spanning 12+ countries."
+        }
+       },
+       {
+        "icon": "trending-up",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Volume Croissant",
+         "en": "Growing Volume"
+        },
+        "body": {
+         "fr": "Connectez-vous à une plateforme traitant des milliers de transactions mensuelles.",
+         "en": "Plug into a platform processing thousands of transactions monthly."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_874frhoc",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Rejoindre le Réseau",
+       "en": "Join the Network"
+      },
+      "title": {
+       "fr": "Devenir Partenaire FinPay Africa",
+       "en": "Become a FinPay Africa Partner"
+      },
+      "subtitle": {
+       "fr": "Nous recherchons toujours des organisations avant-gardistes pour grandir avec nous. Que vous soyez une banque, une fintech, un opérateur mobile ou un réseau de commerçants — il y a une place pour vous dans l'écosystème FinPay Africa.",
+       "en": "We are always looking for forward-thinking organizations to grow with us. Whether you're a bank, fintech, mobile operator, or merchant network — there's a place for you in the FinPay Africa ecosystem."
+      },
+      "primary": {
+       "label": {
+        "fr": "Postuler maintenant",
+        "en": "Apply now"
+       },
+       "url": "/contact-us?type=partnership"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "points": []
+     }
+    }
+   ]
+  },
+  {
+   "system_key": "investors",
+   "slug": "investors",
+   "title": {
+    "fr": "Investisseurs",
+    "en": "Investors"
+   },
+   "meta_title": {
+    "fr": "Investisseurs — FinPay Africa",
+    "en": "Investors — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Les frais de transaction vers l'Afrique restent à 9,1 % — près du double de la moyenne mondiale. FinPay Africa offre une solution moderne, peu coûteuse et entièrement conforme qui est déjà opérationnelle, en croissance et prête à se développer.",
+    "en": "Transaction costs to Africa remain 9.1% — nearly double the global average. FinPay Africa delivers a modern, low-cost, fully compliant solution that is already live, already growing, and ready to scale."
+   },
+   "sections": [
+    {
+     "id": "b_n9j2qp89",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Opportunité d'Investissement",
+       "en": "Investment Opportunity"
+      },
+      "title": {
+       "fr": "Le Marché 40 Milliards $ des Transferts de Fonds Africains",
+       "en": "The $40 Billion African Remittance Market"
+      },
+      "highlight": {
+       "fr": "est Prêt à Être Transformé",
+       "en": "is Ready to be Disrupted"
+      },
+      "subtitle": {
+       "fr": "Les frais de transaction vers l'Afrique restent à 9,1 % — près du double de la moyenne mondiale. FinPay Africa offre une solution moderne, peu coûteuse et entièrement conforme qui est déjà opérationnelle, en croissance et prête à se développer.",
+       "en": "Transaction costs to Africa remain 9.1% — nearly double the global average. FinPay Africa delivers a modern, low-cost, fully compliant solution that is already live, already growing, and ready to scale."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander le pitch deck",
+        "en": "Request the pitch deck"
+       },
+       "url": "/contact-us?type=investor"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Planifier un appel",
+        "en": "Schedule a call"
+       },
+       "url": "/contact-us?type=investor"
+      },
+      "image": null,
+      "badges": [
+       {
+        "icon": "award",
+        "label": {
+         "fr": "Solution Certifiée",
+         "en": "Certified Solution"
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Conforme à l'UE",
+         "en": "EU Compliant"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Opérationnel",
+         "en": "Live & Operating"
+        }
+       },
+       {
+        "icon": "users",
+        "label": {
+         "fr": "Axé sur la Diaspora",
+         "en": "Diaspora-Focused"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_uzfk8ut0",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Le Problème",
+       "en": "The Problem"
+      },
+      "title": {
+       "fr": "L'Afrique Paie le Plus Cher pour Transférer son Propre Argent",
+       "en": "Africa Pays the Most to Transfer its Own Money"
+      },
+      "subtitle": {
+       "fr": "Bien que l'Afrique subsaharienne soit l'une des régions les plus actives pour les transferts de fonds au monde, elle paie systématiquement les frais les plus élevés, subit les transferts les plus lents et dispose de la moins importante infrastructure financière pour soutenir sa population.",
+       "en": "Despite being one of the most active remittance regions in the world, Sub-Saharan Africa consistently pays the highest fees, suffers the slowest transfers, and has the least financial infrastructure to support its people."
+      },
+      "tone": "muted",
+      "items": [
+       {
+        "value": {
+         "fr": "9,1 %",
+         "en": "9.1%"
+        },
+        "label": {
+         "fr": "Frais de transaction moyens vers l'Afrique subsaharienne",
+         "en": "Average transaction cost to Sub-Saharan Africa"
+        },
+        "note": {
+         "fr": "contre 7,2 % en moyenne mondiale et 5,4 % en Asie du Sud",
+         "en": "vs 7.2% global average and 5.4% in South Asia"
+        }
+       },
+       {
+        "value": {
+         "fr": "40 Md$",
+         "en": "$40B+"
+        },
+        "label": {
+         "fr": "Transferts annuels vers l'Afrique subsaharienne",
+         "en": "Annual remittances to Sub-Saharan Africa"
+        },
+        "note": {
+         "fr": "Représentant 10 %+ du PIB de plusieurs nations africaines",
+         "en": "Representing 10%+ of GDP for several African nations"
+        }
+       },
+       {
+        "value": {
+         "fr": "57 %",
+         "en": "57%"
+        },
+        "label": {
+         "fr": "Des adultes en Afrique subsaharienne restent non bancarisés",
+         "en": "Of adults in Sub-Saharan Africa remain unbanked"
+        },
+        "note": {
+         "fr": "La plus grande population sans accès bancaire au monde",
+         "en": "The largest unbanked population of any world region"
+        }
+       }
+      ],
+      "source": {
+       "fr": "Sources : Banque mondiale, Remittance Prices Worldwide.",
+       "en": "Sources: World Bank, Remittance Prices Worldwide."
+      }
+     }
+    },
+    {
+     "id": "b_cvs4f8cg",
+     "type": "chart",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Notre Réponse",
+       "en": "Our Answer"
+      },
+      "title": {
+       "fr": "Un Écosystème Financier Complet, Construit pour l'Afrique",
+       "en": "A Complete Financial Ecosystem, Built for Africa"
+      },
+      "subtitle": {
+       "fr": "FinPay Africa va bien au-delà des simples transferts. Nous construisons l'infrastructure financière qui connecte la diaspora à leurs pays d'origine — rapidement, simplement et abordablement.",
+       "en": "FinPay Africa goes beyond simple transfers. We are building the financial infrastructure that connects the diaspora to their home countries — quickly, simply, and affordably."
+      },
+      "unit": "%",
+      "items": [
+       {
+        "label": {
+         "fr": "Afrique subsaharienne",
+         "en": "Sub-Saharan Africa"
+        },
+        "value": 9.1,
+        "highlight": false
+       },
+       {
+        "label": {
+         "fr": "Moyenne Mondiale",
+         "en": "Global Average"
+        },
+        "value": 7.2,
+        "highlight": false
+       },
+       {
+        "label": {
+         "fr": "Asie du Sud",
+         "en": "South Asia"
+        },
+        "value": 5.4,
+        "highlight": false
+       },
+       {
+        "label": {
+         "fr": "Objectif FinPay",
+         "en": "FinPay Target"
+        },
+        "value": 3.0,
+        "highlight": true
+       }
+      ],
+      "caption": {
+       "fr": "Frais de Transaction par Région — FinPay Africa vise l'engagement de 5 % du G20, au-dessous de 3 %.",
+       "en": "Transaction Cost by Region — FinPay Africa targets the G20 5% commitment, undercut to 3%."
+      },
+      "points": [
+       {
+        "title": {
+         "fr": "Transferts instantanés et peu coûteux",
+         "en": "Instant, low-cost transfers"
+        },
+        "body": {
+         "fr": "Notre plateforme réduit les frais de transfert pour approcher l'objectif de 3 % du G20, économisant de l'argent réel aux familles à chaque transaction.",
+         "en": "Our platform reduces transfer costs to approach the 3% G20 target, saving families real money on every transaction."
+        }
+       },
+       {
+        "title": {
+         "fr": "Compte IBAN + carte bancaire",
+         "en": "IBAN account + bank card"
+        },
+        "body": {
+         "fr": "Chaque utilisateur reçoit une carte bancaire certifiée et un compte IBAN, accordant l'accès au système financier mondial.",
+         "en": "Every user receives a certified bank card and IBAN account, granting access to the global financial system."
+        }
+       },
+       {
+        "title": {
+         "fr": "Mobile-first, adapté à la diaspora",
+         "en": "Mobile-first, diaspora-ready"
+        },
+        "body": {
+         "fr": "Conçu pour la diaspora africaine en Europe — simple, rapide et disponible où qu'ils se trouvent.",
+         "en": "Designed for the African diaspora in Europe — simple, fast, and available wherever they are."
+        }
+       },
+       {
+        "title": {
+         "fr": "Gestion des événements et tontines",
+         "en": "Event & tontine management"
+        },
+        "body": {
+         "fr": "Outils de pooling financier communautaire qui reflètent les pratiques sociales et économiques réelles de l'Afrique.",
+         "en": "Community financial pooling tools that reflect real African social and economic practices."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_vyie6ivw",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Traction et Preuve",
+       "en": "Traction & Proof"
+      },
+      "title": {
+       "fr": "Les Chiffres Parlent",
+       "en": "The Numbers Speak"
+      },
+      "subtitle": {
+       "fr": "Nous ne sommes pas juste une vision. FinPay Africa est opérationnel, en croissance et offre une véritable valeur à de vraies personnes en Europe et en Afrique aujourd'hui.",
+       "en": "We are not just a vision. FinPay Africa is live, growing, and delivering real value to real people across Europe and Africa today."
+      },
+      "tone": "dark",
+      "items": [
+       {
+        "value": {
+         "fr": "2500+",
+         "en": "2500+"
+        },
+        "label": {
+         "fr": "Clients Actifs",
+         "en": "Active Clients"
+        },
+        "note": {
+         "fr": "utilisant la plateforme Connect et la carte",
+         "en": "using the Connect platform & card"
+        }
+       },
+       {
+        "value": {
+         "fr": "30+",
+         "en": "30+"
+        },
+        "label": {
+         "fr": "Partenaires Stratégiques",
+         "en": "Strategic Partners"
+        },
+        "note": {
+         "fr": "dans la finance, la tech et le commerce",
+         "en": "across finance, tech & commerce"
+        }
+       },
+       {
+        "value": {
+         "fr": "12",
+         "en": "12"
+        },
+        "label": {
+         "fr": "Pays Couverts",
+         "en": "Countries Covered"
+        },
+        "note": {
+         "fr": "et expansion à travers l'Afrique",
+         "en": "and expanding across Africa"
+        }
+       },
+       {
+        "value": {
+         "fr": "$40B",
+         "en": "$40B"
+        },
+        "label": {
+         "fr": "Marché Adressable",
+         "en": "Market Addressable"
+        },
+        "note": {
+         "fr": "flux annuel de transferts vers l'Afrique subsaharienne",
+         "en": "annual remittance flow to Sub-Saharan Africa"
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_pvs7hzio",
+     "type": "steps",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Le Cas d'Investissement",
+       "en": "The Investment Case"
+      },
+      "title": {
+       "fr": "5 Raisons d'Investir dans FinPay Africa",
+       "en": "5 Reasons to Invest in FinPay Africa"
+      },
+      "subtitle": {
+       "fr": "Une combinaison convaincante de taille de marché, de timing, de maturité technologique, de conformité réglementaire et de mission sociale.",
+       "en": "A compelling combination of market size, timing, technology maturity, regulatory compliance, and social mission."
+      },
+      "tone": "light",
+      "items": [
+       {
+        "title": {
+         "fr": "Un Marché Prouvé et Massif",
+         "en": "A Proven, Massive Market"
+        },
+        "body": {
+         "fr": "Plus de 40 milliards de dollars affluent chaque année en Afrique subsaharienne par le biais des transferts de fonds — représentant 10 %+ du PIB de plusieurs nations. Ce n'est pas spéculatif : c'est un marché profond, récurrent et en croissance qui a à peine été touché par la fintech moderne.",
+         "en": "Over $40 billion flows into Sub-Saharan Africa each year through remittances — representing 10%+ of GDP in several nations. This is not speculative: it is a deep, recurring, growing market that has barely been touched by modern fintech."
+        }
+       },
+       {
+        "title": {
+         "fr": "Avantage du Premier Arrivant",
+         "en": "First-Mover Advantage"
+        },
+        "body": {
+         "fr": "Les frais de transaction dans les corridors de transfert africains restent près du double de la moyenne mondiale en raison d'une infrastructure formelle limitée. FinPay Africa entre dans ce vide avec une solution certifiée, moderne et peu coûteuse avant la consolidation du marché.",
+         "en": "Transaction costs in African remittance corridors remain nearly double the global average due to limited formal infrastructure. FinPay Africa enters this gap with a certified, modern, low-cost solution before the market consolidates."
+        }
+       },
+       {
+        "title": {
+         "fr": "Opérationnel, Certifié et Conforme",
+         "en": "Live, Certified & Compliant"
+        },
+        "body": {
+         "fr": "FinPay Africa n'est pas un concept — elle est opérationnelle aujourd'hui. Nous détenons les certifications et partenariats nécessaires pour émettre de véritables cartes bancaires et comptes IBAN. Chaque transaction est traitée en pleine conformité avec les réglementations financières de l'UE et internationales.",
+         "en": "FinPay Africa is not a concept — it is operational today. We hold the certifications and partnerships required to issue real bank cards and IBAN accounts. Every transaction is processed in full compliance with EU and international financial regulations."
+        }
+       },
+       {
+        "title": {
+         "fr": "Une Pile Technologique Évolutive",
+         "en": "A Scalable Technology Stack"
+        },
+        "body": {
+         "fr": "Construit en partenariat avec BrightLink Technologies, notre plateforme est modulaire et basée sur les API. L'ajout de nouveaux pays, de nouveaux corridors ou de nouvelles lignes de produits (monnaie mobile, microcrédits, assurance) nécessite une configuration, non une refonte.",
+         "en": "Built in partnership with BrightLink Technologies, our platform is modular and API-driven. Adding new countries, new corridors, or new product lines (mobile money, microloans, insurance) requires configuration, not rebuilding."
+        }
+       },
+       {
+        "title": {
+         "fr": "Impact Social — un Atout Stratégique",
+         "en": "Social Impact — a Strategic Asset"
+        },
+        "body": {
+         "fr": "Les investisseurs alignés sur les critères ESG et les institutions de développement international recherchent activement des opportunités fintech ayant un impact social mesurable. FinPay Africa offre : l'inclusion financière, l'autonomisation de la diaspora et la réduction de la pauvreté liée aux transferts sont intégrées dans notre modèle fondamental.",
+         "en": "ESG-aligned investors and international development institutions are actively seeking fintech opportunities with measurable social impact. FinPay Africa delivers: financial inclusion, diaspora empowerment, and reduced remittance poverty are built into our core model."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_ykl1cq99",
+     "type": "team",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Prêt à Investir ?",
+       "en": "Ready to Invest?"
+      },
+      "title": {
+       "fr": "Parlez Directement à Notre Équipe",
+       "en": "Talk Directly to Our Team"
+      },
+      "subtitle": {
+       "fr": "Cliquez sur n'importe quelle carte pour ouvrir un e-mail prérempli, ou appelez directement.",
+       "en": "Click any card to open a pre-filled email, or call directly."
+      }
+     }
+    },
+    {
+     "id": "b_chj755nf",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Prêt à Investir ?",
+       "en": "Ready to Invest?"
+      },
+      "title": {
+       "fr": "Rejoignez-Nous dans la Construction de l'Avenir Financier de l'Afrique",
+       "en": "Join Us in Building Africa's Financial Future"
+      },
+      "subtitle": {
+       "fr": "Nous sommes actuellement ouverts aux investisseurs stratégiques qui partagent notre vision de transformer les transferts de fonds et l'inclusion financière en Afrique. Notre pitch deck est disponible sur demande.",
+       "en": "We are currently open to strategic investors who share our vision of transforming remittances and financial inclusion across Africa. Our pitch deck is available upon request."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander le pitch deck",
+        "en": "Request the pitch deck"
+       },
+       "url": "/contact-us?type=investor"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Planifier un appel",
+        "en": "Schedule a call"
+       },
+       "url": "/contact-us?type=investor"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "NDA confidentiel disponible",
+         "en": "Confidential NDA available"
+        }
+       },
+       {
+        "text": {
+         "fr": "Entité réglementée par l'UE",
+         "en": "EU-regulated entity"
+        }
+       },
+       {
+        "text": {
+         "fr": "Opérationnel",
+         "en": "Live & operating"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "system_key": "contact",
+   "slug": "contact",
+   "title": {
+    "fr": "Contact",
+    "en": "Contact"
+   },
+   "meta_title": {
+    "fr": "Contactez-nous — FinPay Africa",
+    "en": "Contact us — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Que vous soyez un partenaire potentiel, un investisseur, ou simplement curieux de connaître ce que nous construisons chez FinPay Africa — nous serions ravi de vous entendre.",
+    "en": "Whether you're a potential partner, an investor, or simply want to know more about what we're building at FinPay Africa — we'd love to hear from you."
+   },
+   "sections": [
+    {
+     "id": "b_4zw9xa3k",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Entrez en Contact",
+       "en": "Get In Touch"
+      },
+      "title": {
+       "fr": "Nous Répondons dans les",
+       "en": "We Reply Within"
+      },
+      "highlight": {
+       "fr": "24 Heures",
+       "en": "24 Hours"
+      },
+      "subtitle": {
+       "fr": "Que vous soyez un partenaire potentiel, un investisseur, ou simplement curieux de connaître ce que nous construisons chez FinPay Africa — nous serions ravi de vous entendre.",
+       "en": "Whether you're a potential partner, an investor, or simply want to know more about what we're building at FinPay Africa — we'd love to hear from you."
+      },
+      "primary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    },
+    {
+     "id": "b_x7eedtjv",
+     "type": "contact",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Envoyez-nous un message",
+       "en": "Send us a message"
+      },
+      "title": {
+       "fr": "Comment pouvons-nous vous aider ?",
+       "en": "How can we help?"
+      },
+      "subtitle": {
+       "fr": "Choisissez le type de demande, nous l’adressons directement à la bonne personne.",
+       "en": "Choose the type of enquiry and we route it straight to the right person."
+      },
+      "form_title": {
+       "fr": "Comment pouvons-nous vous aider ?",
+       "en": "How can we help?"
+      },
+      "note": {
+       "fr": "Nous respectons votre vie privée. Vos informations ne sont jamais partagées avec des tiers.",
+       "en": "We respect your privacy. Your information is never shared with third parties."
+      }
+     }
+    },
+    {
+     "id": "b_zhwjr64d",
+     "type": "team",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Notre Équipe",
+       "en": "Our Team"
+      },
+      "title": {
+       "fr": "Parlez à la Bonne Personne",
+       "en": "Talk to the Right Person"
+      },
+      "subtitle": {
+       "fr": "Notre équipe couvre la Belgique, le Burundi et le Rwanda — couvrant les fuseaux horaires d'Europe et d'Afrique de l'Est. Contactez directement celui qui est le plus proche de vos besoins.",
+       "en": "Our team spans Belgium, Burundi, and Rwanda — covering Europe and East Africa time zones. Reach out directly to whoever is closest to your need."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "system_key": "blog",
+   "slug": "blog",
+   "title": {
+    "fr": "Analyses",
+    "en": "Insights"
+   },
+   "meta_title": {
+    "fr": "Analyses et actualités — FinPay Africa",
+    "en": "Insights and news — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Actualités, analyses et perspectives de FinPay Africa sur les paiements et la finance numérique en Afrique.",
+    "en": "News, analysis and perspectives from FinPay Africa on payments and digital finance in Africa."
+   },
+   "sections": [
+    {
+     "id": "b_pja1wj0t",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "centered",
+      "eyebrow": {
+       "fr": "Dernières perspectives",
+       "en": "Latest Insights"
+      },
+      "title": {
+       "fr": "Analyses et",
+       "en": "Insights and"
+      },
+      "highlight": {
+       "fr": "actualités",
+       "en": "news"
+      },
+      "subtitle": {
+       "fr": "Points de vue de notre équipe sur les paiements, la conformité et la finance numérique en Afrique.",
+       "en": "Perspectives from our team on payments, compliance and digital finance in Africa."
+      },
+      "primary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    }
+   ]
+  },
+  {
+   "system_key": null,
+   "slug": "privacy-policy",
+   "title": {
+    "fr": "Politique de confidentialité",
+    "en": "Privacy policy"
+   },
+   "meta_title": {
+    "fr": "Politique de confidentialité — FinPay Africa",
+    "en": "Privacy policy — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Politique de confidentialité",
+    "en": "Privacy policy"
+   },
+   "show_in_footer": true,
+   "sections": [
+    {
+     "id": "b_pac56t4u",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "centered",
+      "eyebrow": {
+       "fr": "Mentions légales",
+       "en": "Legal"
+      },
+      "title": {
+       "fr": "Politique de confidentialité",
+       "en": "Privacy policy"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "primary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    },
+    {
+     "id": "b_fel6246h",
+     "type": "rich_text",
+     "visible": true,
+     "data": {
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "body": {
+       "fr": "<p><strong>TODO :</strong> texte juridique à fournir par FinPay Africa et à faire valider par un conseiller juridique.</p>",
+       "en": "<p><strong>TODO:</strong> legal text to be supplied by FinPay Africa and reviewed by legal counsel.</p>"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "system_key": null,
+   "slug": "terms",
+   "title": {
+    "fr": "Conditions d'utilisation",
+    "en": "Terms of use"
+   },
+   "meta_title": {
+    "fr": "Conditions d'utilisation — FinPay Africa",
+    "en": "Terms of use — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Conditions d'utilisation",
+    "en": "Terms of use"
+   },
+   "show_in_footer": true,
+   "sections": [
+    {
+     "id": "b_id25owf7",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "centered",
+      "eyebrow": {
+       "fr": "Mentions légales",
+       "en": "Legal"
+      },
+      "title": {
+       "fr": "Conditions d'utilisation",
+       "en": "Terms of use"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "primary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    },
+    {
+     "id": "b_5935a0l7",
+     "type": "rich_text",
+     "visible": true,
+     "data": {
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "body": {
+       "fr": "<p><strong>TODO :</strong> texte juridique à fournir par FinPay Africa et à faire valider par un conseiller juridique.</p>",
+       "en": "<p><strong>TODO:</strong> legal text to be supplied by FinPay Africa and reviewed by legal counsel.</p>"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "system_key": null,
+   "slug": "cookies",
+   "title": {
+    "fr": "Politique de cookies",
+    "en": "Cookie policy"
+   },
+   "meta_title": {
+    "fr": "Politique de cookies — FinPay Africa",
+    "en": "Cookie policy — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Politique de cookies",
+    "en": "Cookie policy"
+   },
+   "show_in_footer": true,
+   "sections": [
+    {
+     "id": "b_253j2d54",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "centered",
+      "eyebrow": {
+       "fr": "Mentions légales",
+       "en": "Legal"
+      },
+      "title": {
+       "fr": "Politique de cookies",
+       "en": "Cookie policy"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "primary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "secondary": {
+       "label": {
+        "fr": "",
+        "en": ""
+       },
+       "url": ""
+      },
+      "image": null,
+      "badges": []
+     }
+    },
+    {
+     "id": "b_i3qk2iag",
+     "type": "rich_text",
+     "visible": true,
+     "data": {
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "body": {
+       "fr": "<p><strong>TODO :</strong> texte juridique à fournir par FinPay Africa et à faire valider par un conseiller juridique.</p>",
+       "en": "<p><strong>TODO:</strong> legal text to be supplied by FinPay Africa and reviewed by legal counsel.</p>"
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "solutions": [
+  {
+   "slug": "cross-border",
+   "icon": "globe",
+   "sort": 0,
+   "tag": {
+    "fr": "Phare",
+    "en": "Flagship"
+   },
+   "title": {
+    "fr": "Paiements Transfrontaliers Instantanés",
+    "en": "Instant Cross-Border Payments"
+   },
+   "summary": {
+    "fr": "Envoyez et recevez de l'argent sur 54 marchés africains en moins de 2 secondes. Cryptage de niveau bancaire avec règlement en temps réel.",
+    "en": "Send and receive money across 54 African markets in under 2 seconds. Bank-grade encryption with real-time settlement."
+   },
+   "image": "@asset:cross-border.webp",
+   "meta_title": {
+    "fr": "Paiements Transfrontaliers Instantanés — FinPay Africa",
+    "en": "Instant Cross-border Payments — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Règlement en temps réel dans 150+ pays. Tarification transparente. Pas de frais cachés.",
+    "en": "Real-time settlement in 150+ countries. Transparent pricing. No hidden fees."
+   },
+   "sections": [
+    {
+     "id": "b_l58kxo9t",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Paiements Transfrontaliers",
+       "en": "Cross-Border Payments"
+      },
+      "title": {
+       "fr": "Déplacez l'argent globalement avec vitesse et transparence",
+       "en": "Move money globally with speed and transparency"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "Règlement en temps réel dans 150+ pays. Tarification transparente. Pas de frais cachés.",
+       "en": "Real-time settlement in 150+ countries. Transparent pricing. No hidden fees."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à un expert",
+        "en": "Talk to an expert"
+       },
+       "url": "/contact-us"
+      },
+      "image": "@asset:cross-border.webp",
+      "badges": []
+     }
+    },
+    {
+     "id": "b_7e8g8jdp",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "light",
+      "items": [
+       {
+        "value": {
+         "fr": "< 60s",
+         "en": "< 60s"
+        },
+        "label": {
+         "fr": "Temps de règlement",
+         "en": "Settlement time"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "150+",
+         "en": "150+"
+        },
+        "label": {
+         "fr": "Pays couverts",
+         "en": "Countries covered"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "0.8%",
+         "en": "0.8%"
+        },
+        "label": {
+         "fr": "Frais moyen",
+         "en": "Average fee"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "$2M+",
+         "en": "$2M+"
+        },
+        "label": {
+         "fr": "Volume traité quotidiennement",
+         "en": "Volume processed daily"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_0lvsnujz",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Couverture globale",
+       "en": "Global coverage"
+      },
+      "title": {
+       "fr": "Envoyez de l'argent partout en secondes",
+       "en": "Send money anywhere in seconds"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "150+ pays",
+         "en": "150+ countries"
+        },
+        "body": {
+         "fr": "Règlement en temps réel vers des comptes bancaires et portefeuilles mobiles dans le monde entier.",
+         "en": "Real-time settlement to bank accounts and mobile wallets worldwide."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Transferts instantanés",
+         "en": "Instant transfers"
+        },
+        "body": {
+         "fr": "La plupart des corridors se règlent en moins de 60 secondes — pas de retards, pas d'excuses.",
+         "en": "Most corridors settle in under 60 seconds — no delays, no excuses."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Tarification transparente",
+         "en": "Transparent pricing"
+        },
+        "body": {
+         "fr": "Pas de frais cachés. Connaissez votre coût exact avant d'envoyer.",
+         "en": "No hidden fees. Know your exact cost before you send."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Conformité complète",
+         "en": "Full compliance"
+        },
+        "body": {
+         "fr": "Screening des sanctions intégré et vérifications AML sur chaque transaction.",
+         "en": "Built-in sanctions screening and AML checks on every transaction."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "API d'abord",
+         "en": "API first"
+        },
+        "body": {
+         "fr": "Intégrez les paiements dans votre app. Webhooks pour les mises à jour de règlement en temps réel.",
+         "en": "Embed payments into your app. Webhooks for real-time settlement updates."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Sécurité de niveau entreprise",
+         "en": "Enterprise-grade security"
+        },
+        "body": {
+         "fr": "Paiements multi-signatures, détection de fraude et résolution de litiges.",
+         "en": "Multi-signature payouts, fraud detection, and dispute resolution."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_a7tz0ync",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_xll4zklo",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "Commencez à envoyer globalement aujourd'hui",
+       "en": "Start sending globally today"
+      },
+      "subtitle": {
+       "fr": "Pas de frais de configuration. Pas de volume minimum. Payez au fur et à mesure.",
+       "en": "No setup fees. No minimum volume. Pay as you go."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Soutenu par les principaux investisseurs fintech",
+         "en": "Supported by leading fintech investors"
+        }
+       },
+       {
+        "text": {
+         "fr": "Certifié ISO 27001",
+         "en": "ISO 27001 certified"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "slug": "diaspora",
+   "icon": "send",
+   "sort": 1,
+   "tag": {
+    "fr": "Transfert",
+    "en": "Remittance"
+   },
+   "title": {
+    "fr": "Transferts d'Argent Diaspora",
+    "en": "Diaspora Money Transfers"
+   },
+   "summary": {
+    "fr": "Transferts rapides à frais réduits depuis l'Europe, l'Amérique du Nord et le Moyen-Orient directement vers les portefeuilles mobiles africains.",
+    "en": "Low-fee, high-speed remittances from Europe, North America, and the Middle East directly to African mobile wallets."
+   },
+   "image": "@asset:diaspora.webp",
+   "meta_title": {
+    "fr": "Transferts d'Argent Diaspora — FinPay Africa",
+    "en": "Diaspora Money Transfers — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Transferts d'argent rapides et à faible coût pour les communautés africaines de la diaspora. Taux de change transparents, options de paiement locales et conformité intégrée.",
+    "en": "Fast, low-cost money transfers for African diaspora communities. Transparent FX, local payout options, and built-in compliance."
+   },
+   "sections": [
+    {
+     "id": "b_okep7y6w",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Remises Diaspora",
+       "en": "Diaspora Remittances"
+      },
+      "title": {
+       "fr": "Envoyez de l'argent chez vous avec rapidité, confiance et clarté",
+       "en": "Send money home with speed, trust, and clarity"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "Transferts à faible frais d'Europe, d'Amérique du Nord et du Moyen-Orient vers l'Afrique, avec des rails de paiement locaux, des taux de change leaders du marché et une conformité totale.",
+       "en": "Low-fee transfers from Europe, North America and the Middle East into Africa, with local payout rails, market-leading FX, and full compliance."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à un expert",
+        "en": "Talk to an expert"
+       },
+       "url": "/contact-us"
+      },
+      "image": "@asset:diaspora.webp",
+      "badges": []
+     }
+    },
+    {
+     "id": "b_ktakpuxq",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "light",
+      "items": [
+       {
+        "value": {
+         "fr": "< 60s",
+         "en": "< 60s"
+        },
+        "label": {
+         "fr": "Temps de paiement moyen",
+         "en": "Average payout time"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "99.9%",
+         "en": "99.9%"
+        },
+        "label": {
+         "fr": "Taux d'achèvement des transferts",
+         "en": "Transfer completion rate"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "24/7",
+         "en": "24/7"
+        },
+        "label": {
+         "fr": "Support pour les couloirs diaspora",
+         "en": "Support for diaspora corridors"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "Multi-devises",
+         "en": "Multi-currency"
+        },
+        "label": {
+         "fr": "EUR, USD, GBP, AED, et plus",
+         "en": "EUR, USD, GBP, AED, and more"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_phr62gds",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Paiements axés sur la diaspora",
+       "en": "Diaspora-first payments"
+      },
+      "title": {
+       "fr": "Livrer des remises plus rapides et plus sûres pour chaque couloir",
+       "en": "Deliver faster, safer remittances for every corridor"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Couverture des couloirs mondiaux",
+         "en": "Global corridor coverage"
+        },
+        "body": {
+         "fr": "Prendre en charge les paiements des principaux hubs de diaspora vers les comptes africains locaux, les portefeuilles mobiles et les partenaires de retrait d'espèces.",
+         "en": "Support payouts from major diaspora hubs into local African accounts, mobile wallets, and cash pickup partners."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Règlement rapide",
+         "en": "Fast settlement"
+        },
+        "body": {
+         "fr": "La plupart des transferts se règlent en moins de 60 secondes avec un routage transparent et des mises à jour de notification en temps réel.",
+         "en": "Most transfers settle in under 60 seconds with transparent routing and real-time notification updates."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Conformité intégrée",
+         "en": "Built-in compliance"
+        },
+        "body": {
+         "fr": "Les screenings AML, les vérifications KYC et les filtrages de sanctions gardent chaque transfert sûr et auditable.",
+         "en": "AML screening, KYC checks, and sanctions filtering keep every transfer safe and auditable."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Tarification FX transparente",
+         "en": "Transparent FX pricing"
+        },
+        "body": {
+         "fr": "Montrez aux clients les taux de change exacts et les frais avant qu'ils envoient, sans coûts cachés.",
+         "en": "Show customers exact exchange rates and fees before they send, with no hidden costs."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "APIs conviviales pour les développeurs",
+         "en": "Developer-friendly APIs"
+        },
+        "body": {
+         "fr": "Intégrez rapidement les flux de remise avec des points de terminaison REST, des webhooks et des parcours de paiement personnalisables.",
+         "en": "Integrate remittance flows quickly with REST endpoints, webhooks, and customizable payout journeys."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Intégrations sécurisées",
+         "en": "Secure onboardings"
+        },
+        "body": {
+         "fr": "Protégez votre marque avec des contrôles de fraude multi-couches et des rails de règlement sécurisés.",
+         "en": "Protect your brand with multi-layer fraud controls and secure settlement rails."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_wm31yiha",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Conçu pour la confiance diaspora",
+       "en": "Designed for diaspora trust"
+      },
+      "title": {
+       "fr": "Connecter les familles, les entreprises et les écosystèmes financiers",
+       "en": "Connect families, businesses, and financial ecosystems"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "light",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Partenaires de paiement réglementés",
+         "en": "Regulated payout partners"
+        },
+        "body": {
+         "fr": "Travaillez avec des payeurs locaux licenciés et des banques à travers l'Afrique pour une livraison rapide et conforme.",
+         "en": "Work with licensed local payers and banks across Africa for fast, compliant delivery."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Support multi-rails",
+         "en": "Multi-rail support"
+        },
+        "body": {
+         "fr": "Offrez des virements bancaires, des crédits de portefeuille mobile et des collectes d'espèces dans les marchés clés.",
+         "en": "Offer bank transfers, mobile wallet credit, and cash collection in key markets."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Expérience conviviale pour les consommateurs",
+         "en": "Consumer-friendly experience"
+        },
+        "body": {
+         "fr": "Gardez le parcours client simple avec des frais clairs, un verrouillage des taux et des mises à jour de statut instantanées.",
+         "en": "Keep the customer journey simple with clear fees, rate locking, and instant status updates."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Insights basés sur les données",
+         "en": "Data-driven insights"
+        },
+        "body": {
+         "fr": "Mesurez les performances des couloirs, la rétention des clients et les marges FX depuis un tableau de bord unique.",
+         "en": "Measure corridor performance, customer retention, and FX margins from one dashboard."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Flux en marque blanche",
+         "en": "White-label flows"
+        },
+        "body": {
+         "fr": "Marquez l'expérience de remise comme la vôtre tandis que FinPay gère les rails.",
+         "en": "Brand the remittance experience as your own while FinPay handles the rails."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Financement sécurisé",
+         "en": "Secure funding"
+        },
+        "body": {
+         "fr": "Protégez les dépôts des clients avec des contrôles de règlement solides et des portefeuilles sécurisés.",
+         "en": "Protect customer deposits with strong settlement controls and secure wallets."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_ir4cowgz",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_rixa11dp",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "Lancez les transferts diaspora avec confiance",
+       "en": "Launch diaspora transfers with confidence"
+      },
+      "subtitle": {
+       "fr": "Activez des remises à faible coût, rapides et conformes pour les clients africains de la diaspora.",
+       "en": "Enable low-cost, fast, compliant remittances for African diaspora customers."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Approuvé par les fintechs diaspora",
+         "en": "Trusted by diaspora fintechs"
+        }
+       },
+       {
+        "text": {
+         "fr": "Aucun frais de configuration",
+         "en": "No setup fee"
+        }
+       },
+       {
+        "text": {
+         "fr": "Contrôle API complet",
+         "en": "Full API control"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "slug": "api",
+   "icon": "code",
+   "sort": 2,
+   "tag": {
+    "fr": "Développeur",
+    "en": "Developer"
+   },
+   "title": {
+    "fr": "API et Infrastructure de Paiement",
+    "en": "Payment API & Infrastructure"
+   },
+   "summary": {
+    "fr": "Intégrez nos solutions de paiement dans n'importe quelle application avec un seul SDK. Conforme PCI-DSS, avec une disponibilité garantie de 99,9 %.",
+    "en": "Integrate our payment rails into any app with a single SDK. PCI-DSS compliant, 99.9% uptime SLA guaranteed."
+   },
+   "image": "@asset:api.webp",
+   "meta_title": {
+    "fr": "API de Paiement & Infrastructure — FinPay Africa",
+    "en": "Payment API & Infrastructure — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Créez des applications compatibles avec les paiements grâce à une API unifiée, une infrastructure sécurisée et des rails de règlement locaux conçus pour les marchés africains les plus dynamiques.",
+    "en": "Build payment-enabled apps with a unified API, secure infrastructure, and local settlement rails designed for African markets."
+   },
+   "sections": [
+    {
+     "id": "b_g8sbi4q2",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "API de Paiement",
+       "en": "Payment API"
+      },
+      "title": {
+       "fr": "Alimentez les paiements avec une API unique et une infrastructure de niveau entreprise",
+       "en": "Power payments with one API and enterprise-grade infrastructure"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "Intégrez le checkout, la réconciliation, la conformité et le règlement avec une plateforme unique conçue pour les applications africaines à la croissance la plus rapide.",
+       "en": "Integrate checkout, reconciliation, compliance and settlement with a single platform built for Africa’s fastest growing apps."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à un expert",
+        "en": "Talk to an expert"
+       },
+       "url": "/contact-us"
+      },
+      "image": "@asset:api.webp",
+      "badges": []
+     }
+    },
+    {
+     "id": "b_y9v86wzs",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "light",
+      "items": [
+       {
+        "value": {
+         "fr": "99.99%",
+         "en": "99.99%"
+        },
+        "label": {
+         "fr": "Disponibilité de l'API",
+         "en": "API uptime"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "< 50ms",
+         "en": "< 50ms"
+        },
+        "label": {
+         "fr": "Temps de réponse moyen",
+         "en": "Average response time"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "100+",
+         "en": "100+"
+        },
+        "label": {
+         "fr": "Points de terminaison d'intégration",
+         "en": "Integration endpoints"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "24/7",
+         "en": "24/7"
+        },
+        "label": {
+         "fr": "Surveillance de l'infrastructure",
+         "en": "Infrastructure monitoring"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_3t60rjiw",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Infrastructure axée sur les développeurs",
+       "en": "Developer-first infrastructure"
+      },
+      "title": {
+       "fr": "Une API. Plusieurs rails de paiement. Zéro surcharge d'infrastructure.",
+       "en": "One API. Multiple payment rails. Zero infrastructure overhead."
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Points de terminaison de paiement unifiés",
+         "en": "Unified payment endpoints"
+        },
+        "body": {
+         "fr": "Acceptez les cartes, les virements bancaires, l'argent mobile et les portefeuilles via une API REST unique avec des SDK pour le web et le mobile.",
+         "en": "Accept cards, bank transfers, mobile money and wallets through one REST API with SDKs for web and mobile."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Sécurité prête pour PCI",
+         "en": "PCI-ready security"
+        },
+        "body": {
+         "fr": "Tokenisation hébergée, coffres-forts sécurisés et vérifications de conformité intégrées dans chaque flux de paiement.",
+         "en": "Hosted tokenization, secure vaults, and compliance checks built into every payment flow."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Rails de règlement locaux",
+         "en": "Local settlement rails"
+        },
+        "body": {
+         "fr": "Connecté aux banques locales, portefeuilles et réseaux d'argent liquide à travers l'Afrique pour des paiements rapides et conformes.",
+         "en": "Connected to local banks, wallets and cash networks across Africa for fast, compliant payouts."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Routage intelligent",
+         "en": "Smart routing"
+        },
+        "body": {
+         "fr": "Routez les paiements automatiquement en fonction du coût, de la vitesse et de la disponibilité des devises pour la meilleure expérience client.",
+         "en": "Route payments automatically on cost, speed, and currency availability for the best customer experience."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Rapprochement en temps réel",
+         "en": "Real-time reconciliation"
+        },
+        "body": {
+         "fr": "Suivez les règlements, remboursements et litiges instantanément avec des webhooks et des rapports prêts pour le grand livre.",
+         "en": "Track settlements, refunds and disputes instantly with webhooks and ledger-ready reporting."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Conformité intégrée",
+         "en": "Built-in compliance"
+        },
+        "body": {
+         "fr": "Les screenings KYC, AML et sanctions sont intégrés dans le chemin de paiement, pour que chaque transaction reste conforme.",
+         "en": "KYC, AML and sanctions screening are embedded in the payment path, so every transaction stays compliant."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_1swjckjl",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Infrastructure pour l'échelle",
+       "en": "Infrastructure for scale"
+      },
+      "title": {
+       "fr": "Systèmes sécurisés et résilients pour les paiements à haut volume",
+       "en": "Secure, resilient systems for high-volume payments"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "light",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Orchestration des paiements",
+         "en": "Payment orchestration"
+        },
+        "body": {
+         "fr": "Un cœur résilient route les fonds à travers les rails avec des tentatives, des chemins de secours et des garanties de paiement.",
+         "en": "A resilient core routes funds across rails with retries, fallback paths and payout guarantees."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Sécurité d'entreprise",
+         "en": "Enterprise security"
+        },
+        "body": {
+         "fr": "Accès basé sur les rôles, journaux d'audit et chiffrement protègent vos utilisateurs et votre entreprise.",
+         "en": "Role-based access, audit logs, and encryption protect your users and your business."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Connectivité régionale",
+         "en": "Regional connectivity"
+        },
+        "body": {
+         "fr": "Support des devises locales et partenaires de règlement dans les marchés africains clés réduisent les frictions et accélèrent les paiements.",
+         "en": "Local currency support and settlement partners in key African markets reduce friction and speed payouts."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "SDK et webhooks",
+         "en": "SDKs & webhooks"
+        },
+        "body": {
+         "fr": "Déployez plus rapidement avec des SDK, des composants UI prêts à l'emploi et des événements webhook pour chaque état du cycle de vie des paiements.",
+         "en": "Ship faster with SDKs, ready-made UI components, and webhook events for every payment lifecycle state."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Tableaux de bord perspicaces",
+         "en": "Insightful dashboards"
+        },
+        "body": {
+         "fr": "Surveillez la santé des transactions, les métriques de revenus et les performances des partenaires depuis un panneau d'analyse unique.",
+         "en": "Monitor transaction health, revenue metrics, and partner performance from one analytics panel."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Prévention de la fraude",
+         "en": "Fraud prevention"
+        },
+        "body": {
+         "fr": "Le scoring de risque adaptatif et les règles de fraude réduisent les rejets de paiement et protègent la confiance des clients.",
+         "en": "Adaptive risk scoring and fraud rules reduce chargebacks and protect customer trust."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_teiyzcot",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_ohp6vz41",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "Lancez des API de paiement en lesquelles votre équipe peut avoir confiance",
+       "en": "Launch payment APIs your team can trust"
+      },
+      "subtitle": {
+       "fr": "Des startups aux entreprises, utilisez une infrastructure moderne qui gère les paiements, la conformité et le règlement en une seule plateforme.",
+       "en": "From startups to enterprise, use modern infrastructure that handles payments, compliance, and settlement in one platform."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Prêt pour PCI",
+         "en": "PCI-ready"
+        }
+       },
+       {
+        "text": {
+         "fr": "ISO 27001",
+         "en": "ISO 27001"
+        }
+       },
+       {
+        "text": {
+         "fr": "Conçu pour les paiements africains",
+         "en": "Built for African payments"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "slug": "cards",
+   "icon": "credit-card",
+   "sort": 3,
+   "tag": {
+    "fr": "Cartes",
+    "en": "Cards"
+   },
+   "title": {
+    "fr": "Cartes Virtuelles et Physiques",
+    "en": "Virtual & Physical Cards"
+   },
+   "summary": {
+    "fr": "Émettez des cartes virtuelles ou physiques personnalisées pour vos clients et employés — acceptation mondiale, contrôle en temps réel.",
+    "en": "Issue branded virtual or physical cards to your customers and employees — worldwide acceptance, real-time controls."
+   },
+   "image": "@asset:card-and-app.webp",
+   "meta_title": {
+    "fr": "Cartes Virtuelles & Physiques — FinPay Africa",
+    "en": "Virtual & Physical Cards — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Émettez des cartes de marque pour les clients et les employés. Contrôles de dépenses en temps réel, acceptation mondiale.",
+    "en": "Issue branded cards to customers and employees. Real-time spend controls, worldwide acceptance."
+   },
+   "sections": [
+    {
+     "id": "b_nam148p0",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Émission de Cartes",
+       "en": "Cards Issuing"
+      },
+      "title": {
+       "fr": "Votre marque, dans chaque portefeuille",
+       "en": "Your brand, in every wallet"
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "Émettez des cartes Visa / Mastercard virtuelles ou physiques de marque à quiconque en Afrique. Contrôles de dépenses en temps réel. Gel instantané. Zéro fraude carte-présente.",
+       "en": "Issue branded virtual or physical Visa / Mastercard cards to anyone in Africa. Real-time spend controls. Instant freeze. Zero card-present fraud."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à un expert",
+        "en": "Talk to an expert"
+       },
+       "url": "/contact-us"
+      },
+      "image": "@asset:card-and-app.webp",
+      "badges": []
+     }
+    },
+    {
+     "id": "b_tvhhpbmy",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "light",
+      "items": [
+       {
+        "value": {
+         "fr": "< 30s",
+         "en": "< 30s"
+        },
+        "label": {
+         "fr": "Temps d'émission de carte",
+         "en": "Card issuance time"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "190+",
+         "en": "190+"
+        },
+        "label": {
+         "fr": "Pays acceptés",
+         "en": "Countries accepted"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "0%",
+         "en": "0%"
+        },
+        "label": {
+         "fr": "Fraude carte-présente",
+         "en": "Card-present fraud"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "Temps réel",
+         "en": "Real-time"
+        },
+        "label": {
+         "fr": "Contrôles de dépenses",
+         "en": "Spend controls"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_ofqewaou",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Tout inclus",
+       "en": "Everything included"
+      },
+      "title": {
+       "fr": "Une plateforme, tous types de cartes",
+       "en": "One platform, every card type"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Cartes virtuelles — instantanées",
+         "en": "Virtual cards — instant"
+        },
+        "body": {
+         "fr": "Créez des cartes virtuelles pour les paiements en ligne, abonnements ou dépenses des employés en moins de 30 secondes via API ou tableau de bord.",
+         "en": "Spin up virtual cards for online payments, subscriptions, or employee expenses in under 30 seconds via API or dashboard."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Production de cartes physiques",
+         "en": "Physical card production"
+        },
+        "body": {
+         "fr": "Cartes physiques en marque blanche avec votre marque, puce, sans contact et PIN. Livrées partout en Afrique dans les 5 jours ouvrables.",
+         "en": "White-label physical cards with your brand, chip, contactless, and PIN. Delivered anywhere in Africa within 5 business days."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Contrôles de dépenses en temps réel",
+         "en": "Real-time spend controls"
+        },
+        "body": {
+         "fr": "Définissez des limites par catégorie, marchand, temps, géographie ou montant. Gelez / dégelez toute carte en millisecondes via API.",
+         "en": "Set limits by category, merchant, time, geography, or amount. Freeze / unfreeze any card in milliseconds via API."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Rapports de transactions",
+         "en": "Transaction reporting"
+        },
+        "body": {
+         "fr": "Flux de transactions en direct, analyses de dépenses catégorisées et relevés exportables — pour votre équipe financière ou vos clients.",
+         "en": "Live transaction feeds, categorised spend analytics, and exportable statements — for your finance team or your customers."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Recharge instantanée",
+         "en": "Instant top-up"
+        },
+        "body": {
+         "fr": "Financer les cartes directement depuis votre portefeuille FinPay. Mises à jour de solde en temps réel poussées vers votre système via Webhooks.",
+         "en": "Fund cards directly from your FinPay wallet. Real-time balance updates pushed to your system via Webhooks."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Contrôle API complet",
+         "en": "Full API control"
+        },
+        "body": {
+         "fr": "Créez, financez, gelez et fermez des cartes par programmation. Intégrez la gestion des cartes dans votre propre application avec notre SDK en marque blanche.",
+         "en": "Create, fund, freeze, and close cards programmatically. Embed card management into your own app with our white-label SDK."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_axeqbnhl",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_1n13jcat",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "Lancez votre programme de cartes aujourd'hui",
+       "en": "Launch your card programme today"
+      },
+      "subtitle": {
+       "fr": "Des startups fintech aux entreprises — nous évoluons avec vous.",
+       "en": "From fintech startups to enterprise — we scale with you."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Certifié Visa & Mastercard",
+         "en": "Visa & Mastercard certified"
+        }
+       },
+       {
+        "text": {
+         "fr": "Aucun volume minimum",
+         "en": "No minimum volume"
+        }
+       },
+       {
+        "text": {
+         "fr": "Accès API complet",
+         "en": "Full API access"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "slug": "kyc",
+   "icon": "user-check",
+   "sort": 4,
+   "tag": {
+    "fr": "Conformité",
+    "en": "Compliance"
+   },
+   "title": {
+    "fr": "Vérification d'Identité et KYC",
+    "en": "Identity & KYC Verification"
+   },
+   "summary": {
+    "fr": "Contrôle KYC et AML automatisé pour une intégration rapide et conforme des particuliers et des entreprises à travers l'Afrique.",
+    "en": "Automated KYC and AML screening for fast, compliant onboarding of individuals and businesses across Africa."
+   },
+   "image": "@asset:kyc.webp",
+   "meta_title": {
+    "fr": "Vérification d'Identité & KYC — FinPay Africa",
+    "en": "Identity & KYC Verification — FinPay Africa"
+   },
+   "meta_description": {
+    "fr": "Screening KYC et AML automatisé pour un onboarding rapide et conforme des individus et entreprises à travers l'Afrique.",
+    "en": "Automated KYC and AML screening for fast, compliant onboarding of individuals and businesses across Africa."
+   },
+   "sections": [
+    {
+     "id": "b_9mx2x18h",
+     "type": "hero",
+     "visible": true,
+     "data": {
+      "variant": "page",
+      "eyebrow": {
+       "fr": "Conformité",
+       "en": "Compliance"
+      },
+      "title": {
+       "fr": "Connaissez votre client. Protégez votre entreprise.",
+       "en": "Know your customer. Protect your business."
+      },
+      "highlight": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "KYC automatisé, screening AML et vérification d'identité — conçu pour les types d'ID africains. Onboardez en secondes. Restez conforme pour toujours.",
+       "en": "Automated KYC, AML screening, and identity verification — built for African ID types. Onboard in seconds. Stay compliant forever."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à un expert",
+        "en": "Talk to an expert"
+       },
+       "url": "/contact-us"
+      },
+      "image": "@asset:kyc.webp",
+      "badges": []
+     }
+    },
+    {
+     "id": "b_afeyuhz1",
+     "type": "stats",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "",
+       "en": ""
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "tone": "light",
+      "items": [
+       {
+        "value": {
+         "fr": "< 8s",
+         "en": "< 8s"
+        },
+        "label": {
+         "fr": "Temps moyen KYC",
+         "en": "Average KYC time"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "98.4%",
+         "en": "98.4%"
+        },
+        "label": {
+         "fr": "Précision de vérification",
+         "en": "Verification accuracy"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "50+",
+         "en": "50+"
+        },
+        "label": {
+         "fr": "Listes de sanctions criblées",
+         "en": "Sanction lists screened"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       },
+       {
+        "value": {
+         "fr": "22",
+         "en": "22"
+        },
+        "label": {
+         "fr": "Types d'ID africains pris en charge",
+         "en": "African ID types supported"
+        },
+        "note": {
+         "fr": "",
+         "en": ""
+        }
+       }
+      ],
+      "source": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_gv0e38da",
+     "type": "features",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Conformité à l'échelle",
+       "en": "Compliance at scale"
+      },
+      "title": {
+       "fr": "Vérifiez quiconque, n'importe où en Afrique",
+       "en": "Verify anyone, anywhere in Africa"
+      },
+      "subtitle": {
+       "fr": "",
+       "en": ""
+      },
+      "columns": "3",
+      "tone": "muted",
+      "items": [
+       {
+        "icon": "globe",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Support multi-documents ID",
+         "en": "Multi-document ID support"
+        },
+        "body": {
+         "fr": "IDs nationales, passeports, permis de conduire et cartes d'électeur — de 54 pays africains — vérifiés avec OCR alimenté par IA.",
+         "en": "National IDs, passports, driver licences, and voter cards — from 54 African countries — verified with AI-powered OCR."
+        }
+       },
+       {
+        "icon": "zap",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Détection de vivacité",
+         "en": "Liveness detection"
+        },
+        "body": {
+         "fr": "Vérifications de vivacité passive en moins de 3 secondes. Empêche la tromperie avec des photos imprimées ou des vidéos enregistrées.",
+         "en": "Passive liveness checks in under 3 seconds. Prevents spoofing with printed photos or recorded videos."
+        }
+       },
+       {
+        "icon": "chart-column",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Screening AML et sanctions",
+         "en": "AML & sanctions screening"
+        },
+        "body": {
+         "fr": "Screening en temps réel contre 50+ listes de sanctions globales, bases de données PEP et médias défavorables — à chaque onboarding et transaction.",
+         "en": "Real-time screening against 50+ global sanction lists, PEP databases, and adverse media — on every onboarding and transaction."
+        }
+       },
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Résultats notés par risque",
+         "en": "Risk-scored results"
+        },
+        "body": {
+         "fr": "Chaque vérification retourne un score de risque avec des codes de raison détaillés, pour que votre équipe de conformité puisse prendre des décisions rapides et audibles.",
+         "en": "Every verification returns a risk score with detailed reason codes, so your compliance team can make fast, auditable decisions."
+        }
+       },
+       {
+        "icon": "code",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Sans code + API",
+         "en": "No-code + API"
+        },
+        "body": {
+         "fr": "Intégrez notre flux KYC hébergé avec une ligne de code, ou construisez un parcours entièrement personnalisé en utilisant notre API de Vérification headless.",
+         "en": "Drop in our hosted KYC flow with one line of code, or build a fully custom journey using our headless Verification API."
+        }
+       },
+       {
+        "icon": "lock",
+        "label": {
+         "fr": "",
+         "en": ""
+        },
+        "title": {
+         "fr": "Enregistrements prêts pour audit",
+         "en": "Audit-ready records"
+        },
+        "body": {
+         "fr": "Chaque vérification est stockée avec horodatage, preuves et journal de décision. Export en un clic pour les demandes de régulateur.",
+         "en": "Every check is stored with timestamp, evidence, and decision log. One-click export for regulator requests."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "b_ly8ozcyw",
+     "type": "trust",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "Confiance Institutionnelle",
+       "en": "Institutional Trust"
+      },
+      "title": {
+       "fr": "La sécurité et la conformité au cœur de chaque transaction",
+       "en": "Security and compliance built into every transaction"
+      },
+      "subtitle": {
+       "fr": "Nos plateformes sont conçues selon les exigences des institutions financières régulées : chiffrement, traçabilité et contrôle à chaque étape.",
+       "en": "Our platforms are engineered to the standards regulated financial institutions expect: encryption, traceability and control at every step."
+      },
+      "items": [
+       {
+        "icon": "shield-check",
+        "label": {
+         "fr": "Sécurité de niveau bancaire",
+         "en": "Bank-grade security"
+        },
+        "sub": {
+         "fr": "Chiffrement de bout en bout et authentification forte",
+         "en": "End-to-end encryption and strong authentication"
+        }
+       },
+       {
+        "icon": "file-check",
+        "label": {
+         "fr": "Conformité réglementaire",
+         "en": "Regulatory compliance"
+        },
+        "sub": {
+         "fr": "Alignés sur les directives BNR et les normes AML/KYC",
+         "en": "Aligned with BNR directives and AML/KYC standards"
+        }
+       },
+       {
+        "icon": "activity",
+        "label": {
+         "fr": "Fiabilité éprouvée",
+         "en": "Proven reliability"
+        },
+        "sub": {
+         "fr": "Infrastructure surveillée 24/7 et plans de reprise",
+         "en": "24/7 monitored infrastructure and recovery plans"
+        }
+       },
+       {
+        "icon": "landmark",
+        "label": {
+         "fr": "Adossé au Groupe NSI",
+         "en": "Backed by NSI Group"
+        },
+        "sub": {
+         "fr": "Un groupe industriel établi de longue date",
+         "en": "A long-established industrial group"
+        }
+       }
+      ],
+      "note": {
+       "fr": "",
+       "en": ""
+      }
+     }
+    },
+    {
+     "id": "b_d14ve92m",
+     "type": "cta",
+     "visible": true,
+     "data": {
+      "eyebrow": {
+       "fr": "",
+       "en": ""
+      },
+      "title": {
+       "fr": "Onboarding conforme en minutes, pas en mois",
+       "en": "Compliant onboarding in minutes, not months"
+      },
+      "subtitle": {
+       "fr": "Approuvé par les fintechs et banques licenciées à travers l'Afrique.",
+       "en": "Trusted by licensed fintechs and banks across Africa."
+      },
+      "primary": {
+       "label": {
+        "fr": "Demander une démo",
+        "en": "Request a demo"
+       },
+       "url": "/contact-us"
+      },
+      "secondary": {
+       "label": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+       },
+       "url": "/contact-us"
+      },
+      "points": [
+       {
+        "text": {
+         "fr": "Conforme GDPR & NDPR",
+         "en": "GDPR & NDPR compliant"
+        }
+       },
+       {
+        "text": {
+         "fr": "SOC 2 Type II",
+         "en": "SOC 2 Type II"
+        }
+       },
+       {
+        "text": {
+         "fr": "Données restent en région",
+         "en": "Data stays in-region"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "partners": [
+  {
+   "name": "BrightLink Technologies",
+   "category": "technology",
+   "partnership_type": {
+    "fr": "Infrastructure de Cartes & API",
+    "en": "Card Infrastructure & API"
+   },
+   "description": {
+    "fr": "BrightLink alimente l'infrastructure d'émission de cartes et les API de paiement qui sous-tendent la plateforme Connect, permettant un traitement des transactions rapide et sécurisé à grande échelle dans notre réseau.",
+    "en": "BrightLink powers the card issuance infrastructure and payment APIs that underpin the Connect platform, enabling fast, secure transaction processing at scale across our network."
+   },
+   "since": "2022",
+   "region": {
+    "fr": "Europe & Afrique",
+    "en": "Europe & Africa"
+   },
+   "sort": 0,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "NSI-Monétique",
+   "category": "financial",
+   "partnership_type": {
+    "fr": "Solutions Bancaires & Monétiques",
+    "en": "Banking & Monetic Solutions"
+   },
+   "description": {
+    "fr": "Notre partenaire financier fondateur, fournissant le cadre réglementaire, l'expertise bancaire et l'infrastructure monétique qui donnent à FinPay Africa sa fondation institutionnelle et sa crédibilité.",
+    "en": "Our founding financial partner, providing the regulatory framework, banking expertise, and monetic infrastructure that gives FinPay Africa its institutional foundation and credibility."
+   },
+   "since": "2021",
+   "region": {
+    "fr": "Belgique / Afrique",
+    "en": "Belgium / Africa"
+   },
+   "sort": 1,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "Pan-African Mobile Network",
+   "category": "mobile_money",
+   "partnership_type": {
+    "fr": "Intégration de Portefeuille Mobile",
+    "en": "Mobile Wallet Integration"
+   },
+   "description": {
+    "fr": "Connecter la plateforme FinPay aux écosystèmes de portefeuilles mobiles à travers l'Afrique subsaharienne pour assurer une livraison du dernier kilomètre et une véritable inclusion financière pour la population non bancarisée.",
+    "en": "Connecting the FinPay platform to mobile wallet ecosystems across Sub-Saharan Africa to ensure last-mile delivery and true financial inclusion for the unbanked population."
+   },
+   "since": "2023",
+   "region": {
+    "fr": "Afrique Subsaharienne",
+    "en": "Sub-Saharan Africa"
+   },
+   "sort": 2,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "African Merchant Alliance",
+   "category": "commerce",
+   "partnership_type": {
+    "fr": "Réseau d'Acceptation Marchande",
+    "en": "Merchant Acceptance Network"
+   },
+   "description": {
+    "fr": "Une coalition de commerçants et de détaillants qui acceptent les cartes FinPay et les terminaux de paiement, élargissant notre présence sur le terrain sur les principaux marchés urbains en Afrique.",
+    "en": "A coalition of merchants and retailers who accept FinPay cards and payment terminals, expanding our on-the-ground footprint across key urban markets throughout Africa."
+   },
+   "since": "2023",
+   "region": {
+    "fr": "Afrique de l'Ouest & du Centre",
+    "en": "West & Central Africa"
+   },
+   "sort": 3,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "EuroConnect Financial",
+   "category": "financial",
+   "partnership_type": {
+    "fr": "Banque pour la Diaspora Européenne",
+    "en": "European Diaspora Banking"
+   },
+   "description": {
+    "fr": "Permettre aux communautés de la diaspora européenne d'envoyer de l'argent à la maison de manière transparente par le biais de corridors conformes et compétitifs qui répondent aux réglementations financières de l'UE.",
+    "en": "Enabling European-based diaspora communities to send money home seamlessly through compliant, competitively priced corridors that meet EU financial regulations."
+   },
+   "since": "2022",
+   "region": {
+    "fr": "Europe",
+    "en": "Europe"
+   },
+   "sort": 4,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "SecurePay Technologies",
+   "category": "technology",
+   "partnership_type": {
+    "fr": "Sécurité & Conformité",
+    "en": "Security & Compliance"
+   },
+   "description": {
+    "fr": "Fournissant le chiffrement de classe entreprise, la détection des fraudes en temps réel et les outils de conformité pour que chaque transaction FinPay respecte les plus hautes normes de sécurité internationales.",
+    "en": "Providing enterprise-grade encryption, real-time fraud detection, and compliance tooling so every FinPay transaction meets the highest international security standards."
+   },
+   "since": "2023",
+   "region": {
+    "fr": "Mondial",
+    "en": "Global"
+   },
+   "sort": 5,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "Diaspora Connect Europe",
+   "category": "commerce",
+   "partnership_type": {
+    "fr": "Communauté & Distribution",
+    "en": "Community & Distribution"
+   },
+   "description": {
+    "fr": "Un réseau de distribution piloté par la communauté reliant les services FinPay à la diaspora africaine en France, en Belgique et au Royaume-Uni par le biais de points de contact communautaires de confiance.",
+    "en": "A community-driven distribution network connecting FinPay services to the African diaspora across France, Belgium, and the UK through trusted community touchpoints."
+   },
+   "since": "2022",
+   "region": {
+    "fr": "France, Belgique, Royaume-Uni",
+    "en": "France, Belgium, UK"
+   },
+   "sort": 6,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "AfriMobile Solutions",
+   "category": "mobile_money",
+   "partnership_type": {
+    "fr": "Infrastructure Bancaire Mobile",
+    "en": "Mobile Banking Infrastructure"
+   },
+   "description": {
+    "fr": "Un spécialiste de la technologie USSD et des services bancaires mobiles, permettant à FinPay d'atteindre les clients même dans les régions où la pénétration des smartphones est limitée.",
+    "en": "A specialist in USSD and mobile banking technology, allowing FinPay to reach customers even in regions with limited smartphone penetration."
+   },
+   "since": "2023",
+   "region": {
+    "fr": "Afrique de l'Est & du Centre",
+    "en": "East & Central Africa"
+   },
+   "sort": 7,
+   "show_in_logo_bar": false
+  },
+  {
+   "name": "Banque Nationale du Rwanda",
+   "category": "financial",
+   "logo": "@asset:logo-bnr.png",
+   "show_in_logo_bar": true,
+   "partnership_type": {
+    "fr": "",
+    "en": ""
+   },
+   "description": {
+    "fr": "",
+    "en": ""
+   },
+   "since": null,
+   "region": {
+    "fr": "Afrique de l’Est",
+    "en": "East Africa"
+   },
+   "sort": 100
+  },
+  {
+   "name": "Ecobank",
+   "category": "financial",
+   "logo": "@asset:logo-ecobank.png",
+   "show_in_logo_bar": true,
+   "partnership_type": {
+    "fr": "",
+    "en": ""
+   },
+   "description": {
+    "fr": "",
+    "en": ""
+   },
+   "since": null,
+   "region": {
+    "fr": "Afrique de l’Est",
+    "en": "East Africa"
+   },
+   "sort": 101
+  },
+  {
+   "name": "Equity Bank",
+   "category": "financial",
+   "logo": "@asset:logo-equity.png",
+   "show_in_logo_bar": true,
+   "partnership_type": {
+    "fr": "",
+    "en": ""
+   },
+   "description": {
+    "fr": "",
+    "en": ""
+   },
+   "since": null,
+   "region": {
+    "fr": "Afrique de l’Est",
+    "en": "East Africa"
+   },
+   "sort": 102
+  },
+  {
+   "name": "I&M Bank",
+   "category": "financial",
+   "logo": "@asset:logo-im.png",
+   "show_in_logo_bar": true,
+   "partnership_type": {
+    "fr": "",
+    "en": ""
+   },
+   "description": {
+    "fr": "",
+    "en": ""
+   },
+   "since": null,
+   "region": {
+    "fr": "Afrique de l’Est",
+    "en": "East Africa"
+   },
+   "sort": 103
+  },
+  {
+   "name": "Urwego Bank",
+   "category": "financial",
+   "logo": "@asset:logo-urwegobank.png",
+   "show_in_logo_bar": true,
+   "partnership_type": {
+    "fr": "",
+    "en": ""
+   },
+   "description": {
+    "fr": "",
+    "en": ""
+   },
+   "since": null,
+   "region": {
+    "fr": "Afrique de l’Est",
+    "en": "East Africa"
+   },
+   "sort": 104
+  }
+ ],
+ "team": [
+  {
+   "name": "Richard Michel",
+   "role": {
+    "fr": "Associé Fondateur",
+    "en": "Founding Partner"
+   },
+   "email": "rmichel@nsi-monetique.com",
+   "phone": "+32 478 63 71 41",
+   "location": {
+    "fr": "Bruxelles, Belgique",
+    "en": "Brussels, Belgium"
+   },
+   "availability": {
+    "fr": "Lun–Ven, 9:00–18:00 CET",
+    "en": "Mon–Fri, 9:00–18:00 CET"
+   },
+   "sort": 0
+  },
+  {
+   "name": "Charles Nzeyimana",
+   "role": {
+    "fr": "Directeur Régional",
+    "en": "Regional Director"
+   },
+   "email": "c.nzeyima@nsi-monetique.com",
+   "phone": "+257 79 591 466",
+   "location": {
+    "fr": "Bujumbura, Burundi",
+    "en": "Bujumbura, Burundi"
+   },
+   "availability": {
+    "fr": "Lun–Ven, 8:00–17:00 EAT",
+    "en": "Mon–Fri, 8:00–17:00 EAT"
+   },
+   "sort": 1
+  },
+  {
+   "name": "Jean Paul Ngabonziza",
+   "role": {
+    "fr": "Directeur Afrique de l'Est",
+    "en": "East Africa Director"
+   },
+   "email": "jp.ngabonziza@nsi-monetique.com",
+   "phone": "+250 788 624 389",
+   "location": {
+    "fr": "Kigali, Rwanda",
+    "en": "Kigali, Rwanda"
+   },
+   "availability": {
+    "fr": "Lun–Ven, 8:00–17:00 EAT",
+    "en": "Mon–Fri, 8:00–17:00 EAT"
+   },
+   "sort": 2
+  }
+ ],
+ "settings": {
+  "general": {
+   "site_name": "FinPay Africa",
+   "tagline": {
+    "fr": "Connecter l’Afrique",
+    "en": "Connecting Africa"
+   },
+   "legal_name": "FinPay Africa Ltd",
+   "group": {
+    "fr": "Membre du Groupe NSI (Nord Sud Industries)",
+    "en": "Part of NSI Group (Nord Sud Industries)"
+   },
+   "registration": "TIN 155772836",
+   "announcement": {
+    "fr": "",
+    "en": ""
+   },
+   "announcement_url": ""
+  },
+  "contact": {
+   "email": "rmichel@nsi-monetique.com",
+   "phone": "+32 478 63 71 41",
+   "phone_secondary": "+250 782 567 921",
+   "address": {
+    "fr": "Kigali, Rwanda",
+    "en": "Kigali, Rwanda"
+   },
+   "hours": {
+    "fr": "Lun–Ven, 8h00–18h00",
+    "en": "Mon–Fri, 8:00–18:00"
+   },
+   "response_time": {
+    "fr": "Réponse sous 24 heures",
+    "en": "Reply within 24 hours"
+   },
+   "notify_email": ""
+  },
+  "social": {
+   "linkedin": "",
+   "x": "",
+   "facebook": "",
+   "instagram": "",
+   "youtube": ""
+  },
+  "navigation": {
+   "items": [
+    {
+     "label": {
+      "fr": "Solutions",
+      "en": "Solutions"
+     },
+     "url": "/solutions",
+     "mega": true
+    },
+    {
+     "label": {
+      "fr": "À propos",
+      "en": "About"
+     },
+     "url": "/about",
+     "mega": false
+    },
+    {
+     "label": {
+      "fr": "Partenaires",
+      "en": "Partners"
+     },
+     "url": "/partners",
+     "mega": false
+    },
+    {
+     "label": {
+      "fr": "Investisseurs",
+      "en": "Investors"
+     },
+     "url": "/investors",
+     "mega": false
+    },
+    {
+     "label": {
+      "fr": "Analyses",
+      "en": "Insights"
+     },
+     "url": "/blog",
+     "mega": false
+    }
+   ],
+   "cta": {
+    "label": {
+     "fr": "Nous contacter",
+     "en": "Contact us"
+    },
+    "url": "/contact-us"
+   }
+  },
+  "footer": {
+   "about": {
+    "fr": "FinPay Africa conçoit une infrastructure de paiement sécurisée et conforme pour les institutions financières, les entreprises et la diaspora africaine.",
+    "en": "FinPay Africa builds secure, compliant payment infrastructure for financial institutions, businesses and the African diaspora."
+   },
+   "columns": [
+    {
+     "title": {
+      "fr": "Entreprise",
+      "en": "Company"
+     },
+     "links": [
+      {
+       "label": {
+        "fr": "À propos",
+        "en": "About us"
+       },
+       "url": "/about"
+      },
+      {
+       "label": {
+        "fr": "Partenaires",
+        "en": "Partners"
+       },
+       "url": "/partners"
+      },
+      {
+       "label": {
+        "fr": "Investisseurs",
+        "en": "Investors"
+       },
+       "url": "/investors"
+      },
+      {
+       "label": {
+        "fr": "Analyses",
+        "en": "Insights"
+       },
+       "url": "/blog"
+      },
+      {
+       "label": {
+        "fr": "Contact",
+        "en": "Contact"
+       },
+       "url": "/contact-us"
+      }
+     ]
+    }
+   ],
+   "newsletter_title": {
+    "fr": "Restez informé",
+    "en": "Stay informed"
+   },
+   "newsletter_text": {
+    "fr": "Recevez nos actualités et analyses, une à deux fois par mois.",
+    "en": "Get our news and insights once or twice a month."
+   },
+   "disclaimer": {
+    "fr": "FinPay Africa Ltd est une société technologique enregistrée au Rwanda. Les services de paiement sont fournis avec nos partenaires financiers agréés.",
+    "en": "FinPay Africa Ltd is a technology company registered in Rwanda. Payment services are provided together with our licensed financial partners."
+   }
+  },
+  "seo": {
+   "title_suffix": " — FinPay Africa",
+   "description": {
+    "fr": "FinPay Africa propose une infrastructure de paiement sécurisée, instantanée et accessible, au service des entreprises, des communautés de la diaspora et des populations sous-bancarisées sur tout le continent.",
+    "en": "FinPay Africa delivers secure, instant, and accessible payment infrastructure — empowering businesses, diaspora communities, and underbanked populations across the continent."
+   },
+   "og_image": null,
+   "google_analytics_id": "",
+   "google_site_verification": ""
+  }
+ },
+ "categories": [
+  {
+   "slug": "company",
+   "name": {
+    "fr": "Entreprise",
+    "en": "Company"
+   }
+  },
+  {
+   "slug": "payments",
+   "name": {
+    "fr": "Paiements",
+    "en": "Payments"
+   }
+  },
+  {
+   "slug": "compliance",
+   "name": {
+    "fr": "Conformité",
+    "en": "Compliance"
+   }
+  },
+  {
+   "slug": "diaspora",
+   "name": {
+    "fr": "Diaspora",
+    "en": "Diaspora"
+   }
+  }
+ ],
+ "posts": [
+  {
+   "slug": "why-remittance-costs-to-africa-remain-high",
+   "category": "payments",
+   "cover": "@asset:cross-border.webp",
+   "title": {
+    "fr": "Pourquoi les transferts vers l’Afrique restent-ils si chers ?",
+    "en": "Why do transfers to Africa remain so expensive?"
+   },
+   "excerpt": {
+    "fr": "Les frais d’envoi vers l’Afrique subsaharienne dépassent toujours la moyenne mondiale. Voici ce qui les explique et comment les réduire.",
+    "en": "Sending money to Sub-Saharan Africa still costs more than the global average. Here is what drives the cost, and how to bring it down."
+   },
+   "body": {
+    "fr": "<p>TODO : article d’exemple à remplacer par un vrai contenu.</p><h2>Un marché de plus de 40 milliards de dollars</h2><p>Les envois de fonds de la diaspora représentent plus de 10 % du PIB de plusieurs pays africains.</p>",
+    "en": "<p>TODO: sample article, replace with real content.</p><h2>A market of more than $40 billion</h2><p>Diaspora remittances represent more than 10% of GDP in several African countries.</p>"
+   }
+  },
+  {
+   "slug": "kyc-built-for-african-id-documents",
+   "category": "compliance",
+   "cover": "@asset:kyc.webp",
+   "title": {
+    "fr": "Un KYC pensé pour les documents d’identité africains",
+    "en": "KYC designed for African identity documents"
+   },
+   "excerpt": {
+    "fr": "Une vérification d’identité rapide et conforme commence par la prise en charge des documents réellement utilisés sur le continent.",
+    "en": "Fast, compliant onboarding starts with supporting the identity documents people actually use across the continent."
+   },
+   "body": {
+    "fr": "<p>TODO : article d’exemple à remplacer par un vrai contenu.</p>",
+    "en": "<p>TODO: sample article, replace with real content.</p>"
+   }
+  },
+  {
+   "slug": "one-api-for-african-payment-rails",
+   "category": "payments",
+   "cover": "@asset:api.webp",
+   "title": {
+    "fr": "Une seule API pour les rails de paiement africains",
+    "en": "One API for Africa’s payment rails"
+   },
+   "excerpt": {
+    "fr": "Cartes, virements, mobile money : comment une API unifiée simplifie l’intégration des paiements.",
+    "en": "Cards, bank transfers, mobile money: how a unified API simplifies payment integration."
+   },
+   "body": {
+    "fr": "<p>TODO : article d’exemple à remplacer par un vrai contenu.</p>",
+    "en": "<p>TODO: sample article, replace with real content.</p>"
+   }
+  }
+ ],
+ "redirects": [
+  {
+   "from_path": "/fr/solutions/payments",
+   "to_path": "/fr/solutions/cross-border"
+  },
+  {
+   "from_path": "/en/solutions/payments",
+   "to_path": "/en/solutions/cross-border"
+  }
+ ]
+}

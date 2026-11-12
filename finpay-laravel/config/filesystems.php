@@ -30,6 +30,16 @@ return [
 
     'disks' => [
 
+        // CMS uploads live directly under public/media so no storage symlink is needed on OVH shared hosting.
+        // The deploy workflow never touches this folder.
+        'media' => [
+            'driver' => 'local',
+            'root' => public_path('media'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/media',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
