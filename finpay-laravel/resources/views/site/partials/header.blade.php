@@ -85,7 +85,8 @@
         </div>
     </div>
 
-    {{-- Mobile navigation --}}
+    {{-- Mobile navigation (teleported to <body>: the header's backdrop blur would otherwise clip fixed children) --}}
+    <template x-teleport="body">
     <div x-cloak x-show="mobile" class="fixed inset-0 z-50 lg:hidden" id="mobile-nav" role="dialog" aria-modal="true">
         <div class="absolute inset-0 bg-ink/40 backdrop-blur-sm" x-show="mobile" x-transition.opacity @click="mobile = false"></div>
         <div x-show="mobile" x-transition:enter="transition duration-300 ease-out" x-transition:enter-start="translate-x-full" x-transition:leave="transition duration-200" x-transition:leave-end="translate-x-full"
@@ -129,4 +130,5 @@
             </div>
         </div>
     </div>
+    </template>
 </header>

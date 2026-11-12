@@ -35,10 +35,10 @@
                             <p class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">{{ __('site.presence.'.$st) }}</p>
                             <ul class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                                 @foreach ($groups[$st] as $c)
-                                    <li class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3 py-2.5 text-[14px] font-medium">
-                                        <span class="grid h-6 w-8 place-items-center rounded-md bg-surface font-mono text-[11px] font-semibold text-ink/70">{{ $c['code'] }}</span>
-                                        <span class="truncate">{{ tr($c['name']) }}</span>
-                                        <span class="ml-auto size-2 shrink-0 rounded-full {{ $dot[$st] }}"></span>
+                                    <li class="flex min-w-0 items-center gap-2 rounded-xl border border-line bg-white px-2.5 py-2.5 text-[13.5px] leading-tight font-medium sm:gap-2.5 sm:px-3 sm:text-[14px]">
+                                        <span class="grid h-6 w-8 shrink-0 place-items-center rounded-md bg-surface font-mono text-[11px] font-semibold text-ink/70">{{ $c['code'] }}</span>
+                                        <span class="min-w-0 break-words">{{ tr($c['name']) }}</span>
+                                        <span class="ml-auto hidden size-2 shrink-0 rounded-full sm:block {{ $dot[$st] }}"></span>
                                     </li>
                                 @endforeach
                             </ul>
