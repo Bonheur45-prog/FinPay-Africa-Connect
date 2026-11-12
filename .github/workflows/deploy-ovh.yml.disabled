@@ -1,0 +1,34 @@
+name: Deploy FinPay Africa to OVH
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Install and build
+        env:
+          VITE_API_URL: https://backend-z0r8.onrender.com
+        run: |
+          cd FinPay-Africa
+          npm install
+          npm run build
+      
+      - name: Deploy to OVH
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.cluster100.hosting.ovh.net
+          username: ${{ secrets.OVH_FTP_USER }}
+          password: ${{ secrets.OVH_FTP_PASSWORD }}
+          local-dir: ./FinPay-Africa/dist/
+          server-dir: ./www/
+          dangerous-clean-slate: true

@@ -3,7 +3,7 @@
  * Detailed blog article page with comments, related articles, and media support
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import {
@@ -249,6 +249,59 @@ function BlogDetailPage({ postId }) {
   const blogBasePath = `/${lang || "fr"}/blog`;
   const language = i18n.language || "en";
   const { post, relatedPosts, isLoading, error } = useBlogDetail(postId);
+
+  // Manage SEO tags for the post when loaded
+  useEffect(() => {
+    if (post) {
+      const title = `${post.title[language]} — FinPay Africa`;
+      const description = post.excerpt?.[language] || post.description?.[language] || '';
+      const pathname = typeof window !== 'undefined' ? window.location.pathname : `${blogBasePath}/${post.slug}`;
+      const canonical = `https://finpay-africa.com${pathname}`;
+      const hreflangs = [
+        { lang: 'en', href: `https://finpay-africa.com/en${pathname.startsWith('/en') ? pathname.slice(3) : pathname}` },
+        { lang: 'fr', href: `https://finpay-africa.com/fr${pathname.startsWith('/fr') ? pathname.slice(3) : pathname}` },
+      ];
+      const og = { title, description, url: canonical, image: post.coverImage || 'https://finpay-africa.com/assets/og-blog.jpg' };
+
+      // Use HeadTitle via a programmatic approach: set document title and meta as fallback for initial load
+      document.title = title;
+      let meta = document.querySelector('meta[name="description"]');
+      if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
+      meta.content = description;
+
+      // set OG/Twitter/canonical/hreflang/jsonld using the HeadTitle-managed elements
+      const setMeta = (name, content, prop = false) => {
+        if (!content) return;
+        let el = document.querySelector(`meta[${prop ? 'property' : 'name'}=\"${name}\"]`);
+        if (!el) { el = document.createElement('meta'); if (prop) el.setAttribute('property', name); else el.setAttribute('name', name); document.head.appendChild(el); }
+        el.content = content;
+      };
+
+      setMeta('og:title', og.title, true);
+      setMeta('og:description', og.description || description, true);
+      setMeta('og:url', og.url, true);
+      setMeta('og:image', og.image, true);
+
+      setMeta('twitter:card', 'summary_large_image');
+      setMeta('twitter:title', og.title);
+      setMeta('twitter:description', og.description || description);
+      setMeta('twitter:image', og.image);
+
+      // canonical
+      let link = document.querySelector('link[rel="canonical"][data-managed="HeadTitle"]');
+      if (!link) { link = document.createElement('link'); link.rel = 'canonical'; link.setAttribute('data-managed', 'HeadTitle'); document.head.appendChild(link); }
+      link.href = canonical;
+
+      // hreflangs
+      document.querySelectorAll('link[rel="alternate"][data-managed="HeadTitle"]').forEach(el => el.remove());
+      hreflangs.forEach(h => { const l = document.createElement('link'); l.rel = 'alternate'; l.hreflang = h.lang; l.href = h.href; l.setAttribute('data-managed', 'HeadTitle'); document.head.appendChild(l); });
+
+      // json-ld
+      document.querySelectorAll('script[type="application/ld+json"][data-managed="HeadTitle"]').forEach(el => el.remove());
+      const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline: post.title[language], description: description, author: post.author?.name, datePublished: post.publishedAt || post.createdAt, image: og.image, mainEntityOfPage: canonical };
+      const script = document.createElement('script'); script.type = 'application/ld+json'; script.setAttribute('data-managed', 'HeadTitle'); script.text = JSON.stringify(jsonLd); document.head.appendChild(script);
+    }
+  }, [post, language]);
 
   if (isLoading) {
     return (
