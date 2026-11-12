@@ -244,9 +244,75 @@
         }
        }
       ],
-      "image": "@asset:global.webp",
+      "image": null,
       "image_side": "right",
       "tags": [],
+      "facts_title": {
+       "fr": "Profil de l'Entreprise",
+       "en": "Company Profile"
+      },
+      "facts": [
+       {
+        "label": {
+         "fr": "Fondée",
+         "en": "Founded"
+        },
+        "value": {
+         "fr": "2015, Kigali",
+         "en": "2015, Kigali"
+        }
+       },
+       {
+        "label": {
+         "fr": "Siège",
+         "en": "Headquarters"
+        },
+        "value": {
+         "fr": "Kigali, Rwanda",
+         "en": "Kigali, Rwanda"
+        }
+       },
+       {
+        "label": {
+         "fr": "Groupe",
+         "en": "Group"
+        },
+        "value": {
+         "fr": "NSI Group (Nord Sud Industries)",
+         "en": "NSI Group (Nord Sud Industries)"
+        }
+       },
+       {
+        "label": {
+         "fr": "Équipes",
+         "en": "Teams"
+        },
+        "value": {
+         "fr": "Belgique · Burundi · Rwanda",
+         "en": "Belgium · Burundi · Rwanda"
+        }
+       },
+       {
+        "label": {
+         "fr": "Enregistrement",
+         "en": "Registration"
+        },
+        "value": {
+         "fr": "TIN 155772836",
+         "en": "TIN 155772836"
+        }
+       },
+       {
+        "label": {
+         "fr": "Expertise",
+         "en": "Focus"
+        },
+        "value": {
+         "fr": "Paiements, cartes, KYC",
+         "en": "Payments, cards, KYC"
+        }
+       }
+      ],
       "cta": {
        "label": {
         "fr": "En savoir plus sur nous",
@@ -477,7 +543,7 @@
        {
         "name": {
          "fr": "Congo-Brazzaville",
-         "en": "Republic of the Congo"
+         "en": "Congo-Brazzaville"
         },
         "code": "CG",
         "status": "expanding"
@@ -645,8 +711,74 @@
        "en": "<p>FinPay Africa Ltd is a Kigali-based enterprise technology company specializing in secure financial software, payment systems, and digital infrastructure for banks, microfinance institutions, and enterprise clients across Rwanda and the broader African continent.</p><p>Operating as part of the <strong>NSI Group (Nord Sud Industriess)</strong> — a well-established industrial and commercial conglomerate — FinPay Africa benefits from decades of institutional trust, local market knowledge, and strategic positioning that few technology firms in the region can match.</p><p>We don't just deliver software. We engineer trust — through robust architecture, rigorous compliance frameworks, and client-centric partnerships that stand the test of time.</p>"
       },
       "bullets": [],
-      "image": "@asset:brand-art.webp",
+      "image": null,
       "image_side": "right",
+      "facts_title": {
+       "fr": "Profil de l'Entreprise",
+       "en": "Company Profile"
+      },
+      "facts": [
+       {
+        "label": {
+         "fr": "Fondée",
+         "en": "Founded"
+        },
+        "value": {
+         "fr": "2015, Kigali",
+         "en": "2015, Kigali"
+        }
+       },
+       {
+        "label": {
+         "fr": "Siège",
+         "en": "Headquarters"
+        },
+        "value": {
+         "fr": "Kigali, Rwanda",
+         "en": "Kigali, Rwanda"
+        }
+       },
+       {
+        "label": {
+         "fr": "Groupe",
+         "en": "Group"
+        },
+        "value": {
+         "fr": "NSI Group (Nord Sud Industries)",
+         "en": "NSI Group (Nord Sud Industries)"
+        }
+       },
+       {
+        "label": {
+         "fr": "Équipes",
+         "en": "Teams"
+        },
+        "value": {
+         "fr": "Belgique · Burundi · Rwanda",
+         "en": "Belgium · Burundi · Rwanda"
+        }
+       },
+       {
+        "label": {
+         "fr": "Enregistrement",
+         "en": "Registration"
+        },
+        "value": {
+         "fr": "TIN 155772836",
+         "en": "TIN 155772836"
+        }
+       },
+       {
+        "label": {
+         "fr": "Expertise",
+         "en": "Focus"
+        },
+        "value": {
+         "fr": "Paiements, cartes, KYC",
+         "en": "Payments, cards, KYC"
+        }
+       }
+      ],
       "tags": [
        {
         "text": {

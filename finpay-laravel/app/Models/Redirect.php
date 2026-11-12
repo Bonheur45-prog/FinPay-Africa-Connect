@@ -13,6 +13,13 @@ class Redirect extends Model
 
     protected $casts = ['is_active' => 'boolean'];
 
+    protected static function booted(): void
+    {
+        $flush = fn () => \Illuminate\Support\Facades\Cache::forget(\App\Http\Middleware\CmsRedirects::CACHE_KEY);
+        static::saved($flush);
+        static::deleted($flush);
+    }
+
     public static function normalize(string $path): string
     {
         $path = parse_url(trim($path), PHP_URL_PATH) ?: '/';

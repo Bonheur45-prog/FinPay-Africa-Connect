@@ -100,6 +100,11 @@ return [
             'bullets' => $plain('Checklist', 'repeater', ['fields' => ['text' => $t('Item')]]),
             'image' => $plain('Image', 'image'),
             'image_side' => $plain('Image side', 'select', ['options' => ['right' => 'Right', 'left' => 'Left']]),
+            'facts_title' => $t('Fact card title (shown when no image is set)'),
+            'facts' => $plain('Fact card rows', 'repeater', ['fields' => [
+                'label' => $t('Label'),
+                'value' => $t('Value'),
+            ]]),
             'tags' => $plain('Tags', 'repeater', ['fields' => ['text' => $t('Tag')]]),
             'cta' => $plain('Button', 'link'),
             'tone' => $tone,
