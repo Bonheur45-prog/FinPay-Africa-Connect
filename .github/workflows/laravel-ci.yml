@@ -12,6 +12,9 @@ defaults:
   run:
     working-directory: finpay-laravel
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -37,11 +40,16 @@ jobs:
           if [ -f composer.lock ]; then composer install --no-interaction --prefer-dist --no-progress
           else composer update --no-interaction --prefer-dist --no-progress; fi
 
-      - name: Upload composer.lock
-        uses: actions/upload-artifact@v4
-        with:
-          name: composer-lock
-          path: finpay-laravel/composer.lock
+      - name: Commit generated composer.lock
+        if: github.event_name == 'push'
+        run: |
+          if [ -n "$(git status --porcelain composer.lock)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add composer.lock
+            git commit -m "Add generated composer.lock [skip ci]"
+            git push
+          fi
 
       - uses: actions/setup-node@v4
         with:
