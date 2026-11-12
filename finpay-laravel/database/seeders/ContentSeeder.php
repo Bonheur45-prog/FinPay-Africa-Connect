@@ -130,6 +130,12 @@ class ContentSeeder extends Seeder
 
             return;
         }
+        if (! env('ADMIN_PASSWORD') && app()->isProduction()) {
+            // Never print a generated password into deploy logs.
+            $this->command?->warn('ADMIN_PASSWORD not set — run: php artisan cms:create-admin '.$email);
+
+            return;
+        }
         $password = env('ADMIN_PASSWORD') ?: Str::password(16);
         User::updateOrCreate(['email' => $email], ['name' => 'Administrator', 'password' => $password, 'role' => 'admin', 'is_active' => true]);
         if (! env('ADMIN_PASSWORD')) {

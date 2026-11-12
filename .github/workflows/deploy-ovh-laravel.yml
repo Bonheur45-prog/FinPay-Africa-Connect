@@ -1,0 +1,176 @@
+name: Deploy FinPay Laravel to OVH
+
+# Builds the Laravel app on GitHub and uploads it to the OVH web hosting over SSH (rsync).
+# Nothing has to be installed on the server or on your computer.
+#
+# Runs when you click "Run workflow" (Actions tab), and on every push to main once the
+# repository variable OVH_DEPLOY_ENABLED is set to "true".
+# Required secrets/variables are listed in finpay-laravel/DEPLOY.md.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['finpay-laravel/**', '.github/workflows/deploy-ovh-laravel.yml']
+
+concurrency:
+  group: deploy-ovh
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || vars.OVH_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: ${{ vars.OVH_APP_DIR || 'finpay' }}
+      PHP_BIN: ${{ vars.OVH_PHP_BIN || '/usr/local/php8.3/bin/php' }}
+      SSH_HOST: ${{ secrets.OVH_SSH_HOST }}
+      SSH_USER: ${{ secrets.OVH_SSH_USER }}
+      SSHPASS: ${{ secrets.OVH_SSH_PASSWORD }}
+    defaults:
+      run:
+        working-directory: finpay-laravel
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required secrets
+        run: |
+          missing=""
+          for v in OVH_SSH_HOST OVH_SSH_USER DB_HOST DB_DATABASE DB_USERNAME DB_PASSWORD; do
+            [ -z "${!v}" ] && missing="$missing $v"
+          done
+          [ -z "$SSHPASS" ] && [ -z "$SSH_KEY" ] && missing="$missing OVH_SSH_PASSWORD(or OVH_SSH_KEY)"
+          if [ -n "$missing" ]; then echo "::error::Missing secrets:$missing — see finpay-laravel/DEPLOY.md"; exit 1; fi
+        env:
+          OVH_SSH_HOST: ${{ secrets.OVH_SSH_HOST }}
+          OVH_SSH_USER: ${{ secrets.OVH_SSH_USER }}
+          SSH_KEY: ${{ secrets.OVH_SSH_KEY }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_DATABASE: ${{ secrets.DB_DATABASE }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_mysql, gd, intl, zip, fileinfo
+          coverage: none
+
+      - name: Install PHP dependencies (production)
+        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build CSS/JS
+        run: |
+          npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+          npm run build
+          rm -rf node_modules
+
+      - name: Write production .env (APP_KEY is kept from the server)
+        env:
+          APP_URL: ${{ vars.APP_URL || 'https://finpay-africa.com' }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT || '3306' }}
+          DB_DATABASE: ${{ secrets.DB_DATABASE }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MAIL_FROM_ADDRESS: ${{ vars.MAIL_FROM_ADDRESS || 'no-reply@finpay-africa.com' }}
+          MAIL_NOTIFY_TO: ${{ vars.MAIL_NOTIFY_TO }}
+          TURNSTILE_SITE_KEY: ${{ secrets.TURNSTILE_SITE_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        run: |
+          q() { printf '"%s"' "$(printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g')"; }
+          {
+            echo 'APP_NAME="FinPay Africa"'
+            echo 'APP_ENV=production'
+            echo 'APP_KEY=__KEEP__'
+            echo 'APP_DEBUG=false'
+            echo "APP_URL=$APP_URL"
+            echo 'APP_LOCALE=fr'
+            echo 'APP_FALLBACK_LOCALE=fr'
+            echo 'LOG_CHANNEL=daily'
+            echo 'LOG_LEVEL=warning'
+            echo 'DB_CONNECTION=mysql'
+            echo "DB_HOST=$DB_HOST"
+            echo "DB_PORT=$DB_PORT"
+            echo "DB_DATABASE=$DB_DATABASE"
+            echo "DB_USERNAME=$DB_USERNAME"
+            echo "DB_PASSWORD=$(q "$DB_PASSWORD")"
+            echo 'SESSION_DRIVER=file'
+            echo 'SESSION_SECURE_COOKIE=true'
+            echo 'CACHE_STORE=file'
+            echo 'QUEUE_CONNECTION=sync'
+            echo 'MAIL_MAILER=log'
+            echo "MAIL_FROM_ADDRESS=$MAIL_FROM_ADDRESS"
+            echo 'MAIL_FROM_NAME="FinPay Africa"'
+            echo "MAIL_NOTIFY_TO=$MAIL_NOTIFY_TO"
+            echo "BREVO_API_KEY=$(q "$BREVO_API_KEY")"
+            echo "TURNSTILE_SITE_KEY=$TURNSTILE_SITE_KEY"
+            echo "TURNSTILE_SECRET_KEY=$(q "$TURNSTILE_SECRET_KEY")"
+            echo "ADMIN_EMAIL=$ADMIN_EMAIL"
+            echo "ADMIN_PASSWORD=$(q "$ADMIN_PASSWORD")"
+          } > .env.deploy
+
+      - name: Prepare SSH
+        env:
+          SSH_KEY: ${{ secrets.OVH_SSH_KEY }}
+        run: |
+          sudo apt-get install -y -qq sshpass rsync >/dev/null
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          if [ -n "$SSH_KEY" ]; then
+            printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy && chmod 600 ~/.ssh/id_deploy
+            echo "SSH_CMD=ssh -i $HOME/.ssh/id_deploy" >> $GITHUB_ENV
+            echo "SSH_WRAP=" >> $GITHUB_ENV
+          else
+            echo "SSH_CMD=ssh" >> $GITHUB_ENV
+            echo "SSH_WRAP=sshpass -e" >> $GITHUB_ENV
+          fi
+
+      - name: Upload files (uploads in public/media and the server .env are never touched)
+        run: |
+          $SSH_WRAP $SSH_CMD "$SSH_USER@$SSH_HOST" "mkdir -p ~/$APP_DIR"
+          $SSH_WRAP rsync -az --delete -e "$SSH_CMD" \
+            --exclude='.env' --exclude='.env.example' --exclude='/storage/' --exclude='/public/media/' \
+            --exclude='/bootstrap/cache/*.php' --exclude='/tests/' --exclude='/database/database.sqlite' \
+            --exclude='/node_modules/' --exclude='.git*' --exclude='/phpunit.xml' \
+            ./ "$SSH_USER@$SSH_HOST:~/$APP_DIR/"
+          # storage skeleton + media .htaccess, without overwriting anything already on the server
+          $SSH_WRAP rsync -az --ignore-existing -e "$SSH_CMD" ./storage/ "$SSH_USER@$SSH_HOST:~/$APP_DIR/storage/"
+          $SSH_WRAP rsync -az -e "$SSH_CMD" ./public/media/.htaccess "$SSH_USER@$SSH_HOST:~/$APP_DIR/public/media/.htaccess"
+
+      - name: Migrate, seed first content, cache config
+        run: |
+          $SSH_WRAP $SSH_CMD "$SSH_USER@$SSH_HOST" "APP_DIR='$APP_DIR' PHP='$PHP_BIN' bash -s" <<'REMOTE'
+          set -e
+          cd ~/$APP_DIR
+          if [ -f .env ] && grep -q '^APP_KEY=base64:' .env; then
+            KEY=$(grep '^APP_KEY=' .env | head -1 | cut -d= -f2-)
+          else
+            KEY="base64:$($PHP -r 'echo base64_encode(random_bytes(32));')"
+          fi
+          sed "s#^APP_KEY=__KEEP__#APP_KEY=$KEY#" .env.deploy > .env && rm -f .env.deploy && chmod 600 .env
+          mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache public/media
+          $PHP artisan down --retry=15 || true
+          $PHP artisan migrate --force
+          $PHP artisan db:seed --force          # only fills an empty database; existing content is never touched
+          $PHP artisan optimize:clear
+          $PHP artisan config:cache
+          $PHP artisan route:cache
+          $PHP artisan view:cache
+          $PHP artisan up
+          echo "Deployed $(date -u)"
+          REMOTE
+
+      - name: Smoke test
+        if: vars.APP_URL != ''
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' -L "${{ vars.APP_URL }}/fr")
+          echo "Home page returned HTTP $code"
+          [ "$code" = "200" ]

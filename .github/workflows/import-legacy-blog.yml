@@ -1,0 +1,42 @@
+name: Import old blog posts (MongoDB → Laravel)
+
+# One-off, manual. Exports the "blogs" collection from the old MongoDB Atlas database
+# and imports it into the Laravel CMS on OVH. Posts whose slug already exists are skipped,
+# so it is safe to run more than once. Needs the MONGODB_URI secret plus the OVH SSH secrets.
+
+on:
+  workflow_dispatch:
+    inputs:
+      collection:
+        description: 'MongoDB collection name'
+        default: 'blogs'
+        required: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: ${{ vars.OVH_APP_DIR || 'finpay' }}
+      PHP_BIN: ${{ vars.OVH_PHP_BIN || '/usr/local/php8.3/bin/php' }}
+      SSH_HOST: ${{ secrets.OVH_SSH_HOST }}
+      SSH_USER: ${{ secrets.OVH_SSH_USER }}
+      SSHPASS: ${{ secrets.OVH_SSH_PASSWORD }}
+    steps:
+      - name: Export from MongoDB Atlas
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: |
+          [ -z "$MONGODB_URI" ] && { echo "::error::Add the MONGODB_URI secret first."; exit 1; }
+          curl -sSL https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.10.0.tgz | tar xz
+          ./mongodb-database-tools-*/bin/mongoexport --uri="$MONGODB_URI" --collection="${{ inputs.collection }}" --jsonArray --out=legacy-blogs.json
+          echo "Exported $(grep -o '"slug"' legacy-blogs.json | wc -l) posts"
+
+      - name: Upload and import on OVH
+        env:
+          SSH_KEY: ${{ secrets.OVH_SSH_KEY }}
+        run: |
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          if [ -n "$SSH_KEY" ]; then printf '%s\n' "$SSH_KEY" > ~/.ssh/k && chmod 600 ~/.ssh/k; S="ssh -i $HOME/.ssh/k"; W=""; else S="ssh"; W="sshpass -e"; fi
+          $W scp $( [ -n "$SSH_KEY" ] && echo "-i $HOME/.ssh/k" ) legacy-blogs.json "$SSH_USER@$SSH_HOST:~/$APP_DIR/storage/legacy-blogs.json"
+          $W $S "$SSH_USER@$SSH_HOST" "cd ~/$APP_DIR && $PHP_BIN artisan cms:import-blogs storage/legacy-blogs.json && rm -f storage/legacy-blogs.json"
