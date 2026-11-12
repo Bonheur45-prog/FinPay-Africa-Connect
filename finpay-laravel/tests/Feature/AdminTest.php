@@ -148,4 +148,15 @@ class AdminTest extends TestCase
         $this->actingAs($me);
         $this->delete('/admin/users/'.$me->id)->assertSessionHas('error');
     }
+
+    public function test_an_earlier_version_can_be_restored(): void
+    {
+        $this->actingAs($this->admin());
+        $post = Post::first();
+        $original = $post->t('title', 'en');
+        $post->update(['title' => ['fr' => 'Modifié', 'en' => 'Changed title']]);
+        $first = $post->versions()->reorder('id')->first();
+        $this->post('/admin/versions/'.$first->id.'/restore')->assertSessionHas('status');
+        $this->assertSame($original, $post->fresh()->t('title', 'en'));
+    }
 }
