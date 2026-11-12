@@ -20,6 +20,11 @@ class MediaService
 
     private const VARIANTS = ['sm' => 640, 'md' => 1280];
 
+    public static function root(): string
+    {
+        return rtrim((string) config('filesystems.disks.media.root', public_path('media')), '/');
+    }
+
     public function storeUpload(UploadedFile $file, ?int $userId = null): Media
     {
         return $this->storePath($file->getRealPath(), $file->getClientOriginalName(), $userId);
@@ -40,7 +45,7 @@ class MediaService
         $base = Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) ?: 'file';
         $base = Str::limit($base, 60, '').'-'.Str::lower(Str::random(6));
         $ext = self::ALLOWED[$mime];
-        $root = public_path('media');
+        $root = self::root();
         File::ensureDirectoryExists($root.'/'.$dir);
         $rel = $dir.'/'.$base.'.'.$ext;
         copy($source, $root.'/'.$rel);
@@ -90,7 +95,7 @@ class MediaService
             imagesavealpha($dst, true);
             imagecopyresampled($dst, $src, 0, 0, 0, 0, $target, $nh, $w, $h);
             $rel = $dir.'/'.$base.'-'.$key.'.webp';
-            imagewebp($dst, public_path('media/'.$rel), 82);
+            imagewebp($dst, self::root().'/'.$rel, 82);
             imagedestroy($dst);
             $out[$key] = $rel;
         }
@@ -103,7 +108,7 @@ class MediaService
     public function deleteFiles(Media $media): void
     {
         foreach (array_merge([$media->path], array_values($media->variants ?? [])) as $rel) {
-            $full = public_path('media/'.$rel);
+            $full = self::root().'/'.$rel;
             if (is_file($full)) {
                 @unlink($full);
             }
