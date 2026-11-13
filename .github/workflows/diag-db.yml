@@ -14,15 +14,4 @@ jobs:
         run: |
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~/finpay && /usr/local/php8.3/bin/php -r '"'"'
-            require "vendor/autoload.php"; $app = require "bootstrap/app.php";
-            $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-            $db = Illuminate\Support\Facades\DB::connection();
-            $name = $db->getDatabaseName();
-            $rows = $db->select("SELECT TABLE_NAME t, TABLE_ROWS r, CREATE_TIME c FROM information_schema.TABLES WHERE TABLE_SCHEMA = ? ORDER BY CREATE_TIME", [$name]);
-            foreach ($rows as $x) echo str_pad($x->t, 32), str_pad((string)$x->r, 8), $x->c, "\n";
-            echo "--- migrations table rows ---\n";
-            try { foreach ($db->select("SELECT id, migration, batch FROM migrations ORDER BY id") as $m) echo $m->id, " ", $m->migration, " batch ", $m->batch, "\n"; } catch (Throwable $e) { echo "no migrations table\n"; }
-            echo "--- exact counts of the tables Laravel may have created ---\n";
-            foreach (["users","password_reset_tokens","sessions","cache","cache_locks","jobs","job_batches","failed_jobs","settings","media"] as $t) { try { echo $t, ": ", $db->table($t)->count(), "\n"; } catch (Throwable $e) { echo $t, ": absent\n"; } }
-          '"'"''
+          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'set +e; cd ~; echo "== home"; ls -la; echo "== www"; ls -la www 2>/dev/null | head -40; echo "== www/.htaccess"; head -40 www/.htaccess 2>/dev/null; echo "== .ovhconfig"; cat .ovhconfig www/.ovhconfig 2>/dev/null; echo "== dirs with index or artisan (depth 2)"; find ~ -maxdepth 3 \( -name artisan -o -name index.html -o -name index.php \) -not -path "*/vendor/*" -not -path "*/node_modules/*" 2>/dev/null | head -30; echo "== curl host"; curl -s -o /dev/null -w "finpay-africa.com %{http_code}\n" https://finpay-africa.com/ ; curl -sL https://finpay-africa.com/ | head -c 400; echo'
