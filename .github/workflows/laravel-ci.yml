@@ -76,4 +76,5 @@ jobs:
           DB_DATABASE: finpay_test
           DB_USERNAME: root
           DB_PASSWORD: root
-        run: php artisan migrate:fresh --seed --force
+          DB_PREFIX: fp_
+        run: php artisan migrate:fresh --seed --force && php artisan migrate:status | head -5

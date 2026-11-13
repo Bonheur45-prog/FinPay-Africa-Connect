@@ -77,6 +77,7 @@ jobs:
           DB_DATABASE: ${{ secrets.DB_DATABASE }}
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PREFIX: ${{ vars.DB_PREFIX || 'fp_' }}
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           MAIL_FROM_ADDRESS: ${{ vars.MAIL_FROM_ADDRESS || 'no-reply@finpay-africa.com' }}
           MAIL_NOTIFY_TO: ${{ vars.MAIL_NOTIFY_TO }}
@@ -102,6 +103,7 @@ jobs:
             echo "DB_DATABASE=$DB_DATABASE"
             echo "DB_USERNAME=$DB_USERNAME"
             echo "DB_PASSWORD=$(q "$DB_PASSWORD")"
+            echo "DB_PREFIX=$DB_PREFIX"
             echo 'SESSION_DRIVER=file'
             echo 'SESSION_SECURE_COOKIE=true'
             echo 'CACHE_STORE=file'
@@ -172,6 +174,8 @@ jobs:
           fi
           sed "s#^APP_KEY=__KEEP__#APP_KEY=$KEY#" .env.deploy > .env && rm -f .env.deploy && chmod 600 .env
           mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache public/media
+          # Safety: this database is shared with another production site. Never migrate without a table prefix.
+          if ! grep -qE '^DB_PREFIX=[A-Za-z0-9_]+$' .env; then echo "Refusing to migrate: DB_PREFIX is empty (shared database)."; exit 1; fi
           $PHP artisan down --retry=15 || true
           $PHP artisan migrate --force
           $PHP artisan db:seed --force          # only fills an empty database; existing content is never touched

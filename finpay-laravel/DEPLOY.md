@@ -39,6 +39,7 @@ Repository → Settings → *Secrets and variables* → **Actions**.
 | `MAIL_NOTIFY_TO` | *optional*: where form alerts go (otherwise the email set in CMS → Settings → Contact) |
 | `OVH_APP_DIR` | *optional*: folder in your hosting home, default `finpay` |
 | `OVH_PHP_BIN` | *optional*: default `/usr/local/php8.3/bin/php` |
+| `DB_PREFIX` | *optional*: table prefix, default `fp_`. FinPay shares its database with another site, so every FinPay table is prefixed and the other site's tables are never touched. |
 | `OVH_DEPLOY_ENABLED` | set to `true` to deploy automatically on every push to `main` |
 
 ## 3. Deploy
