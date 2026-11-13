@@ -28,6 +28,27 @@ $tone = $plain('Background', 'select', ['options' => ['light' => 'White', 'muted
 
 return [
 
+    'slider' => [
+        'label' => 'Hero slideshow',
+        'description' => 'Full-width photo slideshow with a headline per slide (home page).',
+        'fields' => [
+            'slides' => $plain('Slides', 'repeater', ['fields' => [
+                'image' => $plain('Photo', 'image'),
+                'eyebrow' => $t('Eyebrow'),
+                'title' => $t('Title'),
+                'highlight' => $t('Highlighted words'),
+                'subtitle' => $t('Text', 'textarea'),
+                'primary' => $plain('Primary button', 'link'),
+                'secondary' => $plain('Secondary button', 'link'),
+            ]]),
+            'badges' => $plain('Trust points (bottom bar)', 'repeater', ['fields' => [
+                'icon' => $plain('Icon', 'icon'),
+                'label' => $t('Text'),
+            ]]),
+            'interval' => $plain('Seconds per slide', 'number'),
+        ],
+    ],
+
     'hero' => [
         'label' => 'Hero',
         'description' => 'Large opening section with title, text and buttons.',
@@ -40,6 +61,8 @@ return [
             'primary' => $plain('Primary button', 'link'),
             'secondary' => $plain('Secondary button', 'link'),
             'image' => $plain('Image (optional)', 'image'),
+            'background' => $plain('Background photo (inner pages)', 'image'),
+            'overlay' => $plain('Darkening over the photo', 'select', ['options' => ['strong' => 'Strong (best for long text)', 'medium' => 'Medium', 'light' => 'Light']]),
             'badges' => $plain('Trust points under the buttons', 'repeater', ['fields' => [
                 'icon' => $plain('Icon', 'icon'),
                 'label' => $t('Text'),
@@ -140,6 +163,7 @@ return [
         'fields' => [
             'text' => $t('Quote', 'textarea'),
             'attribution' => $t('Attribution'),
+            'background' => $plain('Background photo (optional, shown with parallax)', 'image'),
         ],
     ],
 
@@ -224,6 +248,9 @@ return [
         'fields' => $heading + [
             'form_title' => $t('Form title'),
             'note' => $t('Privacy note under the form', 'textarea'),
+            'backgrounds' => $plain('Background slideshow photos', 'repeater', ['fields' => [
+                'image' => $plain('Photo', 'image'),
+            ]]),
         ],
     ],
 

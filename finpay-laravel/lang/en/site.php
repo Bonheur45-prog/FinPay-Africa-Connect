@@ -3,6 +3,8 @@
 return [
     'skip' => 'Skip to content',
     'hero' => ['chip_secure' => 'Bank-grade security', 'chip_secure_sub' => 'Encrypted end to end', 'chip_fast' => 'Real-time settlement', 'chip_fast_sub' => 'Across African corridors'],
+    'slider' => ['label' => 'Highlights', 'goto' => 'Go to slide :n', 'play' => 'Play slideshow', 'pause' => 'Pause slideshow', 'prev' => 'Previous slide', 'next' => 'Next slide'],
+    'back_to_top' => 'Back to top',
     'nav' => [
         'home' => 'Home', 'solutions' => 'Solutions', 'menu' => 'Menu', 'close' => 'Close menu',
         'all_solutions' => 'All solutions', 'all_solutions_text' => 'Explore the full FinPay Africa platform',
