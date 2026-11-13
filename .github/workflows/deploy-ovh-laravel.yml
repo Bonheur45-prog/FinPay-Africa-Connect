@@ -121,9 +121,16 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.OVH_SSH_KEY }}
         run: |
-          sudo apt-get install -y -qq sshpass rsync >/dev/null
+          sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass rsync >/dev/null
           mkdir -p ~/.ssh && chmod 700 ~/.ssh
-          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          # Accept host names pasted with a scheme, user or port by mistake (e.g. ssh://user@host:22).
+          HOST=$(printf '%s' "$SSH_HOST" | sed -E 's#^[a-z]+://##; s#^.*@##; s#[:/].*$##' | tr -d '[:space:]')
+          echo "SSH_HOST=$HOST" >> $GITHUB_ENV
+          if ! ssh-keyscan -T 15 -H "$HOST" >> ~/.ssh/known_hosts 2>/tmp/keyscan.err || [ ! -s ~/.ssh/known_hosts ]; then
+            echo "::error::Cannot reach the SSH server '$HOST' on port 22. Check OVH_SSH_HOST (OVH panel → Hosting → FTP - SSH, e.g. ssh.cluster0XX.hosting.ovh.net) and that SSH is enabled for your login."
+            cat /tmp/keyscan.err
+            exit 1
+          fi
           if [ -n "$SSH_KEY" ]; then
             printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy && chmod 600 ~/.ssh/id_deploy
             echo "SSH_CMD=ssh -i $HOME/.ssh/id_deploy" >> $GITHUB_ENV
@@ -131,6 +138,13 @@ jobs:
           else
             echo "SSH_CMD=ssh" >> $GITHUB_ENV
             echo "SSH_WRAP=sshpass -e" >> $GITHUB_ENV
+          fi
+
+      - name: Test SSH login
+        run: |
+          if ! $SSH_WRAP $SSH_CMD -o BatchMode=no -o ConnectTimeout=20 "$SSH_USER@$SSH_HOST" 'echo connected; ls -d ~/; command -v rsync || echo NO_RSYNC; ls /usr/local/php8.3/bin/php 2>/dev/null || echo NO_PHP83'; then
+            echo "::error::SSH login failed. Check OVH_SSH_USER / OVH_SSH_PASSWORD (OVH panel → Hosting → FTP - SSH) and that the login has SSH access, not FTP only."
+            exit 1
           fi
 
       - name: Upload files (uploads in public/media and the server .env are never touched)
