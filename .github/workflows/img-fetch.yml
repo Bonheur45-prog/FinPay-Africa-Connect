@@ -13,11 +13,8 @@ jobs:
         run: |
           mkdir -p photos && cd photos
           get() { curl -sSL -m 60 -o "$1.jpg" "$2" && echo "$1 $(file -b --mime-type $1.jpg) $(stat -c%s $1.jpg)" || echo "$1 FAILED"; }
-          for id in 9QFSXyF2Ipo dGUXKJZGDSg vyagy6HJpVE 1Uwcoo-ttjY 0EhDwwtMDks imfDeYW-YQY 67ruAEYmp4c z-lNmXoXt-k Ciba8rvHYng e3RJy3mkLXU eeijZpKf2Kg fGd8paHzN98 EBcKOqWzc9M Y7mcBJAgytM z9mq3SP9uy4; do
-            url=$(curl -sSL -m 30 -A "Mozilla/5.0" "https://unsplash.com/photos/$id" | grep -oE 'https://images\.unsplash\.com/photo-[0-9]+-[0-9a-f]+' | head -1)
-            lic=$(curl -sSL -m 30 -A "Mozilla/5.0" "https://unsplash.com/photos/$id" | grep -oE 'Free to use under the|Unsplash\+ License' | head -1)
-            echo "$id -> $url [$lic]"
-            [ -n "$url" ] && [ "$lic" = "Free to use under the" ] && get "n-$id" "$url?w=2000&q=78&fm=jpg&fit=max"
+          for id in 1522605033133-c806e4c59806 1593717191400-84f38ee95485 1511283878565-0833bf39de9d 1576814547952-f8531781d7ef 1693902997450-7e912c0d3554 1688989666504-c2de3f266d36 1618828665011-0abd973f7bb8 1572727850654-f50a7ead20df 1611144727915-ef30a08aaeb3; do
+            get "n-$id" "https://images.unsplash.com/photo-$id?w=2200&q=78&fm=jpg&fit=max"
           done
           # keep only real images, downsized for review
           for f in *.jpg; do case "$(file -b --mime-type $f)" in image/*) ;; *) rm -f "$f";; esac; done
@@ -25,4 +22,4 @@ jobs:
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -f photos/u-*.jpg 2>/dev/null; git add -A photos && git commit -m "Candidate photos [skip ci]" && git push
+          git add -A photos && git commit -m "Candidate photos [skip ci]" && git push
