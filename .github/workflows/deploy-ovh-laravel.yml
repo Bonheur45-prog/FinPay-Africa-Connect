@@ -157,6 +157,7 @@ jobs:
             ./ "$SSH_USER@$SSH_HOST:~/$APP_DIR/"
           # storage skeleton + media .htaccess, without overwriting anything already on the server
           $SSH_WRAP rsync -az --ignore-existing -e "$SSH_CMD" ./storage/ "$SSH_USER@$SSH_HOST:~/$APP_DIR/storage/"
+          $SSH_WRAP $SSH_CMD "$SSH_USER@$SSH_HOST" "mkdir -p ~/$APP_DIR/public/media"
           $SSH_WRAP rsync -az -e "$SSH_CMD" ./public/media/.htaccess "$SSH_USER@$SSH_HOST:~/$APP_DIR/public/media/.htaccess"
 
       - name: Migrate, seed first content, cache config
