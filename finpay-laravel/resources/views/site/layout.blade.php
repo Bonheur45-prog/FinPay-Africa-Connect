@@ -38,6 +38,10 @@
     @include('site.partials.footer')
     @include('site.partials.cookie-consent')
 
+    <button type="button" id="back-to-top" class="fixed bottom-5 left-5 z-40 grid size-11 place-items-center rounded-full bg-ink text-white shadow-[var(--shadow-float)] hover:bg-brand-600" aria-label="{{ __('site.back_to_top') }}">
+        {!! icon('arrow-up', 'icon size-5', 2) !!}
+    </button>
+
     @auth
         @if (! empty($editUrl))
             <a href="{{ $editUrl }}" class="fixed right-5 bottom-5 z-50 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-float)] hover:bg-navy-800">

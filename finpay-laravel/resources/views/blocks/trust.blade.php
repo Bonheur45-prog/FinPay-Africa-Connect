@@ -1,4 +1,4 @@
-<section class="section bg-dark-section on-dark">
+<section class="section bg-dark-section on-dark relative overflow-hidden">
     <div class="bg-grid-dark pointer-events-none absolute inset-0"></div>
     <div class="container-site relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>

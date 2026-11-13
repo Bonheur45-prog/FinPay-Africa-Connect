@@ -99,6 +99,8 @@ class ContentSeeder extends Seeder
         }
 
         $this->createAdmin();
+
+        \App\Support\ContentUpgrades::run();
     }
 
     /** Replace "@asset:file" tokens with media ids, importing each asset once. */

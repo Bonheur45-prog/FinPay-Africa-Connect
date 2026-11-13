@@ -7,9 +7,14 @@ Alpine.data('siteHeader', () => ({
     mobile: false,
     menu: null,
     scrolled: false,
+    progress: 0,
     timer: null,
     init() {
-        const onScroll = () => { this.scrolled = window.scrollY > 8; };
+        const onScroll = () => {
+            this.scrolled = window.scrollY > 8;
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            this.progress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
         this.$watch('mobile', (v) => { document.documentElement.style.overflow = v ? 'hidden' : ''; });
@@ -58,6 +63,44 @@ Alpine.data('contactForm', (initialType = 'general') => ({
     submit() { this.sending = true; },
 }));
 
+const prefersReduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Home hero slideshow: autoplay with progress, pauses on hover/focus, when the tab is hidden, or by the pause button.
+Alpine.data('heroSlider', (count, seconds = 7) => ({
+    active: 0,
+    progress: 0,
+    hover: false,
+    paused: false,
+    count,
+    init() {
+        if (count < 2) return;
+        if (prefersReduced()) this.paused = true;
+        let last = performance.now();
+        const tick = (now) => {
+            const dt = now - last;
+            last = now;
+            if (!this.hover && !this.paused && !document.hidden) {
+                this.progress += (dt / (seconds * 1000)) * 100;
+                if (this.progress >= 100) this.next();
+            }
+            requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+    },
+    go(i) { this.active = (i + this.count) % this.count; this.progress = 0; },
+    next() { this.go(this.active + 1); },
+    prev() { this.go(this.active - 1); },
+}));
+
+// Cross-fading background photos (contact section).
+Alpine.data('bgSlideshow', (count, seconds = 6) => ({
+    active: 0,
+    init() {
+        if (count < 2 || prefersReduced()) return;
+        setInterval(() => { if (!document.hidden) this.active = (this.active + 1) % count; }, seconds * 1000);
+    },
+}));
+
 Alpine.data('partnerFilter', () => ({
     active: 'all',
     show(cat) { return this.active === 'all' || this.active === cat; },
@@ -91,7 +134,32 @@ function countUp(el) {
     requestAnimationFrame(step);
 }
 
+// Parallax: [data-parallax="0.2"] moves at a fraction of the scroll speed while its section is on screen.
+function initParallax() {
+    const els = [...document.querySelectorAll('[data-parallax]')];
+    if (!els.length || prefersReduced()) return;
+    let ticking = false;
+    const update = () => {
+        const vh = window.innerHeight;
+        els.forEach((el) => {
+            const host = el.closest('section') || el.parentElement;
+            const r = host.getBoundingClientRect();
+            if (r.bottom < -100 || r.top > vh + 100) return;
+            const factor = parseFloat(el.dataset.parallax) || 0.2;
+            const offset = (r.top + r.height / 2 - vh / 2) * -factor;
+            el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+        });
+        ticking = false;
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initParallax();
+    initBackToTop();
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const els = document.querySelectorAll('[data-reveal], [data-count]');
     if (!('IntersectionObserver' in window) || reduce) {
@@ -108,6 +176,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
     els.forEach((el) => io.observe(el));
 });
+
+function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    const toggle = () => btn.classList.toggle('is-shown', window.scrollY > 900);
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReduced() ? 'auto' : 'smooth' }));
+}
 
 window.Alpine = Alpine;
 Alpine.start();

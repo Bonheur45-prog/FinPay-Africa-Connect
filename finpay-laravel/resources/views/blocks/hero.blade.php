@@ -1,6 +1,8 @@
 @php
     $variant = $d['variant'] ?? 'page';
     $hasImage = (bool) media($d['image'] ?? null);
+    $bg = media($d['background'] ?? null);
+    $overlay = ['strong' => 'from-navy-950/95 via-navy-950/85 to-navy-950/60', 'medium' => 'from-navy-950/90 via-navy-950/70 to-navy-950/35', 'light' => 'from-navy-950/80 via-navy-950/50 to-navy-950/10'][$d['overlay'] ?? 'strong'] ?? 'from-navy-950/95 via-navy-950/85 to-navy-950/60';
     $level = $first ? 'h1' : 'h2';
 @endphp
 
@@ -69,9 +71,18 @@
     </section>
 
 @else
-    <section class="bg-dark-section on-dark relative overflow-hidden">
-        <div class="bg-grid-dark pointer-events-none absolute inset-0"></div>
-        <div @class(['container-site relative py-16 md:py-24', 'grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]' => $hasImage])>
+    <section class="bg-dark-section on-dark relative isolate overflow-hidden">
+        @if ($bg)
+            <div class="parallax-wrap absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+                <img src="{{ $bg->url('md') }}" srcset="{{ $bg->srcset() }}" sizes="100vw" alt="" fetchpriority="high" decoding="async"
+                     class="parallax-img hero-zoom absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover" data-parallax="0.22">
+            </div>
+            <div class="absolute inset-0 -z-10 bg-gradient-to-r {{ $overlay }}" aria-hidden="true"></div>
+            <div class="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-navy-950/70 to-transparent" aria-hidden="true"></div>
+        @else
+            <div class="bg-grid-dark pointer-events-none absolute inset-0"></div>
+        @endif
+        <div @class(['container-site relative py-16 md:py-24', 'md:py-32 lg:py-36' => $bg && ! $hasImage, 'grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]' => $hasImage])>
             <div @class(['max-w-3xl' => ! $hasImage])>
                 @include('blocks._breadcrumbs', ['dark' => true])
                 @if (has_text($d['eyebrow'] ?? null))<p class="eyebrow">{{ tr($d['eyebrow']) }}</p>@endif
