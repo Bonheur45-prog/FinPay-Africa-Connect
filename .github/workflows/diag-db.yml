@@ -3,19 +3,36 @@ on:
   push:
     branches: [diag-db]
 jobs:
-  diag:
+  golive:
     runs-on: ubuntu-latest
     env:
       SSH_HOST: ${{ secrets.OVH_SSH_HOST }}
       SSH_USER: ${{ secrets.OVH_SSH_USER }}
       SSHPASS: ${{ secrets.OVH_SSH_PASSWORD }}
     steps:
-      - name: Read-only table listing
+      - name: Switch finpay-africa.com to the new site (auto-rollback)
         run: |
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          set +e
-          for h in nsi-monetique.com www.nsi-monetique.com; do echo "== $h"; dig +short A $h; curl -skI -m 20 "https://$h/" | grep -iE '^(HTTP|server|x-powered|set-cookie: [a-z_-]+)' | cut -c1-60; curl -skL -m 20 -o /dev/null -w 'final=%{url_effective} code=%{http_code}\n' "https://$h/"; done
-          echo "== finpay hosting web IP: 5.135.23.164"
-          echo "== recently used files in this hosting's www (who is reading it?)"
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'set +e; ls -la ~/nordsud-app/storage/logs 2>/dev/null | tail -5; tail -c 600 ~/nordsud-app/storage/logs/laravel.log 2>/dev/null | tail -3; grep -E "^(APP_URL|DB_HOST|DB_DATABASE|DB_PREFIX)=" ~/nordsud-app/.env 2>/dev/null | sed -E "s/(DB_DATABASE=).*/\1<hidden>/"'
+          R() { sshpass -e ssh "$SSH_USER@$SSH_HOST" "$@"; }
+          TS=$(date -u +%Y%m%d-%H%M)
+          echo "== switch"
+          R "set -e; cd ~; test -f finpay/public/index.php; if [ -L www ]; then echo already-symlink; else mv www www-nsi-demo-backup-$TS && ln -s finpay/public www && echo switched; fi; cp .ovhconfig .ovhconfig.backup-$TS; sed -i 's/^app.engine.version=.*/app.engine.version=8.3/' .ovhconfig; ls -la ~ | grep -E ' www| www-'; cat .ovhconfig"
+          ok=no
+          for i in $(seq 1 10); do
+            sleep 15
+            body=$(curl -s -m 30 -D /tmp/h http://finpay-africa.com/fr || true)
+            code=$(head -1 /tmp/h 2>/dev/null)
+            php=$(grep -i '^x-powered-by' /tmp/h 2>/dev/null | tr -d '\r')
+            echo "try $i: $code $php"
+            if echo "$body" | grep -q 'images/brand/logo.png' && ! grep -qi 'nsi-group-session' /tmp/h; then ok=yes; break; fi
+          done
+          if [ "$ok" != yes ]; then
+            echo "== NOT OK — rolling back"
+            echo "$body" | head -c 600
+            R "cd ~; if [ -L www ]; then rm www && mv www-nsi-demo-backup-$TS www; fi; cp .ovhconfig.backup-$TS .ovhconfig; ls -la ~ | grep -E ' www'"
+            exit 1
+          fi
+          echo "== LIVE"
+          for p in /fr /en /en/solutions/cross-border /fr/contact-us /admin/login /sitemap.xml /build/manifest.json; do printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code}' -m 30 "http://finpay-africa.com$p")" "$p"; done
+          curl -s -o /dev/null -w 'www redirect: %{http_code} -> %{redirect_url}\n' http://www.finpay-africa.com/fr
