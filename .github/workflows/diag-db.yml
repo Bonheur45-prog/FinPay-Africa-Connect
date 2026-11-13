@@ -15,6 +15,6 @@ jobs:
           set +e
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~; ls -la | grep -E "www|ovhconfig"; echo "--"; cat .ovhconfig; echo "--"; ls finpay/public | head; ls -la ~/www/ | head -5'
+          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~/finpay; ls -la storage storage/logs storage/framework bootstrap/cache | head -40; echo "-- log"; tail -c 3500 storage/logs/laravel-*.log 2>/dev/null | grep -vE "^#[0-9]+ " | tail -25; tail -c 2500 storage/logs/laravel.log 2>/dev/null | grep -vE "^#[0-9]+ " | tail -15; echo "-- php errors"; ls -la ~/logs 2>/dev/null | tail -3'
           for p in /fr /en /admin/login /build/manifest.json; do curl -s -o /tmp/b -D /tmp/h -m 30 "http://finpay-africa.com$p"; echo "$p $(head -1 /tmp/h) $(grep -i x-powered /tmp/h | tr -d '\r') logo=$(grep -c images/brand/logo.png /tmp/b)"; done
           head -c 700 /tmp/b; echo
