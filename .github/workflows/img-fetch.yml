@@ -13,18 +13,16 @@ jobs:
         run: |
           mkdir -p photos && cd photos
           get() { curl -sSL -m 60 -o "$1.jpg" "$2" && echo "$1 $(file -b --mime-type $1.jpg) $(stat -c%s $1.jpg)" || echo "$1 FAILED"; }
-          Q='?w=2000&q=78&fm=jpg&fit=max'
-          for id in 1611348586804-61bf6c080437 1556742049-0cfed4f6a45d 1607863680198-23d4b2565df0 1521791136064-7986c2920216 1565728744382-61accd4aa148 \
-                    1563013544-824ae1b704d3 1556740758-90de374c12ad 1554224155-6726b3ff858f 1559526324-4b87b5e36e44 1486406146926-c627a92ad1ab \
-                    1460925895917-afdab827c52f 1551836022-d5d88e9218df 1556761175-5973dc0f32e7 1600880292203-757bb62b4baf 1573164713988-8665fc963095 \
-                    1531482615713-2afd69097998 1611095973763-414019e72400 1556745757-8d76bdb6984b 1580048915913-4f8f5cb481c4 1589758438368-0ad531db3366; do
-            get "u-$id" "https://images.unsplash.com/photo-$id$Q"
+          for id in 9QFSXyF2Ipo dGUXKJZGDSg vyagy6HJpVE 1Uwcoo-ttjY 0EhDwwtMDks imfDeYW-YQY 67ruAEYmp4c z-lNmXoXt-k Ciba8rvHYng e3RJy3mkLXU eeijZpKf2Kg fGd8paHzN98 EBcKOqWzc9M Y7mcBJAgytM z9mq3SP9uy4; do
+            url=$(curl -sSL -m 30 -A "Mozilla/5.0" "https://unsplash.com/photos/$id" | grep -oE 'https://images\.unsplash\.com/photo-[0-9]+-[0-9a-f]+' | head -1)
+            lic=$(curl -sSL -m 30 -A "Mozilla/5.0" "https://unsplash.com/photos/$id" | grep -oE 'Free to use under the|Unsplash\+ License' | head -1)
+            echo "$id -> $url [$lic]"
+            [ -n "$url" ] && [ "$lic" = "Free to use under the" ] && get "n-$id" "$url?w=2000&q=78&fm=jpg&fit=max"
           done
-          for slug in z-lNmXoXt-k xIH6XLSc9JM W3Jl3jREpDY b4hWEDaDy4o; do get "s-$slug" "https://unsplash.com/photos/$slug/download?force=true&w=2000"; done
           # keep only real images, downsized for review
           for f in *.jpg; do case "$(file -b --mime-type $f)" in image/*) ;; *) rm -f "$f";; esac; done
           ls -la
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add photos && git commit -m "Candidate photos [skip ci]" && git push
+          rm -f photos/u-*.jpg 2>/dev/null; git add -A photos && git commit -m "Candidate photos [skip ci]" && git push
