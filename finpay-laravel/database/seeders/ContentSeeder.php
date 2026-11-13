@@ -124,21 +124,21 @@ class ContentSeeder extends Seeder
 
     private function createAdmin(): void
     {
-        $email = env('ADMIN_EMAIL');
+        $email = config('services.admin.email');
         if (! $email) {
             $this->command?->warn('ADMIN_EMAIL not set — create the first admin with: php artisan cms:create-admin');
 
             return;
         }
-        if (! env('ADMIN_PASSWORD') && app()->isProduction()) {
+        if (! config('services.admin.password') && app()->isProduction()) {
             // Never print a generated password into deploy logs.
             $this->command?->warn('ADMIN_PASSWORD not set — run: php artisan cms:create-admin '.$email);
 
             return;
         }
-        $password = env('ADMIN_PASSWORD') ?: Str::password(16);
+        $password = config('services.admin.password') ?: Str::password(16);
         User::updateOrCreate(['email' => $email], ['name' => 'Administrator', 'password' => $password, 'role' => 'admin', 'is_active' => true]);
-        if (! env('ADMIN_PASSWORD')) {
+        if (! config('services.admin.password')) {
             $this->command?->info("Admin created: {$email} / {$password}  (change it after first login)");
         }
     }

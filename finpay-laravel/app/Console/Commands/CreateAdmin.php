@@ -21,8 +21,8 @@ class CreateAdmin extends Command
 
             return self::SUCCESS;
         }
-        $email = strtolower((string) ($this->option('from-env') ? env('ADMIN_EMAIL') : $this->argument('email')));
-        $given = $this->option('from-env') ? (string) env('ADMIN_PASSWORD') : (string) $this->option('password');
+        $email = strtolower((string) ($this->option('from-env') ? config('services.admin.email') : $this->argument('email')));
+        $given = $this->option('from-env') ? (string) config('services.admin.password') : (string) $this->option('password');
         if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->warn('No valid admin email given (set the ADMIN_EMAIL secret) — skipped.');
 

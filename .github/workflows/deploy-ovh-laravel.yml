@@ -176,6 +176,7 @@ jobs:
           mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache public/media
           # Safety: this database is shared with another production site. Never migrate without a table prefix.
           if ! grep -qE '^DB_PREFIX=[A-Za-z0-9_]+$' .env; then echo "Refusing to migrate: DB_PREFIX is empty (shared database)."; exit 1; fi
+          $PHP artisan optimize:clear          # drop the previous deploy's cached config so the new .env is read
           $PHP artisan down --retry=15 || true
           $PHP artisan migrate --force
           $PHP artisan db:seed --force          # only fills an empty database; existing content is never touched
