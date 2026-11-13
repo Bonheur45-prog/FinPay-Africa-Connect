@@ -192,9 +192,10 @@ jobs:
           $PHP artisan db:seed --force          # only fills an empty database; existing content is never touched
           $PHP artisan cms:create-admin --from-env --if-none
           $PHP artisan optimize:clear
-          $PHP artisan config:cache
+          # Only the route cache is path-independent. OVH's SSH login sees the home folder under a different
+          # path (/home/<login>) than the web server (/home/<account>), so config/view caches built here would
+          # point the website at folders it cannot reach.
           $PHP artisan route:cache
-          $PHP artisan view:cache
           $PHP artisan up
           echo "Deployed $(date -u)"
           REMOTE
