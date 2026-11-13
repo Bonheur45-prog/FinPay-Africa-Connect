@@ -14,6 +14,6 @@ jobs:
         run: |
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          for h in finpay-africa.com www.finpay-africa.com; do echo "== $h"; dig +short A $h; dig +short CNAME $h; curl -sI -m 15 https://$h/ | grep -iE '^(HTTP|location|server|x-powered|set-cookie: [a-z_]+)' ; curl -sL -m 15 https://$h/ | grep -oiE '<title>[^<]*</title>' | head -1; done
+          set +e; for h in finpay-africa.com www.finpay-africa.com; do echo "== $h"; dig +short A $h; dig +short CNAME $h; curl -sI -m 15 https://$h/ | grep -iE '^(HTTP|location|server|x-powered|set-cookie: [a-z_]+)' ; curl -sL -m 15 https://$h/ | grep -oiE '<title>[^<]*</title>' | head -1; done
           echo "== hosting IP"; dig +short A ssh.cluster100.hosting.ovh.net; dig +short A cluster100.hosting.ovh.net
           echo "== ns"; dig +short NS finpay-africa.com
