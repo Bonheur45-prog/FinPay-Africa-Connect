@@ -15,6 +15,7 @@ jobs:
           set +e
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~/finpay; ls -la storage storage/logs storage/framework bootstrap/cache | head -40; echo "-- log"; tail -c 3500 storage/logs/laravel-*.log 2>/dev/null | grep -vE "^#[0-9]+ " | tail -25; tail -c 2500 storage/logs/laravel.log 2>/dev/null | grep -vE "^#[0-9]+ " | tail -15; echo "-- php errors"; ls -la ~/logs 2>/dev/null | tail -3'
+          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~/finpay; echo "-- cli request"; REQUEST_URI=/fr REQUEST_METHOD=GET HTTP_HOST=finpay-africa.com SCRIPT_NAME=/index.php SCRIPT_FILENAME=$PWD/public/index.php /usr/local/php8.3/bin/php -d display_errors=1 -d error_reporting=-1 public/index.php 2>&1 | head -c 1500; echo; echo "-- php modules"; /usr/local/php8.3/bin/php -m | tr "\n" " "; echo; grep -E "^(APP_ENV|APP_DEBUG|APP_URL|LOG_CHANNEL|DB_PREFIX|SESSION_DRIVER|CACHE_STORE|FORCE_HTTPS)=" .env'
+          curl -s -m 30 http://finpay-africa.com/fr | head -c 800; echo
           for p in /fr /en /admin/login /build/manifest.json; do curl -s -o /tmp/b -D /tmp/h -m 30 "http://finpay-africa.com$p"; echo "$p $(head -1 /tmp/h) $(grep -i x-powered /tmp/h | tr -d '\r') logo=$(grep -c images/brand/logo.png /tmp/b)"; done
           head -c 700 /tmp/b; echo
