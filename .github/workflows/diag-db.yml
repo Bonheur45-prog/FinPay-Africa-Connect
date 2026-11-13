@@ -15,5 +15,7 @@ jobs:
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
           set +e
-          for u in http://finpay-africa.com/ https://finpay-africa.com/ http://www.finpay-africa.com/; do echo "== $u"; curl -skI -m 20 "$u" | head -8; echo "-- title/body:"; curl -skL -m 20 "$u" | grep -oiE '<title>[^<]*</title>' | head -1; curl -skL -m 20 -o /dev/null -w 'final=%{url_effective} code=%{http_code} ssl_verify=%{ssl_verify_result}\n' "$u"; done
-          echo "== cert"; echo | openssl s_client -connect finpay-africa.com:443 -servername finpay-africa.com 2>/dev/null | openssl x509 -noout -subject -issuer -ext subjectAltName 2>/dev/null
+          for h in nsi-monetique.com www.nsi-monetique.com; do echo "== $h"; dig +short A $h; curl -skI -m 20 "https://$h/" | grep -iE '^(HTTP|server|x-powered|set-cookie: [a-z_-]+)' | cut -c1-60; curl -skL -m 20 -o /dev/null -w 'final=%{url_effective} code=%{http_code}\n' "https://$h/"; done
+          echo "== finpay hosting web IP: 5.135.23.164"
+          echo "== recently used files in this hosting's www (who is reading it?)"
+          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'set +e; ls -la ~/nordsud-app/storage/logs 2>/dev/null | tail -5; tail -c 600 ~/nordsud-app/storage/logs/laravel.log 2>/dev/null | tail -3; grep -E "^(APP_URL|DB_HOST|DB_DATABASE|DB_PREFIX)=" ~/nordsud-app/.env 2>/dev/null | sed -E "s/(DB_DATABASE=).*/\1<hidden>/"'
