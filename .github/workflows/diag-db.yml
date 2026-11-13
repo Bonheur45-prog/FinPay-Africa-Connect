@@ -14,6 +14,6 @@ jobs:
         run: |
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          set +e; for h in finpay-africa.com www.finpay-africa.com; do echo "== $h"; dig +short A $h; dig +short CNAME $h; curl -sI -m 15 https://$h/ | grep -iE '^(HTTP|location|server|x-powered|set-cookie: [a-z_]+)' ; curl -sL -m 15 https://$h/ | grep -oiE '<title>[^<]*</title>' | head -1; done
-          echo "== hosting IP"; dig +short A ssh.cluster100.hosting.ovh.net; dig +short A cluster100.hosting.ovh.net
-          echo "== ns"; dig +short NS finpay-africa.com
+          set +e
+          for u in http://finpay-africa.com/ https://finpay-africa.com/ http://www.finpay-africa.com/; do echo "== $u"; curl -skI -m 20 "$u" | head -8; echo "-- title/body:"; curl -skL -m 20 "$u" | grep -oiE '<title>[^<]*</title>' | head -1; curl -skL -m 20 -o /dev/null -w 'final=%{url_effective} code=%{http_code} ssl_verify=%{ssl_verify_result}\n' "$u"; done
+          echo "== cert"; echo | openssl s_client -connect finpay-africa.com:443 -servername finpay-africa.com 2>/dev/null | openssl x509 -noout -subject -issuer -ext subjectAltName 2>/dev/null
