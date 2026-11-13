@@ -87,12 +87,22 @@ jobs:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         run: |
           q() { printf '"%s"' "$(printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g')"; }
+          # Use https only if the domain's certificate is valid; otherwise http (no browser warning, working forms).
+          HOST=$(printf '%s' "$APP_URL" | sed -E 's#^[a-z]+://##; s#/.*$##')
+          if curl -sS -o /dev/null -m 20 "https://$HOST/" 2>/tmp/tls.err; then
+            APP_URL="https://$HOST"; SECURE=true
+          else
+            echo "::warning::No valid SSL certificate for $HOST yet ($(head -c 160 /tmp/tls.err)). Serving over http until SSL is enabled in OVH Multisite."
+            APP_URL="http://$HOST"; SECURE=false
+          fi
+          echo "SITE_URL=$APP_URL" >> $GITHUB_ENV
           {
             echo 'APP_NAME="FinPay Africa"'
             echo 'APP_ENV=production'
             echo 'APP_KEY=__KEEP__'
             echo 'APP_DEBUG=false'
             echo "APP_URL=$APP_URL"
+            echo "FORCE_HTTPS=$SECURE"
             echo 'APP_LOCALE=fr'
             echo 'APP_FALLBACK_LOCALE=fr'
             echo 'LOG_CHANNEL=daily'
@@ -105,7 +115,7 @@ jobs:
             echo "DB_PASSWORD=$(q "$DB_PASSWORD")"
             echo "DB_PREFIX=$DB_PREFIX"
             echo 'SESSION_DRIVER=file'
-            echo 'SESSION_SECURE_COOKIE=true'
+            echo "SESSION_SECURE_COOKIE=$SECURE"
             echo 'CACHE_STORE=file'
             echo 'QUEUE_CONNECTION=sync'
             echo 'MAIL_MAILER=log'
@@ -193,6 +203,6 @@ jobs:
         if: vars.APP_URL != ''
         continue-on-error: true   # fails until the domain's OVH root folder points to ~/finpay/public
         run: |
-          code=$(curl -s -o /dev/null -w '%{http_code}' -L "${{ vars.APP_URL }}/fr" || true)
+          code=$(curl -s -o /dev/null -w '%{http_code}' -L "$SITE_URL/fr" || true)
           echo "Home page returned HTTP $code"
-          if [ "$code" != "200" ]; then echo "::warning::${{ vars.APP_URL }} does not serve the new site yet. Point the domain's OVH root folder to $APP_DIR/public."; fi
+          if [ "$code" != "200" ]; then echo "::warning::$SITE_URL does not serve the new site yet. Point the domain's OVH root folder to $APP_DIR/public."; fi
