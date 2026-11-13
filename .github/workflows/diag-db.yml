@@ -14,4 +14,6 @@ jobs:
         run: |
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'set +e; cd ~; echo "== home"; ls -la; echo "== www"; ls -la www 2>/dev/null | head -40; echo "== www/.htaccess"; head -40 www/.htaccess 2>/dev/null; echo "== .ovhconfig"; cat .ovhconfig www/.ovhconfig 2>/dev/null; echo "== dirs with index or artisan (depth 2)"; find ~ -maxdepth 3 \( -name artisan -o -name index.html -o -name index.php \) -not -path "*/vendor/*" -not -path "*/node_modules/*" 2>/dev/null | head -30; echo "== curl host"; curl -s -o /dev/null -w "finpay-africa.com %{http_code}\n" https://finpay-africa.com/ ; curl -sL https://finpay-africa.com/ | head -c 400; echo'
+          for h in finpay-africa.com www.finpay-africa.com; do echo "== $h"; dig +short A $h; dig +short CNAME $h; curl -sI -m 15 https://$h/ | grep -iE '^(HTTP|location|server|x-powered|set-cookie: [a-z_]+)' ; curl -sL -m 15 https://$h/ | grep -oiE '<title>[^<]*</title>' | head -1; done
+          echo "== hosting IP"; dig +short A ssh.cluster100.hosting.ovh.net; dig +short A cluster100.hosting.ovh.net
+          echo "== ns"; dig +short NS finpay-africa.com
