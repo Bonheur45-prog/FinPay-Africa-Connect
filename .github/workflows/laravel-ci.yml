@@ -1,0 +1,79 @@
+name: Laravel CI
+
+on:
+  push:
+    branches: [laravel-cms, main]
+    paths: ['finpay-laravel/**', '.github/workflows/laravel-ci.yml']
+  pull_request:
+    paths: ['finpay-laravel/**']
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: finpay-laravel
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: finpay_test
+        ports: ['3306:3306']
+        options: --health-cmd="mysqladmin ping -proot" --health-interval=5s --health-timeout=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_mysql, pdo_sqlite, gd, intl, zip, fileinfo
+          coverage: none
+
+      - name: Install PHP dependencies (creates composer.lock if missing)
+        run: |
+          if [ -f composer.lock ]; then composer install --no-interaction --prefer-dist --no-progress
+          else composer update --no-interaction --prefer-dist --no-progress; fi
+
+      - name: Commit generated composer.lock
+        if: github.event_name == 'push'
+        run: |
+          if [ -n "$(git status --porcelain composer.lock)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add composer.lock
+            git commit -m "Add generated composer.lock [skip ci]"
+            git push
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build front-end assets
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Tests (SQLite)
+        run: php artisan test
+
+      - name: Migrate + seed on MySQL (same engine as OVH)
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: finpay_test
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: php artisan migrate:fresh --seed --force
