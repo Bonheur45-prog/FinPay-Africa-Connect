@@ -1,0 +1,21 @@
+name: Live site check (read-only)
+on:
+  push:
+    branches: [live-check]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Live checks
+        run: |
+          set +e
+          B=http://finpay-africa.com
+          for p in / /fr /en /fr/about /en/solutions /en/solutions/cross-border /fr/solutions/diaspora /fr/solutions/api /fr/solutions/cards /fr/solutions/kyc /en/partners /en/investors /fr/contact-us /fr/blog /fr/privacy-policy /sitemap.xml /admin/login /fr/nope; do
+            printf '%-32s %s\n' "$p" "$(curl -s -o /dev/null -m 40 -w '%{http_code} %{time_total}s' "$B$p")"
+          done
+          html=$(curl -s -m 40 $B/en)
+          echo "css: $(echo "$html" | grep -oE '/build/assets/app-[^"]+\.css')"
+          echo "slides: $(echo "$html" | grep -c 'aria-roledescription="slide"')  home-nav: $(echo "$html" | grep -c '>Home<')"
+          for a in $(echo "$html" | grep -oE '/media/[^" ]+\.webp' | sort -u | head -6); do printf '%s %s\n' "$(curl -s -o /dev/null -m 40 -w '%{http_code}' "$B$a")" "$a"; done
+          echo "contact slideshow photos: $(curl -s -m 40 $B/fr/contact-us | grep -c 'kenburns size-full')"
+          echo "about bg: $(curl -s -m 40 $B/en/about | grep -c 'hero-about')"
