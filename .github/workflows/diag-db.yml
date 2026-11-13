@@ -15,25 +15,7 @@ jobs:
           set +e
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          N=diag-$(date +%s)$RANDOM.php
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" "cat > ~/finpay/public/$N" <<'PHP'
-          <?php
-          ini_set('display_errors', '1'); error_reporting(-1);
-          header('Content-Type: text/plain');
-          echo "php ", PHP_VERSION, " sapi ", PHP_SAPI, "\n__DIR__ ", __DIR__, "\nrealpath ", realpath(__DIR__.'/..'), "\nopen_basedir ", ini_get('open_basedir'), "\n";
-          echo "storage writable ", is_writable(__DIR__.'/../storage/framework/views') ? 'yes' : 'no', "\n";
-          try {
-              require __DIR__.'/../vendor/autoload.php';
-              $app = require __DIR__.'/../bootstrap/app.php';
-              $_SERVER['REQUEST_URI'] = '/fr';
-              $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-              $req = Illuminate\Http\Request::create('/fr', 'GET');
-              $res = $kernel->handle($req);
-              echo "status ", $res->getStatusCode(), "\n";
-              if ($res->getStatusCode() >= 500 && isset($res->exception)) { echo get_class($res->exception), ": ", $res->exception->getMessage(), "\n", $res->exception->getFile(), ":", $res->exception->getLine(), "\n"; }
-          } catch (Throwable $e) { echo get_class($e), ": ", $e->getMessage(), "\n", $e->getFile(), ":", $e->getLine(), "\n", substr($e->getTraceAsString(), 0, 1500); }
-          PHP
-          curl -s -m 30 "http://finpay-africa.com/$N"; echo
-          sshpass -e ssh "$SSH_USER@$SSH_HOST" "rm -f ~/finpay/public/$N; tail -c 2000 ~/finpay/storage/logs/laravel-*.log | grep -vE '^#[0-9]+ ' | tail -6"
+          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~/finpay && /usr/local/php8.3/bin/php artisan config:clear && /usr/local/php8.3/bin/php artisan view:clear && /usr/local/php8.3/bin/php artisan route:cache && ls bootstrap/cache'
+          sleep 3
           for p in /fr /en /admin/login /build/manifest.json; do curl -s -o /tmp/b -D /tmp/h -m 30 "http://finpay-africa.com$p"; echo "$p $(head -1 /tmp/h) $(grep -i x-powered /tmp/h | tr -d '\r') logo=$(grep -c images/brand/logo.png /tmp/b)"; done
           head -c 700 /tmp/b; echo
