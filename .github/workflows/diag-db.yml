@@ -3,36 +3,18 @@ on:
   push:
     branches: [diag-db]
 jobs:
-  golive:
+  check:
     runs-on: ubuntu-latest
     env:
       SSH_HOST: ${{ secrets.OVH_SSH_HOST }}
       SSH_USER: ${{ secrets.OVH_SSH_USER }}
       SSHPASS: ${{ secrets.OVH_SSH_PASSWORD }}
     steps:
-      - name: Switch finpay-africa.com to the new site (auto-rollback)
+      - name: Check state
         run: |
+          set +e
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq sshpass >/dev/null
           mkdir -p ~/.ssh && ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          R() { sshpass -e ssh "$SSH_USER@$SSH_HOST" "$@"; }
-          TS=$(date -u +%Y%m%d-%H%M)
-          echo "== switch"
-          R "set -e; cd ~; test -f finpay/public/index.php; if [ -L www ]; then echo already-symlink; else mv www www-nsi-demo-backup-$TS && ln -s finpay/public www && echo switched; fi; cp .ovhconfig .ovhconfig.backup-$TS; sed -i 's/^app.engine.version=.*/app.engine.version=8.3/' .ovhconfig; ls -la ~ | grep -E ' www| www-'; cat .ovhconfig"
-          ok=no
-          for i in $(seq 1 10); do
-            sleep 15
-            body=$(curl -s -m 30 -D /tmp/h http://finpay-africa.com/fr || true)
-            code=$(head -1 /tmp/h 2>/dev/null)
-            php=$(grep -i '^x-powered-by' /tmp/h 2>/dev/null | tr -d '\r')
-            echo "try $i: $code $php"
-            if echo "$body" | grep -q 'images/brand/logo.png' && ! grep -qi 'nsi-group-session' /tmp/h; then ok=yes; break; fi
-          done
-          if [ "$ok" != yes ]; then
-            echo "== NOT OK — rolling back"
-            echo "$body" | head -c 600
-            R "cd ~; if [ -L www ]; then rm www && mv www-nsi-demo-backup-$TS www; fi; cp .ovhconfig.backup-$TS .ovhconfig; ls -la ~ | grep -E ' www'"
-            exit 1
-          fi
-          echo "== LIVE"
-          for p in /fr /en /en/solutions/cross-border /fr/contact-us /admin/login /sitemap.xml /build/manifest.json; do printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code}' -m 30 "http://finpay-africa.com$p")" "$p"; done
-          curl -s -o /dev/null -w 'www redirect: %{http_code} -> %{redirect_url}\n' http://www.finpay-africa.com/fr
+          sshpass -e ssh "$SSH_USER@$SSH_HOST" 'cd ~; ls -la | grep -E "www|ovhconfig"; echo "--"; cat .ovhconfig; echo "--"; ls finpay/public | head; ls -la ~/www/ | head -5'
+          for p in /fr /en /admin/login /build/manifest.json; do curl -s -o /tmp/b -D /tmp/h -m 30 "http://finpay-africa.com$p"; echo "$p $(head -1 /tmp/h) $(grep -i x-powered /tmp/h | tr -d '\r') logo=$(grep -c images/brand/logo.png /tmp/b)"; done
+          head -c 700 /tmp/b; echo
