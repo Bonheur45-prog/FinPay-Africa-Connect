@@ -9,6 +9,11 @@ name: Deploy FinPay Laravel to OVH
 
 on:
   workflow_dispatch:
+    inputs:
+      reset_admin:
+        description: 'Reset admin login: create or update the admin from the ADMIN_EMAIL / ADMIN_PASSWORD secrets'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: ['finpay-laravel/**', '.github/workflows/deploy-ovh-laravel.yml']
@@ -174,7 +179,7 @@ jobs:
 
       - name: Migrate, seed first content, cache config
         run: |
-          $SSH_WRAP $SSH_CMD "$SSH_USER@$SSH_HOST" "APP_DIR='$APP_DIR' PHP='$PHP_BIN' bash -s" <<'REMOTE'
+          $SSH_WRAP $SSH_CMD "$SSH_USER@$SSH_HOST" "APP_DIR='$APP_DIR' PHP='$PHP_BIN' RESET_ADMIN='${{ inputs.reset_admin || false }}' bash -s" <<'REMOTE'
           set -e
           cd ~/$APP_DIR
           if [ -f .env ] && grep -q '^APP_KEY=base64:' .env; then
@@ -190,7 +195,11 @@ jobs:
           $PHP artisan down --retry=15 || true
           $PHP artisan migrate --force
           $PHP artisan db:seed --force          # only fills an empty database; existing content is never touched
-          $PHP artisan cms:create-admin --from-env --if-none
+          if [ "$RESET_ADMIN" = "true" ]; then
+            $PHP artisan cms:create-admin --from-env          # sets this email's password (creates the admin if new)
+          else
+            $PHP artisan cms:create-admin --from-env --if-none
+          fi
           $PHP artisan optimize:clear
           # Only the route cache is path-independent. OVH's SSH login sees the home folder under a different
           # path (/home/<login>) than the web server (/home/<account>), so config/view caches built here would
