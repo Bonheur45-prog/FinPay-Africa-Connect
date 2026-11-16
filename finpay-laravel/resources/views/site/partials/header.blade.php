@@ -4,7 +4,14 @@
     $current ??= null;
     $alts = $seo->alternates ?? [];
     $announcement = tr(setting('general.announcement'));
-    $isActive = fn ($url) => $current && trim((string) $url, '/') === ($current === 'contact' ? 'contact-us' : $current);
+    $isActive = function ($url) use ($current) {
+        $u = trim((string) $url, '/');
+        if ($u === '') {
+            return $current === 'home';
+        }
+
+        return $current && $u === ($current === 'contact' ? 'contact-us' : $current);
+    };
 @endphp
 
 @if ($announcement)
@@ -23,6 +30,7 @@
 <header x-data="siteHeader" @keydown.escape.window="close()"
         :class="scrolled ? 'border-line bg-white/90 shadow-[0_1px_0_rgb(16_24_40/0.04)]' : 'border-transparent bg-white/70'"
         class="sticky top-0 z-40 border-b border-transparent bg-white/80 backdrop-blur-xl transition-colors duration-300">
+    <div class="scroll-progress pointer-events-none absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-brand-600 to-amber-500" :style="`--p:${progress}`" aria-hidden="true"></div>
     <div class="container-site flex h-[72px] items-center justify-between gap-6">
         <a href="{{ href('/') }}" class="shrink-0" aria-label="{{ setting('general.site_name', 'FinPay Africa') }} — {{ __('site.nav.home') }}">
             <img src="{{ asset('images/brand/logo.png') }}" alt="{{ setting('general.site_name', 'FinPay Africa') }}" width="160" height="58" class="h-10 w-auto md:h-11">

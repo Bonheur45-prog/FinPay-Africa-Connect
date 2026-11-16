@@ -3,6 +3,8 @@
 return [
     'skip' => 'Aller au contenu',
     'hero' => ['chip_secure' => 'Sécurité bancaire', 'chip_secure_sub' => 'Chiffré de bout en bout', 'chip_fast' => 'Règlement en temps réel', 'chip_fast_sub' => 'Sur les corridors africains'],
+    'slider' => ['label' => 'À la une', 'goto' => 'Aller à la diapositive :n', 'play' => 'Lancer le diaporama', 'pause' => 'Mettre en pause', 'prev' => 'Diapositive précédente', 'next' => 'Diapositive suivante'],
+    'back_to_top' => 'Retour en haut',
     'nav' => [
         'home' => 'Accueil', 'solutions' => 'Solutions', 'menu' => 'Menu', 'close' => 'Fermer le menu',
         'all_solutions' => 'Toutes les solutions', 'all_solutions_text' => 'Découvrez l’ensemble de la plateforme FinPay Africa',

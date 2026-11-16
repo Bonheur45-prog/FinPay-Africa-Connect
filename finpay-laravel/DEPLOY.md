@@ -51,7 +51,7 @@ Each deploy:
 - uploads the app with rsync. It never touches the server `.env` key, `storage/` or uploaded media in `public/media/`.
 - runs the database migrations
 - fills an empty database with the initial content and creates the admin. On later deploys the seeder sees the existing content and changes nothing.
-- caches config, routes and views, then smoke-tests the home page
+- caches routes and smoke-tests the home page. Config and views are not cached over SSH, because OVH's SSH login sees the home folder under a different path than the web server.
 
 Then sign in at **`https://finpay-africa.com/admin`**.
 

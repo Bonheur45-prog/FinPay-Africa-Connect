@@ -172,3 +172,27 @@
 @media (prefers-reduced-motion: reduce) { .js [data-reveal] { opacity: 1; transform: none; } }
 
 .icon { display: inline-block; flex-shrink: 0; }
+
+/* Slow zoom on active slideshow photos and page-hero photos */
+@keyframes fp-kenburns { from { transform: scale(1); } to { transform: scale(1.08); } }
+.is-active .kenburns { animation: fp-kenburns 9s ease-out both; }
+@keyframes fp-hero-zoom { from { scale: 1.06; } to { scale: 1; } }
+.hero-zoom { animation: fp-hero-zoom 2.4s cubic-bezier(.2,.7,.2,1) both; }
+.parallax-img { will-change: transform; }
+
+/* Section reveal variants */
+.js [data-reveal="left"] { transform: translateX(-18px); }
+.js [data-reveal="right"] { transform: translateX(18px); }
+.js [data-reveal="zoom"] { transform: scale(.97); }
+
+/* Back-to-top */
+#back-to-top { opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .3s, transform .3s; }
+#back-to-top.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+
+/* Scroll progress line under the header */
+.scroll-progress { transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+
+@media (prefers-reduced-motion: reduce) {
+    .kenburns, .hero-zoom, .is-active .kenburns { animation: none !important; }
+    .parallax-img { transform: none !important; }
+}
